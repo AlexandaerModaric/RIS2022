@@ -1,0 +1,56 @@
+﻿@model IEnumerable<Patient>
+@{
+    Layout = "_Layout";
+}   
+@{
+  ViewBag.Title = "Patients";
+}
+
+<div class="container p-3">
+    <div class="row p-4">
+        <div class="col-6">
+            <h2 class="text-primary">Patients List</h2>
+        </div>
+        <div class="col-6 text-end">
+            <div  class="btn btn-dark">
+                <i class="bi bi-plus-circle"></i>@Html.ActionLink("Add New Patient","Create","Patients")
+            </div>
+        </div>
+    </div>
+</div>
+<br />
+
+    <div style="padding-left: 5%;padding-right: 5%;">
+    @(
+        Html
+        .Grid(Model)
+        .Build(columns =>
+        {
+            columns.Add(model => model.Givenid).Titled("Id");
+            columns.Add(model => model.Firstname + " " + model.Lastname).Titled("Patient Name");
+            columns.Add(model => model.Middlename).Titled("Father Name");
+            columns.Add().Encoded(false)
+            .RenderedAs(p=>(Html.ActionLink("Edit","Edit", "Patients", new {id = p.Id}, new {@class = "btn btn-default"})));
+            columns.Add().Encoded(false)
+            .RenderedAs(p=>(Html.ActionLink("Delete","Delete", "Patients", new {id = p.Id}, new {@class = "btn btn-default"})));
+            columns.Add().Encoded(false)
+           .RenderedAs(p=>(Html.ActionLink("Add Order","Create", "Orders", new {patientId = p.Id}, new {@class = "btn btn-default"})));
+             columns.Add().Encoded(false)
+           .RenderedAs(p=>new GridHtmlString(Html.ActionLink("Add Order","Create", "Orders", new {patientId = p.Id}, new {@class = "btn btn-default"}).ToString()+
+           "<i class='bi bi-pencil-square'></i>"));
+ 
+
+                                       
+@*        columns.Add(model => model.Martialstatusid).Titled("Marital status");
+
+        columns.Add(model => model.Age).Titled("Age");
+        columns.Add(model => model.Birthdate).Titled("Birthday").Formatted("{0:d}");*@
+        
+    })
+    .Using(GridFilterMode.Header)
+    .Empty("No data found")
+    .Filterable()
+    .Sortable()
+    .Pageable()
+)
+    </div>

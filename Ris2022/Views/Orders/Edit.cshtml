@@ -1,0 +1,139 @@
+﻿@model Ris2022.Data.Models.Order
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Order</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="Patientid" class="control-label"></label>
+                <input asp-for="Patientid" class="form-control" />
+                <span asp-validation-for="Patientid" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Modalityid" class="control-label"></label>
+                <input asp-for="Modalityid" class="form-control" />
+                <span asp-validation-for="Modalityid" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Proceduretypeid" class="control-label"></label>
+                <input asp-for="Proceduretypeid" class="form-control" />
+                <span asp-validation-for="Proceduretypeid" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Studyid" class="control-label"></label>
+                <input asp-for="Studyid" class="form-control" />
+                <span asp-validation-for="Studyid" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Startdate" class="control-label"></label>
+                <input asp-for="Startdate" class="form-control" />
+                <span asp-validation-for="Startdate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Enddate" class="control-label"></label>
+                <input asp-for="Enddate" class="form-control" />
+                <span asp-validation-for="Enddate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Statusid" class="control-label"></label>
+                <input asp-for="Statusid" class="form-control" />
+                <span asp-validation-for="Statusid" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Doctorid" class="control-label"></label>
+                <input asp-for="Doctorid" class="form-control" />
+                <span asp-validation-for="Doctorid" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Autoexpiredate" class="control-label"></label>
+                <input asp-for="Autoexpiredate" class="form-control" />
+                <span asp-validation-for="Autoexpiredate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Accessionnumber" class="control-label"></label>
+                <input asp-for="Accessionnumber" class="form-control" />
+                <span asp-validation-for="Accessionnumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Deptid" class="control-label"></label>
+                <input asp-for="Deptid" class="form-control" />
+                <span asp-validation-for="Deptid" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Documentid" class="control-label"></label>
+                <input asp-for="Documentid" class="form-control" />
+                <span asp-validation-for="Documentid" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Ordertypeid" class="control-label"></label>
+                <input asp-for="Ordertypeid" class="form-control" />
+                <span asp-validation-for="Ordertypeid" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Insertdate" class="control-label"></label>
+                <input asp-for="Insertdate" class="form-control" />
+                <span asp-validation-for="Insertdate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Insertuserid" class="control-label"></label>
+                <input asp-for="Insertuserid" class="form-control" />
+                <span asp-validation-for="Insertuserid" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Reasonid" class="control-label"></label>
+                <input asp-for="Reasonid" class="form-control" />
+                <span asp-validation-for="Reasonid" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Updateuserid" class="control-label"></label>
+                <input asp-for="Updateuserid" class="form-control" />
+                <span asp-validation-for="Updateuserid" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Updatedate" class="control-label"></label>
+                <input asp-for="Updatedate" class="form-control" />
+                <span asp-validation-for="Updatedate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Paytypeid" class="control-label"></label>
+                <input asp-for="Paytypeid" class="form-control" />
+                <span asp-validation-for="Paytypeid" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Payreasonid" class="control-label"></label>
+                <input asp-for="Payreasonid" class="form-control" />
+                <span asp-validation-for="Payreasonid" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Clinicid" class="control-label"></label>
+                <input asp-for="Clinicid" class="form-control" />
+                <span asp-validation-for="Clinicid" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Modalitytypeid" class="control-label"></label>
+                <input asp-for="Modalitytypeid" class="form-control" />
+                <span asp-validation-for="Modalitytypeid" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

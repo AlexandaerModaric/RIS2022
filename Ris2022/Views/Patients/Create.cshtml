@@ -1,0 +1,154 @@
+﻿@model Patient
+@{
+	ViewBag.Title = @Resource.AddPatient;
+	Layout = "_Layout";
+}
+<legend class="h2">@Resource.AddPatient</legend>
+<form asp-controller="Patients" asp-action="Create" method="post"
+	   class="form-horizontal" role="form">
+	<div class ="row border p-3 mt-4 justify-content-center align-items-center">
+		<div class="p-3 mt-4 col d-flex flex-column">
+
+			<div class="form-group">
+				<label asp-for="Givenid" class="form-label mt-4"></label>
+				<input type="text" class="form-control" placeholder="Givenid" name="Givenid">
+				<span asp-validation-for="Givenid" class="text-danger"></span>
+			</div>
+			@*        <div class="form-group">
+			<label asp-for="Nationalidnumber" class="form-label mt-4"></label>
+			<input type="text" class="form-control" placeholder="National id number" name="Nationalidnumber">
+			<span asp-validation-for="Nationalidnumber" class="text-danger"></span>
+			</div>*@
+			<div class="form-group">
+				<label asp-for="Firstname" class="form-label mt-4"></label>
+				<input type="text" class="form-control" placeholder="patient name" name="Firstname">
+				<span asp-validation-for="Firstname" class="text-danger"></span>
+			</div>
+			<div class="form-group">
+				<label asp-for="Lastname" class="form-label mt-4"></label>
+				<input type="text" class="form-control" placeholder="patient name" name="Lastname">
+				<span asp-validation-for="Lastname" class="text-danger"></span>
+				@* <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> *@
+			</div>
+
+			@* <div class="form-group">
+			@Html.LabelFor(m=>m.Nationalityid,"",new{@class="form-control"})
+			@Html.DropDownList("Nationalityid",null,"",new {@class = "form-control" })
+			</div>
+			<div class="form-group">
+			@Html.LabelFor(m=>m.Martialstatusid,"",new{@class="form-control"})
+			@Html.DropDownList("Martialstatusid",null,"",new { @class = "form-control" })
+			</div>
+			<div class="form-group">
+			@Html.LabelFor(m=>m.Acceptancetypeid,"",new{@class="form-control"})
+			@Html.DropDownList("Acceptancetypeid",null,"",new { @class = "form-control"})
+			</div>
+			<div class="form-group">
+			@Html.LabelFor(m=>m.Worktypeid,"",new{@class="form-control"})
+			@Html.DropDownList("Worktypeid",null,"",new { @class = "form-control" })
+			</div>*@
+
+		</div>
+		<div class="p-3 mt-4 col d-flex flex-column">
+
+			<div class="form-group">
+				<label asp-for="Givenid" class="form-label mt-4"></label>
+				<input type="text" class="form-control" placeholder="Givenid" name="Givenid">
+				<span asp-validation-for="Givenid" class="text-danger"></span>
+			</div>
+			@*        <div class="form-group">
+			<label asp-for="Nationalidnumber" class="form-label mt-4"></label>
+			<input type="text" class="form-control" placeholder="National id number" name="Nationalidnumber">
+			<span asp-validation-for="Nationalidnumber" class="text-danger"></span>
+			</div>*@
+			<div class="form-group">
+				<label asp-for="Firstname" class="form-label mt-4"></label>
+				<input type="text" class="form-control" placeholder="patient name" name="Firstname">
+				<span asp-validation-for="Firstname" class="text-danger"></span>
+			</div>
+			<div class="form-group">
+				<label asp-for="Lastname" class="form-label mt-4"></label>
+				<input type="text" class="form-control" placeholder="patient name" name="Lastname">
+				<span asp-validation-for="Lastname" class="text-danger"></span>
+				@* <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> *@
+			</div>
+
+			@* <div class="form-group">
+			@Html.LabelFor(m=>m.Nationalityid,"",new{@class="form-control"})
+			@Html.DropDownList("Nationalityid",null,"",new {@class = "form-control" })
+			</div>
+			<div class="form-group">
+			@Html.LabelFor(m=>m.Martialstatusid,"",new{@class="form-control"})
+			@Html.DropDownList("Martialstatusid",null,"",new { @class = "form-control" })
+			</div>
+			<div class="form-group">
+			@Html.LabelFor(m=>m.Acceptancetypeid,"",new{@class="form-control"})
+			@Html.DropDownList("Acceptancetypeid",null,"",new { @class = "form-control"})
+			</div>
+			<div class="form-group">
+			@Html.LabelFor(m=>m.Worktypeid,"",new{@class="form-control"})
+			@Html.DropDownList("Worktypeid",null,"",new { @class = "form-control" })
+			</div>*@
+
+		</div>
+		<div class="p-3 mt-4 col d-flex flex-column">
+
+			<div class="form-group">
+				<label asp-for="Givenid" class="form-label mt-4"></label>
+				<input type="text" class="form-control" placeholder="Givenid" name="Givenid">
+				<span asp-validation-for="Givenid" class="text-danger"></span>
+			</div>
+			@*        <div class="form-group">
+			<label asp-for="Nationalidnumber" class="form-label mt-4"></label>
+			<input type="text" class="form-control" placeholder="National id number" name="Nationalidnumber">
+			<span asp-validation-for="Nationalidnumber" class="text-danger"></span>
+			</div>*@
+			<div class="form-group">
+				<label asp-for="Firstname" class="form-label mt-4"></label>
+				<input type="text" class="form-control" placeholder="patient name" name="Firstname">
+				<span asp-validation-for="Firstname" class="text-danger"></span>
+			</div>
+			<div class="form-group">
+				<label asp-for="Lastname" class="form-label mt-4"></label>
+				<input type="text" class="form-control" placeholder="patient name" name="Lastname">
+				<span asp-validation-for="Lastname" class="text-danger"></span>
+				@* <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> *@
+			</div>
+
+			@* <div class="form-group">
+			@Html.LabelFor(m=>m.Nationalityid,"",new{@class="form-control"})
+			@Html.DropDownList("Nationalityid",null,"",new {@class = "form-control" })
+			</div>
+			<div class="form-group">
+			@Html.LabelFor(m=>m.Martialstatusid,"",new{@class="form-control"})
+			@Html.DropDownList("Martialstatusid",null,"",new { @class = "form-control" })
+			</div>
+			<div class="form-group">
+			@Html.LabelFor(m=>m.Acceptancetypeid,"",new{@class="form-control"})
+			@Html.DropDownList("Acceptancetypeid",null,"",new { @class = "form-control"})
+			</div>
+			<div class="form-group">
+			@Html.LabelFor(m=>m.Worktypeid,"",new{@class="form-control"})
+			@Html.DropDownList("Worktypeid",null,"",new { @class = "form-control" })
+			</div>*@
+
+		</div>
+	</div>
+	<div class="container p-3">
+		<div class="row p-4">
+			<div class="col-6">
+				<button type="submit" class="btn btn-primary">Submit</button>
+			</div>
+			<div class="col-6 text-end">
+				<a class="btn btn-secondary" asp-controller="Patients" asp-action="Index">
+					<i class="back">&nbsp;</i>Go back to Patient list
+				</a>
+			</div>
+		</div>
+	</div>
+</form>
+@section Scripts {
+	@{
+		await Html.RenderPartialAsync("_ValidationScriptsPartial");
+	}
+	}

@@ -1,0 +1,101 @@
+﻿@model Ris2022.Data.Models.Order
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+
+<h1>Create</h1>
+
+<h4>Order</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            @Html.HiddenFor(model=>model.Patientid)
+            @Html.HiddenFor(model=>model.Studyid)
+            <div class="form-group">
+                <label asp-for="Modalityid" class="control-label"></label>
+                @Html.DropDownList("Modalityid",null,"",new { @class = "form-control" })
+                <span asp-validation-for="Modalityid" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Proceduretypeid" class="control-label"></label>
+                @Html.DropDownList("Proceduretypeid",null,"",new { @class = "form-control" })
+
+                <span asp-validation-for="Proceduretypeid" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Startdate" class="control-label"></label>
+                <input asp-for="Startdate" class="form-control" />
+                <span asp-validation-for="Startdate" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Doctorid" class="control-label"></label>
+                @Html.DropDownList("Doctorid",null,"",new { @class = "form-control" })
+                <span asp-validation-for="Doctorid" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Deptid" class="control-label"></label>
+                @Html.DropDownList("Deptid",null,"",new { @class = "form-control" })
+                <span asp-validation-for="Deptid" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Documentid" class="control-label"></label>
+                <input asp-for="Documentid" class="form-control" />
+                <span asp-validation-for="Documentid" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Ordertypeid" class="control-label"></label>
+                @Html.DropDownList("Ordertypeid",null,"",new { @class = "form-control" })
+                <span asp-validation-for="Ordertypeid" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Reasonid" class="control-label"></label>
+                @Html.DropDownList("Reasonid",null,"",new { @class = "form-control" })
+                <span asp-validation-for="Reasonid" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Updatedate" class="control-label"></label>
+                <input asp-for="Updatedate" class="form-control" />
+                <span asp-validation-for="Updatedate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Paytypeid" class="control-label"></label>
+                @Html.DropDownList("Paytypeid",null,"",new { @class = "form-control" })
+                <span asp-validation-for="Paytypeid" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Payreasonid" class="control-label"></label>
+                @Html.DropDownList("Payreasonid",null,"",new { @class = "form-control" })
+                <span asp-validation-for="Payreasonid" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Clinicid" class="control-label"></label>
+                @Html.DropDownList("Clinicid",null,"",new { @class = "form-control" })
+                <span asp-validation-for="Clinicid" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Modalitytypeid" class="control-label"></label>
+                @Html.DropDownList("Modalitytypeid",null,"",new { @class = "form-control" })
+                <span asp-validation-for="Modalitytypeid" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,118 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="Views\Acceptancetypes\Create.cshtml" />
+    <None Include="Views\Acceptancetypes\Delete.cshtml" />
+    <None Include="Views\Acceptancetypes\Details.cshtml" />
+    <None Include="Views\Acceptancetypes\Edit.cshtml" />
+    <None Include="Views\Acceptancetypes\Index.cshtml" />
+    <None Include="Views\Clinics\Create.cshtml" />
+    <None Include="Views\Clinics\Delete.cshtml" />
+    <None Include="Views\Clinics\Details.cshtml" />
+    <None Include="Views\Clinics\Edit.cshtml" />
+    <None Include="Views\Clinics\Index.cshtml" />
+    <None Include="Views\Departments\Create.cshtml" />
+    <None Include="Views\Departments\Delete.cshtml" />
+    <None Include="Views\Departments\Details.cshtml" />
+    <None Include="Views\Departments\Edit.cshtml" />
+    <None Include="Views\Departments\Index.cshtml" />
+    <None Include="Views\Modalities\Create.cshtml" />
+    <None Include="Views\Modalities\Delete.cshtml" />
+    <None Include="Views\Modalities\Details.cshtml" />
+    <None Include="Views\Modalities\Edit.cshtml" />
+    <None Include="Views\Modalities\Index.cshtml" />
+    <None Include="Views\Modalitytypes\Create.cshtml" />
+    <None Include="Views\Modalitytypes\Delete.cshtml" />
+    <None Include="Views\Modalitytypes\Details.cshtml" />
+    <None Include="Views\Modalitytypes\Edit.cshtml" />
+    <None Include="Views\Modalitytypes\Index.cshtml" />
+    <None Include="Views\Orders\Create.cshtml" />
+    <None Include="Views\Orders\Delete.cshtml" />
+    <None Include="Views\Orders\Details.cshtml" />
+    <None Include="Views\Orders\Edit.cshtml" />
+    <None Include="Views\Orders\Index.cshtml" />
+    <None Include="Views\Patients\Create.cshtml" />
+    <None Include="Views\Patients\Delete.cshtml" />
+    <None Include="Views\Patients\Details.cshtml" />
+    <None Include="Views\Patients\Edit.cshtml" />
+    <None Include="Views\Patients\Index.cshtml" />
+    <None Include="Views\Paytypes\Create.cshtml" />
+    <None Include="Views\Paytypes\Delete.cshtml" />
+    <None Include="Views\Paytypes\Details.cshtml" />
+    <None Include="Views\Paytypes\Edit.cshtml" />
+    <None Include="Views\Paytypes\Index.cshtml" />
+    <None Include="Views\Proceduretypes\Create.cshtml" />
+    <None Include="Views\Proceduretypes\Delete.cshtml" />
+    <None Include="Views\Proceduretypes\Details.cshtml" />
+    <None Include="Views\Proceduretypes\Edit.cshtml" />
+    <None Include="Views\Proceduretypes\Index.cshtml" />
+    <None Include="Views\Reasons\Create.cshtml" />
+    <None Include="Views\Reasons\Delete.cshtml" />
+    <None Include="Views\Reasons\Details.cshtml" />
+    <None Include="Views\Reasons\Edit.cshtml" />
+    <None Include="Views\Reasons\Index.cshtml" />
+    <None Include="Views\Risusers\Create.cshtml" />
+    <None Include="Views\Risusers\Delete.cshtml" />
+    <None Include="Views\Risusers\Details.cshtml" />
+    <None Include="Views\Risusers\Edit.cshtml" />
+    <None Include="Views\Risusers\Index.cshtml" />
+    <None Include="Views\Shared\_ValidationScriptsPartial.cshtml" />
+    <None Include="Views\Userroles\Create.cshtml" />
+    <None Include="Views\Userroles\Delete.cshtml" />
+    <None Include="Views\Userroles\Details.cshtml" />
+    <None Include="Views\Userroles\Edit.cshtml" />
+    <None Include="Views\Userroles\Index.cshtml" />
+    <None Include="Views\_ViewImports.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="6.0.8" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="6.0.8" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="6.0.8">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.8" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="6.0.8">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="6.0.8" />
+    <PackageReference Include="NonFactors.Grid.Mvc6" Version="7.0.2" />
+    <PackageReference Include="Oracle.EntityFrameworkCore" Version="6.21.61" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Resources\Resource.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resource.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Resources\CommonResources.ar.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resources\CommonResources.en.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resources\CommonResources.fr.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resources\Resource.Ar.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resources\Resource.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resource.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+
+</Project>

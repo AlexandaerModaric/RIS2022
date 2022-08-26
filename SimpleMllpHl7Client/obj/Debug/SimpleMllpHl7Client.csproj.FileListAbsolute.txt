@@ -1,0 +1,16 @@
+E:\vs code projects\RISwithHL7\SimpleMllpHl7Client\bin\Debug\SimpleMllpHl7Client.exe.config
+E:\vs code projects\RISwithHL7\SimpleMllpHl7Client\bin\Debug\SimpleMllpHl7Client.exe
+E:\vs code projects\RISwithHL7\SimpleMllpHl7Client\bin\Debug\SimpleMllpHl7Client.pdb
+E:\vs code projects\RISwithHL7\SimpleMllpHl7Client\obj\Debug\SimpleMllpHl7Client.csproj.AssemblyReference.cache
+E:\vs code projects\RISwithHL7\SimpleMllpHl7Client\obj\Debug\SimpleMllpHl7Client.csproj.SuggestedBindingRedirects.cache
+E:\vs code projects\RISwithHL7\SimpleMllpHl7Client\obj\Debug\SimpleMllpHl7Client.csproj.CoreCompileInputs.cache
+E:\vs code projects\RISwithHL7\SimpleMllpHl7Client\obj\Debug\SimpleMllpHl7Client.exe
+E:\vs code projects\RISwithHL7\SimpleMllpHl7Client\obj\Debug\SimpleMllpHl7Client.pdb
+D:\RisV2\HL7\HL7Test\SimpleMllpHl7Client\bin\Debug\SimpleMllpHl7Client.exe.config
+D:\RisV2\HL7\HL7Test\SimpleMllpHl7Client\bin\Debug\SimpleMllpHl7Client.exe
+D:\RisV2\HL7\HL7Test\SimpleMllpHl7Client\bin\Debug\SimpleMllpHl7Client.pdb
+D:\RisV2\HL7\HL7Test\SimpleMllpHl7Client\obj\Debug\SimpleMllpHl7Client.csproj.AssemblyReference.cache
+D:\RisV2\HL7\HL7Test\SimpleMllpHl7Client\obj\Debug\SimpleMllpHl7Client.csproj.SuggestedBindingRedirects.cache
+D:\RisV2\HL7\HL7Test\SimpleMllpHl7Client\obj\Debug\SimpleMllpHl7Client.csproj.CoreCompileInputs.cache
+D:\RisV2\HL7\HL7Test\SimpleMllpHl7Client\obj\Debug\SimpleMllpHl7Client.exe
+D:\RisV2\HL7\HL7Test\SimpleMllpHl7Client\obj\Debug\SimpleMllpHl7Client.pdb

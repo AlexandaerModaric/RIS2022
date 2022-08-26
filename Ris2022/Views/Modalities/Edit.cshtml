@@ -1,0 +1,65 @@
+﻿@model Ris2022.Data.Models.Modality
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+
+<h1>Edit</h1>
+
+<h4>Modality</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Aetitle" class="control-label"></label>
+                <input asp-for="Aetitle" class="form-control" />
+                <span asp-validation-for="Aetitle" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Ipaddress" class="control-label"></label>
+                <input asp-for="Ipaddress" class="form-control" />
+                <span asp-validation-for="Ipaddress" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Port" class="control-label"></label>
+                <input asp-for="Port" class="form-control" />
+                <span asp-validation-for="Port" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Modalitytypeid" class="control-label"></label>
+                <input asp-for="Modalitytypeid" class="form-control" />
+                <span asp-validation-for="Modalitytypeid" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Description" class="control-label"></label>
+                <input asp-for="Description" class="form-control" />
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Departmentid" class="control-label"></label>
+                <input asp-for="Departmentid" class="form-control" />
+                <span asp-validation-for="Departmentid" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

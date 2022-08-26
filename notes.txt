@@ -1,0 +1,4 @@
+vs 2022:
+1- new project Ris2022
+2- install oracle client 12c x64
+

@@ -1,0 +1,45 @@
+﻿@using Ris2022.Resources
+@model IEnumerable<Order>
+@{
+    Layout = "_Layout";
+}   
+@{
+  ViewBag.Title = Resource.OrderIndex;
+}
+<div class="container p-3">
+    <div class="row p-4">
+        <div class="col-6">
+            <h2 class="text-primary">Orders List</h2>
+        </div>
+        <div class="col-6 text-end">
+            <div  class="btn btn-darl">
+                <i class="bi bi-plus-circle"></i>&nbsp;@Html.ActionLink("Add New Order","Create","Orders")
+            </div>
+        </div>
+    </div>
+</div>
+<br />
+
+    <div style="padding-left: 5%;padding-right: 5%;">
+        @(Html
+    .Grid(Model)
+    .Build(columns =>
+    {
+        columns.Add(model => model.Accessionnumber).Titled("Id");
+        columns.Add(model => model.modality.Name).Titled("Modality Name");
+        columns.Add(model => model.Patientid).Titled("Father Name");
+                columns.Add().Encoded(false)
+        .RenderedAs(p=>(Html.ActionLink("Edit","Edit", "Orders", new {id = p.Id}, new {@class = "btn btn-default"})));
+        columns.Add().Encoded(false)
+        .RenderedAs(p=>(Html.ActionLink("Delete","Delete", "Orders", new {id = p.Id}, new {@class = "btn btn-default"})));
+        columns.Add().Encoded(false)
+        .RenderedAs(p=>(Html.ActionLink("Details","Details", "Orders", new {id = p.Id}, new {@class = "btn btn-default"})));
+        
+    })
+    .Using(GridFilterMode.Header)
+    .Empty("No data found")
+    .Filterable()
+    .Sortable()
+    .Pageable()
+)
+    </div>
