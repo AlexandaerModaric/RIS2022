@@ -46,7 +46,7 @@ namespace Ris2022.Data.Migrations
                         .HasDatabaseName("RoleNameIndex")
                         .HasFilter("\"NormalizedName\" IS NOT NULL");
 
-                    b.ToTable("AspNetRoles", (string)null);
+                    b.ToTable("Role", (string)null);
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -71,7 +71,59 @@ namespace Ris2022.Data.Migrations
 
                     b.HasIndex("RoleId");
 
-                    b.ToTable("AspNetRoleClaims", (string)null);
+                    b.ToTable("RoleClaims", (string)null);
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUser", b =>
+                {
+                    b.Property<string>("Id")
+                        .HasColumnType("NVARCHAR2(450)");
+
+                    b.Property<int>("AccessFailedCount")
+                        .HasColumnType("NUMBER(10)");
+
+                    b.Property<string>("ConcurrencyStamp")
+                        .HasColumnType("NVARCHAR2(2000)");
+
+                    b.Property<string>("Email")
+                        .HasColumnType("NVARCHAR2(2000)");
+
+                    b.Property<bool>("EmailConfirmed")
+                        .HasColumnType("NUMBER(1)");
+
+                    b.Property<bool>("LockoutEnabled")
+                        .HasColumnType("NUMBER(1)");
+
+                    b.Property<DateTimeOffset?>("LockoutEnd")
+                        .HasColumnType("TIMESTAMP(7) WITH TIME ZONE");
+
+                    b.Property<string>("NormalizedEmail")
+                        .HasColumnType("NVARCHAR2(2000)");
+
+                    b.Property<string>("NormalizedUserName")
+                        .HasColumnType("NVARCHAR2(2000)");
+
+                    b.Property<string>("PasswordHash")
+                        .HasColumnType("NVARCHAR2(2000)");
+
+                    b.Property<string>("PhoneNumber")
+                        .HasColumnType("NVARCHAR2(2000)");
+
+                    b.Property<bool>("PhoneNumberConfirmed")
+                        .HasColumnType("NUMBER(1)");
+
+                    b.Property<string>("SecurityStamp")
+                        .HasColumnType("NVARCHAR2(2000)");
+
+                    b.Property<bool>("TwoFactorEnabled")
+                        .HasColumnType("NUMBER(1)");
+
+                    b.Property<string>("UserName")
+                        .HasColumnType("NVARCHAR2(2000)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("User", (string)null);
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<string>", b =>
@@ -96,7 +148,7 @@ namespace Ris2022.Data.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("AspNetUserClaims", (string)null);
+                    b.ToTable("UserClaims", (string)null);
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<string>", b =>
@@ -120,7 +172,7 @@ namespace Ris2022.Data.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("AspNetUserLogins", (string)null);
+                    b.ToTable("UserLogins", (string)null);
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserRole<string>", b =>
@@ -135,7 +187,7 @@ namespace Ris2022.Data.Migrations
 
                     b.HasIndex("RoleId");
 
-                    b.ToTable("AspNetUserRoles", (string)null);
+                    b.ToTable("UserRoles", (string)null);
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<string>", b =>
@@ -156,7 +208,7 @@ namespace Ris2022.Data.Migrations
 
                     b.HasKey("UserId", "LoginProvider", "Name");
 
-                    b.ToTable("AspNetUserTokens", (string)null);
+                    b.ToTable("UserTokens", (string)null);
                 });
 
             modelBuilder.Entity("Ris2022.Data.Models.Acceptancetype", b =>

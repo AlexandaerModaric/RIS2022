@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using Ris2022.Data.Models;
@@ -40,6 +41,34 @@ namespace Ris2022.Data
             base.OnModelCreating(modelBuilder);
             modelBuilder.Model.SetMaxIdentifierLength(30);
             modelBuilder.ApplyConfiguration(new ApplcationUserEntityConfiguration());
+            modelBuilder.Entity<IdentityUser>(entity =>
+            {
+                entity.ToTable(name: "User");
+            });
+            modelBuilder.Entity<IdentityRole>(entity =>
+            {
+                entity.ToTable(name: "Role");
+            });
+            modelBuilder.Entity<IdentityUserRole<string>>(entity =>
+            {
+                entity.ToTable("UserRoles");
+            });
+            modelBuilder.Entity<IdentityUserClaim<string>>(entity =>
+            {
+                entity.ToTable("UserClaims");
+            });
+            modelBuilder.Entity<IdentityUserLogin<string>>(entity =>
+            {
+                entity.ToTable("UserLogins");
+            });
+            modelBuilder.Entity<IdentityRoleClaim<string>>(entity =>
+            {
+                entity.ToTable("RoleClaims");
+            });
+            modelBuilder.Entity<IdentityUserToken<string>>(entity =>
+            {
+                entity.ToTable("UserTokens");
+            });
             //Patient[] patsToSeed = new Patient[6];
             //for (int i = 1; i <= 6; i++)
             //{
