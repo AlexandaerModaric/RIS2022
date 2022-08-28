@@ -42,13 +42,13 @@ namespace Ris2022.Controllers
             return RedirectToAction("Index", "Home");
 
         }
-        public IActionResult Register()
+        public IActionResult AddUser()
         {
             return View();
         }
 
         [HttpPost]
-        public async Task<IActionResult> Register(RegisterViewModel model)
+        public async Task<IActionResult> AddUser(AddUserViewModel model)
         {
 
             if (ModelState.IsValid)
@@ -115,7 +115,7 @@ namespace Ris2022.Controllers
         }
 
         [AllowAnonymous]
-        public async Task AddRolesToUser(RegisterViewModel model)
+        public async Task AddRolesToUser(AddUserViewModel model)
         {
             bool x = await _roleManager.RoleExistsAsync(model.Role);
             if (!x)

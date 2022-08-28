@@ -1,10 +1,10 @@
-﻿@model Ris2022.Data.ViewModel.RegisterViewModel
+﻿@model Ris2022.Data.ViewModel.AddUserViewModel
 @{
-    ViewData["Title"] = "Register";
+    ViewData["Title"] = Resource.AddUser;
     Layout = "_Layout";
 }
 
-<h1>Register</h1>
+<h1>@Resource.AddUser</h1>
 
 <div class="row">
     <div class="col-md-12">
@@ -26,6 +26,11 @@
                 <label asp-for="ConfirmPassword"></label>
                 <input asp-for="ConfirmPassword" class="form-control" />
                 <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Role"></label>
+                <input asp-for="Role" class="form-control" />
+                <span asp-validation-for="Role" class="text-danger"></span>
             </div>
             <button type="submit" class="btn-primary">Register</button>
         </form>

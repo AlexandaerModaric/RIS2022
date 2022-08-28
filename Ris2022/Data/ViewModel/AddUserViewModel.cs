@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Ris2022.Data.ViewModel
 {
-    public class RegisterViewModel
+    public class AddUserViewModel
     {
         [Required]
         [EmailAddress]

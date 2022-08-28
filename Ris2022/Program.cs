@@ -51,6 +51,7 @@ builder.Services.ConfigureApplicationCookie(options =>
     options.AccessDeniedPath = "/Identity/Account/AccessDenied";
     options.SlidingExpiration = true;
 });
+
 #endregion
 builder.Services.AddControllersWithViews();
 
@@ -86,7 +87,12 @@ if (!app.Environment.IsDevelopment())
     // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
     app.UseHsts();
 }
-
+//using (var scope = app.Services.CreateScope())
+//{
+//    var initialiser = scope.ServiceProvider.GetRequiredService<UsersRolesInitialiser>();
+//    await initialiser.InitialiseAsync();
+//    await initialiser.SeedAsync();
+//}
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 app.UseRouting();
