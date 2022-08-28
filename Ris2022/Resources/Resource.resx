@@ -120,6 +120,9 @@
   <data name="AddPatient" xml:space="preserve">
     <value>Add Patient</value>
   </data>
+  <data name="AddUser" xml:space="preserve">
+    <value>Add New User</value>
+  </data>
   <data name="Adminstration" xml:space="preserve">
     <value>Adminstration</value>
   </data>
@@ -158,6 +161,9 @@
   </data>
   <data name="Patients" xml:space="preserve">
     <value>Patients</value>
+  </data>
+  <data name="Register" xml:space="preserve">
+    <value>Register</value>
   </data>
   <data name="RIS" xml:space="preserve">
     <value>Radiology Information System</value>

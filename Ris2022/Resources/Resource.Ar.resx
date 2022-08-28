@@ -120,6 +120,9 @@
   <data name="AddPatient" xml:space="preserve">
     <value>إضافة مريض</value>
   </data>
+  <data name="AddUser" xml:space="preserve">
+    <value>إضافة مستخدم جديد</value>
+  </data>
   <data name="Adminstration" xml:space="preserve">
     <value>إدارة</value>
   </data>
@@ -158,6 +161,9 @@
   </data>
   <data name="Patients" xml:space="preserve">
     <value>المرضى</value>
+  </data>
+  <data name="Register" xml:space="preserve">
+    <value>إنشاء حساب</value>
   </data>
   <data name="RIS" xml:space="preserve">
     <value>برنامج طلبات التصوير</value>

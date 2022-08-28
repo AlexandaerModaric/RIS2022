@@ -739,7 +739,7 @@ namespace Ris2022.Data.Migrations
                         .HasDatabaseName("UserNameIndex")
                         .HasFilter("\"NormalizedUserName\" IS NOT NULL");
 
-                    b.ToTable("AspNetUsers", (string)null);
+                    b.ToTable("AppUser", (string)null);
                 });
 
             modelBuilder.Entity("Ris2022.Data.Models.Risuser", b =>

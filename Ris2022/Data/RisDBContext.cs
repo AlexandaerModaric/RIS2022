@@ -14,8 +14,7 @@ namespace Ris2022.Data
 
         public RisDBContext(DbContextOptions<RisDBContext> options)
             : base(options)
-        {
-        }
+        {        }
         public virtual DbSet<Patient> Patients { get; set; } = null!;
         public virtual DbSet<Acceptancetype> Acceptancetypes { get; set; } = null!;
         public virtual DbSet<Clinic> Clinics { get; set; } = null!;
@@ -41,6 +40,11 @@ namespace Ris2022.Data
             base.OnModelCreating(modelBuilder);
             modelBuilder.Model.SetMaxIdentifierLength(30);
             modelBuilder.ApplyConfiguration(new ApplcationUserEntityConfiguration());
+
+            modelBuilder.Entity<RisAppUser>(entity =>
+            {
+                entity.ToTable(name: "AppUser");
+            });
             modelBuilder.Entity<IdentityUser>(entity =>
             {
                 entity.ToTable(name: "User");

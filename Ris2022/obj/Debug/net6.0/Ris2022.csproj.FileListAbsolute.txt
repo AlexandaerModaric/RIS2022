@@ -290,3 +290,4 @@ C:\Users\hp\source\repos\Ris2022\Ris2022\bin\Debug\net6.0\Microsoft.Extensions.I
 C:\Users\hp\source\repos\Ris2022\Ris2022\bin\Debug\net6.0\Microsoft.Extensions.Identity.Stores.dll
 C:\Users\hp\source\repos\Ris2022\Ris2022\bin\Debug\net6.0\Microsoft.AspNetCore.Identity.UI.dll
 C:\Users\hp\source\repos\Ris2022\Ris2022\bin\Debug\net6.0\Microsoft.Extensions.FileProviders.Embedded.dll
+C:\Users\hp\source\repos\Ris2022\Ris2022\bin\Debug\net6.0\Microsoft.AspNet.Identity.Core.dll
