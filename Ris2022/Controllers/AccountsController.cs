@@ -10,6 +10,7 @@ using Microsoft.EntityFrameworkCore;
 using Ris2022.Data;
 using Ris2022.Data.Models;
 using Ris2022.Data.ViewModel;
+using Ris2022.Data.Enums;
 
 namespace Ris2022.Controllers
 {
@@ -29,26 +30,19 @@ namespace Ris2022.Controllers
             _roleManager = roleManager;
         }
         [AllowAnonymous]
-        public async Task InitializeRoles(RegisterViewModel model)
+        public async Task<IActionResult> InitializeRoles()
         {
-            bool x = await _roleManager.RoleExistsAsync(model.Role);
-            if (!x)
+            foreach (var role in Enum.GetValues(typeof(RolesEnum))) 
             {
-                var user = new RisAppUser
-                {
-                    UserName = model.Email,
-                    Email = model.Email,
-                };
-                // first we create Admin rool    
-                var role = new IdentityRole();
-                role.Name = model.Role;
-                await _roleManager.CreateAsync(role);
-
-                //Add default User to Role Admin
-                var result1 = await _userManager.AddToRoleAsync(user, model.Role);
+                bool result = await _roleManager.RoleExistsAsync(role.ToString());
+                //Seed Role
+                if(!result)
+                await _roleManager.CreateAsync(new IdentityRole(role.ToString()));
             }
+            return RedirectToAction("Index", "Home");
+
         }
-            public IActionResult Register()
+        public IActionResult Register()
         {
             return View();
         }

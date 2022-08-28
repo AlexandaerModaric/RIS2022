@@ -7,7 +7,6 @@ using Ris2022.Interfaces;
 using Ris2022.Repositories;
 using Ris2022.Services;
 using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNet.Identity;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -18,6 +17,7 @@ builder.Services.AddDbContext<RisDBContext>(options => options.UseOracle(
 ));
 #region
 builder.Services.AddDefaultIdentity<RisAppUser>(options => options.SignIn.RequireConfirmedAccount = true)
+    .AddRoles<IdentityRole>()
     .AddEntityFrameworkStores<RisDBContext>()
     .AddDefaultUI();
 builder.Services.Configure<IdentityOptions>(options =>
