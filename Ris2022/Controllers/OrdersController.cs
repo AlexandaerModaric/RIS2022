@@ -57,7 +57,7 @@ namespace Ris2022.Controllers
             order.Studyid = "1.2.4.0.13.1.4.2252867." + patientId;
             ViewData["Modalityid"] = new SelectList(_context.Modalities.ToList(),"Id","Name");
             ViewData["Proceduretypeid"] = new SelectList(_context.Proceduretypes.ToList(),"Id", Thread.CurrentThread.CurrentCulture.ToString().Contains("ar") ? "Namear" : "Nameen");
-            ViewData["Doctorid"] = new SelectList(_context.Risusers.ToList().DistinctBy(c=>c.Isdoctor==true),"Id","Name");
+            //ViewData["Doctorid"] = new SelectList(_context.Risusers.ToList().DistinctBy(c=>c.Isdoctor==true),"Id","Name");
             ViewData["Departmentid"] = new SelectList(_context.Departments.ToList(),"Id", Thread.CurrentThread.CurrentCulture.ToString().Contains("ar") ? "Namear" : "Nameen");
             ViewData["ordertypeid"] = new SelectList(_context.Modalitytypes.ToList(),"Id", Thread.CurrentThread.CurrentCulture.ToString().Contains("ar") ? "Namear" : "Nameen");
             ViewData["Reasonid"] = new SelectList(_context.Reasons.ToList(),"Id", Thread.CurrentThread.CurrentCulture.ToString().Contains("ar") ? "Namear" : "Nameen");
@@ -79,7 +79,7 @@ namespace Ris2022.Controllers
             Modality modality = _context.Modalities.SingleOrDefault(m => m.Id == order.Modalityid);
             ViewData["Modalityid"] = new SelectList(_context.Modalities.ToList(), "Id", "Name");
             ViewData["Proceduretypeid"] = new SelectList(_context.Proceduretypes.ToList(), "Id", Thread.CurrentThread.CurrentCulture.ToString().Contains("ar") ? "Namear" : "Nameen");
-            ViewData["Doctorid"] = new SelectList(_context.Risusers.ToList().DistinctBy(c => c.Isdoctor == true), "Id", "Name");
+            //ViewData["Doctorid"] = new SelectList(_context.Risusers.ToList().DistinctBy(c => c.Isdoctor == true), "Id", "Name");
             ViewData["Departmentid"] = new SelectList(_context.Departments.ToList(), "Id", Thread.CurrentThread.CurrentCulture.ToString().Contains("ar") ? "Namear" : "Nameen");
             ViewData["ordertypeid"] = new SelectList(_context.Modalitytypes.ToList(), "Id", Thread.CurrentThread.CurrentCulture.ToString().Contains("ar") ? "Namear" : "Nameen");
             ViewData["Reasonid"] = new SelectList(_context.Reasons.ToList(), "Id", Thread.CurrentThread.CurrentCulture.ToString().Contains("ar") ? "Namear" : "Nameen");

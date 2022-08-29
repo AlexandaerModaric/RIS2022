@@ -32,18 +32,31 @@ namespace Ris2022.Controllers
         [AllowAnonymous]
         public async Task<IActionResult> InitializeRoles()
         {
-            foreach (var role in Enum.GetValues(typeof(RolesEnum))) 
+            var user = new RisAppUser
+            {
+                UserName = "Admin@RIS.net",
+                Email = "Admin@RIS.net",
+            };
+            await _userManager.CreateAsync(user, "Admin");
+
+            foreach (var role in Enum.GetValues(typeof(RolesEnum)))
             {
                 bool result = await _roleManager.RoleExistsAsync(role.ToString());
                 //Seed Role
-                if(!result)
-                await _roleManager.CreateAsync(new IdentityRole(role.ToString()));
+                if (!result)
+                {
+                    await _roleManager.CreateAsync(new IdentityRole(role.ToString()));
+                    await _userManager.AddToRoleAsync(user, role.ToString());
+                }
+                else
+                    await _userManager.AddToRoleAsync(user, role.ToString());
             }
             return RedirectToAction("Index", "Home");
 
         }
         public IActionResult AddUser()
         {
+            ViewData["Role"] = new SelectList(_roleManager.Roles.ToList(),"Id","Name");
             return View();
         }
 
@@ -59,16 +72,20 @@ namespace Ris2022.Controllers
                     Email = model.Email,
                 };
 
-                var result = await _userManager.CreateAsync(user, model.Password);
-
-                if (result.Succeeded)
+                var result1 = await _userManager.CreateAsync(user, model.Password);
+                var result2 = await _userManager.AddToRoleAsync(user, model.Role);
+                if (result1.Succeeded && result2.Succeeded)
                 {
                     await _signInManager.SignInAsync(user, isPersistent: false);
 
                     return RedirectToAction("index", "Home");
                 }
 
-                foreach (var error in result.Errors)
+                foreach (var error in result1.Errors)
+                {
+                    ModelState.AddModelError("", error.Description);
+                }                
+                foreach (var error in result2.Errors)
                 {
                     ModelState.AddModelError("", error.Description);
                 }

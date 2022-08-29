@@ -57,17 +57,7 @@
     <None Include="Views\Reasons\Details.cshtml" />
     <None Include="Views\Reasons\Edit.cshtml" />
     <None Include="Views\Reasons\Index.cshtml" />
-    <None Include="Views\Risusers\Create.cshtml" />
-    <None Include="Views\Risusers\Delete.cshtml" />
-    <None Include="Views\Risusers\Details.cshtml" />
-    <None Include="Views\Risusers\Edit.cshtml" />
-    <None Include="Views\Risusers\Index.cshtml" />
     <None Include="Views\Shared\_ValidationScriptsPartial.cshtml" />
-    <None Include="Views\Userroles\Create.cshtml" />
-    <None Include="Views\Userroles\Delete.cshtml" />
-    <None Include="Views\Userroles\Details.cshtml" />
-    <None Include="Views\Userroles\Edit.cshtml" />
-    <None Include="Views\Userroles\Index.cshtml" />
     <None Include="Views\_ViewImports.cshtml" />
   </ItemGroup>
 

@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
+using Ris2022.Data.Configuration.Entities;
 using Ris2022.Data.Models;
 
 namespace Ris2022.Data
@@ -29,8 +30,6 @@ namespace Ris2022.Data
         public virtual DbSet<Order> orders { get; set; } = null!;
         public virtual DbSet<Reason> Reasons { get; set; } = null!;
         public virtual DbSet<Report> Reports { get; set; } = null!;
-        public virtual DbSet<Risuser> Risusers { get; set; } = null!;
-        public virtual DbSet<Userrole> Userroles { get; set; } = null!;
         public virtual DbSet<Worktype> Worktypes { get; set; } = null!;
         public virtual DbSet<Ordertype> Ordetypes { get; set; } = null!;
 
@@ -40,6 +39,7 @@ namespace Ris2022.Data
             base.OnModelCreating(modelBuilder);
             modelBuilder.Model.SetMaxIdentifierLength(30);
             modelBuilder.ApplyConfiguration(new ApplcationUserEntityConfiguration());
+
 
             modelBuilder.Entity<RisAppUser>(entity =>
             {
@@ -73,6 +73,20 @@ namespace Ris2022.Data
             {
                 entity.ToTable("UserTokens");
             });
+            modelBuilder.ApplyConfiguration(new RoleConfiguration());
+            modelBuilder.ApplyConfiguration(new ClinicConfiguration());
+            modelBuilder.ApplyConfiguration(new AcceptancetypeConfiguration());
+            modelBuilder.ApplyConfiguration(new DepartmentConfiguration());
+            modelBuilder.ApplyConfiguration(new LanguageConfiguration());
+            modelBuilder.ApplyConfiguration(new MartialstatusConfiguration());
+            modelBuilder.ApplyConfiguration(new ModalityConfiguration());
+            modelBuilder.ApplyConfiguration(new ModalitytypeConfiguration());
+            modelBuilder.ApplyConfiguration(new NationalityConfiguration());
+            modelBuilder.ApplyConfiguration(new OrdertypeConfiguration());
+            modelBuilder.ApplyConfiguration(new PaytypeConfiguration());
+            modelBuilder.ApplyConfiguration(new ProceduretypeConfiguration());
+            modelBuilder.ApplyConfiguration(new ReasonConfiguration());
+            modelBuilder.ApplyConfiguration(new WorktypeConfiguration());
             //Patient[] patsToSeed = new Patient[6];
             //for (int i = 1; i <= 6; i++)
             //{
