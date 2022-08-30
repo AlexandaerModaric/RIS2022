@@ -1,11 +1,22 @@
 ﻿@namespace Ris2022.Pages
 @addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 @addTagHelper *, Ris2022
-@using NonFactors.Mvc.Grid;
+@using Microsoft.AspNetCore.Identity
+@using NonFactors.Mvc.Grid
 @using Ris2022
 @using Ris2022.Data.Models
 @using Ris2022.Pages.Account
 @using Ris2022.Pages.Account.Manage
 @using System.Globalization
 @using Resources
+@using Microsoft.AspNetCore.Builder
+@using Microsoft.AspNetCore.Localization
+@using Microsoft.Extensions.Localization
+@using Microsoft.Extensions.Options
+@using Ris2022.Services
+@inject IStringLocalizer<CommonResources> CommonResources
+@inject IOptions<RequestLocalizationOptions> LocOptions
+@inject SignInManager<RisAppUser> SignInManager
+@inject UserManager<RisAppUser> UserManager
+
 

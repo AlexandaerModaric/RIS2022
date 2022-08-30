@@ -132,6 +132,9 @@
   <data name="Direction" xml:space="preserve">
     <value>ltr</value>
   </data>
+  <data name="Email" xml:space="preserve">
+    <value>Email</value>
+  </data>
   <data name="FathName" xml:space="preserve">
     <value>Middle Name</value>
   </data>

@@ -1,44 +1,50 @@
 ﻿@page
-@using Microsoft.AspNetCore.Localization
-@model IndexModel
+@using Ris2022.Pages.Account
+@model LoginIModel
+
 @{
-    ViewData["Title"] = "Home page";
-    var requestCultureFeature = HttpContext.Features.Get<IRequestCultureFeature>();
-    var requestCulture = requestCultureFeature.RequestCulture;
+    ViewData["Title"] = "Log in";
 }
- 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
- 
-    <table class="table culture-table">
-        <tr>
-            <td style="width:50%;">Culture</td>
-            <td>@requestCulture.Culture.DisplayName {@requestCulture.Culture.Name}</td>
-        </tr>
-        <tr>
-            <td>UI Culture</td>
-            <td>@requestCulture.UICulture.Name</td>
-        </tr>
-        <tr>
-            <td>UICulture Parent</td>
-            <td>@requestCulture.UICulture.Parent</td>
-        </tr>
-        <tr>
-            <td>Date</td>
-            <td>@DateTime.Now.ToLongDateString()</td>
-        </tr>
-        <tr>
-            <td>Currency</td>
-            <td>
-                @(12345.00.ToString("c"))
-            </td>
-        </tr>
-        <tr>
-            <td>Number</td>
-            <td>
-                @(123.45m.ToString("F2"))
-            </td>
-        </tr>
-    </table>
+
+<h1>@Resources.Resource.LogIn</h1>
+<div class="row">
+    <div class="col-md-4">
+        <section>
+            <form id="account" method="post">
+                <h2></h2>
+                <hr />
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-floating">
+                    <input asp-for="Input.Email" class="form-control" autocomplete="username" aria-required="true" />
+                    <label asp-for="Input.Email" class="form-label"></label>
+                    <span asp-validation-for="Input.Email" class="text-danger"></span>
+                </div>
+                <div class="form-floating">
+                    <input asp-for="Input.Password" class="form-control" autocomplete="current-password" aria-required="true" />
+                    <label asp-for="Input.Password" class="form-label"></label>
+                    <span asp-validation-for="Input.Password" class="text-danger"></span>
+                </div>
+                <div>
+                    <div class="checkbox">
+                        <label asp-for="Input.RememberMe" class="form-label">
+                            <input class="form-check-input" asp-for="Input.RememberMe" />
+                            @Html.DisplayNameFor(m => m.Input.RememberMe)
+                        </label>
+                    </div>
+                </div>
+                <div>
+                    <button id="login-submit" type="submit" class="w-100 btn btn-lg btn-primary">Log in</button>
+                </div>
+                <div>
+                    <p>
+                        <a asp-page="/Account/Register" asp-route-returnUrl="@Model.ReturnUrl">Register as a new user</a>
+                    </p>
+                </div>
+            </form>
+        </section>
+    </div>
 </div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

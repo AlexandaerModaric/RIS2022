@@ -99,11 +99,12 @@ app.UseRouting();
 
 // var localizationOptions = app.Services.GetService<IOptions<RequestLocalizationOptions>>().Value;
 // app.UseRequestLocalization(localizationOptions);
-	
+
 app.UseRequestLocalization();
 app.UseAuthentication();;
 
 app.UseAuthorization();
+//app.UseEndpoints(routes => routes.MapDefaultControllerRoute());
 
 app.MapRazorPages();
 app.MapDefaultControllerRoute();
