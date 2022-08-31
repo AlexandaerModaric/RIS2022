@@ -97,6 +97,15 @@ namespace Ris2022.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Call Us.
+        /// </summary>
+        public static string CallUs {
+            get {
+                return ResourceManager.GetString("CallUs", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to ltr.
         /// </summary>
         public static string Direction {
@@ -147,6 +156,15 @@ namespace Ris2022.Resources {
         public static string Lang {
             get {
                 return ResourceManager.GetString("Lang", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Location.
+        /// </summary>
+        public static string Location {
+            get {
+                return ResourceManager.GetString("Location", resourceCulture);
             }
         }
         

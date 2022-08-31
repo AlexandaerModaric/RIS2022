@@ -1,0 +1,157 @@
+﻿@page
+@using Microsoft.AspNetCore.Localization
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+    var requestCultureFeature = HttpContext.Features.Get<IRequestCultureFeature>();
+    var requestCulture = requestCultureFeature.RequestCulture;
+}
+<!--*************** Our Services Starts Here ***************-->
+<!--  ************************* Page Title Starts Here ************************** -->
+            <h1>@ViewData["Title"]</h1>
+
+
+<!-- ######## Page  Title End ####### -->
+<!--*************** Our Services Starts Here ***************-->
+
+
+<section class="our-service container-fluid">
+    <div class="container">
+
+        <div class="col-sm-12 blog-cont">
+            <div class="row no-margin">
+                <div class="col-lg-4 col-md-6 blog-smk">
+                    <div class="blog-single">
+
+                        <img src="assets/images/services/service-1.jpg" alt="">
+
+                        <div class="blog-single-det">
+
+                            <h6>Deperssion</h6>
+
+                            <a href="blog_single.html">
+                                <button class="btn btn-primary ">More Detail</button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 blog-smk">
+                    <div class="blog-single">
+
+                        <img src="assets/images/services/service-2.jpg" alt="">
+
+                        <div class="blog-single-det">
+
+                            <h6>Anxity</h6>
+
+                            <a href="blog_single.html">
+                                <button class="btn btn-primary ">More Detail</button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 blog-smk">
+                    <div class="blog-single">
+
+                        <img src="assets/images/services/service-3.jpg" alt="">
+
+                        <div class="blog-single-det">
+
+                            <h6>Relationship Issue</h6>
+
+                            <a href="blog_single.html">
+                                <button class="btn btn-primary">More Detail</button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 blog-smk">
+                    <div class="blog-single">
+
+                        <img src="assets/images/services/s1.jpg" alt="">
+
+                        <div class="blog-single-det">
+
+                            <h6>Relationship Issue</h6>
+
+                            <a href="blog_single.html">
+                                <button class="btn btn-primary">More Detail</button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 blog-smk">
+                    <div class="blog-single">
+
+                        <img src="assets/images/services/s2.jpg" alt="">
+
+                        <div class="blog-single-det">
+
+                            <h6>Paediatric Issue</h6>
+
+                            <a href="blog_single.html">
+                                <button class="btn btn-primary">More Detail</button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 blog-smk">
+                    <div class="blog-single">
+
+                        <img src="assets/images/services/service-2.jpg" alt="">
+
+                        <div class="blog-single-det">
+
+                            <h6>Neurology Issue</h6>
+
+                            <a href="blog_single.html">
+                                <button class="btn btn-primary">More Detail</button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</section>
+@*<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+ 
+    <table class="table culture-table">
+        <tr>
+            <td style="width:50%;">Culture</td>
+            <td>@requestCulture.Culture.DisplayName {@requestCulture.Culture.Name}</td>
+        </tr>
+        <tr>
+            <td>UI Culture</td>
+            <td>@requestCulture.UICulture.Name</td>
+        </tr>
+        <tr>
+            <td>UICulture Parent</td>
+            <td>@requestCulture.UICulture.Parent</td>
+        </tr>
+        <tr>
+            <td>Date</td>
+            <td>@DateTime.Now.ToLongDateString()</td>
+        </tr>
+        <tr>
+            <td>Currency</td>
+            <td>
+                @(12345.00.ToString("c"))
+            </td>
+        </tr>
+        <tr>
+            <td>Number</td>
+            <td>
+                @(123.45m.ToString("F2"))
+            </td>
+        </tr>
+    </table>
+</div>*@

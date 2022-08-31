@@ -3,11 +3,13 @@
 @model LoginIModel
 
 @{
-    ViewData["Title"] = "Log in";
+    ViewData["Title"] = Resource.Home;
 }
 
 <h1>@Resources.Resource.LogIn</h1>
-<div class="row">
+<section class="section-form" id="contact">
+
+    <div class="row justify-content-center align-items-center">
     <div class="col-md-4">
         <section>
             <form id="account" method="post">
@@ -44,6 +46,7 @@
         </section>
     </div>
 </div>
+</section>
 
 @section Scripts {
     <partial name="_ValidationScriptsPartial" />

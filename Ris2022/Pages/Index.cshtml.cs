@@ -115,7 +115,7 @@ namespace Ris2022.Pages.Account
                 if (result.Succeeded)
                 {
                     _logger.LogInformation("User logged in.");
-                    return RedirectToAction("Index1","Home");
+                    return RedirectToPage("MainPage");
                 }
                 if (result.RequiresTwoFactor)
                 {

@@ -1,23 +1,12 @@
 ﻿@model IEnumerable<Patient>
-@{
-    Layout = "_Layout";
-}   
+
 @{
   ViewBag.Title = "Patients";
 }
-
-<div class="container p-3">
-    <div class="row p-4">
-        <div class="col-6">
-            <h2 class="text-primary">Patients List</h2>
-        </div>
-        <div class="col-6 text-end">
-            <div  class="btn btn-dark">
+<h1 class="text-primary">Patients List</h1>
                 <i class="bi bi-plus-circle"></i>@Html.ActionLink("Add New Patient","Create","Patients")
-            </div>
-        </div>
-    </div>
-</div>
+
+
 <br />
 
     <div style="padding-left: 5%;padding-right: 5%;">

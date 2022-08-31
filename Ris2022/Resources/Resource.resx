@@ -129,6 +129,9 @@
   <data name="AlignDir" xml:space="preserve">
     <value>left</value>
   </data>
+  <data name="CallUs" xml:space="preserve">
+    <value>Call Us</value>
+  </data>
   <data name="Direction" xml:space="preserve">
     <value>ltr</value>
   </data>
@@ -146,6 +149,9 @@
   </data>
   <data name="Lang" xml:space="preserve">
     <value>en</value>
+  </data>
+  <data name="Location" xml:space="preserve">
+    <value>Location</value>
   </data>
   <data name="LogIn" xml:space="preserve">
     <value>Login</value>

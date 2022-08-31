@@ -14,77 +14,115 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - RISnew</title>
+    <link rel="shortcut icon" href="assets/images/fav.png" type="image/x-icon">
+   <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="assets/images/fav.jpg">
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/theme.css" />
-    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/icons/bootstrap-icons.css" />
-    <link rel="stylesheet" href="~/Ris2022.styles.css" asp-append-version="true" />
-    <link href="~/css/mvc-grid/mvc-grid.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/animate.css">
+    <link rel="stylesheet" href="assets/plugins/slider/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="assets/plugins/slider/css/owl.theme.default.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
+        <link href="~/css/mvc-grid/mvc-grid.css" rel="stylesheet">
+
 </head>
 <body>
-    <header>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <div class="container-fluid">
-    <a class="navbar-brand" asp-area="" asp-page="/Index">@Resource.RIS</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor03" aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    @if (SignInManager.IsSignedIn(User))
-{
-    <div class="collapse navbar-collapse" id="navbarColor03" style="float:@Resource.AlignDir">
-      <ul class="navbar-nav  " >
+    <header class="container-fluid" lang="@Resource.Culture" dir="@Resource.Direction">
+        <div class="container">
+            <div class="row top-row">
+                <div class="col-md-4 logo">
+                    <img src="assets/images/logo.gif" alt="">
+                    <a data-toggle="collapse" data-target="#menu-jk" href="#menu-jk"><i class="fas d-block d-md-none small-menu fa-bars"></i></a>
+                </div>
+                <div class="col-md-8 navse">
+                    <div class="row">
+                        <div class="col-lg-4 d-none d-lg-block cinfo">
+                            <div class="cdetl">
+                                <div class="icon">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </div>
+                                <div class="detail">
+                                    <b>@Resource.Location</b>
+                                    <p>Asia Hotel Building, Damascus</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 d-none d-md-block cinfo">
+                            <div class="cdetl">
+                                <div class="icon">
+                                    <i class="far fa-envelope"></i>
+                                </div>
+                                <div class="detail">
+                                    <b>@Resource.Email</b>
+                                    <p>RISsupport@gmail.com</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 d-none d-md-block cinfo">
+                            <div class="cdetl">
+                                <div class="icon">
+                                    <i class="fas fa-phone-alt"></i>
+                                </div>
+                                <div class="detail">
+                                    <b>@Resource.CallUs</b>
+                                    <p>00963-2313441/2330087 </p>
+                                </div>
+                            </div>
+                        </div>
 
-        <li class="nav-item">
-            <a class="nav-link text-dark" asp-controller="Patients" asp-action="Index">@Resource.Patients</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link text-dark" asp-controller="Orders" asp-action="Index">@Resource.OrderIndex</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">@Resource.Lang</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">About Us</a>
-        </li>
+                    </div>
+                </div>
+            </div>
+            <div id="menu-jk" class=" row nav-sectionmk " style="float:@Resource.AlignDir">
+                <ul>
+                     <li class="nav-item">
+                            <form id="logoutForm" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Page("/Index", new { area = "" })">
+                                <button class="btn btn-sm btn-primary" id="logout" type="submit">Logout</button>
+                            </form>
+                    </li>
+                    <li class="nav-item">
+                            <a id="manage" asp-page="/Account/Manage/Index" title="Manage">Hello @UserManager.GetUserName(User)!</a>
+                    </li>
+                    <li class="nav-item">
+                        <form  asp-action="ChangeLanguage" asp-controller="Home" method="post">
+                            <input type="hidden" id="returnUrl" name="returnUrl" value="@returnUrl" />
+                            <select id="culture"
+                                name="culture"
+                                onchange="this.form.submit();"
+                                asp-items="cultureItems"
+                                asp-for="@requestCulture.RequestCulture.UICulture.Name">
+                            </select>
+ 
+                        </form>
+                    </li>
+                    <li class="nav-item"><a href="blog.html">Blog</a></li>
+                    <li class="nav-item"><a href="contact_us.html">Contact Us</a></li>
+                    <li class="nav-item">
+                        <a class="btn btn-sm btn-light" id="login" asp-controller="Accounts" asp-action="Login">Login</a>
+                    </li>
 
-        <li class="nav-item dropdown" >
-          <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">@Resource.Adminstration</a>
-          <div class="dropdown-menu">
-            <a class="dropdown-item" href="#">Action</a>
-            <a class="dropdown-item" href="#">Another action</a>
-            <a class="dropdown-item" href="#">Something else here</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">Separated link</a>
-          </div>
-        </li>
-                <li class="nav-item">
-          <form  asp-action="ChangeLanguage" asp-controller="Home" method="post">
- 
-            <input type="hidden" id="returnUrl" name="returnUrl" value="@returnUrl" />
- 
-            <select id="culture"
-                name="culture"
-                class="nav-link"
-                onchange="this.form.submit();"
-                asp-items="cultureItems"
-                asp-for="@requestCulture.RequestCulture.UICulture.Name">
-            </select>
- 
-          </form>
-        </li>
-      </ul>
-      <form class="d-flex">
-        <input class="form-control me-sm-2" type="text" placeholder="Search">
-        <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
-      </form>
-    </div>
-}
-    
-    <partial name="_LoginPartial"></partial>
-  </div>
-</nav>
+                    <li class="nav-item"><a  asp-controller="Patients" asp-action="Index">@Resource.Patients</a></li>
+                    <li class="nav-item"><a  asp-controller="Orders" asp-action="Index">@Resource.OrderIndex</a></li>
+                    <li class="nav-item"><a asp-page="/Index">@Resource.Home</a></li>
+                    
+
+                </ul>
+                
+            </div>
+        </div>
     </header>
-    <div class="container">
+    <br />
+    <br />
+@*      <!--  ************************* Page Title Starts Here ************************** -->
+        <div class="page-nav row">
+            <div class="container">
+                <div class="row">
+
+                    <h1>@ViewData["Title"]</h1>
+                </div>
+            </div>
+        </div>*@
+ <div class="page-nav row">
         <main role="main" class="pb-3">
             @RenderBody()
             <script src="~/js/mvc-grid/mvc-grid.js"></script>
@@ -92,17 +130,26 @@
                 document.querySelectorAll(".mvc-grid").forEach(element => new MvcGrid(element));
             </script>
         </main>
-    </div>
+    </div>   
+    
+    
+    
+  
+        <!-- ################# Footer Starts Here#######################--->
 
-    <footer class="border-top footer text-muted">
+
+<footer class="border-top footer text-muted">
         <div class="container">
             &copy; 2022 - @Resource.RIS
         </div>
-    </footer>
+</footer>
 
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
+<script src="assets/js/jquery-3.2.1.min.js"></script>
+<script src="assets/js/popper.min.js"></script>
+<script src="assets/js/bootstrap.min.js"></script>
+<script src="assets/plugins/scroll-fixed/jquery-scrolltofixed-min.js"></script>
+<script src="assets/plugins/slider/js/owl.carousel.min.js"></script>
+<script src="assets/js/script.js"></script>
 
     @await RenderSectionAsync("Scripts", required: false)
 </body>

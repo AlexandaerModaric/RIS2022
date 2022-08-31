@@ -1,7 +1,8 @@
 ﻿@model Patient
+ 
 @{
-	ViewBag.Title = @Resource.AddPatient;
 	Layout = "_Layout";
+	ViewBag.Title = @Resource.AddPatient;
 }
 <legend class="h2">@Resource.AddPatient</legend>
 <form asp-controller="Patients" asp-action="Create" method="post"

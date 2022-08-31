@@ -129,6 +129,9 @@
   <data name="AlignDir" xml:space="preserve">
     <value>right</value>
   </data>
+  <data name="CallUs" xml:space="preserve">
+    <value>اتصل بنا</value>
+  </data>
   <data name="Direction" xml:space="preserve">
     <value>rtl</value>
   </data>
@@ -146,6 +149,9 @@
   </data>
   <data name="Lang" xml:space="preserve">
     <value>ar</value>
+  </data>
+  <data name="Location" xml:space="preserve">
+    <value>الموقع</value>
   </data>
   <data name="LogIn" xml:space="preserve">
     <value>تسجيل الدخول</value>
