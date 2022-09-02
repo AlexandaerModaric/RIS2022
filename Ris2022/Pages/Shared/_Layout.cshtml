@@ -4,7 +4,7 @@
  
     var requestCulture = Context.Features.Get<IRequestCultureFeature>();
     var cultureItems = LocOptions.Value.SupportedCultures
-        .Select(c => new SelectListItem { Value = c.Name, Text = c.DisplayName })
+        .Select(c => new SelectListItem { Value = c.Name, Text = c.Name })
         .ToList();
 }
 @inject CommonLocalizationService localizer
@@ -14,15 +14,15 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - RISnew</title>
-    <link rel="shortcut icon" href="assets/images/fav.png" type="image/x-icon">
+    <link rel="shortcut icon" href="~/assets/images/fav.png" type="image/x-icon">
    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500&display=swap" rel="stylesheet">
-    <link rel="shortcut icon" href="assets/images/fav.jpg">
+    <link rel="shortcut icon" href="~/assets/images/fav.jpg">
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="assets/css/all.min.css">
-    <link rel="stylesheet" href="assets/css/animate.css">
-    <link rel="stylesheet" href="assets/plugins/slider/css/owl.carousel.min.css">
-    <link rel="stylesheet" href="assets/plugins/slider/css/owl.theme.default.css">
-    <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
+    <link rel="stylesheet" href="~/assets/css/all.min.css">
+    <link rel="stylesheet" href="~/assets/css/animate.css">
+    <link rel="stylesheet" href="~/assets/plugins/slider/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="~/assets/plugins/slider/css/owl.theme.default.css">
+    <link rel="stylesheet" type="text/css" href="~/assets/css/style.css" />
         <link href="~/css/mvc-grid/mvc-grid.css" rel="stylesheet">
 
 </head>
@@ -31,7 +31,7 @@
         <div class="container">
             <div class="row top-row">
                 <div class="col-md-4 logo">
-                    <img src="assets/images/logo.gif" alt="">
+                    <img src="~/assets/images/logo.gif" alt="">
                     <a data-toggle="collapse" data-target="#menu-jk" href="#menu-jk"><i class="fas d-block d-md-none small-menu fa-bars"></i></a>
                 </div>
                 <div class="col-md-8 navse">
@@ -73,16 +73,15 @@
                     </div>
                 </div>
             </div>
-            <div id="menu-jk" class=" row nav-sectionmk " style="float:@Resource.AlignDir">
-                <ul>
-                     <li class="nav-item">
-                            <form id="logoutForm" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Page("/Index", new { area = "" })">
-                                <button class="btn btn-sm btn-primary" id="logout" type="submit">Logout</button>
-                            </form>
-                    </li>
-                    <li class="nav-item">
-                            <a id="manage" asp-page="/Account/Manage/Index" title="Manage">Hello @UserManager.GetUserName(User)!</a>
-                    </li>
+            <div id="menu-jk" class=" row nav-sectionmk navbar-expand-lg justify-content-@Resource.AlignDir"  style="width:100%">
+                <ul class="navbar-nav ms-auto flex-nowrap">
+                                        @if (SignInManager.IsSignedIn(User))
+                    {
+                        <li class="nav-item"><a  asp-controller="Patients" asp-action="Index">@Resource.Patients</a></li>
+                        <li class="nav-item"><a  asp-controller="Orders" asp-action="Index">@Resource.OrderIndex</a></li>
+                        <li class="nav-item"><a asp-page="/Index">@Resource.Home</a></li>
+                    }   
+
                     <li class="nav-item">
                         <form  asp-action="ChangeLanguage" asp-controller="Home" method="post">
                             <input type="hidden" id="returnUrl" name="returnUrl" value="@returnUrl" />
@@ -95,15 +94,24 @@
  
                         </form>
                     </li>
-                    <li class="nav-item"><a href="blog.html">Blog</a></li>
-                    <li class="nav-item"><a href="contact_us.html">Contact Us</a></li>
-                    <li class="nav-item">
-                        <a class="btn btn-sm btn-light" id="login" asp-controller="Accounts" asp-action="Login">Login</a>
+                    @if (SignInManager.IsSignedIn(User))
+                    {
+                        <li class="nav-item">
+                            <form id="logoutForm" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Page("/Index", new { area = "" })">
+                                <button class="btn btn-sm btn-primary" id="logout" type="submit">Logout</button>
+                            </form>
+                        </li>
+                        <li>
+                            <a id="AddUser" asp-controller="Accounts" asp-action="AddUser" title="AddUser">@Resource.AddUser</a>
+                        </li>
+                        <li class="nav-item">
+                            <a id="manage" asp-page="/Account/Manage/Index" title="Manage">Hello @UserManager.GetUserName(User)!</a>
                     </li>
+                    }
+@*
+                    <li class="nav-item"><a href="blog.html">Blog</a></li>
+                    <li class="nav-item"><a href="contact_us.html">Contact Us</a></li>*@
 
-                    <li class="nav-item"><a  asp-controller="Patients" asp-action="Index">@Resource.Patients</a></li>
-                    <li class="nav-item"><a  asp-controller="Orders" asp-action="Index">@Resource.OrderIndex</a></li>
-                    <li class="nav-item"><a asp-page="/Index">@Resource.Home</a></li>
                     
 
                 </ul>
@@ -113,6 +121,8 @@
     </header>
     <br />
     <br />
+    @if(User.IsInRole("Admin")){<h1>Hi</h1>};
+
 @*      <!--  ************************* Page Title Starts Here ************************** -->
         <div class="page-nav row">
             <div class="container">

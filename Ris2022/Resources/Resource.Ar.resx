@@ -117,6 +117,9 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Acceptancetype" xml:space="preserve">
+    <value>نوع القبول</value>
+  </data>
   <data name="AddPatient" xml:space="preserve">
     <value>إضافة مريض</value>
   </data>
@@ -132,8 +135,17 @@
   <data name="CallUs" xml:space="preserve">
     <value>اتصل بنا</value>
   </data>
+  <data name="Clinic" xml:space="preserve">
+    <value>العيادة</value>
+  </data>
+  <data name="Department" xml:space="preserve">
+    <value>القسم</value>
+  </data>
   <data name="Direction" xml:space="preserve">
     <value>rtl</value>
+  </data>
+  <data name="DoctorName" xml:space="preserve">
+    <value>اسم الطبيب</value>
   </data>
   <data name="Email" xml:space="preserve">
     <value>البريد الالكتروني</value>
@@ -159,17 +171,41 @@
   <data name="LogOut" xml:space="preserve">
     <value>تسجيل الخروج</value>
   </data>
+  <data name="Martialstatus" xml:space="preserve">
+    <value>الوضع العائلي</value>
+  </data>
+  <data name="Modality" xml:space="preserve">
+    <value>آلة التصوير</value>
+  </data>
+  <data name="Modalitytype" xml:space="preserve">
+    <value>نوع الآلة</value>
+  </data>
   <data name="Name" xml:space="preserve">
     <value>الاسم</value>
   </data>
+  <data name="Nationality" xml:space="preserve">
+    <value>الجنسية</value>
+  </data>
   <data name="OrderIndex" xml:space="preserve">
     <value>طلبات التصوير</value>
+  </data>
+  <data name="Ordertype" xml:space="preserve">
+    <value>نوع الطلب</value>
   </data>
   <data name="PatId" xml:space="preserve">
     <value>معرف المريض</value>
   </data>
   <data name="Patients" xml:space="preserve">
     <value>المرضى</value>
+  </data>
+  <data name="Paytype" xml:space="preserve">
+    <value>طريقة الدفع</value>
+  </data>
+  <data name="Proceduretype" xml:space="preserve">
+    <value>نوع الوضعية</value>
+  </data>
+  <data name="Reason" xml:space="preserve">
+    <value>السبب</value>
   </data>
   <data name="Register" xml:space="preserve">
     <value>إنشاء حساب</value>
@@ -179,5 +215,8 @@
   </data>
   <data name="SurName" xml:space="preserve">
     <value>الكنية</value>
+  </data>
+  <data name="Worktype" xml:space="preserve">
+    <value>طبيعة العمل</value>
   </data>
 </root>

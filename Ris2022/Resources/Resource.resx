@@ -117,6 +117,9 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Acceptancetype" xml:space="preserve">
+    <value>Acceptance Type</value>
+  </data>
   <data name="AddPatient" xml:space="preserve">
     <value>Add Patient</value>
   </data>
@@ -132,8 +135,17 @@
   <data name="CallUs" xml:space="preserve">
     <value>Call Us</value>
   </data>
+  <data name="Clinic" xml:space="preserve">
+    <value>Clinic</value>
+  </data>
+  <data name="Department" xml:space="preserve">
+    <value>Department</value>
+  </data>
   <data name="Direction" xml:space="preserve">
     <value>ltr</value>
+  </data>
+  <data name="DoctorName" xml:space="preserve">
+    <value>Doctor Name</value>
   </data>
   <data name="Email" xml:space="preserve">
     <value>Email</value>
@@ -159,11 +171,26 @@
   <data name="LogOut" xml:space="preserve">
     <value>Logout</value>
   </data>
+  <data name="Martialstatus" xml:space="preserve">
+    <value>Martial Status</value>
+  </data>
+  <data name="Modality" xml:space="preserve">
+    <value>Modality</value>
+  </data>
+  <data name="Modalitytype" xml:space="preserve">
+    <value>Modality Type</value>
+  </data>
   <data name="Name" xml:space="preserve">
     <value>Name</value>
   </data>
+  <data name="Nationality" xml:space="preserve">
+    <value>Nationality</value>
+  </data>
   <data name="OrderIndex" xml:space="preserve">
-    <value>Radiology Orders List</value>
+    <value>Radiographs Orders</value>
+  </data>
+  <data name="Ordertype" xml:space="preserve">
+    <value>Order Type</value>
   </data>
   <data name="PatId" xml:space="preserve">
     <value>Patient Id</value>
@@ -171,13 +198,28 @@
   <data name="Patients" xml:space="preserve">
     <value>Patients</value>
   </data>
+  <data name="Paytype" xml:space="preserve">
+    <value>Pay Type</value>
+  </data>
+  <data name="Proceduretype" xml:space="preserve">
+    <value>Procedure Type</value>
+  </data>
+  <data name="Reason" xml:space="preserve">
+    <value>Reason</value>
+  </data>
   <data name="Register" xml:space="preserve">
     <value>Register</value>
   </data>
   <data name="RIS" xml:space="preserve">
     <value>Radiology Information System</value>
   </data>
+  <data name="String1" xml:space="preserve">
+    <value />
+  </data>
   <data name="SurName" xml:space="preserve">
     <value>Surname</value>
+  </data>
+  <data name="Worktype" xml:space="preserve">
+    <value>Work Type</value>
   </data>
 </root>

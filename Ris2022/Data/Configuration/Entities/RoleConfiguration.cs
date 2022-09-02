@@ -17,7 +17,7 @@ namespace Ris2022.Data.Configuration.Entities
                 new IdentityRole
                 {
                     Name = "Administrator",
-                    NormalizedName = "ADMINISTATOR"
+                    NormalizedName = "ADMINISTRATOR"
                 }
                 );
         }

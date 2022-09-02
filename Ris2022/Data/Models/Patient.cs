@@ -2,6 +2,7 @@
 using System.ComponentModel.DataAnnotations;
 using Ris2022.Resources;
 using System.ComponentModel;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Ris2022.Data.Models
 {
@@ -27,7 +28,7 @@ namespace Ris2022.Data.Models
         [MaxLength(25)]
         [Display(ResourceType = typeof(Resource), Name = "SurName")]
         public string Lastname { get; set; } = null!;
-        [Range(0,1)]
+        [Range(0, 1)]
         [Display(ResourceType = typeof(Resource), Name = "Gender")]
 
         public int? Gendre { get; set; }
@@ -43,19 +44,34 @@ namespace Ris2022.Data.Models
         //public string? Nearestperson { get; set; }
         //public string? Nearestpersonphone { get; set; }
         //public string? Birthplace { get; set; }
-        //public int? Nationalityid { get; set; }
-        //public int? Worktypeid { get; set; }
+
         //public string? Notes { get; set; }
-        //public int? Martialstatusid { get; set; }
         //public string? Translatedfname { get; set; }
         //public string? Translatedlname { get; set; }
         //public string? Translatedfathername { get; set; }
         //public string? Translatedmothername { get; set; }
         //public DateTime? Insertdate { get; set; }
-        //public int? Insertuserid { get; set; }
-        //public int? Updateduserid { get; set; }
+
         //public DateTime? Updatedate { get; set; }
         //public int? Reasonid { get; set; }
-        //public int? Acceptancetypeid { get; set; }
+        public string InsertUserName { get; set; }
+
+        [ForeignKey("NationalityFK")]
+        [Display(ResourceType = typeof(Resource), Name = "Nationality")]
+        public int? Nationalityid { get; set; }
+
+        [Display(ResourceType = typeof(Resource), Name = "Worktype")]
+        [ForeignKey("WorktypeFK")]
+        public int? Worktypeid { get; set; }
+
+        [Display(ResourceType = typeof(Resource), Name = "Martialstatus")]
+        [ForeignKey("MartialstatusFK")]
+        public int? Martialstatusid { get; set; }
+
+        [Display(ResourceType = typeof(Resource), Name = "Acceptancetype")]
+        [ForeignKey("AcceptancetypeFK")]
+        public int Acceptancetypeid { get; set; }
+
+        public ICollection<Order> patientOrders { get; set; }
     }
 }

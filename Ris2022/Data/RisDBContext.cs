@@ -7,7 +7,7 @@ using Ris2022.Data.Models;
 
 namespace Ris2022.Data
 {
-    public class RisDBContext:IdentityDbContext<RisAppUser>
+    public class RisDBContext : IdentityDbContext<RisAppUser>
     {
         public RisDBContext()
         {
@@ -15,7 +15,7 @@ namespace Ris2022.Data
 
         public RisDBContext(DbContextOptions<RisDBContext> options)
             : base(options)
-        {        }
+        { }
         public virtual DbSet<Patient> Patients { get; set; } = null!;
         public virtual DbSet<Acceptancetype> Acceptancetypes { get; set; } = null!;
         public virtual DbSet<Clinic> Clinics { get; set; } = null!;
@@ -73,7 +73,11 @@ namespace Ris2022.Data
             {
                 entity.ToTable("UserTokens");
             });
+            //modelBuilder.Entity<Patient>().HasMany<Order>().WithOne().OnDelete(DeleteBehavior.Cascade);
+            //modelBuilder.Entity<Patient>().Navigation(p => p.patientOrders).UsePropertyAccessMode(PropertyAccessMode.Property);
             modelBuilder.ApplyConfiguration(new RoleConfiguration());
+            modelBuilder.ApplyConfiguration(new UserConfiguration());
+
             modelBuilder.ApplyConfiguration(new ClinicConfiguration());
             modelBuilder.ApplyConfiguration(new AcceptancetypeConfiguration());
             modelBuilder.ApplyConfiguration(new DepartmentConfiguration());
@@ -87,6 +91,14 @@ namespace Ris2022.Data
             modelBuilder.ApplyConfiguration(new ProceduretypeConfiguration());
             modelBuilder.ApplyConfiguration(new ReasonConfiguration());
             modelBuilder.ApplyConfiguration(new WorktypeConfiguration());
+
+//            modelBuilder.Entity<IdentityUserRole<string>>().HasData(
+//new IdentityUserRole<string>
+//{
+//    RoleId = "4c2f0067-63b4-4b49-a830-ead7e607414c",
+//    UserId = "a44db56d-1497-4ed0-b01e-5613e2b77ff3"
+//}
+//);
             //Patient[] patsToSeed = new Patient[6];
             //for (int i = 1; i <= 6; i++)
             //{

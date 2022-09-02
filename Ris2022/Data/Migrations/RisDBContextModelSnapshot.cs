@@ -51,15 +51,15 @@ namespace Ris2022.Data.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "8af6efc3-9429-4f7c-ad40-1b4ee01a6f97",
-                            ConcurrencyStamp = "ec4f3466-faf7-402c-afb5-87b62a0a6fa3",
+                            Id = "f4f98ee4-ced6-46d4-ad9a-1b99dc78a956",
+                            ConcurrencyStamp = "70a81b85-f773-4b0e-936a-f5634c420523",
                             Name = "User",
                             NormalizedName = "USER"
                         },
                         new
                         {
-                            Id = "b5d9b55b-47df-419f-8f2f-d075825acfa2",
-                            ConcurrencyStamp = "b0f569cf-fbae-4f19-856f-bf55aaae75a7",
+                            Id = "cc4ae014-8484-4adb-b79b-dbcf5f22cb98",
+                            ConcurrencyStamp = "0754ee29-fb92-4de0-b186-bcdb177de0ed",
                             Name = "Administrator",
                             NormalizedName = "ADMINISTATOR"
                         });
@@ -551,6 +551,8 @@ namespace Ris2022.Data.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("Clinicid");
+
                     b.HasIndex("Deptid");
 
                     b.HasIndex("Modalityid");
@@ -605,6 +607,9 @@ namespace Ris2022.Data.Migrations
 
                     OraclePropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
+                    b.Property<int>("Acceptancetypeid")
+                        .HasColumnType("NUMBER(10)");
+
                     b.Property<string>("Firstname")
                         .IsRequired()
                         .HasMaxLength(25)
@@ -617,16 +622,37 @@ namespace Ris2022.Data.Migrations
                         .IsRequired()
                         .HasColumnType("NVARCHAR2(2000)");
 
+                    b.Property<string>("InsertUserName")
+                        .IsRequired()
+                        .HasColumnType("NVARCHAR2(2000)");
+
                     b.Property<string>("Lastname")
                         .IsRequired()
                         .HasMaxLength(25)
                         .HasColumnType("NVARCHAR2(25)");
 
+                    b.Property<int?>("Martialstatusid")
+                        .HasColumnType("NUMBER(10)");
+
                     b.Property<string>("Middlename")
                         .HasMaxLength(25)
                         .HasColumnType("NVARCHAR2(25)");
 
+                    b.Property<int?>("Nationalityid")
+                        .HasColumnType("NUMBER(10)");
+
+                    b.Property<int?>("Worktypeid")
+                        .HasColumnType("NUMBER(10)");
+
                     b.HasKey("Id");
+
+                    b.HasIndex("Acceptancetypeid");
+
+                    b.HasIndex("Martialstatusid");
+
+                    b.HasIndex("Nationalityid");
+
+                    b.HasIndex("Worktypeid");
 
                     b.ToTable("Patients");
                 });
@@ -859,6 +885,26 @@ namespace Ris2022.Data.Migrations
                         .HasFilter("\"NormalizedUserName\" IS NOT NULL");
 
                     b.ToTable("AppUser", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = "3084c682-ad28-41c9-8e5b-c99592e15d64",
+                            AccessFailedCount = 0,
+                            ConcurrencyStamp = "4b8fd4d6-effd-49d8-9f1e-b084c9c70a5b",
+                            Email = "RISAdmin@RIS.com",
+                            EmailConfirmed = true,
+                            Firstname = "RIS",
+                            Isdoctor = true,
+                            Languageid = 1,
+                            Lastname = "Admin",
+                            LockoutEnabled = false,
+                            PasswordHash = "P@ssw0rd123",
+                            PhoneNumberConfirmed = true,
+                            SecurityStamp = "c54a9cda-12e6-4f39-b179-aa0f5c22c5e5",
+                            TwoFactorEnabled = false,
+                            UserName = "RISAdmin"
+                        });
                 });
 
             modelBuilder.Entity("Ris2022.Data.Models.Worktype", b =>
@@ -941,6 +987,10 @@ namespace Ris2022.Data.Migrations
 
             modelBuilder.Entity("Ris2022.Data.Models.Order", b =>
                 {
+                    b.HasOne("Ris2022.Data.Models.Clinic", "clinic")
+                        .WithMany()
+                        .HasForeignKey("Clinicid");
+
                     b.HasOne("Ris2022.Data.Models.Department", "dept")
                         .WithMany()
                         .HasForeignKey("Deptid");
@@ -960,7 +1010,7 @@ namespace Ris2022.Data.Migrations
                         .HasForeignKey("Ordertypeid");
 
                     b.HasOne("Ris2022.Data.Models.Patient", "patient")
-                        .WithMany()
+                        .WithMany("patientOrders")
                         .HasForeignKey("Patientid")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -979,6 +1029,8 @@ namespace Ris2022.Data.Migrations
 
                     b.Navigation("Ordertype");
 
+                    b.Navigation("clinic");
+
                     b.Navigation("dept");
 
                     b.Navigation("modality");
@@ -992,6 +1044,52 @@ namespace Ris2022.Data.Migrations
                     b.Navigation("proceduretype");
 
                     b.Navigation("reason");
+                });
+
+            modelBuilder.Entity("Ris2022.Data.Models.Patient", b =>
+                {
+                    b.HasOne("Ris2022.Data.Models.Acceptancetype", null)
+                        .WithMany("patients")
+                        .HasForeignKey("Acceptancetypeid")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Ris2022.Data.Models.Martialstatus", null)
+                        .WithMany("patients")
+                        .HasForeignKey("Martialstatusid");
+
+                    b.HasOne("Ris2022.Data.Models.Nationality", null)
+                        .WithMany("patients")
+                        .HasForeignKey("Nationalityid");
+
+                    b.HasOne("Ris2022.Data.Models.Worktype", null)
+                        .WithMany("patients")
+                        .HasForeignKey("Worktypeid");
+                });
+
+            modelBuilder.Entity("Ris2022.Data.Models.Acceptancetype", b =>
+                {
+                    b.Navigation("patients");
+                });
+
+            modelBuilder.Entity("Ris2022.Data.Models.Martialstatus", b =>
+                {
+                    b.Navigation("patients");
+                });
+
+            modelBuilder.Entity("Ris2022.Data.Models.Nationality", b =>
+                {
+                    b.Navigation("patients");
+                });
+
+            modelBuilder.Entity("Ris2022.Data.Models.Patient", b =>
+                {
+                    b.Navigation("patientOrders");
+                });
+
+            modelBuilder.Entity("Ris2022.Data.Models.Worktype", b =>
+                {
+                    b.Navigation("patients");
                 });
 #pragma warning restore 612, 618
         }

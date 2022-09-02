@@ -66,19 +66,21 @@ namespace Ris2022.Controllers
 
             if (ModelState.IsValid)
             {
+                ViewData["Role"] = new SelectList(_roleManager.Roles.ToList(), "Id", "Name");
+
                 var user = new RisAppUser
                 {
                     UserName = model.Email,
                     Email = model.Email,
                 };
-
+                user.PasswordHash = model.Password;
                 var result1 = await _userManager.CreateAsync(user, model.Password);
                 var result2 = await _userManager.AddToRoleAsync(user, model.Role);
                 if (result1.Succeeded && result2.Succeeded)
                 {
-                    await _signInManager.SignInAsync(user, isPersistent: false);
+                    //await _signInManager.SignInAsync(user, isPersistent: false);
 
-                    return RedirectToAction("index", "Home");
+                    return RedirectToPage("/MainPage");
                 }
 
                 foreach (var error in result1.Errors)

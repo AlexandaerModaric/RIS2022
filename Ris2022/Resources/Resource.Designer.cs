@@ -61,6 +61,15 @@ namespace Ris2022.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Acceptance Type.
+        /// </summary>
+        public static string Acceptancetype {
+            get {
+                return ResourceManager.GetString("Acceptancetype", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Add Patient.
         /// </summary>
         public static string AddPatient {
@@ -106,11 +115,38 @@ namespace Ris2022.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Clinic.
+        /// </summary>
+        public static string Clinic {
+            get {
+                return ResourceManager.GetString("Clinic", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Department.
+        /// </summary>
+        public static string Department {
+            get {
+                return ResourceManager.GetString("Department", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to ltr.
         /// </summary>
         public static string Direction {
             get {
                 return ResourceManager.GetString("Direction", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Doctor Name.
+        /// </summary>
+        public static string DoctorName {
+            get {
+                return ResourceManager.GetString("DoctorName", resourceCulture);
             }
         }
         
@@ -187,6 +223,33 @@ namespace Ris2022.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Martial Status.
+        /// </summary>
+        public static string Martialstatus {
+            get {
+                return ResourceManager.GetString("Martialstatus", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Modality.
+        /// </summary>
+        public static string Modality {
+            get {
+                return ResourceManager.GetString("Modality", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Modality Type.
+        /// </summary>
+        public static string Modalitytype {
+            get {
+                return ResourceManager.GetString("Modalitytype", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Name.
         /// </summary>
         public static string Name {
@@ -196,11 +259,29 @@ namespace Ris2022.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Radiology Orders List.
+        ///   Looks up a localized string similar to Nationality.
+        /// </summary>
+        public static string Nationality {
+            get {
+                return ResourceManager.GetString("Nationality", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Radiographs Orders.
         /// </summary>
         public static string OrderIndex {
             get {
                 return ResourceManager.GetString("OrderIndex", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Order Type.
+        /// </summary>
+        public static string Ordertype {
+            get {
+                return ResourceManager.GetString("Ordertype", resourceCulture);
             }
         }
         
@@ -223,6 +304,33 @@ namespace Ris2022.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Pay Type.
+        /// </summary>
+        public static string Paytype {
+            get {
+                return ResourceManager.GetString("Paytype", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Procedure Type.
+        /// </summary>
+        public static string Proceduretype {
+            get {
+                return ResourceManager.GetString("Proceduretype", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Reason.
+        /// </summary>
+        public static string Reason {
+            get {
+                return ResourceManager.GetString("Reason", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Register.
         /// </summary>
         public static string Register {
@@ -241,11 +349,29 @@ namespace Ris2022.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        public static string String1 {
+            get {
+                return ResourceManager.GetString("String1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Surname.
         /// </summary>
         public static string SurName {
             get {
                 return ResourceManager.GetString("SurName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Work Type.
+        /// </summary>
+        public static string Worktype {
+            get {
+                return ResourceManager.GetString("Worktype", resourceCulture);
             }
         }
     }
