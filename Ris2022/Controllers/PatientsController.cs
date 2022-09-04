@@ -1,13 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
+using System.Security.Claims;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Ris2022.Data;
 using Ris2022.Data.Models;
 using Ris2022.Interfaces;
+using Ris2022.Resources;
 
 namespace Ris2022.Controllers
 {
@@ -21,14 +26,18 @@ namespace Ris2022.Controllers
 
         //}
         private readonly IUnitOfWork _unitOfWork;
-        public PatientsController(IUnitOfWork unitOfWork, RisDBContext context)
+        private readonly UserManager<RisAppUser> _userManager;
+
+        public PatientsController(IUnitOfWork unitOfWork, RisDBContext context, UserManager<RisAppUser> userManager)
         {
             _unitOfWork = unitOfWork;
             _context = context;
+            _userManager = userManager;
 
         }
 
         // GET: Patients
+        [Authorize(Roles = "Administrator")]
         public async Task<IActionResult> Index()
         {
               return _unitOfWork.Patients != null ? 
@@ -57,7 +66,15 @@ namespace Ris2022.Controllers
         // GET: Patients/Create
         public IActionResult Create()
         {
-            return View();
+            ViewData["Nationalityid"] = new SelectList(_context.Nationalities.ToList(), "Id", Resource.ENARName);
+            ViewData["Worktypeid"] = new SelectList(_context.Worktypes.ToList(), "Id", Resource.ENARName);
+            ViewData["Martialstatusid"] = new SelectList(_context.Martialstatuses.ToList(), "Id", Resource.ENARName);
+            ViewData["Acceptancetypeid"] = new SelectList(_context.Acceptancetypes.ToList(), "Id", Resource.ENARName);
+            Patient patient = new Patient();
+            patient.InsertUserName = User.FindFirstValue(ClaimTypes.Name);
+
+            patient.patientOrders = new Order[] { };
+            return View(patient);
         }
 
         // POST: Patients/Create
@@ -66,12 +83,20 @@ namespace Ris2022.Controllers
         [HttpPost]
         public async Task<IActionResult> Create(Patient patient)
         {
+            ViewData["Nationalityid"] = new SelectList(_context.Nationalities.ToList(), "Id", Resource.ENARName,patient.Nationalityid);
+            ViewData["Worktypeid"] = new SelectList(_context.Worktypes.ToList(), "Id", Resource.ENARName,patient.Worktypeid);
+            ViewData["Martialstatusid"] = new SelectList(_context.Martialstatuses.ToList(), "Id", Resource.ENARName, patient.Martialstatusid);
+            ViewData["Acceptancetypeid"] = new SelectList(_context.Acceptancetypes.ToList(), "Id", Resource.ENARName, patient.Acceptancetypeid);
+            patient.InsertUserName = User.FindFirstValue(ClaimTypes.Name);
+            patient.patientOrders = new Order[] {};
             if (ModelState.IsValid)
             {
                 _context.Add(patient);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
+            foreach (var error in ModelState.Values.SelectMany(modelState => modelState.Errors))
+                ModelState.AddModelError(string.Empty, error.ToString());
             return View(patient);
         }
 

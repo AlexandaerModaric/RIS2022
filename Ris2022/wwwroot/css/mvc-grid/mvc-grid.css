@@ -31,7 +31,7 @@
 
 .mvc-grid-table > table > thead > tr > th {
     background-clip: padding-box;
-    background-color: royalblue;
+    background-color: gray;
     position: relative;
 }
 
@@ -64,7 +64,7 @@
 .mvc-grid-sort,
 .mvc-grid-filter {
     transition: background-color 0.5s;
-    background: rgb(0 0 0 / 0.03);
+    background: #cccccc;
     font-family: GridGlyphs;
     font-size: inherit;
     position: absolute;
@@ -115,7 +115,7 @@
     font-weight: bold;
     text-align: left;
     font-size: 0.7em;
-    color: #adacac;
+    color: aliceblue;
     width: 33%;
     right: 0;
     top: 40%;
@@ -366,20 +366,20 @@
     cursor: pointer;
     margin: 0.5em 0;
     min-width: 2em;
-    color: #337ab7;
+    color: rgb(0 0 0 / 0.176);
 }
 
 .mvc-grid-pager button:focus,
 .mvc-grid-pager button:hover {
     background: #f7f7f7;
-    color: #014c8c;
+    color: #dee2e6;
 }
 
 .mvc-grid-pager .active,
 .mvc-grid-pager .active:focus,
 .mvc-grid-pager .active:hover {
-    border-color: #0275d8;
-    background: #0275d8;
+    border-color: aliceblue;
+    background: #cccccc;
     color: #ffffff;
 }
 

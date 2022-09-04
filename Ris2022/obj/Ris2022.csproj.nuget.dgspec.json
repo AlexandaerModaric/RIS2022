@@ -79,6 +79,10 @@
             "Oracle.EntityFrameworkCore": {
               "target": "Package",
               "version": "[6.21.61, )"
+            },
+            "Serilog.AspNetCore": {
+              "target": "Package",
+              "version": "[6.0.1, )"
             }
           },
           "imports": [

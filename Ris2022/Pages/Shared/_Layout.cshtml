@@ -102,7 +102,7 @@
                             </form>
                         </li>
                         <li>
-                            <a id="AddUser" asp-controller="Accounts" asp-action="AddUser" title="AddUser">@Resource.AddUser</a>
+                            <a id="AddUser" asp-page="/Account/AddUser" title="AddUser">@Resource.AddUser</a>
                         </li>
                         <li class="nav-item">
                             <a id="manage" asp-page="/Account/Manage/Index" title="Manage">Hello @UserManager.GetUserName(User)!</a>

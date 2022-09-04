@@ -291,3 +291,14 @@ C:\Users\hp\source\repos\Ris2022\Ris2022\bin\Debug\net6.0\Microsoft.Extensions.I
 C:\Users\hp\source\repos\Ris2022\Ris2022\bin\Debug\net6.0\Microsoft.AspNetCore.Identity.UI.dll
 C:\Users\hp\source\repos\Ris2022\Ris2022\bin\Debug\net6.0\Microsoft.Extensions.FileProviders.Embedded.dll
 C:\Users\hp\source\repos\Ris2022\Ris2022\obj\Debug\net6.0\scopedcss\Pages\Shared\_LayoutOld.cshtml.rz.scp.css
+C:\Users\hp\source\repos\Ris2022\Ris2022\bin\Debug\net6.0\Microsoft.Extensions.DependencyModel.dll
+C:\Users\hp\source\repos\Ris2022\Ris2022\bin\Debug\net6.0\Serilog.dll
+C:\Users\hp\source\repos\Ris2022\Ris2022\bin\Debug\net6.0\Serilog.AspNetCore.dll
+C:\Users\hp\source\repos\Ris2022\Ris2022\bin\Debug\net6.0\Serilog.Extensions.Hosting.dll
+C:\Users\hp\source\repos\Ris2022\Ris2022\bin\Debug\net6.0\Serilog.Extensions.Logging.dll
+C:\Users\hp\source\repos\Ris2022\Ris2022\bin\Debug\net6.0\Serilog.Formatting.Compact.dll
+C:\Users\hp\source\repos\Ris2022\Ris2022\bin\Debug\net6.0\Serilog.Settings.Configuration.dll
+C:\Users\hp\source\repos\Ris2022\Ris2022\bin\Debug\net6.0\Serilog.Sinks.Console.dll
+C:\Users\hp\source\repos\Ris2022\Ris2022\bin\Debug\net6.0\Serilog.Sinks.Debug.dll
+C:\Users\hp\source\repos\Ris2022\Ris2022\bin\Debug\net6.0\Serilog.Sinks.File.dll
+C:\Users\hp\source\repos\Ris2022\Ris2022\obj\Debug\net6.0\scopedcss\Pages\Shared\_LoginLayout.cshtml.rz.scp.css

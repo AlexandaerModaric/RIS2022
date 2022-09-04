@@ -15,6 +15,10 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\hp\source\repos\Ris2022\Ris2022
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/hp/source/repos/Ris2022/Ris2022/Pages/Account/AccessDenied.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWNjb3VudFxBY2Nlc3NEZW5pZWQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/hp/source/repos/Ris2022/Ris2022/Pages/Account/AddUser.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWNjb3VudFxBZGRVc2VyLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
@@ -113,14 +117,6 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/hp/source/repos/Ris2022/Ris2022/Views/Acceptancetypes/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjZXB0YW5jZXR5cGVzXEluZGV4LmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/hp/source/repos/Ris2022/Ris2022/Views/Accounts/AddUser.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudHNcQWRkVXNlci5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/hp/source/repos/Ris2022/Ris2022/Views/Accounts/Login.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudHNcTG9naW4uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/hp/source/repos/Ris2022/Ris2022/Views/Clinics/Create.cshtml]
@@ -326,3 +322,7 @@ build_metadata.AdditionalFiles.CssScope = b-6kmxru5ih0
 [C:/Users/hp/source/repos/Ris2022/Ris2022/Pages/Shared/_LayoutOld.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9MYXlvdXRPbGQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-2ypraay0ae
+
+[C:/Users/hp/source/repos/Ris2022/Ris2022/Pages/Shared/_LoginLayout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9Mb2dpbkxheW91dC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = b-3e18x5q83m

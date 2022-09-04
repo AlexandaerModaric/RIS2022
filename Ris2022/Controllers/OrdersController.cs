@@ -10,16 +10,20 @@ using Ris2022.Data.Models;
 using Ris2022.MllpHl7Client;
 using System.Text;
 using Microsoft.AspNetCore.Components.Web;
+using Ris2022.Resources;
+using Microsoft.AspNetCore.Identity;
 
 namespace Ris2022.Controllers
 {
     public class OrdersController : Controller
     {
         private readonly RisDBContext _context;
-
-        public OrdersController(RisDBContext context)
+        private readonly UserManager<RisAppUser> _userManager;
+        public OrdersController(RisDBContext context, UserManager<RisAppUser> userManager)
         {
             _context = context;
+            _userManager = userManager;
+
         }
 
         // GET: Orders
@@ -56,15 +60,15 @@ namespace Ris2022.Controllers
             order.Patientid = patientId;
             order.Studyid = "1.2.4.0.13.1.4.2252867." + patientId;
             ViewData["Modalityid"] = new SelectList(_context.Modalities.ToList(),"Id","Name");
-            ViewData["Proceduretypeid"] = new SelectList(_context.Proceduretypes.ToList(),"Id", Thread.CurrentThread.CurrentCulture.ToString().Contains("ar") ? "Namear" : "Nameen");
-            //ViewData["Doctorid"] = new SelectList(_context.Risusers.ToList().DistinctBy(c=>c.Isdoctor==true),"Id","Name");
-            ViewData["Departmentid"] = new SelectList(_context.Departments.ToList(),"Id", Thread.CurrentThread.CurrentCulture.ToString().Contains("ar") ? "Namear" : "Nameen");
-            ViewData["ordertypeid"] = new SelectList(_context.Modalitytypes.ToList(),"Id", Thread.CurrentThread.CurrentCulture.ToString().Contains("ar") ? "Namear" : "Nameen");
-            ViewData["Reasonid"] = new SelectList(_context.Reasons.ToList(),"Id", Thread.CurrentThread.CurrentCulture.ToString().Contains("ar") ? "Namear" : "Nameen");
-            ViewData["Paytypeid"] = new SelectList(_context.Paytypes.ToList(),"Id", Thread.CurrentThread.CurrentCulture.ToString().Contains("ar") ? "Namear" : "Nameen");
-            ViewData["Payreasonid"] = new SelectList(_context.Reasons.ToList(),"Id", Thread.CurrentThread.CurrentCulture.ToString().Contains("ar") ? "Namear" : "Nameen");
-            ViewData["Clinicid"] = new SelectList(_context.Clinics.ToList(),"Id", Thread.CurrentThread.CurrentCulture.ToString().Contains("ar") ? "Namear" : "Nameen");
-            ViewData["Modalitytypeid"] = new SelectList(_context.Modalitytypes.ToList(),"Id", Thread.CurrentThread.CurrentCulture.ToString().Contains("ar") ? "Namear" : "Nameen");
+            ViewData["Proceduretypeid"] = new SelectList(_context.Proceduretypes.ToList(),"Id", Resource.ENARName);
+            //ViewData["Doctorid"] = new SelectList(_userManager.Users.Where(user=>user.Isdoctor==true), "Id", "Name");
+            ViewData["Departmentid"] = new SelectList(_context.Departments.ToList(),"Id", Resource.ENARName);
+            ViewData["ordertypeid"] = new SelectList(_context.Modalitytypes.ToList(),"Id", Resource.ENARName);
+            ViewData["Reasonid"] = new SelectList(_context.Reasons.ToList(),"Id", Resource.ENARName);
+            ViewData["Paytypeid"] = new SelectList(_context.Paytypes.ToList(),"Id", Resource.ENARName);
+            ViewData["Payreasonid"] = new SelectList(_context.Reasons.ToList(),"Id", Resource.ENARName);
+            ViewData["Clinicid"] = new SelectList(_context.Clinics.ToList(),"Id", Resource.ENARName);
+            ViewData["Modalitytypeid"] = new SelectList(_context.Modalitytypes.ToList(),"Id", Resource.ENARName);
             return View(order);
         }
 
@@ -78,15 +82,15 @@ namespace Ris2022.Controllers
             Patient patient = _context.Patients.SingleOrDefault(p => p.Id == order.Patientid);
             Modality modality = _context.Modalities.SingleOrDefault(m => m.Id == order.Modalityid);
             ViewData["Modalityid"] = new SelectList(_context.Modalities.ToList(), "Id", "Name");
-            ViewData["Proceduretypeid"] = new SelectList(_context.Proceduretypes.ToList(), "Id", Thread.CurrentThread.CurrentCulture.ToString().Contains("ar") ? "Namear" : "Nameen");
-            //ViewData["Doctorid"] = new SelectList(_context.Risusers.ToList().DistinctBy(c => c.Isdoctor == true), "Id", "Name");
-            ViewData["Departmentid"] = new SelectList(_context.Departments.ToList(), "Id", Thread.CurrentThread.CurrentCulture.ToString().Contains("ar") ? "Namear" : "Nameen");
-            ViewData["ordertypeid"] = new SelectList(_context.Modalitytypes.ToList(), "Id", Thread.CurrentThread.CurrentCulture.ToString().Contains("ar") ? "Namear" : "Nameen");
-            ViewData["Reasonid"] = new SelectList(_context.Reasons.ToList(), "Id", Thread.CurrentThread.CurrentCulture.ToString().Contains("ar") ? "Namear" : "Nameen");
-            ViewData["Paytypeid"] = new SelectList(_context.Paytypes.ToList(), "Id", Thread.CurrentThread.CurrentCulture.ToString().Contains("ar") ? "Namear" : "Nameen");
-            ViewData["Payreasonid"] = new SelectList(_context.Reasons.ToList(), "Id", Thread.CurrentThread.CurrentCulture.ToString().Contains("ar") ? "Namear" : "Nameen");
-            ViewData["Clinicid"] = new SelectList(_context.Clinics.ToList(), "Id", Thread.CurrentThread.CurrentCulture.ToString().Contains("ar") ? "Namear" : "Nameen");
-            ViewData["Modalitytypeid"] = new SelectList(_context.Modalitytypes.ToList(), "Id", Thread.CurrentThread.CurrentCulture.ToString().Contains("ar") ? "Namear" : "Nameen");
+            ViewData["Proceduretypeid"] = new SelectList(_context.Proceduretypes.ToList(), "Id", Resource.ENARName);
+            //ViewData["Doctorid"] = new SelectList(_userManager.Users.Where(user => user.Isdoctor == true), "Id", "Name");
+            ViewData["Departmentid"] = new SelectList(_context.Departments.ToList(), "Id", Resource.ENARName);
+            ViewData["ordertypeid"] = new SelectList(_context.Modalitytypes.ToList(), "Id", Resource.ENARName);
+            ViewData["Reasonid"] = new SelectList(_context.Reasons.ToList(), "Id", Resource.ENARName);
+            ViewData["Paytypeid"] = new SelectList(_context.Paytypes.ToList(), "Id", Resource.ENARName);
+            ViewData["Payreasonid"] = new SelectList(_context.Reasons.ToList(), "Id", Resource.ENARName);
+            ViewData["Clinicid"] = new SelectList(_context.Clinics.ToList(), "Id", Resource.ENARName);
+            ViewData["Modalitytypeid"] = new SelectList(_context.Modalitytypes.ToList(), "Id", Resource.ENARName);
             HL7message hL7Message = new HL7message();
             order.Accessionnumber = int.Parse(patient.Id+ DateTime.Now.ToString("ssmm"));
             order.Insertuserid = 1;

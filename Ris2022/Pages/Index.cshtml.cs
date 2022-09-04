@@ -14,6 +14,8 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Logging;
 using Ris2022.Data.Models;
+using Serilog;
+using Ris2022.Resources;
 
 namespace Ris2022.Pages.Account
 {
@@ -64,15 +66,20 @@ namespace Ris2022.Pages.Account
             ///     This API supports the ASP.NET Core Identity default UI infrastructure and is not intended to be used
             ///     directly from your code. This API may change or be removed in future releases.
             /// </summary>
+            //[Required]
+            //[EmailAddress]
+            //public string Email { get; set; }
+
             [Required]
-            [EmailAddress]
-            public string Email { get; set; }
+            [Display(ResourceType = typeof(Resource), Name = "UserName")]
+            public string UserName { get; set; }
 
             /// <summary>
             ///     This API supports the ASP.NET Core Identity default UI infrastructure and is not intended to be used
             ///     directly from your code. This API may change or be removed in future releases.
             /// </summary>
             [Required]
+            [Display(ResourceType = typeof(Resource), Name = "Password")]
             [DataType(DataType.Password)]
             public string Password { get; set; }
 
@@ -80,7 +87,7 @@ namespace Ris2022.Pages.Account
             ///     This API supports the ASP.NET Core Identity default UI infrastructure and is not intended to be used
             ///     directly from your code. This API may change or be removed in future releases.
             /// </summary>
-            [Display(Name = "Remember me?")]
+            [Display(ResourceType = typeof(Resource), Name = "RememberMe")]
             public bool RememberMe { get; set; }
         }
 
@@ -109,26 +116,28 @@ namespace Ris2022.Pages.Account
 
             if (ModelState.IsValid)
             {
+                string Email = Input.UserName + "@RIS.hos";
                 // This doesn't count login failures towards account lockout
                 // To enable password failures to trigger account lockout, set lockoutOnFailure: true
-                var result = await _signInManager.PasswordSignInAsync(Input.Email, Input.Password, Input.RememberMe, lockoutOnFailure: false);
+                var result = await _signInManager.PasswordSignInAsync(Email, Input.Password, Input.RememberMe, lockoutOnFailure: false);
                 if (result.Succeeded)
                 {
-                    _logger.LogInformation("User logged in.");
+                    Log.Information($"{Input.UserName} User logged in.");
                     return RedirectToPage("MainPage");
                 }
-                if (result.RequiresTwoFactor)
-                {
-                    return RedirectToPage("./LoginWith2fa", new { ReturnUrl = returnUrl, RememberMe = Input.RememberMe });
-                }
-                if (result.IsLockedOut)
-                {
-                    _logger.LogWarning("User account locked out.");
-                    return RedirectToPage("./Lockout");
-                }
+                //if (result.RequiresTwoFactor)
+                //{
+                //    return RedirectToPage("./LoginWith2fa", new { ReturnUrl = returnUrl, RememberMe = Input.RememberMe });
+                //}
+                //if (result.IsLockedOut)
+                //{
+                //    _logger.LogWarning("User account locked out.");
+                //    return RedirectToPage("./Lockout");
+                //}
                 else
                 {
                     ModelState.AddModelError(string.Empty, "Invalid login attempt.");
+                    Log.Error($"Invalid login attempt to {Input.UserName} User");
                     return Page();
                 }
             }

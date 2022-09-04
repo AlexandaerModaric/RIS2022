@@ -16,7 +16,7 @@
     {
         columns.Add(model => model.Accessionnumber).Titled("Id");
         columns.Add(model => model.modality.Name).Titled("Modality Name");
-        columns.Add(model => model.Patientid).Titled("Father Name");
+        columns.Add(model => model.Patientid).Titled(Resource.PatId);
                 columns.Add().Encoded(false)
         .RenderedAs(p=>(Html.ActionLink("Edit","Edit", "Orders", new {id = p.Id}, new {@class = "btn btn-default"})));
         columns.Add().Encoded(false)

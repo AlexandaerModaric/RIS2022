@@ -138,6 +138,9 @@
   <data name="Clinic" xml:space="preserve">
     <value>العيادة</value>
   </data>
+  <data name="Confirm" xml:space="preserve">
+    <value>تأكيد كلمة السر</value>
+  </data>
   <data name="Department" xml:space="preserve">
     <value>القسم</value>
   </data>
@@ -150,6 +153,9 @@
   <data name="Email" xml:space="preserve">
     <value>البريد الالكتروني</value>
   </data>
+  <data name="ENARName" xml:space="preserve">
+    <value>Namear</value>
+  </data>
   <data name="FathName" xml:space="preserve">
     <value>اسم الأب</value>
   </data>
@@ -158,6 +164,9 @@
   </data>
   <data name="Home" xml:space="preserve">
     <value>الصفحة الرئيسية</value>
+  </data>
+  <data name="IsDoctor" xml:space="preserve">
+    <value>هل أنت طبيب؟</value>
   </data>
   <data name="Lang" xml:space="preserve">
     <value>ar</value>
@@ -192,6 +201,9 @@
   <data name="Ordertype" xml:space="preserve">
     <value>نوع الطلب</value>
   </data>
+  <data name="Password" xml:space="preserve">
+    <value>كلمة السر</value>
+  </data>
   <data name="PatId" xml:space="preserve">
     <value>معرف المريض</value>
   </data>
@@ -210,11 +222,20 @@
   <data name="Register" xml:space="preserve">
     <value>إنشاء حساب</value>
   </data>
+  <data name="RememberMe" xml:space="preserve">
+    <value>تذكرني؟</value>
+  </data>
   <data name="RIS" xml:space="preserve">
     <value>برنامج طلبات التصوير</value>
   </data>
+  <data name="Role" xml:space="preserve">
+    <value>دور المستخدم</value>
+  </data>
   <data name="SurName" xml:space="preserve">
     <value>الكنية</value>
+  </data>
+  <data name="UserName" xml:space="preserve">
+    <value>اسم المستخدم</value>
   </data>
   <data name="Worktype" xml:space="preserve">
     <value>طبيعة العمل</value>

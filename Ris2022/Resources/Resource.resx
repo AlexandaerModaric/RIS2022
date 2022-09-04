@@ -138,6 +138,9 @@
   <data name="Clinic" xml:space="preserve">
     <value>Clinic</value>
   </data>
+  <data name="Confirm" xml:space="preserve">
+    <value>Confirm Password</value>
+  </data>
   <data name="Department" xml:space="preserve">
     <value>Department</value>
   </data>
@@ -150,6 +153,9 @@
   <data name="Email" xml:space="preserve">
     <value>Email</value>
   </data>
+  <data name="ENARName" xml:space="preserve">
+    <value>Nameen</value>
+  </data>
   <data name="FathName" xml:space="preserve">
     <value>Middle Name</value>
   </data>
@@ -158,6 +164,9 @@
   </data>
   <data name="Home" xml:space="preserve">
     <value>Home</value>
+  </data>
+  <data name="IsDoctor" xml:space="preserve">
+    <value>Is Doctor?</value>
   </data>
   <data name="Lang" xml:space="preserve">
     <value>en</value>
@@ -192,6 +201,9 @@
   <data name="Ordertype" xml:space="preserve">
     <value>Order Type</value>
   </data>
+  <data name="Password" xml:space="preserve">
+    <value>Password</value>
+  </data>
   <data name="PatId" xml:space="preserve">
     <value>Patient Id</value>
   </data>
@@ -210,14 +222,20 @@
   <data name="Register" xml:space="preserve">
     <value>Register</value>
   </data>
+  <data name="RememberMe" xml:space="preserve">
+    <value>Remember me?</value>
+  </data>
   <data name="RIS" xml:space="preserve">
     <value>Radiology Information System</value>
   </data>
-  <data name="String1" xml:space="preserve">
-    <value />
+  <data name="Role" xml:space="preserve">
+    <value>Role</value>
   </data>
   <data name="SurName" xml:space="preserve">
     <value>Surname</value>
+  </data>
+  <data name="UserName" xml:space="preserve">
+    <value>User Name</value>
   </data>
   <data name="Worktype" xml:space="preserve">
     <value>Work Type</value>

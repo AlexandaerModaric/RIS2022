@@ -1,0 +1,135 @@
+﻿
+@{
+    string returnUrl = ViewContext.HttpContext.Request.Path;
+ 
+    var requestCulture = Context.Features.Get<IRequestCultureFeature>();
+    var cultureItems = LocOptions.Value.SupportedCultures
+        .Select(c => new SelectListItem { Value = c.Name, Text = c.Name })
+        .ToList();
+}
+@inject CommonLocalizationService localizer
+<!DOCTYPE html>
+<html lang="@Resource.Culture" dir="@Resource.Direction">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - RISnew</title>
+    <link rel="shortcut icon" href="~/assets/images/fav.png" type="image/x-icon">
+   <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="~/assets/images/fav.jpg">
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/assets/css/all.min.css">
+    <link rel="stylesheet" href="~/assets/css/animate.css">
+    <link rel="stylesheet" href="~/assets/plugins/slider/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="~/assets/plugins/slider/css/owl.theme.default.css">
+    <link rel="stylesheet" type="text/css" href="~/assets/css/style.css" />
+
+</head>
+<body>
+    <header class="container-fluid" lang="@Resource.Culture" dir="@Resource.Direction">
+        <div class="container">
+            <div class="row top-row">
+                <div class="col-md-4 logo">
+                    <img src="~/assets/images/logo.gif" alt="">
+                    <a data-toggle="collapse" data-target="#menu-jk" href="#menu-jk"><i class="fas d-block d-md-none small-menu fa-bars"></i></a>
+                </div>
+                <div class="col-md-8 navse">
+                    <div class="row">
+                        <div class="col-lg-4 d-none d-lg-block cinfo">
+                            <div class="cdetl">
+                                <div class="icon">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </div>
+                                <div class="detail">
+                                    <b>@Resource.Location</b>
+                                    <p>Asia Hotel Building, Damascus</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 d-none d-md-block cinfo">
+                            <div class="cdetl">
+                                <div class="icon">
+                                    <i class="far fa-envelope"></i>
+                                </div>
+                                <div class="detail">
+                                    <b>@Resource.Email</b>
+                                    <p>RISsupport@gmail.com</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 d-none d-md-block cinfo">
+                            <div class="cdetl">
+                                <div class="icon">
+                                    <i class="fas fa-phone-alt"></i>
+                                </div>
+                                <div class="detail">
+                                    <b>@Resource.CallUs</b>
+                                    <p>00963-2313441/2330087 </p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div id="menu-jk" class=" row nav-sectionmk navbar-expand-lg justify-content-@Resource.AlignDir"  style="width:100%">
+                <ul class="navbar-nav ms-auto flex-nowrap">
+
+                    <li class="nav-item">
+                        <form  asp-action="ChangeLanguage" asp-controller="Home" method="post">
+                            <input type="hidden" id="returnUrl" name="returnUrl" value="@returnUrl" />
+                            <select id="culture"
+                                name="culture"
+                                onchange="this.form.submit();"
+                                asp-items="cultureItems"
+                                asp-for="@requestCulture.RequestCulture.UICulture.Name">
+                            </select>
+ 
+                        </form>
+                    </li>
+@*
+                    <li class="nav-item"><a href="blog.html">Blog</a></li>
+                    <li class="nav-item"><a href="contact_us.html">Contact Us</a></li>*@
+
+                    
+
+                </ul>
+                
+            </div>
+        </div>
+    </header>
+    <br />
+    <br />
+    @if(User.IsInRole("Administrator")){<h1>Hi</h1>};
+
+@*      <!--  ************************* Page Title Starts Here ************************** -->
+        <div class="page-nav row">
+            <div class="container">
+                <div class="row">
+
+                    <h1>@ViewData["Title"]</h1>
+                </div>
+            </div>
+        </div>*@
+ <div class="page-nav row">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>   
+
+<footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2022 - @Resource.RIS
+        </div>
+</footer>
+
+<script src="assets/js/jquery-3.2.1.min.js"></script>
+<script src="assets/js/popper.min.js"></script>
+<script src="assets/js/bootstrap.min.js"></script>
+<script src="assets/plugins/scroll-fixed/jquery-scrolltofixed-min.js"></script>
+<script src="assets/plugins/slider/js/owl.carousel.min.js"></script>
+<script src="assets/js/script.js"></script>
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

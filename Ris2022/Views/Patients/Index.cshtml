@@ -8,26 +8,26 @@
 
 
 <br />
+@{string aspHtmlString = "<a asp-action=\"Index\">";}
 
     <div style="padding-left: 5%;padding-right: 5%;">
     @(
         Html
-        .Grid(Model)
-        .Build(columns =>
-        {
-            columns.Add(model => model.Givenid).Titled("Id");
-            columns.Add(model => model.Firstname + " " + model.Lastname).Titled("Patient Name");
-            columns.Add(model => model.Middlename).Titled("Father Name");
-            columns.Add().Encoded(false)
-            .RenderedAs(p=>(Html.ActionLink("Edit","Edit", "Patients", new {id = p.Id}, new {@class = "btn btn-default"})));
-            columns.Add().Encoded(false)
-            .RenderedAs(p=>(Html.ActionLink("Delete","Delete", "Patients", new {id = p.Id}, new {@class = "btn btn-default"})));
-            columns.Add().Encoded(false)
-           .RenderedAs(p=>(Html.ActionLink("Add Order","Create", "Orders", new {patientId = p.Id}, new {@class = "btn btn-default"})));
-             columns.Add().Encoded(false)
-           .RenderedAs(p=>new GridHtmlString(Html.ActionLink("Add Order","Create", "Orders", new {patientId = p.Id}, new {@class = "btn btn-default"}).ToString()+
-           "<i class='bi bi-pencil-square'></i>"));
- 
+            .Grid(Model)
+            .Build(columns =>
+            {
+                columns.Add(model => model.Givenid).Titled("Id");
+                columns.Add(model => model.Firstname).Titled(Resource.Name);
+                columns.Add(model => model.Lastname).Titled(Resource.SurName);
+                columns.Add(model => model.Middlename).Titled(Resource.FathName);
+                columns.Add().Encoded(false)
+                .RenderedAs(p=>(Html.ActionLink("Edit","Edit", "Patients", new {id = p.Id}, new {@style = "background:#010101"})));
+                columns.Add().Encoded(false)
+                .RenderedAs(p=>(Html.ActionLink("Delete","Delete", "Patients", new {id = p.Id}, new {})));
+                columns.Add().Encoded(false)
+               .RenderedAs(p=>(Html.ActionLink("Add Order","Create", "Orders", new {patientId = p.Id}, new {})));
+                columns.Add().Encoded(false)
+               .RenderedAs(p =>new GridHtmlString(aspHtmlString)); 
 
                                        
 @*        columns.Add(model => model.Martialstatusid).Titled("Marital status");

@@ -7,9 +7,17 @@ using Ris2022.Interfaces;
 using Ris2022.Repositories;
 using Ris2022.Services;
 using Microsoft.AspNetCore.Identity;
+using Serilog;
+Log.Logger = new LoggerConfiguration()
+    .WriteTo.File(
+    path:Environment.CurrentDirectory.ToString()+"\\Logs\\log-.txt",
+    outputTemplate:"{Timestamp:yyyy-MM-dd HH:mm:ss.fff zzz} [{Level:u3} {Message:lj} {NewLine} {Exception}]",
+    rollingInterval: RollingInterval.Day,
+    restrictedToMinimumLevel: Serilog.Events.LogEventLevel.Information
+    ).CreateLogger();
 
 var builder = WebApplication.CreateBuilder(args);
-
+builder.Host.UseSerilog();
 // Add services to the container.
 builder.Services.AddRazorPages();
 builder.Services.AddDbContext<RisDBContext>(options => options.UseOracle(
@@ -37,7 +45,7 @@ builder.Services.Configure<IdentityOptions>(options =>
 
     // User settings.
     options.User.AllowedUserNameCharacters =
-    "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-._@+";
+    "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-._@+ÇÈÊËÌÍÎÏÐÑÒÓÔÚÛÞßáãäåæíÅÃÄÆÁìÉÂ";
     options.User.RequireUniqueEmail = false;
 });
 
@@ -47,8 +55,8 @@ builder.Services.ConfigureApplicationCookie(options =>
     options.Cookie.HttpOnly = true;
     options.ExpireTimeSpan = TimeSpan.FromMinutes(5);
 
-    options.LoginPath = "/Identity/Account/Login";
-    options.AccessDeniedPath = "/Identity/Account/AccessDenied";
+    options.LoginPath = "/Index";
+    options.AccessDeniedPath = "/Account/AccessDenied";
     options.SlidingExpiration = true;
 });
 
@@ -78,6 +86,11 @@ builder.Services.AddTransient<IPatientRepository, PatientRepository>();
 builder.Services.AddTransient<IUnitOfWork, UnitOfWork>();
 #endregion
 
+builder.Services.AddAuthorization(options =>
+{
+    options.AddPolicy("RequireAdministratorRole",
+         policy => policy.RequireRole("Administrator"));
+});
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -108,4 +121,16 @@ app.UseAuthorization();
 
 app.MapRazorPages();
 app.MapDefaultControllerRoute();
-app.Run();
+try
+{
+    Log.Information("Application Is Starting");
+    app.Run();
+}
+catch (Exception ex)
+{
+    Log.Fatal(ex, "Application Failed to Start");
+}
+finally
+{
+    Log.CloseAndFlush();
+}
