@@ -8,9 +8,13 @@
 
   <ItemGroup>
     <Compile Remove="Views\Accounts\**" />
+    <Compile Remove="Views\Orders1\**" />
     <Content Remove="Views\Accounts\**" />
+    <Content Remove="Views\Orders1\**" />
     <EmbeddedResource Remove="Views\Accounts\**" />
+    <EmbeddedResource Remove="Views\Orders1\**" />
     <None Remove="Views\Accounts\**" />
+    <None Remove="Views\Orders1\**" />
   </ItemGroup>
 
   <ItemGroup>
@@ -43,11 +47,6 @@
     <None Include="Views\Modalitytypes\Details.cshtml" />
     <None Include="Views\Modalitytypes\Edit.cshtml" />
     <None Include="Views\Modalitytypes\Index.cshtml" />
-    <None Include="Views\Orders\Create.cshtml" />
-    <None Include="Views\Orders\Delete.cshtml" />
-    <None Include="Views\Orders\Details.cshtml" />
-    <None Include="Views\Orders\Edit.cshtml" />
-    <None Include="Views\Orders\Index.cshtml" />
     <None Include="Views\Patients\Create.cshtml" />
     <None Include="Views\Patients\Delete.cshtml" />
     <None Include="Views\Patients\Details.cshtml" />
@@ -118,6 +117,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Data\Migrations\" />
     <Folder Include="Logs\" />
   </ItemGroup>
 

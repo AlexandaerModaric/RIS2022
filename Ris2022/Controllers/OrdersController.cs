@@ -1,38 +1,37 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Claims;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Ris2022.Data;
 using Ris2022.Data.Models;
 using Ris2022.MllpHl7Client;
-using System.Text;
-using Microsoft.AspNetCore.Components.Web;
 using Ris2022.Resources;
-using Microsoft.AspNetCore.Identity;
 
 namespace Ris2022.Controllers
 {
+    [Authorize]
     public class OrdersController : Controller
     {
         private readonly RisDBContext _context;
         private readonly UserManager<RisAppUser> _userManager;
-        public OrdersController(RisDBContext context, UserManager<RisAppUser> userManager)
+
+        public OrdersController(RisDBContext context,UserManager<RisAppUser> userManager)
         {
             _context = context;
             _userManager = userManager;
-
         }
 
         // GET: Orders
         public async Task<IActionResult> Index()
         {
-
-            return _context.orders != null ? 
-                          View(await _context.orders.ToListAsync()) :
-                          Problem("Entity set 'RisDBContext.orders'  is null.");
+            var risDBContext = _context.orders.Include(o => o.Ordertype).Include(o => o.clinic).Include(o => o.dept).Include(o => o.modality).Include(o => o.modalitytype).Include(o => o.patient).Include(o => o.paytype).Include(o => o.proceduretype).Include(o => o.reason);
+            return View(await risDBContext.ToListAsync());
         }
 
         // GET: Orders/Details/5
@@ -44,6 +43,15 @@ namespace Ris2022.Controllers
             }
 
             var order = await _context.orders
+                .Include(o => o.Ordertype)
+                .Include(o => o.clinic)
+                .Include(o => o.dept)
+                .Include(o => o.modality)
+                .Include(o => o.modalitytype)
+                .Include(o => o.patient)
+                .Include(o => o.paytype)
+                .Include(o => o.proceduretype)
+                .Include(o => o.reason)
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (order == null)
             {
@@ -56,19 +64,21 @@ namespace Ris2022.Controllers
         // GET: Orders/Create
         public IActionResult Create(int patientId)
         {
-            Order order = new();
-            order.Patientid = patientId;
-            order.Studyid = "1.2.4.0.13.1.4.2252867." + patientId;
-            ViewData["Modalityid"] = new SelectList(_context.Modalities.ToList(),"Id","Name");
-            ViewData["Proceduretypeid"] = new SelectList(_context.Proceduretypes.ToList(),"Id", Resource.ENARName);
-            //ViewData["Doctorid"] = new SelectList(_userManager.Users.Where(user=>user.Isdoctor==true), "Id", "Name");
-            ViewData["Departmentid"] = new SelectList(_context.Departments.ToList(),"Id", Resource.ENARName);
-            ViewData["ordertypeid"] = new SelectList(_context.Modalitytypes.ToList(),"Id", Resource.ENARName);
-            ViewData["Reasonid"] = new SelectList(_context.Reasons.ToList(),"Id", Resource.ENARName);
-            ViewData["Paytypeid"] = new SelectList(_context.Paytypes.ToList(),"Id", Resource.ENARName);
-            ViewData["Payreasonid"] = new SelectList(_context.Reasons.ToList(),"Id", Resource.ENARName);
-            ViewData["Clinicid"] = new SelectList(_context.Clinics.ToList(),"Id", Resource.ENARName);
-            ViewData["Modalitytypeid"] = new SelectList(_context.Modalitytypes.ToList(),"Id", Resource.ENARName);
+            Order order = new()
+            {
+                Patientid = patientId,
+                Studyid = "1.2.4.0.13.1.4.2252867." + patientId
+            };
+            ViewData["Doctorid"] = new SelectList(_userManager.Users.Where(user => user.Isdoctor == true), "Id", "UserName");
+            ViewData["Ordertypeid"] = new SelectList(_context.Ordetypes, "Id", Resource.ENARName);
+            ViewData["Clinicid"] = new SelectList(_context.Clinics, "Id", Resource.ENARName);
+            ViewData["Departmentid"] = new SelectList(_context.Departments, "Id", Resource.ENARName);
+            ViewData["Modalityid"] = new SelectList(_context.Modalities, "Id", "Name");
+            ViewData["Modalitytypeid"] = new SelectList(_context.Modalitytypes, "Id", Resource.ENARName);
+            ViewData["Patientid"] = new SelectList(_context.Patients, "Id", "Firstname");
+            ViewData["Paytypeid"] = new SelectList(_context.Paytypes, "Id", Resource.ENARName);
+            ViewData["Proceduretypeid"] = new SelectList(_context.Proceduretypes, "Id", Resource.ENARName);
+            ViewData["Reasonid"] = new SelectList(_context.Reasons, "Id", Resource.ENARName);
             return View(order);
         }
 
@@ -80,41 +90,41 @@ namespace Ris2022.Controllers
         public async Task<IActionResult> Create(Order order)
         {
             Patient patient = _context.Patients.SingleOrDefault(p => p.Id == order.Patientid);
-            Modality modality = _context.Modalities.SingleOrDefault(m => m.Id == order.Modalityid);
-            ViewData["Modalityid"] = new SelectList(_context.Modalities.ToList(), "Id", "Name");
-            ViewData["Proceduretypeid"] = new SelectList(_context.Proceduretypes.ToList(), "Id", Resource.ENARName);
-            //ViewData["Doctorid"] = new SelectList(_userManager.Users.Where(user => user.Isdoctor == true), "Id", "Name");
-            ViewData["Departmentid"] = new SelectList(_context.Departments.ToList(), "Id", Resource.ENARName);
-            ViewData["ordertypeid"] = new SelectList(_context.Modalitytypes.ToList(), "Id", Resource.ENARName);
-            ViewData["Reasonid"] = new SelectList(_context.Reasons.ToList(), "Id", Resource.ENARName);
-            ViewData["Paytypeid"] = new SelectList(_context.Paytypes.ToList(), "Id", Resource.ENARName);
-            ViewData["Payreasonid"] = new SelectList(_context.Reasons.ToList(), "Id", Resource.ENARName);
-            ViewData["Clinicid"] = new SelectList(_context.Clinics.ToList(), "Id", Resource.ENARName);
-            ViewData["Modalitytypeid"] = new SelectList(_context.Modalitytypes.ToList(), "Id", Resource.ENARName);
-            HL7message hL7Message = new HL7message();
-            order.Accessionnumber = int.Parse(patient.Id+ DateTime.Now.ToString("ssmm"));
-            order.Insertuserid = 1;
-            order.Startdate = DateTime.UtcNow;
-            hL7Message.studyId = order.Studyid;
-            hL7Message.accessionNumber = order.Accessionnumber.ToString();
-            hL7Message.patientGivenId = patient.Givenid;
-            hL7Message.aeTitle = modality.Aetitle;
-            hL7Message.sStationName = modality.Name;
-            hL7Message.obsOrderPFNum = patient.Id;
-            hL7Message.patientFirstName = patient.Firstname;
-            hL7Message.patientLastName = patient.Lastname;
-            hL7Message.modalityName = modality.Name;
-            hL7Message.startDateTime = "20220419183649";
-            hL7Message.procedureId = order.Proceduretypeid.Value;
-            hL7Message.procedureName = _context.Proceduretypes.SingleOrDefault(proc=>proc.Id==order.Proceduretypeid).Nameen;
-            if (ModelState.IsValid && Hl7Client.SendHl7Msg(hL7Message))
+            order.Accessionnumber = int.Parse(patient.Id + DateTime.Now.ToString("ssmm"));
+            order.InsertuserName = User.FindFirstValue(ClaimTypes.Name);
+            order.Startdate = DateTime.Now;
+            //order.Startdate = DateTime.Now.ToUniversalTime();
+            HL7message hL7Message = new HL7message()
             {
-                
+                studyId = order.Studyid,
+                patientGivenId = patient.Givenid,
+                aeTitle = order.modality.Aetitle,
+                sStationName = order.modality.Name,
+                obsOrderPFNum = patient.Id,
+                patientFirstName = patient.Firstname,
+                patientLastName = patient.Lastname,
+                modalityName = order.modality.Name,
+                startDateTime = "20220419183649",
+                procedureId = order.Proceduretypeid.Value,
+                procedureName = order.proceduretype.Nameen
+            };
+            if (ModelState.IsValid && !Hl7Client.SendHl7Msg(hL7Message))
+                //if (ModelState.IsValid)
+            {
                 _context.Add(order);
                 await _context.SaveChangesAsync();
-                //var testHl7MessageToTransmit = new StringBuilder();
                 return RedirectToAction(nameof(Index));
             }
+            ViewData["Doctorid"] = new SelectList(_userManager.Users.Where(user => user.Isdoctor == true), "Id", "UserName",order.InsertuserName);
+            ViewData["Ordertypeid"] = new SelectList(_context.Ordetypes, "Id", Resource.ENARName, order.Ordertypeid);
+            ViewData["Clinicid"] = new SelectList(_context.Clinics, "Id", Resource.ENARName, order.Clinicid);
+            ViewData["Departmentid"] = new SelectList(_context.Departments, "Id", Resource.ENARName, order.Departmentid);
+            ViewData["Modalityid"] = new SelectList(_context.Modalities, "Id", "Name", order.Modalityid);
+            ViewData["Modalitytypeid"] = new SelectList(_context.Modalitytypes, "Id", Resource.ENARName, order.Modalitytypeid);
+            ViewData["Patientid"] = new SelectList(_context.Patients, "Id", "Firstname", order.Patientid);
+            ViewData["Paytypeid"] = new SelectList(_context.Paytypes, "Id", Resource.ENARName, order.Paytypeid);
+            ViewData["Proceduretypeid"] = new SelectList(_context.Proceduretypes, "Id", Resource.ENARName, order.Proceduretypeid);
+            ViewData["Reasonid"] = new SelectList(_context.Reasons, "Id", Resource.ENARName, order.Reasonid);
             return View(order);
         }
 
@@ -131,6 +141,16 @@ namespace Ris2022.Controllers
             {
                 return NotFound();
             }
+            ViewData["Doctorid"] = new SelectList(_userManager.Users.Where(user => user.Isdoctor == true), "Id", "UserName",order.InsertuserName);
+            ViewData["Ordertypeid"] = new SelectList(_context.Ordetypes, "Id", Resource.ENARName, order.Ordertypeid);
+            ViewData["Clinicid"] = new SelectList(_context.Clinics, "Id", Resource.ENARName, order.Clinicid);
+            ViewData["Departmentid"] = new SelectList(_context.Departments, "Id", Resource.ENARName, order.Departmentid);
+            ViewData["Modalityid"] = new SelectList(_context.Modalities, "Id", "Name", order.Modalityid);
+            ViewData["Modalitytypeid"] = new SelectList(_context.Modalitytypes, "Id", Resource.ENARName, order.Modalitytypeid);
+            ViewData["Patientid"] = new SelectList(_context.Patients, "Id", "Firstname", order.Patientid);
+            ViewData["Paytypeid"] = new SelectList(_context.Paytypes, "Id", Resource.ENARName, order.Paytypeid);
+            ViewData["Proceduretypeid"] = new SelectList(_context.Proceduretypes, "Id", Resource.ENARName, order.Proceduretypeid);
+            ViewData["Reasonid"] = new SelectList(_context.Reasons, "Id", Resource.ENARName, order.Reasonid);
             return View(order);
         }
 
@@ -139,7 +159,7 @@ namespace Ris2022.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Patientid,Modalityid,Proceduretypeid,Studyid,Startdate,Enddate,Statusid,Doctorid,Autoexpiredate,Accessionnumber,Departmentid,Documentid,Typeid,Insertdate,Insertuserid,Reasonid,Updateuserid,Updatedate,Paytypeid,Payreasonid,Clinicid,Modalitytypeid")] Order order)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Patientid,Modalityid,Proceduretypeid,Studyid,Startdate,Enddate,Statusid,Doctorid,Autoexpiredate,Accessionnumber,Departmentid,Documentid,Ordertypeid,Insertdate,InsertuserName,Reasonid,UpdateuserName,Updatedate,Paytypeid,Payreasonid,Clinicid,Modalitytypeid")] Order order)
         {
             if (id != order.Id)
             {
@@ -166,6 +186,16 @@ namespace Ris2022.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
+            ViewData["Doctorid"] = new SelectList(_userManager.Users.Where(user => user.Isdoctor == true), "Id", "UserName", order.InsertuserName);
+            ViewData["Ordertypeid"] = new SelectList(_context.Ordetypes, "Id", Resource.ENARName, order.Ordertypeid);
+            ViewData["Clinicid"] = new SelectList(_context.Clinics, "Id", Resource.ENARName, order.Clinicid);
+            ViewData["Departmentid"] = new SelectList(_context.Departments, "Id", Resource.ENARName, order.Departmentid);
+            ViewData["Modalityid"] = new SelectList(_context.Modalities, "Id", "Name", order.Modalityid);
+            ViewData["Modalitytypeid"] = new SelectList(_context.Modalitytypes, "Id", Resource.ENARName, order.Modalitytypeid);
+            ViewData["Patientid"] = new SelectList(_context.Patients, "Id", "Firstname", order.Patientid);
+            ViewData["Paytypeid"] = new SelectList(_context.Paytypes, "Id", Resource.ENARName, order.Paytypeid);
+            ViewData["Proceduretypeid"] = new SelectList(_context.Proceduretypes, "Id", Resource.ENARName, order.Proceduretypeid);
+            ViewData["Reasonid"] = new SelectList(_context.Reasons, "Id", Resource.ENARName, order.Reasonid);
             return View(order);
         }
 
@@ -178,6 +208,15 @@ namespace Ris2022.Controllers
             }
 
             var order = await _context.orders
+                .Include(o => o.Ordertype)
+                .Include(o => o.clinic)
+                .Include(o => o.dept)
+                .Include(o => o.modality)
+                .Include(o => o.modalitytype)
+                .Include(o => o.patient)
+                .Include(o => o.paytype)
+                .Include(o => o.proceduretype)
+                .Include(o => o.reason)
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (order == null)
             {

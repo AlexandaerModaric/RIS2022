@@ -120,6 +120,9 @@
   <data name="Acceptancetype" xml:space="preserve">
     <value>نوع القبول</value>
   </data>
+  <data name="AddOrder" xml:space="preserve">
+    <value>طلب تصوير</value>
+  </data>
   <data name="AddPatient" xml:space="preserve">
     <value>إضافة مريض</value>
   </data>
@@ -129,8 +132,17 @@
   <data name="Adminstration" xml:space="preserve">
     <value>إدارة</value>
   </data>
+  <data name="Age" xml:space="preserve">
+    <value>العمر</value>
+  </data>
   <data name="AlignDir" xml:space="preserve">
     <value>right</value>
+  </data>
+  <data name="Birthdate" xml:space="preserve">
+    <value>تاريخ الولادة</value>
+  </data>
+  <data name="Birthplace" xml:space="preserve">
+    <value>محل الولادة</value>
   </data>
   <data name="CallUs" xml:space="preserve">
     <value>اتصل بنا</value>
@@ -141,14 +153,26 @@
   <data name="Confirm" xml:space="preserve">
     <value>تأكيد كلمة السر</value>
   </data>
+  <data name="Currentaddress" xml:space="preserve">
+    <value>العنوان الحالي</value>
+  </data>
+  <data name="Delete" xml:space="preserve">
+    <value>حذف</value>
+  </data>
   <data name="Department" xml:space="preserve">
     <value>القسم</value>
+  </data>
+  <data name="Details" xml:space="preserve">
+    <value>تفاصيل</value>
   </data>
   <data name="Direction" xml:space="preserve">
     <value>rtl</value>
   </data>
   <data name="DoctorName" xml:space="preserve">
     <value>اسم الطبيب</value>
+  </data>
+  <data name="Edit" xml:space="preserve">
+    <value>تعديل</value>
   </data>
   <data name="Email" xml:space="preserve">
     <value>البريد الالكتروني</value>
@@ -165,8 +189,17 @@
   <data name="Home" xml:space="preserve">
     <value>الصفحة الرئيسية</value>
   </data>
+  <data name="Insertdate" xml:space="preserve">
+    <value>تاريخ التسجيل</value>
+  </data>
+  <data name="InsertUserName" xml:space="preserve">
+    <value>سجل الاسم</value>
+  </data>
   <data name="IsDoctor" xml:space="preserve">
     <value>هل أنت طبيب؟</value>
+  </data>
+  <data name="Landphone" xml:space="preserve">
+    <value>رقم الهاتف</value>
   </data>
   <data name="Lang" xml:space="preserve">
     <value>ar</value>
@@ -181,7 +214,10 @@
     <value>تسجيل الخروج</value>
   </data>
   <data name="Martialstatus" xml:space="preserve">
-    <value>الوضع العائلي</value>
+    <value>الحالة الاجتماعية</value>
+  </data>
+  <data name="Mobilephone" xml:space="preserve">
+    <value>رقم الموبايل</value>
   </data>
   <data name="Modality" xml:space="preserve">
     <value>آلة التصوير</value>
@@ -189,11 +225,26 @@
   <data name="Modalitytype" xml:space="preserve">
     <value>نوع الآلة</value>
   </data>
+  <data name="MotherName" xml:space="preserve">
+    <value>اسم الأم</value>
+  </data>
   <data name="Name" xml:space="preserve">
     <value>الاسم</value>
   </data>
   <data name="Nationality" xml:space="preserve">
     <value>الجنسية</value>
+  </data>
+  <data name="Nearestperson" xml:space="preserve">
+    <value>أقرب شخص</value>
+  </data>
+  <data name="Nearestpersonphone" xml:space="preserve">
+    <value>هاتف أقرب شخص</value>
+  </data>
+  <data name="News" xml:space="preserve">
+    <value>الأخبار</value>
+  </data>
+  <data name="Notes" xml:space="preserve">
+    <value>الملاحظات</value>
   </data>
   <data name="OrderIndex" xml:space="preserve">
     <value>طلبات التصوير</value>
@@ -225,6 +276,9 @@
   <data name="RememberMe" xml:space="preserve">
     <value>تذكرني؟</value>
   </data>
+  <data name="Residentaddress" xml:space="preserve">
+    <value>العنوان الدائم</value>
+  </data>
   <data name="RIS" xml:space="preserve">
     <value>برنامج طلبات التصوير</value>
   </data>
@@ -234,8 +288,20 @@
   <data name="SurName" xml:space="preserve">
     <value>الكنية</value>
   </data>
+  <data name="Updatedate" xml:space="preserve">
+    <value>تاريخ التعديل</value>
+  </data>
+  <data name="UpdateuserName" xml:space="preserve">
+    <value>قام بالبتعديل</value>
+  </data>
   <data name="UserName" xml:space="preserve">
     <value>اسم المستخدم</value>
+  </data>
+  <data name="Workaddress" xml:space="preserve">
+    <value>عنوان العمل</value>
+  </data>
+  <data name="Workphone" xml:space="preserve">
+    <value>هاتف العمل</value>
   </data>
   <data name="Worktype" xml:space="preserve">
     <value>طبيعة العمل</value>

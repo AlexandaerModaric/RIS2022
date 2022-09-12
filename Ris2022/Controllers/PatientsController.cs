@@ -1,48 +1,34 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data;
 using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Ris2022.Data;
 using Ris2022.Data.Models;
-using Ris2022.Interfaces;
 using Ris2022.Resources;
+
 
 namespace Ris2022.Controllers
 {
+    [Authorize]
     public class PatientsController : Controller
     {
         private readonly RisDBContext _context;
 
-        //public PatientsController(RisDBContext context)
-        //{
-        //    _context = context;
-
-        //}
-        private readonly IUnitOfWork _unitOfWork;
-        private readonly UserManager<RisAppUser> _userManager;
-
-        public PatientsController(IUnitOfWork unitOfWork, RisDBContext context, UserManager<RisAppUser> userManager)
+        public PatientsController(RisDBContext context)
         {
-            _unitOfWork = unitOfWork;
             _context = context;
-            _userManager = userManager;
-
         }
 
         // GET: Patients
-        [Authorize(Roles = "Administrator")]
         public async Task<IActionResult> Index()
         {
-              return _unitOfWork.Patients != null ? 
-                          View( _unitOfWork.Patients.GetAll()) :
-                          Problem("Entity set 'RisDBContext.Patients'  is null.");
+            var risDBContext = _context.Patients.Include(p => p.Acceptancetype).Include(p => p.Martialstatus).Include(p => p.Nationality).Include(p => p.Worktype).Include(p => p.Reason);
+            return View(await risDBContext.ToListAsync());
         }
 
         // GET: Patients/Details/5
@@ -53,8 +39,14 @@ namespace Ris2022.Controllers
                 return NotFound();
             }
 
-            var patient = await _context.Patients
-                .FirstOrDefaultAsync(m => m.Id == id);
+            var patients = await _context.Patients.Where(x => x.Id == id)
+                .Include(p => p.Acceptancetype)
+                .Include(p => p.Martialstatus)
+                .Include(p => p.Nationality)
+                .Include(p => p.Worktype)
+                .Include(p => p.Reason)
+                .Take(1).ToListAsync();
+            var patient = patients.FirstOrDefault();
             if (patient == null)
             {
                 return NotFound();
@@ -66,14 +58,17 @@ namespace Ris2022.Controllers
         // GET: Patients/Create
         public IActionResult Create()
         {
-            ViewData["Nationalityid"] = new SelectList(_context.Nationalities.ToList(), "Id", Resource.ENARName);
-            ViewData["Worktypeid"] = new SelectList(_context.Worktypes.ToList(), "Id", Resource.ENARName);
-            ViewData["Martialstatusid"] = new SelectList(_context.Martialstatuses.ToList(), "Id", Resource.ENARName);
-            ViewData["Acceptancetypeid"] = new SelectList(_context.Acceptancetypes.ToList(), "Id", Resource.ENARName);
-            Patient patient = new Patient();
-            patient.InsertUserName = User.FindFirstValue(ClaimTypes.Name);
+            ViewData["Acceptancetypeid"] = new SelectList(_context.Acceptancetypes, "Id", Resource.ENARName);
+            ViewData["Martialstatusid"] = new SelectList(_context.Martialstatuses, "Id", Resource.ENARName);
+            ViewData["Nationalityid"] = new SelectList(_context.Nationalities, "Id", Resource.ENARName);
+            ViewData["Worktypeid"] = new SelectList(_context.Worktypes, "Id", Resource.ENARName);
+            ViewData["Reasonid"] = new SelectList(_context.Reasons, "Id", Resource.ENARName);
 
-            patient.patientOrders = new Order[] { };
+            Patient patient = new()
+            {
+                InsertUserName = User.FindFirstValue(ClaimTypes.Name),
+                Givenid = "pat" + DateTime.Today.ToString("ddMMyyyy")
+            };
             return View(patient);
         }
 
@@ -81,22 +76,21 @@ namespace Ris2022.Controllers
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create(Patient patient)
         {
-            ViewData["Nationalityid"] = new SelectList(_context.Nationalities.ToList(), "Id", Resource.ENARName,patient.Nationalityid);
-            ViewData["Worktypeid"] = new SelectList(_context.Worktypes.ToList(), "Id", Resource.ENARName,patient.Worktypeid);
-            ViewData["Martialstatusid"] = new SelectList(_context.Martialstatuses.ToList(), "Id", Resource.ENARName, patient.Martialstatusid);
-            ViewData["Acceptancetypeid"] = new SelectList(_context.Acceptancetypes.ToList(), "Id", Resource.ENARName, patient.Acceptancetypeid);
-            patient.InsertUserName = User.FindFirstValue(ClaimTypes.Name);
-            patient.patientOrders = new Order[] {};
+
             if (ModelState.IsValid)
             {
                 _context.Add(patient);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            foreach (var error in ModelState.Values.SelectMany(modelState => modelState.Errors))
-                ModelState.AddModelError(string.Empty, error.ToString());
+            ViewData["Acceptancetypeid"] = new SelectList(_context.Acceptancetypes, "Id", Resource.ENARName, patient.Acceptancetypeid);
+            ViewData["Martialstatusid"] = new SelectList(_context.Martialstatuses, "Id", Resource.ENARName, patient.Martialstatusid);
+            ViewData["Nationalityid"] = new SelectList(_context.Nationalities, "Id", Resource.ENARName, patient.Nationalityid);
+            ViewData["Worktypeid"] = new SelectList(_context.Worktypes, "Id", Resource.ENARName, patient.Worktypeid);
+            ViewData["Reasonid"] = new SelectList(_context.Reasons, "Id", Resource.ENARName, patient.Reasonid);
             return View(patient);
         }
 
@@ -113,6 +107,12 @@ namespace Ris2022.Controllers
             {
                 return NotFound();
             }
+            ViewData["Acceptancetypeid"] = new SelectList(_context.Acceptancetypes, "Id", "Id", patient.Acceptancetypeid);
+            ViewData["Martialstatusid"] = new SelectList(_context.Martialstatuses, "Id", "Id", patient.Martialstatusid);
+            ViewData["Nationalityid"] = new SelectList(_context.Nationalities, "Id", "Id", patient.Nationalityid);
+            ViewData["Worktypeid"] = new SelectList(_context.Worktypes, "Id", "Id", patient.Worktypeid);
+            ViewData["Reasonid"] = new SelectList(_context.Reasons, "Id", Resource.ENARName, patient.Reasonid);
+
             return View(patient);
         }
 
@@ -121,7 +121,7 @@ namespace Ris2022.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Givenid,Firstname,Middlename,Lastname,Gendre")] Patient patient)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Givenid,Firstname,Middlename,Lastname,Gendre,Mothername,Birthdate,Age,Mobilephone,Landphone,Currentaddress,Residentaddress,Workphone,Workaddress,Nearestperson,Nearestpersonphone,Birthplace,Notes,Translatedfname,Translatedlname,Translatedfathername,Translatedmothername,Insertdate,UpdateuserName,Updatedate,Reasonid,InsertUserName,Nationalityid,Worktypeid,Martialstatusid,Acceptancetypeid")] Patient patient)
         {
             if (id != patient.Id)
             {
@@ -148,6 +148,12 @@ namespace Ris2022.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
+            ViewData["Acceptancetypeid"] = new SelectList(_context.Acceptancetypes, "Id", "Id", patient.Acceptancetypeid);
+            ViewData["Martialstatusid"] = new SelectList(_context.Martialstatuses, "Id", "Id", patient.Martialstatusid);
+            ViewData["Nationalityid"] = new SelectList(_context.Nationalities, "Id", "Id", patient.Nationalityid);
+            ViewData["Worktypeid"] = new SelectList(_context.Worktypes, "Id", "Id", patient.Worktypeid);
+            ViewData["Reasonid"] = new SelectList(_context.Reasons, "Id", Resource.ENARName, patient.Reasonid);
+
             return View(patient);
         }
 
@@ -160,6 +166,11 @@ namespace Ris2022.Controllers
             }
 
             var patient = await _context.Patients
+                .Include(p => p.Acceptancetype)
+                .Include(p => p.Martialstatus)
+                .Include(p => p.Nationality)
+                .Include(p => p.Worktype)
+                .Include(p => p.Reason)
                 .FirstOrDefaultAsync(m => m.Id == id);
             if (patient == null)
             {
@@ -183,14 +194,14 @@ namespace Ris2022.Controllers
             {
                 _context.Patients.Remove(patient);
             }
-            
+
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
         private bool PatientExists(int id)
         {
-          return (_context.Patients?.Any(e => e.Id == id)).GetValueOrDefault();
+            return (_context.Patients?.Any(e => e.Id == id)).GetValueOrDefault();
         }
     }
 }

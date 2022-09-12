@@ -12,8 +12,8 @@ using Ris2022.Data;
 namespace Ris2022.Data.Migrations
 {
     [DbContext(typeof(RisDBContext))]
-    [Migration("20220902170433_InitialMigration")]
-    partial class InitialMigration
+    [Migration("20220912073150_ReasonToPatient")]
+    partial class ReasonToPatient
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -53,17 +53,17 @@ namespace Ris2022.Data.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "f4f98ee4-ced6-46d4-ad9a-1b99dc78a956",
-                            ConcurrencyStamp = "70a81b85-f773-4b0e-936a-f5634c420523",
+                            Id = "48c53fbb-fd41-4d65-9e44-66e4079f18bc",
+                            ConcurrencyStamp = "ac17d7ac-dbce-40fe-999a-8a232767654e",
                             Name = "User",
                             NormalizedName = "USER"
                         },
                         new
                         {
-                            Id = "cc4ae014-8484-4adb-b79b-dbcf5f22cb98",
-                            ConcurrencyStamp = "0754ee29-fb92-4de0-b186-bcdb177de0ed",
+                            Id = "d01ce298-d77e-4b5a-b13e-09e6dc378e87",
+                            ConcurrencyStamp = "c0dc3c2e-e286-4c89-a9b1-ebbef755fde4",
                             Name = "Administrator",
-                            NormalizedName = "ADMINISTATOR"
+                            NormalizedName = "ADMINISTRATOR"
                         });
                 });
 
@@ -493,11 +493,12 @@ namespace Ris2022.Data.Migrations
                     b.Property<int?>("Clinicid")
                         .HasColumnType("NUMBER(10)");
 
-                    b.Property<int?>("Deptid")
+                    b.Property<int?>("Departmentid")
                         .HasColumnType("NUMBER(10)");
 
-                    b.Property<int?>("Doctorid")
-                        .HasColumnType("NUMBER(10)");
+                    b.Property<string>("Doctorid")
+                        .IsRequired()
+                        .HasColumnType("NVARCHAR2(2000)");
 
                     b.Property<int?>("Documentid")
                         .HasColumnType("NUMBER(10)");
@@ -508,8 +509,8 @@ namespace Ris2022.Data.Migrations
                     b.Property<DateTime?>("Insertdate")
                         .HasColumnType("TIMESTAMP(7)");
 
-                    b.Property<int?>("Insertuserid")
-                        .HasColumnType("NUMBER(10)");
+                    b.Property<string>("InsertuserName")
+                        .HasColumnType("NVARCHAR2(2000)");
 
                     b.Property<int>("Modalityid")
                         .HasColumnType("NUMBER(10)");
@@ -535,6 +536,9 @@ namespace Ris2022.Data.Migrations
                     b.Property<int?>("Reasonid")
                         .HasColumnType("NUMBER(10)");
 
+                    b.Property<string>("RisAppDoctorId")
+                        .HasColumnType("NVARCHAR2(450)");
+
                     b.Property<DateTime?>("Startdate")
                         .HasColumnType("TIMESTAMP(7)");
 
@@ -548,14 +552,14 @@ namespace Ris2022.Data.Migrations
                     b.Property<DateTime?>("Updatedate")
                         .HasColumnType("TIMESTAMP(7)");
 
-                    b.Property<int?>("Updateuserid")
-                        .HasColumnType("NUMBER(10)");
+                    b.Property<string>("UpdateuserName")
+                        .HasColumnType("NVARCHAR2(2000)");
 
                     b.HasKey("Id");
 
                     b.HasIndex("Clinicid");
 
-                    b.HasIndex("Deptid");
+                    b.HasIndex("Departmentid");
 
                     b.HasIndex("Modalityid");
 
@@ -570,6 +574,8 @@ namespace Ris2022.Data.Migrations
                     b.HasIndex("Proceduretypeid");
 
                     b.HasIndex("Reasonid");
+
+                    b.HasIndex("RisAppDoctorId");
 
                     b.ToTable("orders");
                 });
@@ -612,6 +618,18 @@ namespace Ris2022.Data.Migrations
                     b.Property<int>("Acceptancetypeid")
                         .HasColumnType("NUMBER(10)");
 
+                    b.Property<int?>("Age")
+                        .HasColumnType("NUMBER(10)");
+
+                    b.Property<DateTime?>("Birthdate")
+                        .HasColumnType("TIMESTAMP(7)");
+
+                    b.Property<string>("Birthplace")
+                        .HasColumnType("NVARCHAR2(2000)");
+
+                    b.Property<string>("Currentaddress")
+                        .HasColumnType("NVARCHAR2(2000)");
+
                     b.Property<string>("Firstname")
                         .IsRequired()
                         .HasMaxLength(25)
@@ -628,6 +646,12 @@ namespace Ris2022.Data.Migrations
                         .IsRequired()
                         .HasColumnType("NVARCHAR2(2000)");
 
+                    b.Property<DateTime?>("Insertdate")
+                        .HasColumnType("TIMESTAMP(7)");
+
+                    b.Property<string>("Landphone")
+                        .HasColumnType("NVARCHAR2(2000)");
+
                     b.Property<string>("Lastname")
                         .IsRequired()
                         .HasMaxLength(25)
@@ -640,8 +664,53 @@ namespace Ris2022.Data.Migrations
                         .HasMaxLength(25)
                         .HasColumnType("NVARCHAR2(25)");
 
+                    b.Property<string>("Mobilephone")
+                        .HasColumnType("NVARCHAR2(2000)");
+
+                    b.Property<string>("Mothername")
+                        .HasColumnType("NVARCHAR2(2000)");
+
                     b.Property<int?>("Nationalityid")
                         .HasColumnType("NUMBER(10)");
+
+                    b.Property<string>("Nearestperson")
+                        .HasColumnType("NVARCHAR2(2000)");
+
+                    b.Property<string>("Nearestpersonphone")
+                        .HasColumnType("NVARCHAR2(2000)");
+
+                    b.Property<string>("Notes")
+                        .HasColumnType("NVARCHAR2(2000)");
+
+                    b.Property<int?>("Reasonid")
+                        .HasColumnType("NUMBER(10)");
+
+                    b.Property<string>("Residentaddress")
+                        .HasColumnType("NVARCHAR2(2000)");
+
+                    b.Property<string>("Translatedfathername")
+                        .HasColumnType("NVARCHAR2(2000)");
+
+                    b.Property<string>("Translatedfname")
+                        .HasColumnType("NVARCHAR2(2000)");
+
+                    b.Property<string>("Translatedlname")
+                        .HasColumnType("NVARCHAR2(2000)");
+
+                    b.Property<string>("Translatedmothername")
+                        .HasColumnType("NVARCHAR2(2000)");
+
+                    b.Property<DateTime?>("Updatedate")
+                        .HasColumnType("TIMESTAMP(7)");
+
+                    b.Property<string>("UpdateuserName")
+                        .HasColumnType("NVARCHAR2(2000)");
+
+                    b.Property<string>("Workaddress")
+                        .HasColumnType("NVARCHAR2(2000)");
+
+                    b.Property<string>("Workphone")
+                        .HasColumnType("NVARCHAR2(2000)");
 
                     b.Property<int?>("Worktypeid")
                         .HasColumnType("NUMBER(10)");
@@ -653,6 +722,8 @@ namespace Ris2022.Data.Migrations
                     b.HasIndex("Martialstatusid");
 
                     b.HasIndex("Nationalityid");
+
+                    b.HasIndex("Reasonid");
 
                     b.HasIndex("Worktypeid");
 
@@ -891,10 +962,10 @@ namespace Ris2022.Data.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "3084c682-ad28-41c9-8e5b-c99592e15d64",
+                            Id = "2326a1f2-a58a-4f03-92ab-1aea67ed6a28",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "4b8fd4d6-effd-49d8-9f1e-b084c9c70a5b",
-                            Email = "RISAdmin@RIS.com",
+                            ConcurrencyStamp = "1f8ffe5a-de0c-49be-8112-241d90d0107c",
+                            Email = "RISAdmin@yy.com",
                             EmailConfirmed = true,
                             Firstname = "RIS",
                             Isdoctor = true,
@@ -903,7 +974,7 @@ namespace Ris2022.Data.Migrations
                             LockoutEnabled = false,
                             PasswordHash = "P@ssw0rd123",
                             PhoneNumberConfirmed = true,
-                            SecurityStamp = "c54a9cda-12e6-4f39-b179-aa0f5c22c5e5",
+                            SecurityStamp = "4dcbce47-0eb7-441f-8ad6-ddf8c5515988",
                             TwoFactorEnabled = false,
                             UserName = "RISAdmin"
                         });
@@ -995,7 +1066,7 @@ namespace Ris2022.Data.Migrations
 
                     b.HasOne("Ris2022.Data.Models.Department", "dept")
                         .WithMany()
-                        .HasForeignKey("Deptid");
+                        .HasForeignKey("Departmentid");
 
                     b.HasOne("Ris2022.Data.Models.Modality", "modality")
                         .WithMany()
@@ -1029,7 +1100,13 @@ namespace Ris2022.Data.Migrations
                         .WithMany()
                         .HasForeignKey("Reasonid");
 
+                    b.HasOne("Ris2022.Data.Models.RisAppUser", "RisAppDoctor")
+                        .WithMany()
+                        .HasForeignKey("RisAppDoctorId");
+
                     b.Navigation("Ordertype");
+
+                    b.Navigation("RisAppDoctor");
 
                     b.Navigation("clinic");
 
@@ -1050,23 +1127,37 @@ namespace Ris2022.Data.Migrations
 
             modelBuilder.Entity("Ris2022.Data.Models.Patient", b =>
                 {
-                    b.HasOne("Ris2022.Data.Models.Acceptancetype", null)
+                    b.HasOne("Ris2022.Data.Models.Acceptancetype", "Acceptancetype")
                         .WithMany("patients")
                         .HasForeignKey("Acceptancetypeid")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Ris2022.Data.Models.Martialstatus", null)
+                    b.HasOne("Ris2022.Data.Models.Martialstatus", "Martialstatus")
                         .WithMany("patients")
                         .HasForeignKey("Martialstatusid");
 
-                    b.HasOne("Ris2022.Data.Models.Nationality", null)
+                    b.HasOne("Ris2022.Data.Models.Nationality", "Nationality")
                         .WithMany("patients")
                         .HasForeignKey("Nationalityid");
 
-                    b.HasOne("Ris2022.Data.Models.Worktype", null)
+                    b.HasOne("Ris2022.Data.Models.Reason", "Reason")
+                        .WithMany()
+                        .HasForeignKey("Reasonid");
+
+                    b.HasOne("Ris2022.Data.Models.Worktype", "Worktype")
                         .WithMany("patients")
                         .HasForeignKey("Worktypeid");
+
+                    b.Navigation("Acceptancetype");
+
+                    b.Navigation("Martialstatus");
+
+                    b.Navigation("Nationality");
+
+                    b.Navigation("Reason");
+
+                    b.Navigation("Worktype");
                 });
 
             modelBuilder.Entity("Ris2022.Data.Models.Acceptancetype", b =>

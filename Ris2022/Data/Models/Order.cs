@@ -14,19 +14,19 @@ namespace Ris2022.Data.Models
         [ForeignKey("patientFK")]
         public int Patientid { get; set; }
 
-        public Patient patient { get; set; }
+        public virtual Patient? patient { get; set; }
 
         [Display(ResourceType = typeof(Resource), Name = "Modality")]
         [ForeignKey("ModalityFK")]
         public int Modalityid { get; set; }
 
-        public Modality modality { get; set; }
+        public virtual Modality? modality { get; set; }
 
         [Display(ResourceType = typeof(Resource), Name = "Proceduretype")]
         [ForeignKey("ProceduretypeFK")]
         public int? Proceduretypeid { get; set; }
 
-        public Proceduretype proceduretype { get; set; }
+        public virtual Proceduretype? proceduretype { get; set; }
 
         public string Studyid { get; set; }
         public DateTime? Startdate { get; set; }
@@ -34,51 +34,53 @@ namespace Ris2022.Data.Models
         public int? Statusid { get; set; }
 
         [Display(ResourceType = typeof(Resource), Name = "DoctorName")]
-        public int? Doctorid { get; set; }
+        public string Doctorid { get; set; }
+        public virtual RisAppUser? RisAppDoctor { get; set; }
 
         public DateTime? Autoexpiredate { get; set; }
 
         [Display(ResourceType = typeof(Resource), Name = "Department")]
         public int? Accessionnumber { get; set; }
-        [ForeignKey("DepartmentFK")]
-        public int? Deptid { get; set; }
 
-        public Department dept { get; set; }
+        [ForeignKey("DepartmentFK")]
+        public int? Departmentid { get; set; }
+
+        public virtual Department? dept { get; set; }
         public int? Documentid { get; set; }
 
         [Display(ResourceType = typeof(Resource), Name = "Ordertype")]
         [ForeignKey("OrdertypeFK")]
         public int?  Ordertypeid{ get; set; }
-        public Ordertype Ordertype { get; set; }
+        public virtual Ordertype? Ordertype { get; set; }
 
         public DateTime? Insertdate { get; set; } = DateTime.Now;
-        public int? Insertuserid { get; set; }
+        public string? InsertuserName { get; set; }
 
         [Display(ResourceType = typeof(Resource), Name = "Reason")]
         [ForeignKey("ReasonFK")]
         public int? Reasonid { get; set; }
 
-        public Reason reason { get; set; }
+        public virtual Reason? reason { get; set; }
 
-        public int? Updateuserid { get; set; }
+        public string? UpdateuserName { get; set; }
         public DateTime? Updatedate { get; set; }= DateTime.Now;
 
         [Display(ResourceType = typeof(Resource), Name = "Paytype")]
         [ForeignKey("PaytypeFK")]
         public int? Paytypeid { get; set; }
-        public Paytype paytype { get; set; }
+        public virtual Paytype? paytype { get; set; }
 
         public int? Payreasonid { get; set; }
 
         [Display(ResourceType = typeof(Resource), Name = "Clinic")]
         public int? Clinicid { get; set; }
-        public Clinic clinic { get; set; }
+        public virtual Clinic? clinic { get; set; }
 
 
         [Display(ResourceType = typeof(Resource), Name = "Modalitytype")]
         [ForeignKey("ModalitytypeFK")]
         public int? Modalitytypeid { get; set; }
 
-        public Modalitytype modalitytype { get; set; }
+        public virtual Modalitytype? modalitytype { get; set; }
     }
 }

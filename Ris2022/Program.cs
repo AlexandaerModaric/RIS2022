@@ -119,8 +119,8 @@ app.UseAuthentication();;
 app.UseAuthorization();
 //app.UseEndpoints(routes => routes.MapDefaultControllerRoute());
 
-app.MapRazorPages();
-app.MapDefaultControllerRoute();
+app.MapRazorPages().RequireAuthorization();
+app.MapDefaultControllerRoute().RequireAuthorization();
 try
 {
     Log.Information("Application Is Starting");

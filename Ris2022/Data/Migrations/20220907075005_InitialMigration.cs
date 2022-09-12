@@ -414,6 +414,27 @@ namespace Ris2022.Data.Migrations
                     Middlename = table.Column<string>(type: "NVARCHAR2(25)", maxLength: 25, nullable: true),
                     Lastname = table.Column<string>(type: "NVARCHAR2(25)", maxLength: 25, nullable: false),
                     Gendre = table.Column<int>(type: "NUMBER(10)", nullable: true),
+                    Mothername = table.Column<string>(type: "NVARCHAR2(2000)", nullable: true),
+                    Birthdate = table.Column<DateTime>(type: "TIMESTAMP(7)", nullable: true),
+                    Age = table.Column<int>(type: "NUMBER(10)", nullable: true),
+                    Mobilephone = table.Column<string>(type: "NVARCHAR2(2000)", nullable: true),
+                    Landphone = table.Column<string>(type: "NVARCHAR2(2000)", nullable: true),
+                    Currentaddress = table.Column<string>(type: "NVARCHAR2(2000)", nullable: true),
+                    Residentaddress = table.Column<string>(type: "NVARCHAR2(2000)", nullable: true),
+                    Workphone = table.Column<string>(type: "NVARCHAR2(2000)", nullable: true),
+                    Workaddress = table.Column<string>(type: "NVARCHAR2(2000)", nullable: true),
+                    Nearestperson = table.Column<string>(type: "NVARCHAR2(2000)", nullable: true),
+                    Nearestpersonphone = table.Column<string>(type: "NVARCHAR2(2000)", nullable: true),
+                    Birthplace = table.Column<string>(type: "NVARCHAR2(2000)", nullable: true),
+                    Notes = table.Column<string>(type: "NVARCHAR2(2000)", nullable: true),
+                    Translatedfname = table.Column<string>(type: "NVARCHAR2(2000)", nullable: true),
+                    Translatedlname = table.Column<string>(type: "NVARCHAR2(2000)", nullable: true),
+                    Translatedfathername = table.Column<string>(type: "NVARCHAR2(2000)", nullable: true),
+                    Translatedmothername = table.Column<string>(type: "NVARCHAR2(2000)", nullable: true),
+                    Insertdate = table.Column<DateTime>(type: "TIMESTAMP(7)", nullable: true),
+                    UpdateuserName = table.Column<string>(type: "NVARCHAR2(2000)", nullable: true),
+                    Updatedate = table.Column<DateTime>(type: "TIMESTAMP(7)", nullable: true),
+                    Reasonid = table.Column<int>(type: "NUMBER(10)", nullable: true),
                     InsertUserName = table.Column<string>(type: "NVARCHAR2(2000)", nullable: false),
                     Nationalityid = table.Column<int>(type: "NUMBER(10)", nullable: true),
                     Worktypeid = table.Column<int>(type: "NUMBER(10)", nullable: true),
@@ -459,16 +480,17 @@ namespace Ris2022.Data.Migrations
                     Startdate = table.Column<DateTime>(type: "TIMESTAMP(7)", nullable: true),
                     Enddate = table.Column<DateTime>(type: "TIMESTAMP(7)", nullable: true),
                     Statusid = table.Column<int>(type: "NUMBER(10)", nullable: true),
-                    Doctorid = table.Column<int>(type: "NUMBER(10)", nullable: true),
+                    Doctorid = table.Column<string>(type: "NVARCHAR2(2000)", nullable: false),
+                    RisAppDoctorId = table.Column<string>(type: "NVARCHAR2(450)", nullable: true),
                     Autoexpiredate = table.Column<DateTime>(type: "TIMESTAMP(7)", nullable: true),
                     Accessionnumber = table.Column<int>(type: "NUMBER(10)", nullable: true),
-                    Deptid = table.Column<int>(type: "NUMBER(10)", nullable: true),
+                    Departmentid = table.Column<int>(type: "NUMBER(10)", nullable: true),
                     Documentid = table.Column<int>(type: "NUMBER(10)", nullable: true),
                     Ordertypeid = table.Column<int>(type: "NUMBER(10)", nullable: true),
                     Insertdate = table.Column<DateTime>(type: "TIMESTAMP(7)", nullable: true),
-                    Insertuserid = table.Column<int>(type: "NUMBER(10)", nullable: true),
+                    InsertuserName = table.Column<string>(type: "NVARCHAR2(2000)", nullable: true),
                     Reasonid = table.Column<int>(type: "NUMBER(10)", nullable: true),
-                    Updateuserid = table.Column<int>(type: "NUMBER(10)", nullable: true),
+                    UpdateuserName = table.Column<string>(type: "NVARCHAR2(2000)", nullable: true),
                     Updatedate = table.Column<DateTime>(type: "TIMESTAMP(7)", nullable: true),
                     Paytypeid = table.Column<int>(type: "NUMBER(10)", nullable: true),
                     Payreasonid = table.Column<int>(type: "NUMBER(10)", nullable: true),
@@ -479,13 +501,18 @@ namespace Ris2022.Data.Migrations
                 {
                     table.PrimaryKey("PK_orders", x => x.Id);
                     table.ForeignKey(
+                        name: "FK_orders_AppUser_RisAppDocto~",
+                        column: x => x.RisAppDoctorId,
+                        principalTable: "AppUser",
+                        principalColumn: "Id");
+                    table.ForeignKey(
                         name: "FK_orders_Clinics_Clinicid",
                         column: x => x.Clinicid,
                         principalTable: "Clinics",
                         principalColumn: "Id");
                     table.ForeignKey(
-                        name: "FK_orders_Departments_Deptid",
-                        column: x => x.Deptid,
+                        name: "FK_orders_Departments_Departm~",
+                        column: x => x.Departmentid,
                         principalTable: "Departments",
                         principalColumn: "Id");
                     table.ForeignKey(
@@ -535,7 +562,7 @@ namespace Ris2022.Data.Migrations
             migrationBuilder.InsertData(
                 table: "AppUser",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Departmentid", "Email", "EmailConfirmed", "Firstname", "Isdoctor", "Languageid", "Lastname", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "3084c682-ad28-41c9-8e5b-c99592e15d64", 0, "4b8fd4d6-effd-49d8-9f1e-b084c9c70a5b", null, "RISAdmin@RIS.com", true, "RIS", true, 1, "Admin", false, null, null, null, "P@ssw0rd123", null, true, "c54a9cda-12e6-4f39-b179-aa0f5c22c5e5", false, "RISAdmin" });
+                values: new object[] { "024ed066-22ce-4280-901f-7f6120b1138f", 0, "c543e544-958e-492d-9d95-f410a78f1ab5", null, "RISAdmin@yy.com", true, "RIS", true, 1, "Admin", false, null, null, null, "P@ssw0rd123", null, true, "2bf0e1b1-0148-448b-9de2-5d4c65dded27", false, "RISAdmin" });
 
             migrationBuilder.InsertData(
                 table: "Clinics",
@@ -597,8 +624,8 @@ namespace Ris2022.Data.Migrations
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
                 values: new object[,]
                 {
-                    { "cc4ae014-8484-4adb-b79b-dbcf5f22cb98", "0754ee29-fb92-4de0-b186-bcdb177de0ed", "Administrator", "ADMINISTRATOR" },
-                    { "f4f98ee4-ced6-46d4-ad9a-1b99dc78a956", "70a81b85-f773-4b0e-936a-f5634c420523", "User", "USER" }
+                    { "4e7097e3-550c-4396-b684-e7d8609e0d8c", "ce7a8304-d3bd-4090-8923-c6cf14b3ab94", "User", "USER" },
+                    { "a63ed26a-e35b-43a5-947b-1a9546b2e03b", "58aa212c-7c46-4057-b26b-c805362721b8", "Administrator", "ADMINISTRATOR" }
                 });
 
             migrationBuilder.InsertData(
@@ -624,9 +651,9 @@ namespace Ris2022.Data.Migrations
                 column: "Clinicid");
 
             migrationBuilder.CreateIndex(
-                name: "IX_orders_Deptid",
+                name: "IX_orders_Departmentid",
                 table: "orders",
-                column: "Deptid");
+                column: "Departmentid");
 
             migrationBuilder.CreateIndex(
                 name: "IX_orders_Modalityid",
@@ -662,6 +689,11 @@ namespace Ris2022.Data.Migrations
                 name: "IX_orders_Reasonid",
                 table: "orders",
                 column: "Reasonid");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_orders_RisAppDoctorId",
+                table: "orders",
+                column: "RisAppDoctorId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Patients_Acceptancetypeid",

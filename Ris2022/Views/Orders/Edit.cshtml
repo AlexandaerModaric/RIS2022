@@ -2,6 +2,7 @@
 
 @{
     ViewData["Title"] = "Edit";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
 }
 
 <h1>Edit</h1>
@@ -15,17 +16,17 @@
             <input type="hidden" asp-for="Id" />
             <div class="form-group">
                 <label asp-for="Patientid" class="control-label"></label>
-                <input asp-for="Patientid" class="form-control" />
+                <select asp-for="Patientid" class="form-control" asp-items="ViewBag.Patientid"></select>
                 <span asp-validation-for="Patientid" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Modalityid" class="control-label"></label>
-                <input asp-for="Modalityid" class="form-control" />
+                <select asp-for="Modalityid" class="form-control" asp-items="ViewBag.Modalityid"></select>
                 <span asp-validation-for="Modalityid" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Proceduretypeid" class="control-label"></label>
-                <input asp-for="Proceduretypeid" class="form-control" />
+                <select asp-for="Proceduretypeid" class="form-control" asp-items="ViewBag.Proceduretypeid"></select>
                 <span asp-validation-for="Proceduretypeid" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -64,9 +65,9 @@
                 <span asp-validation-for="Accessionnumber" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Deptid" class="control-label"></label>
-                <input asp-for="Deptid" class="form-control" />
-                <span asp-validation-for="Deptid" class="text-danger"></span>
+                <label asp-for="Departmentid" class="control-label"></label>
+                <select asp-for="Departmentid" class="form-control" asp-items="ViewBag.Departmentid"></select>
+                <span asp-validation-for="Departmentid" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Documentid" class="control-label"></label>
@@ -75,7 +76,7 @@
             </div>
             <div class="form-group">
                 <label asp-for="Ordertypeid" class="control-label"></label>
-                <input asp-for="Ordertypeid" class="form-control" />
+                <select asp-for="Ordertypeid" class="form-control" asp-items="ViewBag.Ordertypeid"></select>
                 <span asp-validation-for="Ordertypeid" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -84,19 +85,19 @@
                 <span asp-validation-for="Insertdate" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Insertuserid" class="control-label"></label>
-                <input asp-for="Insertuserid" class="form-control" />
-                <span asp-validation-for="Insertuserid" class="text-danger"></span>
+                <label asp-for="InsertuserName" class="control-label"></label>
+                <input asp-for="InsertuserName" class="form-control" />
+                <span asp-validation-for="InsertuserName" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Reasonid" class="control-label"></label>
-                <input asp-for="Reasonid" class="form-control" />
+                <select asp-for="Reasonid" class="form-control" asp-items="ViewBag.Reasonid"></select>
                 <span asp-validation-for="Reasonid" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Updateuserid" class="control-label"></label>
-                <input asp-for="Updateuserid" class="form-control" />
-                <span asp-validation-for="Updateuserid" class="text-danger"></span>
+                <label asp-for="UpdateuserName" class="control-label"></label>
+                <input asp-for="UpdateuserName" class="form-control" />
+                <span asp-validation-for="UpdateuserName" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Updatedate" class="control-label"></label>
@@ -105,7 +106,7 @@
             </div>
             <div class="form-group">
                 <label asp-for="Paytypeid" class="control-label"></label>
-                <input asp-for="Paytypeid" class="form-control" />
+                <select asp-for="Paytypeid" class="form-control" asp-items="ViewBag.Paytypeid"></select>
                 <span asp-validation-for="Paytypeid" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -115,12 +116,12 @@
             </div>
             <div class="form-group">
                 <label asp-for="Clinicid" class="control-label"></label>
-                <input asp-for="Clinicid" class="form-control" />
+                <select asp-for="Clinicid" class="form-control" asp-items="ViewBag.Clinicid"></select>
                 <span asp-validation-for="Clinicid" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Modalitytypeid" class="control-label"></label>
-                <input asp-for="Modalitytypeid" class="form-control" />
+                <select asp-for="Modalitytypeid" class="form-control" asp-items="ViewBag.Modalitytypeid"></select>
                 <span asp-validation-for="Modalitytypeid" class="text-danger"></span>
             </div>
             <div class="form-group">

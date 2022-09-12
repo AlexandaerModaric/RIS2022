@@ -1,34 +1,170 @@
-﻿@using Ris2022.Resources
-@model IEnumerable<Order>
+﻿@model IEnumerable<Order>
 
 @{
-  ViewBag.Title = Resource.OrderIndex;
+	ViewData["Title"] = "Index";
+	Layout = "~/Pages/Shared/_Layout.cshtml";
 }
-<h2 class="text-primary">Orders List</h2>
-  <i class="bi bi-plus-circle"></i>&nbsp;@Html.ActionLink("Add New Order","Create","Orders")
 
-<br />
+<h1>Index</h1>
 
-    <div style="padding-left: 5%;padding-right: 5%;">
-        @(Html
-    .Grid(Model)
-    .Build(columns =>
-    {
-        columns.Add(model => model.Accessionnumber).Titled("Id");
-        columns.Add(model => model.modality.Name).Titled("Modality Name");
-        columns.Add(model => model.Patientid).Titled(Resource.PatId);
-                columns.Add().Encoded(false)
-        .RenderedAs(p=>(Html.ActionLink("Edit","Edit", "Orders", new {id = p.Id}, new {@class = "btn btn-default"})));
-        columns.Add().Encoded(false)
-        .RenderedAs(p=>(Html.ActionLink("Delete","Delete", "Orders", new {id = p.Id}, new {@class = "btn btn-default"})));
-        columns.Add().Encoded(false)
-        .RenderedAs(p=>(Html.ActionLink("Details","Details", "Orders", new {id = p.Id}, new {@class = "btn btn-default"})));
-        
-    })
-    .Using(GridFilterMode.Header)
-    .Empty("No data found")
-    .Filterable()
-    .Sortable()
-    .Pageable()
-)
-    </div>
+<p>
+	<a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+	<thead>
+		<tr>
+			<th>
+				@Html.DisplayNameFor(model => model.patient)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.modality)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.proceduretype)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.Studyid)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.Startdate)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.Enddate)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.Statusid)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.Doctorid)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.Autoexpiredate)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.Accessionnumber)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.dept)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.Documentid)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.Ordertype)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.Insertdate)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.InsertuserName)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.reason)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.UpdateuserName)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.Updatedate)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.paytype)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.Payreasonid)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.clinic)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.modalitytype)
+			</th>
+			<th></th>
+		</tr>
+	</thead>
+	<tbody>
+		@foreach (var item in Model)
+		{
+			<tr>
+				<td>
+					@Html.DisplayFor(modelItem => item.patient.Firstname)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.modality.Name)
+				</td>
+				@{
+					if (Resource.Lang == "ar")
+					{
+						<td>@Html.DisplayFor(modelItem => item.proceduretype.Namear)</td>
+					}
+					else
+					{
+						<td>@Html.DisplayFor(modelItem => item.proceduretype.Nameen) </td>
+					}
+				}
+				<td>
+					@Html.DisplayFor(modelItem => item.Studyid)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.Startdate)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.Enddate)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.Statusid)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.Doctorid)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.Autoexpiredate)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.Accessionnumber)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.dept.Id)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.Documentid)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.Ordertype.Id)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.Insertdate)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.InsertuserName)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.reason.Id)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.UpdateuserName)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.Updatedate)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.paytype.Id)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.Payreasonid)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.clinic.Id)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.modalitytype.Id)
+				</td>
+				<td>
+					<a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+					<a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+					<a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+				</td>
+			</tr>
+		}
+	</tbody>
+</table>

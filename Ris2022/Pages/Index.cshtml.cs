@@ -19,6 +19,7 @@ using Ris2022.Resources;
 
 namespace Ris2022.Pages.Account
 {
+    [AllowAnonymous]
     public class LoginIModel : PageModel
     {
         private readonly SignInManager<RisAppUser> _signInManager;
@@ -116,10 +117,10 @@ namespace Ris2022.Pages.Account
 
             if (ModelState.IsValid)
             {
-                string Email = Input.UserName + "@RIS.hos";
+                //string Email = Input.UserName + "@yy.com";
                 // This doesn't count login failures towards account lockout
                 // To enable password failures to trigger account lockout, set lockoutOnFailure: true
-                var result = await _signInManager.PasswordSignInAsync(Email, Input.Password, Input.RememberMe, lockoutOnFailure: false);
+                var result = await _signInManager.PasswordSignInAsync(Input.UserName, Input.Password, Input.RememberMe, lockoutOnFailure: false);
                 if (result.Succeeded)
                 {
                     Log.Information($"{Input.UserName} User logged in.");

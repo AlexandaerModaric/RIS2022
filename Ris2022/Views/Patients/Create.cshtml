@@ -1,95 +1,153 @@
 ﻿@model Patient
- 
+
 @{
-	Layout = "_Layout";
-	ViewBag.Title = @Resource.AddPatient;
+	ViewData["Title"] = Resource.AddPatient;
+	Layout = "~/Pages/Shared/_Layout.cshtml";
 }
-<legend class="h2">@Resource.AddPatient</legend>
-<form asp-controller="Patients" asp-action="Create" method="post"
-	   class="form-horizontal" role="form">
-	<div class ="row border p-3 mt-4 justify-content-center align-items-center">
-		<div class="p-3 mt-4 col d-flex flex-column">
-			@Html.HiddenFor(model=>model.patientOrders)
-            @Html.HiddenFor(model=>model.InsertUserName)
+
+<h1>@Resource.AddPatient</h1>
+
+<hr />
+<div class="row">
+		<form asp-action="Create">
+			<div asp-validation-summary="ModelOnly" class="text-danger"></div>
+			@Html.HiddenFor(model=>model.InsertUserName)
+			@Html.HiddenFor(model=>model.Givenid)
+			<div class="row border p-3 mt-4 justify-content-center align-items-center">
+				<div class="p-3 mt-4 col d-flex flex-column">
+
+
+					<div class="form-group">
+						<label asp-for="Firstname" class="form-label"></label>
+						<input type="text" class="form-control" placeholder="First name" name="Firstname">
+						<span asp-validation-for="Firstname" class="text-danger"></span>
+					</div>
+					<div class="form-group">
+						<label asp-for="Nationalityid" class="form-label"></label>
+						<select asp-for="Nationalityid" class="form-control" asp-items="ViewBag.Nationalityid"></select>
+					</div>
+					<div class="form-group">
+						<label asp-for="Birthdate" class="form-label"></label>
+						<input asp-for="Birthdate" class="form-control" placeholder="Birthdate" name="Birthdate">
+						<span asp-validation-for="Birthdate" class="text-danger"></span>
+					</div>
+					<div class="form-group">
+						<label asp-for="Nearestperson" class="form-label"></label>
+						<input asp-for="Nearestperson" class="form-control" />
+						<span asp-validation-for="Nearestperson" class="text-danger"></span>
+					</div>
+				</div>
+				<div class="p-3 mt-4 col d-flex flex-column">
+
+					<div class="form-group">
+						<label asp-for="Middlename" class="form-label"></label>
+						<input type="text" class="form-control" placeholder="Middle name" name="Middlename">
+						<span asp-validation-for="Middlename" class="text-danger"></span>
+						@* <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> *@
+					</div>
+
+					<div class="form-group">
+						<label asp-for="Acceptancetypeid" class="form-label"></label>
+						<select asp-for="Acceptancetypeid" class="form-control" asp-items="ViewBag.Acceptancetypeid"></select>
+					</div>
+					<div class="form-group">
+						<label asp-for="Birthplace" class="form-label"></label>
+						<input type="text" class="form-control" placeholder="Birthplace" name="Birthplace">
+						<span asp-validation-for="Birthplace" class="text-danger"></span>
+					</div>
+					<div class="form-group">
+						<label asp-for="Residentaddress" class="form-label"></label>
+						<input asp-for="Residentaddress" class="form-control" />
+						<span asp-validation-for="Residentaddress" class="text-danger"></span>
+					</div>
+
+				</div>
+				<div class="p-3 mt-4 col d-flex flex-column">
+
+					<div class="form-group">
+						<label asp-for="Lastname" class="form-label"></label>
+						<input type="text" class="form-control" placeholder="Last name" name="Lastname">
+						<span asp-validation-for="Lastname" class="text-danger"></span>
+						@* <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> *@
+					</div>
+
+					<div class="form-group">
+						<label asp-for="Martialstatusid" class="form-label"></label>
+						<select asp-for="Martialstatusid" class="form-control" asp-items="ViewBag.Martialstatusid"></select>
+					</div>
+					<div class="form-group">
+						<label asp-for="Gendre" class="form-label"></label>
+						<input type="number" class="form-control" name="Gendre">
+						<span asp-validation-for="Gendre" class="text-danger"></span>
+					</div>
+					<div class="form-group">
+						<label asp-for="Currentaddress" class="form-label"></label>
+						<input asp-for="Currentaddress" class="form-control" />
+						<span asp-validation-for="Currentaddress" class="text-danger"></span>
+					</div>
+				</div>
+				<div class="p-3 mt-4 col d-flex flex-column">
+
+					<div class="form-group">
+						<label asp-for="Mothername" class="form-label"></label>
+						<input type="text" class="form-control" placeholder=@Resource.MotherName name="Mothername">
+						<span asp-validation-for="Mothername" class="text-danger"></span>
+					</div>
+
+					<div class="form-group">
+						<label asp-for="Worktypeid" class="form-label"></label>
+						<select asp-for="Worktypeid" class="form-control" asp-items="ViewBag.Worktypeid"></select>
+					</div>
+					<div class="form-group">
+						<label asp-for="Mobilephone" class="form-label"></label>
+						<input type="number" class="form-control" name="Mobilephone">
+						<span asp-validation-for="Mobilephone" class="text-danger"></span>
+					</div>
+					<div class="form-group">
+						<label asp-for="Landphone" class="form-label"></label>
+						<input asp-for="Landphone" class="form-control" />
+						<span asp-validation-for="Landphone" class="text-danger"></span>
+					</div>
+				</div>
+				<div class="p-3 mt-4 col d-flex flex-column">
+					<div class="form-group">
+						<label asp-for="Workphone" class="form-label"></label>
+						<input asp-for="Workphone" class="form-control" />
+						<span asp-validation-for="Workphone" class="text-danger"></span>
+					</div>
+					<div class="form-group">
+						<label asp-for="Workaddress" class="form-label"></label>
+						<input asp-for="Workaddress" class="form-control" />
+						<span asp-validation-for="Workaddress" class="text-danger"></span>
+					</div>
+					<div class="form-group">
+						<label asp-for="Nearestpersonphone" class="form-label"></label>
+						<input asp-for="Nearestpersonphone" class="form-control" />
+						<span asp-validation-for="Nearestpersonphone" class="text-danger"></span>
+					</div>
+					<div class="form-group">
+						<label asp-for="Notes" class="form-label"></label>
+						<input asp-for="Notes" class="form-control" />
+						<span asp-validation-for="Notes" class="text-danger"></span>
+					</div>
+
+
+					@*<div class="form-group">
+					<label asp-for="Reasonid" class="form-label"></label>
+					<select asp-for="Reasonid" class="form-control" asp-items="ViewBag.Reasonid"></select>
+					</div>*@
+				</div>
+			</div>
 			<div class="form-group">
-				<label asp-for="Givenid" class="form-label mt-4"></label>
-				<input type="text" class="form-control" placeholder="Givenid" name="Givenid">
-				<span asp-validation-for="Givenid" class="text-danger"></span>
+				<input type="submit" value="Create" class="btn btn-primary" />
 			</div>
+		</form>
+</div>
 
-			<div class="form-group">
-				<label asp-for="Firstname" class="form-label mt-4"></label>
-				<input type="text" class="form-control" placeholder="First name" name="Firstname">
-				<span asp-validation-for="Firstname" class="text-danger"></span>
-			</div>
+<div>
+	<a asp-action="Index">Back to List</a>
+</div>
 
-
-
-		</div>
-
-		<div class="p-3 mt-4 col d-flex flex-column">
-
-			<div class="form-group">
-				<label asp-for="Middlename" class="form-label mt-4"></label>
-				<input type="text" class="form-control" placeholder="Middle name" name="Middlename">
-				<span asp-validation-for="Middlename" class="text-danger"></span>
-				@* <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> *@
-			</div>
-
-			<div class="form-group">
-                <label asp-for="Acceptancetypeid" class="control-label"></label>
-				@Html.DropDownList("Acceptancetypeid",null,"",new { @class = "form-control" })
-				<span asp-validation-for="Acceptancetypeid" class="text-danger"></span>
-            </div>
-			<div class="form-group">
-				<label asp-for="Nationalityid" class="control-label"></label>
-				@Html.DropDownList("Nationalityid",null,"",new { @class = "form-control" })
-				<span asp-validation-for="Nationalityid" class="text-danger"></span>
-			</div>
-			<div class="form-group">
-				<label asp-for="Worktypeid" class="control-label"></label>
-				@Html.DropDownList("Worktypeid",null,"",new { @class = "form-control" })
-				<span asp-validation-for="Worktypeid" class="text-danger"></span>
-			</div>
-
-		</div>
-		<div class="p-3 mt-4 col d-flex flex-column">
-
-			<div class="form-group">
-				<label asp-for="Lastname" class="form-label mt-4"></label>
-				<input type="text" class="form-control" placeholder="Last name" name="Lastname">
-				<span asp-validation-for="Lastname" class="text-danger"></span>
-				@* <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> *@
-			</div>
-
-			<div class="form-group">
-				<label asp-for="Martialstatusid" class="control-label"></label>
-				@Html.DropDownList("Martialstatusid",null,"",new { @class = "form-control" })
-				<span asp-validation-for="Martialstatusid" class="text-danger"></span>
-			</div>
-=
-			<div class="form-group">
-				<label asp-for="Gendre" class="form-label mt-4"></label>
-				<input type="number" class="form-control" name="Gendre">
-				<span asp-validation-for="Gendre" class="text-danger"></span>
-			</div>
-
-
-		</div>
-	</div>
-	<div class="container p-3">
-		<div class="row p-4">
-			<div class="col-6">
-				<button type="submit" class="btn btn-primary">Submit</button>
-			</div>
-			<div class="col-6 text-end">
-				<a class="btn btn-secondary" asp-controller="Patients" asp-action="Index">
-					<i class="back">&nbsp;</i>Go back to Patient list
-				</a>
-			</div>
-		</div>
-	</div>
-</form>
 @section Scripts {
 	@{
 		await Html.RenderPartialAsync("_ValidationScriptsPartial");

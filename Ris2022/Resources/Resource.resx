@@ -120,6 +120,9 @@
   <data name="Acceptancetype" xml:space="preserve">
     <value>Acceptance Type</value>
   </data>
+  <data name="AddOrder" xml:space="preserve">
+    <value>New Radigraph</value>
+  </data>
   <data name="AddPatient" xml:space="preserve">
     <value>Add Patient</value>
   </data>
@@ -129,8 +132,17 @@
   <data name="Adminstration" xml:space="preserve">
     <value>Adminstration</value>
   </data>
+  <data name="Age" xml:space="preserve">
+    <value>Age</value>
+  </data>
   <data name="AlignDir" xml:space="preserve">
     <value>left</value>
+  </data>
+  <data name="Birthdate" xml:space="preserve">
+    <value>Birthdate</value>
+  </data>
+  <data name="Birthplace" xml:space="preserve">
+    <value>Birth Place</value>
   </data>
   <data name="CallUs" xml:space="preserve">
     <value>Call Us</value>
@@ -141,14 +153,26 @@
   <data name="Confirm" xml:space="preserve">
     <value>Confirm Password</value>
   </data>
+  <data name="Currentaddress" xml:space="preserve">
+    <value>Current Address</value>
+  </data>
+  <data name="Delete" xml:space="preserve">
+    <value>Delete</value>
+  </data>
   <data name="Department" xml:space="preserve">
     <value>Department</value>
+  </data>
+  <data name="Details" xml:space="preserve">
+    <value>Details</value>
   </data>
   <data name="Direction" xml:space="preserve">
     <value>ltr</value>
   </data>
   <data name="DoctorName" xml:space="preserve">
     <value>Doctor Name</value>
+  </data>
+  <data name="Edit" xml:space="preserve">
+    <value>Edit</value>
   </data>
   <data name="Email" xml:space="preserve">
     <value>Email</value>
@@ -165,8 +189,17 @@
   <data name="Home" xml:space="preserve">
     <value>Home</value>
   </data>
+  <data name="Insertdate" xml:space="preserve">
+    <value>Insersion Date</value>
+  </data>
+  <data name="InsertUserName" xml:space="preserve">
+    <value>Inserted By</value>
+  </data>
   <data name="IsDoctor" xml:space="preserve">
     <value>Is Doctor?</value>
+  </data>
+  <data name="Landphone" xml:space="preserve">
+    <value>Phone</value>
   </data>
   <data name="Lang" xml:space="preserve">
     <value>en</value>
@@ -183,17 +216,35 @@
   <data name="Martialstatus" xml:space="preserve">
     <value>Martial Status</value>
   </data>
+  <data name="Mobilephone" xml:space="preserve">
+    <value>Mobile</value>
+  </data>
   <data name="Modality" xml:space="preserve">
     <value>Modality</value>
   </data>
   <data name="Modalitytype" xml:space="preserve">
     <value>Modality Type</value>
   </data>
+  <data name="MotherName" xml:space="preserve">
+    <value>Mother Name</value>
+  </data>
   <data name="Name" xml:space="preserve">
     <value>Name</value>
   </data>
   <data name="Nationality" xml:space="preserve">
     <value>Nationality</value>
+  </data>
+  <data name="Nearestperson" xml:space="preserve">
+    <value>Nearest Person</value>
+  </data>
+  <data name="Nearestpersonphone" xml:space="preserve">
+    <value>Nearest Person Phone</value>
+  </data>
+  <data name="News" xml:space="preserve">
+    <value>RIS News</value>
+  </data>
+  <data name="Notes" xml:space="preserve">
+    <value>Notes</value>
   </data>
   <data name="OrderIndex" xml:space="preserve">
     <value>Radiographs Orders</value>
@@ -225,6 +276,9 @@
   <data name="RememberMe" xml:space="preserve">
     <value>Remember me?</value>
   </data>
+  <data name="Residentaddress" xml:space="preserve">
+    <value>Resident Address</value>
+  </data>
   <data name="RIS" xml:space="preserve">
     <value>Radiology Information System</value>
   </data>
@@ -234,8 +288,20 @@
   <data name="SurName" xml:space="preserve">
     <value>Surname</value>
   </data>
+  <data name="Updatedate" xml:space="preserve">
+    <value>Update Date</value>
+  </data>
+  <data name="UpdateuserName" xml:space="preserve">
+    <value>Updated By</value>
+  </data>
   <data name="UserName" xml:space="preserve">
     <value>User Name</value>
+  </data>
+  <data name="Workaddress" xml:space="preserve">
+    <value>Work Address</value>
+  </data>
+  <data name="Workphone" xml:space="preserve">
+    <value>Work Phone</value>
   </data>
   <data name="Worktype" xml:space="preserve">
     <value>Work Type</value>

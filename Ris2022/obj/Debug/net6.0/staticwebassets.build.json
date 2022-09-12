@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "Lnyw6A65h5b4MURi8hZcv8zfi94wQ/JkDk1LF1ij0mQ=",
+  "Hash": "2fte4IKkHUdXzVdsvNDAooFpcW3oJSJEfM79e3fF+Jw=",
   "Source": "Ris2022",
   "BasePath": "_content/Ris2022",
   "Mode": "Default",
@@ -1173,6 +1173,23 @@
       "OriginalItemSpec": "wwwroot\\assets\\css\\fontawsom-all.min.css"
     },
     {
+      "Identity": "C:\\Users\\hp\\source\\repos\\Ris2022\\Ris2022\\wwwroot\\assets\\css\\newsTickerStyle.css",
+      "SourceId": "Ris2022",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\hp\\source\\repos\\Ris2022\\Ris2022\\wwwroot\\",
+      "BasePath": "_content/Ris2022",
+      "RelativePath": "assets/css/newsTickerStyle.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\css\\newsTickerStyle.css"
+    },
+    {
       "Identity": "C:\\Users\\hp\\source\\repos\\Ris2022\\Ris2022\\wwwroot\\assets\\css\\style.css",
       "SourceId": "Ris2022",
       "SourceType": "Discovered",
@@ -1460,6 +1477,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\assets\\images\\slider\\slider-3.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\hp\\source\\repos\\Ris2022\\Ris2022\\wwwroot\\assets\\images\\slider\\slider-3e.jpg",
+      "SourceId": "Ris2022",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\hp\\source\\repos\\Ris2022\\Ris2022\\wwwroot\\",
+      "BasePath": "_content/Ris2022",
+      "RelativePath": "assets/images/slider/slider-3e.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\images\\slider\\slider-3e.jpg"
     },
     {
       "Identity": "C:\\Users\\hp\\source\\repos\\Ris2022\\Ris2022\\wwwroot\\assets\\images\\team\\t1.jpg",

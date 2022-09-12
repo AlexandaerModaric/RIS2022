@@ -28,50 +28,91 @@ namespace Ris2022.Data.Models
         [MaxLength(25)]
         [Display(ResourceType = typeof(Resource), Name = "SurName")]
         public string Lastname { get; set; } = null!;
+
         [Range(0, 1)]
         [Display(ResourceType = typeof(Resource), Name = "Gender")]
-
         public int? Gendre { get; set; }
-        //public string? Mothername { get; set; }
-        //public DateTime? Birthdate { get; set; }
-        //public int? Age { get; set; }
-        //public string? Mobilephone { get; set; }
-        //public string? Landphone { get; set; }
-        //public string? Currentaddress { get; set; }
-        //public string? Residentaddress { get; set; }
-        //public string? Workphone { get; set; }
-        //public string? Workaddress { get; set; }
-        //public string? Nearestperson { get; set; }
-        //public string? Nearestpersonphone { get; set; }
-        //public string? Birthplace { get; set; }
 
-        //public string? Notes { get; set; }
-        //public string? Translatedfname { get; set; }
-        //public string? Translatedlname { get; set; }
-        //public string? Translatedfathername { get; set; }
-        //public string? Translatedmothername { get; set; }
-        //public DateTime? Insertdate { get; set; }
+        [Display(ResourceType = typeof(Resource), Name = "MotherName")]
+        public string? Mothername { get; set; }
 
-        //public DateTime? Updatedate { get; set; }
-        //public int? Reasonid { get; set; }
+        [Display(ResourceType = typeof(Resource), Name = "Birthdate")]
+        public DateTime? Birthdate { get; set; }
+
+        [Display(ResourceType = typeof(Resource), Name = "Age")]
+        public int? Age { get; set; }
+
+        [Display(ResourceType = typeof(Resource), Name = "Mobilephone")]
+        public string? Mobilephone { get; set; }
+
+        [Display(ResourceType = typeof(Resource), Name = "Landphone")]
+        public string? Landphone { get; set; }
+
+        [Display(ResourceType = typeof(Resource), Name = "Currentaddress")]
+        public string? Currentaddress { get; set; }
+
+        [Display(ResourceType = typeof(Resource), Name = "Residentaddress")]
+        public string? Residentaddress { get; set; }
+
+        [Display(ResourceType = typeof(Resource), Name = "Workphone")]
+        public string? Workphone { get; set; }
+
+        [Display(ResourceType = typeof(Resource), Name = "Workaddress")]
+        public string? Workaddress { get; set; }
+
+        [Display(ResourceType = typeof(Resource), Name = "Nearestperson")]
+        public string? Nearestperson { get; set; }
+
+        [Display(ResourceType = typeof(Resource), Name = "Nearestpersonphone")]
+        public string? Nearestpersonphone { get; set; }
+
+        [Display(ResourceType = typeof(Resource), Name = "Birthplace")]
+        public string? Birthplace { get; set; }
+
+        [Display(ResourceType = typeof(Resource), Name = "Notes")]
+        public string? Notes { get; set; }
+
+        public string? Translatedfname { get; set; }
+        public string? Translatedlname { get; set; }
+        public string? Translatedfathername { get; set; }
+        public string? Translatedmothername { get; set; }
+
+        [Display(ResourceType = typeof(Resource), Name = "Insertdate")]
+        public DateTime? Insertdate { get; set; }
+
+        [Display(ResourceType = typeof(Resource), Name = "UpdateuserName")]
+        public string? UpdateuserName { get; set; }
+
+        [Display(ResourceType = typeof(Resource), Name = "Updatedate")]
+        public DateTime? Updatedate { get; set; }
+
+        [Display(ResourceType = typeof(Resource), Name = "Reason")]
+        public int? Reasonid { get; set; }
+        public virtual Reason? Reason { get; set; }
+
+        [Display(ResourceType = typeof(Resource), Name = "InsertUserName")]
         public string InsertUserName { get; set; }
 
         [ForeignKey("NationalityFK")]
         [Display(ResourceType = typeof(Resource), Name = "Nationality")]
         public int? Nationalityid { get; set; }
+        public virtual Nationality? Nationality { get; set; }
 
         [Display(ResourceType = typeof(Resource), Name = "Worktype")]
         [ForeignKey("WorktypeFK")]
         public int? Worktypeid { get; set; }
+        public virtual Worktype? Worktype { get; set; }
 
         [Display(ResourceType = typeof(Resource), Name = "Martialstatus")]
         [ForeignKey("MartialstatusFK")]
         public int? Martialstatusid { get; set; }
+        public virtual Martialstatus? Martialstatus { get; set; }
 
         [Display(ResourceType = typeof(Resource), Name = "Acceptancetype")]
         [ForeignKey("AcceptancetypeFK")]
         public int Acceptancetypeid { get; set; }
+        public virtual Acceptancetype? Acceptancetype { get; set; }
 
-        public ICollection<Order> patientOrders { get; set; }
+        public virtual ICollection<Order>? patientOrders { get; set; }
     }
 }

@@ -2,7 +2,7 @@
 @using Microsoft.AspNetCore.Localization
 @model IndexModel
 @{
-    ViewData["Title"] = "Home page";
+    ViewData["Title"] = Resource.Home;
     var requestCultureFeature = HttpContext.Features.Get<IRequestCultureFeature>();
     var requestCulture = requestCultureFeature.RequestCulture;
 }
@@ -13,7 +13,6 @@
 
 <!-- ######## Page  Title End ####### -->
 <!--*************** Our Services Starts Here ***************-->
-
 
 <section class="our-service container-fluid">
     <div class="container">

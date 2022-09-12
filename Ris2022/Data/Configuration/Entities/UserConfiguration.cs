@@ -14,7 +14,7 @@ namespace Ris2022.Data.Configuration.Entities
                            {
                                Firstname = "RIS",
                                Lastname = "Admin",
-                               Email = "RISAdmin@RIS.com",
+                               Email = "RISAdmin@yy.com",
                                Isdoctor = true,
                                PasswordHash = "P@ssw0rd123",
                                UserName = "RISAdmin",

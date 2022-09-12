@@ -70,6 +70,15 @@ namespace Ris2022.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to New Radigraph.
+        /// </summary>
+        public static string AddOrder {
+            get {
+                return ResourceManager.GetString("AddOrder", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Add Patient.
         /// </summary>
         public static string AddPatient {
@@ -97,11 +106,38 @@ namespace Ris2022.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Age.
+        /// </summary>
+        public static string Age {
+            get {
+                return ResourceManager.GetString("Age", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to left.
         /// </summary>
         public static string AlignDir {
             get {
                 return ResourceManager.GetString("AlignDir", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Birthdate.
+        /// </summary>
+        public static string Birthdate {
+            get {
+                return ResourceManager.GetString("Birthdate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Birth Place.
+        /// </summary>
+        public static string Birthplace {
+            get {
+                return ResourceManager.GetString("Birthplace", resourceCulture);
             }
         }
         
@@ -133,11 +169,38 @@ namespace Ris2022.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Current Address.
+        /// </summary>
+        public static string Currentaddress {
+            get {
+                return ResourceManager.GetString("Currentaddress", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Delete.
+        /// </summary>
+        public static string Delete {
+            get {
+                return ResourceManager.GetString("Delete", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Department.
         /// </summary>
         public static string Department {
             get {
                 return ResourceManager.GetString("Department", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Details.
+        /// </summary>
+        public static string Details {
+            get {
+                return ResourceManager.GetString("Details", resourceCulture);
             }
         }
         
@@ -156,6 +219,15 @@ namespace Ris2022.Resources {
         public static string DoctorName {
             get {
                 return ResourceManager.GetString("DoctorName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Edit.
+        /// </summary>
+        public static string Edit {
+            get {
+                return ResourceManager.GetString("Edit", resourceCulture);
             }
         }
         
@@ -205,11 +277,38 @@ namespace Ris2022.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Insersion Date.
+        /// </summary>
+        public static string Insertdate {
+            get {
+                return ResourceManager.GetString("Insertdate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Inserted By.
+        /// </summary>
+        public static string InsertUserName {
+            get {
+                return ResourceManager.GetString("InsertUserName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Is Doctor?.
         /// </summary>
         public static string IsDoctor {
             get {
                 return ResourceManager.GetString("IsDoctor", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Phone.
+        /// </summary>
+        public static string Landphone {
+            get {
+                return ResourceManager.GetString("Landphone", resourceCulture);
             }
         }
         
@@ -259,6 +358,15 @@ namespace Ris2022.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Mobile.
+        /// </summary>
+        public static string Mobilephone {
+            get {
+                return ResourceManager.GetString("Mobilephone", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Modality.
         /// </summary>
         public static string Modality {
@@ -277,6 +385,15 @@ namespace Ris2022.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Mother Name.
+        /// </summary>
+        public static string MotherName {
+            get {
+                return ResourceManager.GetString("MotherName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Name.
         /// </summary>
         public static string Name {
@@ -291,6 +408,42 @@ namespace Ris2022.Resources {
         public static string Nationality {
             get {
                 return ResourceManager.GetString("Nationality", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Nearest Person.
+        /// </summary>
+        public static string Nearestperson {
+            get {
+                return ResourceManager.GetString("Nearestperson", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Nearest Person Phone.
+        /// </summary>
+        public static string Nearestpersonphone {
+            get {
+                return ResourceManager.GetString("Nearestpersonphone", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to RIS News.
+        /// </summary>
+        public static string News {
+            get {
+                return ResourceManager.GetString("News", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Notes.
+        /// </summary>
+        public static string Notes {
+            get {
+                return ResourceManager.GetString("Notes", resourceCulture);
             }
         }
         
@@ -385,6 +538,15 @@ namespace Ris2022.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Resident Address.
+        /// </summary>
+        public static string Residentaddress {
+            get {
+                return ResourceManager.GetString("Residentaddress", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Radiology Information System.
         /// </summary>
         public static string RIS {
@@ -412,11 +574,47 @@ namespace Ris2022.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Update Date.
+        /// </summary>
+        public static string Updatedate {
+            get {
+                return ResourceManager.GetString("Updatedate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Updated By.
+        /// </summary>
+        public static string UpdateuserName {
+            get {
+                return ResourceManager.GetString("UpdateuserName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to User Name.
         /// </summary>
         public static string UserName {
             get {
                 return ResourceManager.GetString("UserName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Work Address.
+        /// </summary>
+        public static string Workaddress {
+            get {
+                return ResourceManager.GetString("Workaddress", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Work Phone.
+        /// </summary>
+        public static string Workphone {
+            get {
+                return ResourceManager.GetString("Workphone", resourceCulture);
             }
         }
         

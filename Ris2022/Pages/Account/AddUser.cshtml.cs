@@ -24,7 +24,7 @@ using Ris2022.Resources;
 
 namespace Ris2022.Pages.Account
 {
-    [Authorize(Policy = "RequireAdministratorRole")]
+    //[Authorize(Policy = "RequireAdministratorRole")]
     public class AddUserModel : PageModel
     {
         //public IActionResult OnPost() =>
@@ -151,15 +151,16 @@ namespace Ris2022.Pages.Account
                 user.Firstname = Input.FirstName;
                 user.Lastname = Input.LastName;
                 user.Isdoctor = Input.IsDoctor;
+                user.Email = Input.UserName + "@yy.com";
                 await _userStore.SetUserNameAsync(user, Input.UserName, CancellationToken.None);
-                await _emailStore.SetEmailAsync(user, Input.UserName+"@RIS.hos", CancellationToken.None);
+                await _emailStore.SetEmailAsync(user, Input.UserName+"@yy.com", CancellationToken.None);
                 
                 var result1 = await _userManager.CreateAsync(user, Input.Password);
                 var result2 = await _userManager.AddToRoleAsync(user, Input.Role);
 
                 if (result1.Succeeded && result2.Succeeded)
                 {
-                    //await _signInManager.SignInAsync(user, isPersistent: false);
+                    await _signInManager.SignInAsync(user, isPersistent: false);
 
                     return RedirectToPage("/MainPage");
                 }

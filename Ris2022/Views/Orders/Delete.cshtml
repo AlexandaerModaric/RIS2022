@@ -2,6 +2,7 @@
 
 @{
     ViewData["Title"] = "Delete";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
 }
 
 <h1>Delete</h1>
@@ -12,22 +13,22 @@
     <hr />
     <dl class="row">
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Patientid)
+            @Html.DisplayNameFor(model => model.patient)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Patientid)
+            @Html.DisplayFor(model => model.patient.Firstname)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Modalityid)
+            @Html.DisplayNameFor(model => model.modality)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Modalityid)
+            @Html.DisplayFor(model => model.modality.Id)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Proceduretypeid)
+            @Html.DisplayNameFor(model => model.proceduretype)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Proceduretypeid)
+            @Html.DisplayFor(model => model.proceduretype.Id)
         </dd>
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.Studyid)
@@ -72,10 +73,10 @@
             @Html.DisplayFor(model => model.Accessionnumber)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Deptid)
+            @Html.DisplayNameFor(model => model.dept)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Deptid)
+            @Html.DisplayFor(model => model.dept.Id)
         </dd>
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.Documentid)
@@ -84,10 +85,10 @@
             @Html.DisplayFor(model => model.Documentid)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Ordertypeid)
+            @Html.DisplayNameFor(model => model.Ordertype)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Ordertypeid)
+            @Html.DisplayFor(model => model.Ordertype.Id)
         </dd>
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.Insertdate)
@@ -96,22 +97,22 @@
             @Html.DisplayFor(model => model.Insertdate)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Insertuserid)
+            @Html.DisplayNameFor(model => model.InsertuserName)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Insertuserid)
+            @Html.DisplayFor(model => model.InsertuserName)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Reasonid)
+            @Html.DisplayNameFor(model => model.reason)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Reasonid)
+            @Html.DisplayFor(model => model.reason.Id)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Updateuserid)
+            @Html.DisplayNameFor(model => model.UpdateuserName)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Updateuserid)
+            @Html.DisplayFor(model => model.UpdateuserName)
         </dd>
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.Updatedate)
@@ -120,10 +121,10 @@
             @Html.DisplayFor(model => model.Updatedate)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Paytypeid)
+            @Html.DisplayNameFor(model => model.paytype)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Paytypeid)
+            @Html.DisplayFor(model => model.paytype.Id)
         </dd>
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.Payreasonid)
@@ -132,16 +133,16 @@
             @Html.DisplayFor(model => model.Payreasonid)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Clinicid)
+            @Html.DisplayNameFor(model => model.clinic)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Clinicid)
+            @Html.DisplayFor(model => model.clinic.Id)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Modalitytypeid)
+            @Html.DisplayNameFor(model => model.modalitytype)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Modalitytypeid)
+            @Html.DisplayFor(model => model.modalitytype.Id)
         </dd>
     </dl>
     
