@@ -165,13 +165,14 @@ namespace Ris2022.Controllers
                 return NotFound();
             }
 
-            var patient = await _context.Patients
+            var patients = await _context.Patients.Where(x => x.Id == id)
                 .Include(p => p.Acceptancetype)
                 .Include(p => p.Martialstatus)
                 .Include(p => p.Nationality)
                 .Include(p => p.Worktype)
                 .Include(p => p.Reason)
-                .FirstOrDefaultAsync(m => m.Id == id);
+                .Take(1).ToListAsync();
+            var patient = patients.FirstOrDefault();
             if (patient == null)
             {
                 return NotFound();

@@ -1,6 +1,6 @@
 ﻿namespace Ris2022.Data.Models
 {
-    public partial class HL7message
+    public class HL7message
     {
         public int msgId { get; set; }
         public int? patientId { get; set; }

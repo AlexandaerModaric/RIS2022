@@ -106,6 +106,15 @@ namespace Ris2022.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to AE Title.
+        /// </summary>
+        public static string AETitle {
+            get {
+                return ResourceManager.GetString("AETitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Age.
         /// </summary>
         public static string Age {
@@ -192,6 +201,15 @@ namespace Ris2022.Resources {
         public static string Department {
             get {
                 return ResourceManager.GetString("Department", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Description.
+        /// </summary>
+        public static string Description {
+            get {
+                return ResourceManager.GetString("Description", resourceCulture);
             }
         }
         
@@ -291,6 +309,15 @@ namespace Ris2022.Resources {
         public static string InsertUserName {
             get {
                 return ResourceManager.GetString("InsertUserName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ip Address.
+        /// </summary>
+        public static string IpAddress {
+            get {
+                return ResourceManager.GetString("IpAddress", resourceCulture);
             }
         }
         
@@ -484,6 +511,15 @@ namespace Ris2022.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to PatientName.
+        /// </summary>
+        public static string PatientName {
+            get {
+                return ResourceManager.GetString("PatientName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Patients.
         /// </summary>
         public static string Patients {
@@ -498,6 +534,15 @@ namespace Ris2022.Resources {
         public static string Paytype {
             get {
                 return ResourceManager.GetString("Paytype", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Port.
+        /// </summary>
+        public static string Port {
+            get {
+                return ResourceManager.GetString("Port", resourceCulture);
             }
         }
         

@@ -15,7 +15,6 @@ using Ris2022.Resources;
 
 namespace Ris2022.Controllers
 {
-    [Authorize]
     public class OrdersController : Controller
     {
         private readonly RisDBContext _context;
@@ -30,7 +29,17 @@ namespace Ris2022.Controllers
         // GET: Orders
         public async Task<IActionResult> Index()
         {
-            var risDBContext = _context.orders.Include(o => o.Ordertype).Include(o => o.clinic).Include(o => o.dept).Include(o => o.modality).Include(o => o.modalitytype).Include(o => o.patient).Include(o => o.paytype).Include(o => o.proceduretype).Include(o => o.reason);
+            var risDBContext = _context.orders
+                .Include(o => o.Ordertype)
+                .Include(o => o.clinic)
+                .Include(o => o.dept)
+                .Include(o => o.modality)
+                .Include(o => o.modalitytype)
+                .Include(o => o.patient)
+                .Include(o => o.paytype)
+                .Include(o => o.proceduretype)
+                .Include(o => o.reason)
+                .Include(o=>o.RisAppDoctor);
             return View(await risDBContext.ToListAsync());
         }
 
@@ -90,11 +99,13 @@ namespace Ris2022.Controllers
         public async Task<IActionResult> Create(Order order)
         {
             Patient patient = _context.Patients.SingleOrDefault(p => p.Id == order.Patientid);
+            order.modality = _context.Modalities.SingleOrDefault(m => m.Id == order.Modalityid);
             order.Accessionnumber = int.Parse(patient.Id + DateTime.Now.ToString("ssmm"));
             order.InsertuserName = User.FindFirstValue(ClaimTypes.Name);
             order.Startdate = DateTime.Now;
+            order.proceduretype = _context.Proceduretypes.SingleOrDefault(proc => proc.Id == order.Proceduretypeid);
             //order.Startdate = DateTime.Now.ToUniversalTime();
-            HL7message hL7Message = new HL7message()
+            HL7message hL7Message = new()
             {
                 studyId = order.Studyid,
                 patientGivenId = patient.Givenid,
@@ -104,7 +115,7 @@ namespace Ris2022.Controllers
                 patientFirstName = patient.Firstname,
                 patientLastName = patient.Lastname,
                 modalityName = order.modality.Name,
-                startDateTime = "20220419183649",
+                startDateTime = DateTime.Now.ToString("yyyyMMddHHmmss"),
                 procedureId = order.Proceduretypeid.Value,
                 procedureName = order.proceduretype.Nameen
             };

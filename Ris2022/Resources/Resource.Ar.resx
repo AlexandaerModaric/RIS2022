@@ -132,6 +132,9 @@
   <data name="Adminstration" xml:space="preserve">
     <value>إدارة</value>
   </data>
+  <data name="AETitle" xml:space="preserve">
+    <value>تطبيق الآلة</value>
+  </data>
   <data name="Age" xml:space="preserve">
     <value>العمر</value>
   </data>
@@ -161,6 +164,9 @@
   </data>
   <data name="Department" xml:space="preserve">
     <value>القسم</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>الوصف</value>
   </data>
   <data name="Details" xml:space="preserve">
     <value>تفاصيل</value>
@@ -194,6 +200,9 @@
   </data>
   <data name="InsertUserName" xml:space="preserve">
     <value>سجل الاسم</value>
+  </data>
+  <data name="IpAddress" xml:space="preserve">
+    <value>العنوان المنطقي</value>
   </data>
   <data name="IsDoctor" xml:space="preserve">
     <value>هل أنت طبيب؟</value>
@@ -258,11 +267,17 @@
   <data name="PatId" xml:space="preserve">
     <value>معرف المريض</value>
   </data>
+  <data name="PatientName" xml:space="preserve">
+    <value>اسم المريض</value>
+  </data>
   <data name="Patients" xml:space="preserve">
     <value>المرضى</value>
   </data>
   <data name="Paytype" xml:space="preserve">
     <value>طريقة الدفع</value>
+  </data>
+  <data name="Port" xml:space="preserve">
+    <value>المنفذ</value>
   </data>
   <data name="Proceduretype" xml:space="preserve">
     <value>نوع الوضعية</value>

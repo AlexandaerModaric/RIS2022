@@ -15,6 +15,7 @@
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             @Html.HiddenFor(model=>model.Patientid)
 			@Html.HiddenFor(model=>model.Studyid)
+
             <div class="form-group">
                 <label asp-for="Modalityid" class="control-label"></label>
                 <select asp-for="Modalityid" class ="form-control" asp-items="ViewBag.Modalityid"></select>

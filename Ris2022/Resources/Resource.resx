@@ -132,6 +132,9 @@
   <data name="Adminstration" xml:space="preserve">
     <value>Adminstration</value>
   </data>
+  <data name="AETitle" xml:space="preserve">
+    <value>AE Title</value>
+  </data>
   <data name="Age" xml:space="preserve">
     <value>Age</value>
   </data>
@@ -161,6 +164,9 @@
   </data>
   <data name="Department" xml:space="preserve">
     <value>Department</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>Description</value>
   </data>
   <data name="Details" xml:space="preserve">
     <value>Details</value>
@@ -194,6 +200,9 @@
   </data>
   <data name="InsertUserName" xml:space="preserve">
     <value>Inserted By</value>
+  </data>
+  <data name="IpAddress" xml:space="preserve">
+    <value>Ip Address</value>
   </data>
   <data name="IsDoctor" xml:space="preserve">
     <value>Is Doctor?</value>
@@ -258,11 +267,17 @@
   <data name="PatId" xml:space="preserve">
     <value>Patient Id</value>
   </data>
+  <data name="PatientName" xml:space="preserve">
+    <value>PatientName</value>
+  </data>
   <data name="Patients" xml:space="preserve">
     <value>Patients</value>
   </data>
   <data name="Paytype" xml:space="preserve">
     <value>Pay Type</value>
+  </data>
+  <data name="Port" xml:space="preserve">
+    <value>Port</value>
   </data>
   <data name="Proceduretype" xml:space="preserve">
     <value>Procedure Type</value>

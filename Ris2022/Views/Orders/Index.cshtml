@@ -14,65 +14,29 @@
 	<thead>
 		<tr>
 			<th>
+				@Html.DisplayNameFor(model => model.patient.Givenid)
+			</th>
+			<th>
 				@Html.DisplayNameFor(model => model.patient)
 			</th>
 			<th>
-				@Html.DisplayNameFor(model => model.modality)
+				@Html.DisplayNameFor(model => model.modality.Name)
 			</th>
 			<th>
-				@Html.DisplayNameFor(model => model.proceduretype)
-			</th>
-			<th>
-				@Html.DisplayNameFor(model => model.Studyid)
+				@Html.DisplayNameFor(model => model.proceduretype.Namear)
 			</th>
 			<th>
 				@Html.DisplayNameFor(model => model.Startdate)
 			</th>
 			<th>
-				@Html.DisplayNameFor(model => model.Enddate)
+				@Html.DisplayNameFor(model => model.RisAppDoctor.Firstname)
 			</th>
 			<th>
-				@Html.DisplayNameFor(model => model.Statusid)
+				@Html.DisplayNameFor(model => model.dept.Namear)
 			</th>
-			<th>
-				@Html.DisplayNameFor(model => model.Doctorid)
-			</th>
-			<th>
-				@Html.DisplayNameFor(model => model.Autoexpiredate)
-			</th>
-			<th>
-				@Html.DisplayNameFor(model => model.Accessionnumber)
-			</th>
-			<th>
-				@Html.DisplayNameFor(model => model.dept)
-			</th>
-			<th>
-				@Html.DisplayNameFor(model => model.Documentid)
-			</th>
-			<th>
-				@Html.DisplayNameFor(model => model.Ordertype)
-			</th>
-			<th>
-				@Html.DisplayNameFor(model => model.Insertdate)
-			</th>
-			<th>
-				@Html.DisplayNameFor(model => model.InsertuserName)
-			</th>
-			<th>
-				@Html.DisplayNameFor(model => model.reason)
-			</th>
-			<th>
-				@Html.DisplayNameFor(model => model.UpdateuserName)
-			</th>
-			<th>
-				@Html.DisplayNameFor(model => model.Updatedate)
-			</th>
-			<th>
-				@Html.DisplayNameFor(model => model.paytype)
-			</th>
-			<th>
-				@Html.DisplayNameFor(model => model.Payreasonid)
-			</th>
+			
+
+			
 			<th>
 				@Html.DisplayNameFor(model => model.clinic)
 			</th>
@@ -87,7 +51,11 @@
 		{
 			<tr>
 				<td>
+					@Html.DisplayFor(modelItem => item.patient.Givenid)
+				</td>
+				<td>
 					@Html.DisplayFor(modelItem => item.patient.Firstname)
+					@Html.DisplayFor(modelItem => item.patient.Lastname)
 				</td>
 				<td>
 					@Html.DisplayFor(modelItem => item.modality.Name)
@@ -102,67 +70,44 @@
 						<td>@Html.DisplayFor(modelItem => item.proceduretype.Nameen) </td>
 					}
 				}
-				<td>
-					@Html.DisplayFor(modelItem => item.Studyid)
-				</td>
+				
 				<td>
 					@Html.DisplayFor(modelItem => item.Startdate)
 				</td>
+				
 				<td>
-					@Html.DisplayFor(modelItem => item.Enddate)
+					@Html.DisplayFor(modelItem => item.RisAppDoctor.Firstname)
+					@Html.DisplayFor(modelItem => item.RisAppDoctor.Lastname)
 				</td>
+				
+				@if (Resource.Lang == "ar")
+					{
+						<td>@Html.DisplayFor(modelItem => item.dept.Namear)</td>
+					}
+					else
+					{
+						<td>@Html.DisplayFor(modelItem => item.dept.Nameen) </td>
+					}
+				@if (Resource.Lang == "ar")
+				{
+				<td>@Html.DisplayFor(modelItem => item.clinic.Namear)</td>
+				}
+				else
+				{
+				<td>@Html.DisplayFor(modelItem => item.clinic.Nameen) </td>
+				}
+				@if (Resource.Lang == "ar")
+				{
+				<td>@Html.DisplayFor(modelItem => item.modalitytype.Namear)</td>
+				}
+				else
+				{
+				<td>@Html.DisplayFor(modelItem => item.modalitytype.Nameen) </td>
+				}
 				<td>
-					@Html.DisplayFor(modelItem => item.Statusid)
-				</td>
-				<td>
-					@Html.DisplayFor(modelItem => item.Doctorid)
-				</td>
-				<td>
-					@Html.DisplayFor(modelItem => item.Autoexpiredate)
-				</td>
-				<td>
-					@Html.DisplayFor(modelItem => item.Accessionnumber)
-				</td>
-				<td>
-					@Html.DisplayFor(modelItem => item.dept.Id)
-				</td>
-				<td>
-					@Html.DisplayFor(modelItem => item.Documentid)
-				</td>
-				<td>
-					@Html.DisplayFor(modelItem => item.Ordertype.Id)
-				</td>
-				<td>
-					@Html.DisplayFor(modelItem => item.Insertdate)
-				</td>
-				<td>
-					@Html.DisplayFor(modelItem => item.InsertuserName)
-				</td>
-				<td>
-					@Html.DisplayFor(modelItem => item.reason.Id)
-				</td>
-				<td>
-					@Html.DisplayFor(modelItem => item.UpdateuserName)
-				</td>
-				<td>
-					@Html.DisplayFor(modelItem => item.Updatedate)
-				</td>
-				<td>
-					@Html.DisplayFor(modelItem => item.paytype.Id)
-				</td>
-				<td>
-					@Html.DisplayFor(modelItem => item.Payreasonid)
-				</td>
-				<td>
-					@Html.DisplayFor(modelItem => item.clinic.Id)
-				</td>
-				<td>
-					@Html.DisplayFor(modelItem => item.modalitytype.Id)
-				</td>
-				<td>
-					<a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-					<a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-					<a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+					<a asp-action="Edit" asp-route-id="@item.Id">@Resource.Edit</a> |
+					<a asp-action="Details" asp-route-id="@item.Id">@Resource.Details</a> |
+					<a asp-action="Delete" asp-route-id="@item.Id">@Resource.Delete</a>
 				</td>
 			</tr>
 		}

@@ -11,7 +11,7 @@ using Ris2022.Data.Models;
 
 namespace Ris2022.Controllers
 {
-    [Authorize]
+    //[Authorize]
     public class AcceptancetypesController : Controller
     {
         private readonly RisDBContext _context;

@@ -51,15 +51,15 @@ namespace Ris2022.Data.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "48c53fbb-fd41-4d65-9e44-66e4079f18bc",
-                            ConcurrencyStamp = "ac17d7ac-dbce-40fe-999a-8a232767654e",
+                            Id = "1ac10e94-146a-4e09-97ca-85304f0a3ce5",
+                            ConcurrencyStamp = "76934d31-dc62-4c42-9a61-fe22136aebab",
                             Name = "User",
                             NormalizedName = "USER"
                         },
                         new
                         {
-                            Id = "d01ce298-d77e-4b5a-b13e-09e6dc378e87",
-                            ConcurrencyStamp = "c0dc3c2e-e286-4c89-a9b1-ebbef755fde4",
+                            Id = "e39df797-84c8-4e72-88ff-dbc7e5bae028",
+                            ConcurrencyStamp = "e6a207a4-fccf-4cea-914e-a609cc2c4142",
                             Name = "Administrator",
                             NormalizedName = "ADMINISTRATOR"
                         });
@@ -236,10 +236,14 @@ namespace Ris2022.Data.Migrations
                     OraclePropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
                     b.Property<string>("Namear")
-                        .HasColumnType("NVARCHAR2(2000)");
+                        .IsRequired()
+                        .HasMaxLength(25)
+                        .HasColumnType("NVARCHAR2(25)");
 
                     b.Property<string>("Nameen")
-                        .HasColumnType("NVARCHAR2(2000)");
+                        .IsRequired()
+                        .HasMaxLength(25)
+                        .HasColumnType("NVARCHAR2(25)");
 
                     b.HasKey("Id");
 
@@ -267,10 +271,13 @@ namespace Ris2022.Data.Migrations
 
                     b.Property<string>("Namear")
                         .IsRequired()
-                        .HasColumnType("NVARCHAR2(2000)");
+                        .HasMaxLength(25)
+                        .HasColumnType("NVARCHAR2(25)");
 
                     b.Property<string>("Nameen")
-                        .HasColumnType("NVARCHAR2(2000)");
+                        .IsRequired()
+                        .HasMaxLength(25)
+                        .HasColumnType("NVARCHAR2(25)");
 
                     b.HasKey("Id");
 
@@ -295,10 +302,13 @@ namespace Ris2022.Data.Migrations
 
                     b.Property<string>("Namear")
                         .IsRequired()
-                        .HasColumnType("NVARCHAR2(2000)");
+                        .HasMaxLength(25)
+                        .HasColumnType("NVARCHAR2(25)");
 
                     b.Property<string>("Nameen")
-                        .HasColumnType("NVARCHAR2(2000)");
+                        .IsRequired()
+                        .HasMaxLength(25)
+                        .HasColumnType("NVARCHAR2(25)");
 
                     b.HasKey("Id");
 
@@ -327,10 +337,13 @@ namespace Ris2022.Data.Migrations
 
                     b.Property<string>("Namear")
                         .IsRequired()
-                        .HasColumnType("NVARCHAR2(2000)");
+                        .HasMaxLength(25)
+                        .HasColumnType("NVARCHAR2(25)");
 
                     b.Property<string>("Nameen")
-                        .HasColumnType("NVARCHAR2(2000)");
+                        .IsRequired()
+                        .HasMaxLength(25)
+                        .HasColumnType("NVARCHAR2(25)");
 
                     b.HasKey("Id");
 
@@ -355,10 +368,14 @@ namespace Ris2022.Data.Migrations
                     OraclePropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
                     b.Property<string>("Namear")
-                        .HasColumnType("NVARCHAR2(2000)");
+                        .IsRequired()
+                        .HasMaxLength(25)
+                        .HasColumnType("NVARCHAR2(25)");
 
                     b.Property<string>("Nameen")
-                        .HasColumnType("NVARCHAR2(2000)");
+                        .IsRequired()
+                        .HasMaxLength(25)
+                        .HasColumnType("NVARCHAR2(25)");
 
                     b.HasKey("Id");
 
@@ -382,27 +399,41 @@ namespace Ris2022.Data.Migrations
                     OraclePropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
                     b.Property<string>("Aetitle")
-                        .HasColumnType("NVARCHAR2(2000)");
+                        .IsRequired()
+                        .HasMaxLength(25)
+                        .HasColumnType("NVARCHAR2(25)");
 
                     b.Property<int?>("Departmentid")
+                        .IsRequired()
                         .HasColumnType("NUMBER(10)");
 
                     b.Property<string>("Description")
-                        .HasColumnType("NVARCHAR2(2000)");
+                        .HasMaxLength(200)
+                        .HasColumnType("NVARCHAR2(200)");
 
                     b.Property<string>("Ipaddress")
-                        .HasColumnType("NVARCHAR2(2000)");
+                        .IsRequired()
+                        .HasMaxLength(25)
+                        .HasColumnType("NVARCHAR2(25)");
 
                     b.Property<int?>("Modalitytypeid")
+                        .IsRequired()
                         .HasColumnType("NUMBER(10)");
 
                     b.Property<string>("Name")
-                        .HasColumnType("NVARCHAR2(2000)");
+                        .IsRequired()
+                        .HasMaxLength(25)
+                        .HasColumnType("NVARCHAR2(25)");
 
                     b.Property<int?>("Port")
+                        .IsRequired()
                         .HasColumnType("NUMBER(10)");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("Departmentid");
+
+                    b.HasIndex("Modalitytypeid");
 
                     b.ToTable("Modalities");
 
@@ -737,10 +768,14 @@ namespace Ris2022.Data.Migrations
                     OraclePropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
                     b.Property<string>("Namear")
-                        .HasColumnType("NVARCHAR2(2000)");
+                        .IsRequired()
+                        .HasMaxLength(25)
+                        .HasColumnType("NVARCHAR2(25)");
 
                     b.Property<string>("Nameen")
-                        .HasColumnType("NVARCHAR2(2000)");
+                        .IsRequired()
+                        .HasMaxLength(25)
+                        .HasColumnType("NVARCHAR2(25)");
 
                     b.HasKey("Id");
 
@@ -764,10 +799,14 @@ namespace Ris2022.Data.Migrations
                     OraclePropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
                     b.Property<string>("Namear")
-                        .HasColumnType("NVARCHAR2(2000)");
+                        .IsRequired()
+                        .HasMaxLength(25)
+                        .HasColumnType("NVARCHAR2(25)");
 
                     b.Property<string>("Nameen")
-                        .HasColumnType("NVARCHAR2(2000)");
+                        .IsRequired()
+                        .HasMaxLength(25)
+                        .HasColumnType("NVARCHAR2(25)");
 
                     b.Property<int>("Parentnum")
                         .HasColumnType("NUMBER(10)");
@@ -795,10 +834,14 @@ namespace Ris2022.Data.Migrations
                     OraclePropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
                     b.Property<string>("Namear")
-                        .HasColumnType("NVARCHAR2(2000)");
+                        .IsRequired()
+                        .HasMaxLength(25)
+                        .HasColumnType("NVARCHAR2(25)");
 
                     b.Property<string>("Nameen")
-                        .HasColumnType("NVARCHAR2(2000)");
+                        .IsRequired()
+                        .HasMaxLength(25)
+                        .HasColumnType("NVARCHAR2(25)");
 
                     b.HasKey("Id");
 
@@ -960,9 +1003,9 @@ namespace Ris2022.Data.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "2326a1f2-a58a-4f03-92ab-1aea67ed6a28",
+                            Id = "24475690-53f7-4256-9a50-6ad0ec3037f0",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "1f8ffe5a-de0c-49be-8112-241d90d0107c",
+                            ConcurrencyStamp = "838d9fa4-669c-4034-9319-ced3dba32fc0",
                             Email = "RISAdmin@yy.com",
                             EmailConfirmed = true,
                             Firstname = "RIS",
@@ -972,7 +1015,7 @@ namespace Ris2022.Data.Migrations
                             LockoutEnabled = false,
                             PasswordHash = "P@ssw0rd123",
                             PhoneNumberConfirmed = true,
-                            SecurityStamp = "4dcbce47-0eb7-441f-8ad6-ddf8c5515988",
+                            SecurityStamp = "2a871722-6c78-467e-854d-f9ae5332918d",
                             TwoFactorEnabled = false,
                             UserName = "RISAdmin"
                         });
@@ -987,10 +1030,14 @@ namespace Ris2022.Data.Migrations
                     OraclePropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
                     b.Property<string>("Namear")
-                        .HasColumnType("NVARCHAR2(2000)");
+                        .IsRequired()
+                        .HasMaxLength(25)
+                        .HasColumnType("NVARCHAR2(25)");
 
                     b.Property<string>("Nameen")
-                        .HasColumnType("NVARCHAR2(2000)");
+                        .IsRequired()
+                        .HasMaxLength(25)
+                        .HasColumnType("NVARCHAR2(25)");
 
                     b.HasKey("Id");
 
@@ -1054,6 +1101,25 @@ namespace Ris2022.Data.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("Ris2022.Data.Models.Modality", b =>
+                {
+                    b.HasOne("Ris2022.Data.Models.Department", "Department")
+                        .WithMany()
+                        .HasForeignKey("Departmentid")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Ris2022.Data.Models.Modalitytype", "Modalitytype")
+                        .WithMany()
+                        .HasForeignKey("Modalitytypeid")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Department");
+
+                    b.Navigation("Modalitytype");
                 });
 
             modelBuilder.Entity("Ris2022.Data.Models.Order", b =>

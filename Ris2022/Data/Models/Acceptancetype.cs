@@ -1,13 +1,23 @@
-﻿using System;
+﻿using Ris2022.Resources;
+using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace Ris2022.Data.Models
 {
     public partial class Acceptancetype
     {
+        [Key]
         public int Id { get; set; }
+        [Required]
+        [StringLength(25)]
+        [Display(ResourceType = typeof(Resource), Name = "Acceptancetype")]
         public string? Namear { get; set; }
+        [Required]
+        [StringLength(25)]
+        [Display(ResourceType = typeof(Resource), Name = "Acceptancetype")]
         public string? Nameen { get; set; }
-        public ICollection<Patient> patients { get; set; }
+
+        public virtual ICollection<Patient>? patients { get; set; }
     }
 }

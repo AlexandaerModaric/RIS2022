@@ -14,6 +14,7 @@ namespace Ris2022.Data.Models
         [ForeignKey("patientFK")]
         public int Patientid { get; set; }
 
+        [Display(ResourceType = typeof(Resource), Name = "PatientName")]
         public virtual Patient? patient { get; set; }
 
         [Display(ResourceType = typeof(Resource), Name = "Modality")]
