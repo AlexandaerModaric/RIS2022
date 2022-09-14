@@ -1,5 +1,4 @@
-﻿@using Microsoft.AspNetCore.Html
-@model IEnumerable<Ris2022.Data.Models.Paytype>
+﻿@model IEnumerable<Ris2022.Data.Models.Paytype>
 
 @{
     ViewData["Title"] = "Index";
@@ -41,34 +40,3 @@
 }
     </tbody>
 </table>
-    <div style="padding-left: 5%;padding-right: 5%;">
-    @(
-        Html
-        .Grid(Model)
-        .Build(columns =>
-        {
-            columns.Add(model => model.Namear).Titled("name in Arabic");
-            columns.Add(model => model.Nameen ).Titled("name in English");
-            columns.Add().Encoded(false)
-            .RenderedAs(p=>(Html.ActionLink("Edit","Edit", "Paytypes", new {id = p.Id}, new {@class = "btn btn-default"})));
-            columns.Add().Encoded(false)
-            .RenderedAs(p=>(Html.ActionLink("Delete","Delete", "Paytypes", new {id = p.Id}, new {@class = "btn btn-default"})));
-            columns.Add().Encoded(false)
-           .RenderedAs(p=>new HtmlString("<i class='bi bi-pencil-square'></i>"+
-           "<a asp-action='Edit' asp-route-id='@item.Id'>Edit</a>"));
- 
-
-                                       
-@*        columns.Add(model => model.Martialstatusid).Titled("Marital status");
-
-        columns.Add(model => model.Age).Titled("Age");
-        columns.Add(model => model.Birthdate).Titled("Birthday").Formatted("{0:d}");*@
-        
-    })
-    .Using(GridFilterMode.Header)
-    .Empty("No data found")
-    .Filterable()
-    .Sortable()
-    .Pageable()
-)
-    </div>

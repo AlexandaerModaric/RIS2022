@@ -119,6 +119,14 @@
   <ItemGroup>
     <Folder Include="Data\Migrations\" />
     <Folder Include="Logs\" />
+    <Folder Include="Views\Acceptancetypes\" />
+    <Folder Include="Views\Clinics\" />
+    <Folder Include="Views\Departments\" />
+    <Folder Include="Views\Modalities\" />
+    <Folder Include="Views\Modalitytypes\" />
+    <Folder Include="Views\Paytypes\" />
+    <Folder Include="Views\Proceduretypes\" />
+    <Folder Include="Views\Reasons\" />
   </ItemGroup>
 
 </Project>

@@ -30,6 +30,7 @@ namespace Ris2022.Data.Models
         public virtual Proceduretype? proceduretype { get; set; }
 
         public string Studyid { get; set; }
+        [Display(ResourceType = typeof(Resource), Name = "StartDate")]
         public DateTime? Startdate { get; set; }
         public DateTime? Enddate { get; set; }
         public int? Statusid { get; set; }
@@ -40,9 +41,8 @@ namespace Ris2022.Data.Models
 
         public DateTime? Autoexpiredate { get; set; }
 
-        [Display(ResourceType = typeof(Resource), Name = "Department")]
         public int? Accessionnumber { get; set; }
-
+        [Display(ResourceType = typeof(Resource), Name = "Department")]
         [ForeignKey("DepartmentFK")]
         public int? Departmentid { get; set; }
 

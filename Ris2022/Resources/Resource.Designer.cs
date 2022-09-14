@@ -70,6 +70,15 @@ namespace Ris2022.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Add New Modality.
+        /// </summary>
+        public static string AddModality {
+            get {
+                return ResourceManager.GetString("AddModality", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to New Radigraph.
         /// </summary>
         public static string AddOrder {
@@ -394,6 +403,15 @@ namespace Ris2022.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Modalities.
+        /// </summary>
+        public static string Modalities {
+            get {
+                return ResourceManager.GetString("Modalities", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Modality.
         /// </summary>
         public static string Modality {
@@ -606,6 +624,15 @@ namespace Ris2022.Resources {
         public static string Role {
             get {
                 return ResourceManager.GetString("Role", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Start Date.
+        /// </summary>
+        public static string StartDate {
+            get {
+                return ResourceManager.GetString("StartDate", resourceCulture);
             }
         }
         

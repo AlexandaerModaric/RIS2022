@@ -20,5 +20,8 @@ namespace Ris2022.Data.Models
         [Display(ResourceType = typeof(Resource), Name = "Clinic")]
         public string? Nameen { get; set; }
         public int? Cost { get; set; }
+        [Display(ResourceType = typeof(Resource), Name = "UserName")]
+        public virtual ICollection<RisAppUser>? Employees { get; set; }
+        public virtual ICollection<Order>? Orders { get; set; }
     }
 }

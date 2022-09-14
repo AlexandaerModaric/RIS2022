@@ -9,6 +9,7 @@ namespace Ris2022.Data.Models
 {
     public partial class Worktype
     {
+        [Key]
         public int Id { get; set; }
         [Required]
         [StringLength(25)]

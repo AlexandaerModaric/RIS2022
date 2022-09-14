@@ -22,9 +22,8 @@ namespace Ris2022.Controllers
         // GET: Modalities
         public async Task<IActionResult> Index()
         {
-              return _context.Modalities != null ? 
-                          View(await _context.Modalities.ToListAsync()) :
-                          Problem("Entity set 'RisDBContext.Modalities'  is null.");
+            var risDBContext = _context.Modalities.Include(m => m.Department).Include(m => m.Modalitytype);
+            return View(await risDBContext.ToListAsync());
         }
 
         // GET: Modalities/Details/5
@@ -34,9 +33,11 @@ namespace Ris2022.Controllers
             {
                 return NotFound();
             }
-
-            var modality = await _context.Modalities
-                .FirstOrDefaultAsync(m => m.Id == id);
+            var modalities = await _context.Modalities.Where(x => x.Id == id)
+                .Include(m => m.Department)
+                .Include(m => m.Modalitytype)
+                .Take(1).ToListAsync();
+            var modality = modalities.FirstOrDefault();
             if (modality == null)
             {
                 return NotFound();
@@ -48,6 +49,8 @@ namespace Ris2022.Controllers
         // GET: Modalities/Create
         public IActionResult Create()
         {
+            ViewData["Departmentid"] = new SelectList(_context.Departments, "Id", "Namear");
+            ViewData["Modalitytypeid"] = new SelectList(_context.Modalitytypes, "Id", "Namear");
             return View();
         }
 
@@ -56,7 +59,7 @@ namespace Ris2022.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create(Modality modality)
+        public async Task<IActionResult> Create([Bind("Id,Name,Aetitle,Ipaddress,Port,Modalitytypeid,Description,Departmentid")] Modality modality)
         {
             if (ModelState.IsValid)
             {
@@ -64,6 +67,8 @@ namespace Ris2022.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
+            ViewData["Departmentid"] = new SelectList(_context.Departments, "Id", "Namear", modality.Departmentid);
+            ViewData["Modalitytypeid"] = new SelectList(_context.Modalitytypes, "Id", "Namear", modality.Modalitytypeid);
             return View(modality);
         }
 
@@ -80,6 +85,8 @@ namespace Ris2022.Controllers
             {
                 return NotFound();
             }
+            ViewData["Departmentid"] = new SelectList(_context.Departments, "Id", "Namear", modality.Departmentid);
+            ViewData["Modalitytypeid"] = new SelectList(_context.Modalitytypes, "Id", "Namear", modality.Modalitytypeid);
             return View(modality);
         }
 
@@ -115,6 +122,8 @@ namespace Ris2022.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
+            ViewData["Departmentid"] = new SelectList(_context.Departments, "Id", "Namear", modality.Departmentid);
+            ViewData["Modalitytypeid"] = new SelectList(_context.Modalitytypes, "Id", "Namear", modality.Modalitytypeid);
             return View(modality);
         }
 
@@ -126,8 +135,11 @@ namespace Ris2022.Controllers
                 return NotFound();
             }
 
-            var modality = await _context.Modalities
-                .FirstOrDefaultAsync(m => m.Id == id);
+            var modalities = await _context.Modalities.Where(x => x.Id == id)
+                .Include(m => m.Department)
+                .Include(m => m.Modalitytype)
+                .Take(1).ToListAsync();
+            var modality = modalities.FirstOrDefault();
             if (modality == null)
             {
                 return NotFound();

@@ -19,5 +19,7 @@ namespace Ris2022.Data.Models
         [StringLength(25)]
         [Display(ResourceType = typeof(Resource), Name = "Proceduretype")]
         public string? Nameen { get; set; }
+        public virtual ICollection<Order>? Orders { get; set; }
+
     }
 }

@@ -1,52 +1,50 @@
 ﻿@model Ris2022.Data.Models.Modality
-@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
 @{
-    ViewData["Title"] = "Create";
+    ViewData["Title"] = Resource.AddModality;
     Layout = "~/Pages/Shared/_Layout.cshtml";
 }
 
-<h1>Create</h1>
+<h1>@Resource.AddModality</h1>
 
-<h4>Modality</h4>
+<h4>@Resource.Modality</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="Name" class="form-label mt-4"></label>
+                <label asp-for="Name" class="control-label"></label>
                 <input asp-for="Name" class="form-control" />
                 <span asp-validation-for="Name" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Aetitle" class="form-label mt-4"></label>
+                <label asp-for="Aetitle" class="control-label"></label>
                 <input asp-for="Aetitle" class="form-control" />
                 <span asp-validation-for="Aetitle" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Ipaddress" class="form-label mt-4"></label>
+                <label asp-for="Ipaddress" class="control-label"></label>
                 <input asp-for="Ipaddress" class="form-control" />
                 <span asp-validation-for="Ipaddress" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Port" class="form-label mt-4"></label>
+                <label asp-for="Port" class="control-label"></label>
                 <input asp-for="Port" class="form-control" />
                 <span asp-validation-for="Port" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Modalitytypeid" class="form-label mt-4"></label>
-                <input asp-for="Modalitytypeid" class="form-control" />
-                <span asp-validation-for="Modalitytypeid" class="text-danger"></span>
+                <label asp-for="Modalitytypeid" class="control-label"></label>
+                <select asp-for="Modalitytypeid" class ="form-control" asp-items="ViewBag.Modalitytypeid"></select>
             </div>
             <div class="form-group">
-                <label asp-for="Description" class="form-label mt-4"></label>
+                <label asp-for="Description" class="control-label"></label>
                 <input asp-for="Description" class="form-control" />
                 <span asp-validation-for="Description" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Departmentid" class="form-label mt-4"></label>
-                <input asp-for="Departmentid" class="form-control" />
-                <span asp-validation-for="Departmentid" class="text-danger"></span>
+                <label asp-for="Departmentid" class="control-label"></label>
+                <select asp-for="Departmentid" class ="form-control" asp-items="ViewBag.Departmentid"></select>
             </div>
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />

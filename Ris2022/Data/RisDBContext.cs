@@ -27,7 +27,7 @@ namespace Ris2022.Data
         public virtual DbSet<Nationality> Nationalities { get; set; } = null!;
         public virtual DbSet<Paytype> Paytypes { get; set; } = null!;
         public virtual DbSet<Proceduretype> Proceduretypes { get; set; } = null!;
-        public virtual DbSet<Order> orders { get; set; } = null!;
+        public virtual DbSet<Order> Orders { get; set; } = null!;
         public virtual DbSet<Reason> Reasons { get; set; } = null!;
         public virtual DbSet<Report> Reports { get; set; } = null!;
         public virtual DbSet<Worktype> Worktypes { get; set; } = null!;
@@ -78,19 +78,19 @@ namespace Ris2022.Data
             modelBuilder.ApplyConfiguration(new RoleConfiguration());
             modelBuilder.ApplyConfiguration(new UserConfiguration());
 
-            modelBuilder.ApplyConfiguration(new ClinicConfiguration());
-            modelBuilder.ApplyConfiguration(new AcceptancetypeConfiguration());
-            modelBuilder.ApplyConfiguration(new DepartmentConfiguration());
-            modelBuilder.ApplyConfiguration(new LanguageConfiguration());
-            modelBuilder.ApplyConfiguration(new MartialstatusConfiguration());
-            modelBuilder.ApplyConfiguration(new ModalityConfiguration());
-            modelBuilder.ApplyConfiguration(new ModalitytypeConfiguration());
-            modelBuilder.ApplyConfiguration(new NationalityConfiguration());
-            modelBuilder.ApplyConfiguration(new OrdertypeConfiguration());
-            modelBuilder.ApplyConfiguration(new PaytypeConfiguration());
-            modelBuilder.ApplyConfiguration(new ProceduretypeConfiguration());
-            modelBuilder.ApplyConfiguration(new ReasonConfiguration());
-            modelBuilder.ApplyConfiguration(new WorktypeConfiguration());
+            //modelBuilder.ApplyConfiguration(new ClinicConfiguration());
+            //modelBuilder.ApplyConfiguration(new AcceptancetypeConfiguration());
+            //modelBuilder.ApplyConfiguration(new DepartmentConfiguration());
+            //modelBuilder.ApplyConfiguration(new LanguageConfiguration());
+            //modelBuilder.ApplyConfiguration(new MartialstatusConfiguration());
+            //modelBuilder.ApplyConfiguration(new ModalityConfiguration());
+            //modelBuilder.ApplyConfiguration(new ModalitytypeConfiguration());
+            //modelBuilder.ApplyConfiguration(new NationalityConfiguration());
+            //modelBuilder.ApplyConfiguration(new OrdertypeConfiguration());
+            //modelBuilder.ApplyConfiguration(new PaytypeConfiguration());
+            //modelBuilder.ApplyConfiguration(new ProceduretypeConfiguration());
+            //modelBuilder.ApplyConfiguration(new ReasonConfiguration());
+            //modelBuilder.ApplyConfiguration(new WorktypeConfiguration());
 
 //            modelBuilder.Entity<IdentityUserRole<string>>().HasData(
 //new IdentityUserRole<string>

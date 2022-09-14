@@ -25,6 +25,7 @@ using Ris2022.Resources;
 namespace Ris2022.Pages.Account
 {
     //[Authorize(Policy = "RequireAdministratorRole")]
+    [AllowAnonymous]
     public class AddUserModel : PageModel
     {
         //public IActionResult OnPost() =>

@@ -120,6 +120,9 @@
   <data name="Acceptancetype" xml:space="preserve">
     <value>نوع القبول</value>
   </data>
+  <data name="AddModality" xml:space="preserve">
+    <value>إضافة آلة</value>
+  </data>
   <data name="AddOrder" xml:space="preserve">
     <value>طلب تصوير</value>
   </data>
@@ -228,6 +231,9 @@
   <data name="Mobilephone" xml:space="preserve">
     <value>رقم الموبايل</value>
   </data>
+  <data name="Modalities" xml:space="preserve">
+    <value>الآلات</value>
+  </data>
   <data name="Modality" xml:space="preserve">
     <value>آلة التصوير</value>
   </data>
@@ -299,6 +305,9 @@
   </data>
   <data name="Role" xml:space="preserve">
     <value>دور المستخدم</value>
+  </data>
+  <data name="StartDate" xml:space="preserve">
+    <value>تاريخ البدء</value>
   </data>
   <data name="SurName" xml:space="preserve">
     <value>الكنية</value>

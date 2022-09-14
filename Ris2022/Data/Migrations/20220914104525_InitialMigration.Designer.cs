@@ -12,8 +12,8 @@ using Ris2022.Data;
 namespace Ris2022.Data.Migrations
 {
     [DbContext(typeof(RisDBContext))]
-    [Migration("20220912073150_ReasonToPatient")]
-    partial class ReasonToPatient
+    [Migration("20220914104525_InitialMigration")]
+    partial class InitialMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -53,15 +53,15 @@ namespace Ris2022.Data.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "48c53fbb-fd41-4d65-9e44-66e4079f18bc",
-                            ConcurrencyStamp = "ac17d7ac-dbce-40fe-999a-8a232767654e",
+                            Id = "db55a99f-1450-4e7f-ab0f-b55349a5e316",
+                            ConcurrencyStamp = "8f107268-b7ef-4250-a7f7-69a3fd58b7c6",
                             Name = "User",
                             NormalizedName = "USER"
                         },
                         new
                         {
-                            Id = "d01ce298-d77e-4b5a-b13e-09e6dc378e87",
-                            ConcurrencyStamp = "c0dc3c2e-e286-4c89-a9b1-ebbef755fde4",
+                            Id = "c2cc7dcf-49bc-4bb6-9d41-3224c581ef8a",
+                            ConcurrencyStamp = "c8eba6e3-c5d4-461a-a067-6f793bfc0847",
                             Name = "Administrator",
                             NormalizedName = "ADMINISTRATOR"
                         });
@@ -238,22 +238,18 @@ namespace Ris2022.Data.Migrations
                     OraclePropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
                     b.Property<string>("Namear")
-                        .HasColumnType("NVARCHAR2(2000)");
+                        .IsRequired()
+                        .HasMaxLength(25)
+                        .HasColumnType("NVARCHAR2(25)");
 
                     b.Property<string>("Nameen")
-                        .HasColumnType("NVARCHAR2(2000)");
+                        .IsRequired()
+                        .HasMaxLength(25)
+                        .HasColumnType("NVARCHAR2(25)");
 
                     b.HasKey("Id");
 
                     b.ToTable("Acceptancetypes");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            Namear = "اختبار",
-                            Nameen = "test"
-                        });
                 });
 
             modelBuilder.Entity("Ris2022.Data.Models.Clinic", b =>
@@ -269,22 +265,17 @@ namespace Ris2022.Data.Migrations
 
                     b.Property<string>("Namear")
                         .IsRequired()
-                        .HasColumnType("NVARCHAR2(2000)");
+                        .HasMaxLength(25)
+                        .HasColumnType("NVARCHAR2(25)");
 
                     b.Property<string>("Nameen")
-                        .HasColumnType("NVARCHAR2(2000)");
+                        .IsRequired()
+                        .HasMaxLength(25)
+                        .HasColumnType("NVARCHAR2(25)");
 
                     b.HasKey("Id");
 
                     b.ToTable("Clinics");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            Namear = "اختبار",
-                            Nameen = "test"
-                        });
                 });
 
             modelBuilder.Entity("Ris2022.Data.Models.Department", b =>
@@ -297,22 +288,17 @@ namespace Ris2022.Data.Migrations
 
                     b.Property<string>("Namear")
                         .IsRequired()
-                        .HasColumnType("NVARCHAR2(2000)");
+                        .HasMaxLength(25)
+                        .HasColumnType("NVARCHAR2(25)");
 
                     b.Property<string>("Nameen")
-                        .HasColumnType("NVARCHAR2(2000)");
+                        .IsRequired()
+                        .HasMaxLength(25)
+                        .HasColumnType("NVARCHAR2(25)");
 
                     b.HasKey("Id");
 
                     b.ToTable("Departments");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            Namear = "اختبار",
-                            Nameen = "test"
-                        });
                 });
 
             modelBuilder.Entity("Ris2022.Data.Models.Language", b =>
@@ -329,23 +315,17 @@ namespace Ris2022.Data.Migrations
 
                     b.Property<string>("Namear")
                         .IsRequired()
-                        .HasColumnType("NVARCHAR2(2000)");
+                        .HasMaxLength(25)
+                        .HasColumnType("NVARCHAR2(25)");
 
                     b.Property<string>("Nameen")
-                        .HasColumnType("NVARCHAR2(2000)");
+                        .IsRequired()
+                        .HasMaxLength(25)
+                        .HasColumnType("NVARCHAR2(25)");
 
                     b.HasKey("Id");
 
                     b.ToTable("Languages");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            Code = "te",
-                            Namear = "اختبار",
-                            Nameen = "test"
-                        });
                 });
 
             modelBuilder.Entity("Ris2022.Data.Models.Martialstatus", b =>
@@ -357,22 +337,18 @@ namespace Ris2022.Data.Migrations
                     OraclePropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
                     b.Property<string>("Namear")
-                        .HasColumnType("NVARCHAR2(2000)");
+                        .IsRequired()
+                        .HasMaxLength(25)
+                        .HasColumnType("NVARCHAR2(25)");
 
                     b.Property<string>("Nameen")
-                        .HasColumnType("NVARCHAR2(2000)");
+                        .IsRequired()
+                        .HasMaxLength(25)
+                        .HasColumnType("NVARCHAR2(25)");
 
                     b.HasKey("Id");
 
                     b.ToTable("Martialstatuses");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            Namear = "اختبار",
-                            Nameen = "test"
-                        });
                 });
 
             modelBuilder.Entity("Ris2022.Data.Models.Modality", b =>
@@ -384,42 +360,43 @@ namespace Ris2022.Data.Migrations
                     OraclePropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
                     b.Property<string>("Aetitle")
-                        .HasColumnType("NVARCHAR2(2000)");
+                        .IsRequired()
+                        .HasMaxLength(25)
+                        .HasColumnType("NVARCHAR2(25)");
 
                     b.Property<int?>("Departmentid")
+                        .IsRequired()
                         .HasColumnType("NUMBER(10)");
 
                     b.Property<string>("Description")
-                        .HasColumnType("NVARCHAR2(2000)");
+                        .HasMaxLength(200)
+                        .HasColumnType("NVARCHAR2(200)");
 
                     b.Property<string>("Ipaddress")
-                        .HasColumnType("NVARCHAR2(2000)");
+                        .IsRequired()
+                        .HasMaxLength(25)
+                        .HasColumnType("NVARCHAR2(25)");
 
                     b.Property<int?>("Modalitytypeid")
+                        .IsRequired()
                         .HasColumnType("NUMBER(10)");
 
                     b.Property<string>("Name")
-                        .HasColumnType("NVARCHAR2(2000)");
+                        .IsRequired()
+                        .HasMaxLength(25)
+                        .HasColumnType("NVARCHAR2(25)");
 
                     b.Property<int?>("Port")
+                        .IsRequired()
                         .HasColumnType("NUMBER(10)");
 
                     b.HasKey("Id");
 
-                    b.ToTable("Modalities");
+                    b.HasIndex("Departmentid");
 
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            Aetitle = "test",
-                            Departmentid = 1,
-                            Description = "test",
-                            Ipaddress = "127.0.0.1",
-                            Modalitytypeid = 1,
-                            Name = "test",
-                            Port = 104
-                        });
+                    b.HasIndex("Modalitytypeid");
+
+                    b.ToTable("Modalities");
                 });
 
             modelBuilder.Entity("Ris2022.Data.Models.Modalitytype", b =>
@@ -431,22 +408,18 @@ namespace Ris2022.Data.Migrations
                     OraclePropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
                     b.Property<string>("Namear")
-                        .HasColumnType("NVARCHAR2(2000)");
+                        .IsRequired()
+                        .HasMaxLength(25)
+                        .HasColumnType("NVARCHAR2(25)");
 
                     b.Property<string>("Nameen")
-                        .HasColumnType("NVARCHAR2(2000)");
+                        .IsRequired()
+                        .HasMaxLength(25)
+                        .HasColumnType("NVARCHAR2(25)");
 
                     b.HasKey("Id");
 
                     b.ToTable("Modalitytypes");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            Namear = "اختبار",
-                            Nameen = "test"
-                        });
                 });
 
             modelBuilder.Entity("Ris2022.Data.Models.Nationality", b =>
@@ -466,14 +439,6 @@ namespace Ris2022.Data.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Nationalities");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            Namear = "اختبار",
-                            Nameen = "test"
-                        });
                 });
 
             modelBuilder.Entity("Ris2022.Data.Models.Order", b =>
@@ -577,7 +542,7 @@ namespace Ris2022.Data.Migrations
 
                     b.HasIndex("RisAppDoctorId");
 
-                    b.ToTable("orders");
+                    b.ToTable("Orders");
                 });
 
             modelBuilder.Entity("Ris2022.Data.Models.Ordertype", b =>
@@ -589,22 +554,18 @@ namespace Ris2022.Data.Migrations
                     OraclePropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
                     b.Property<string>("Namear")
-                        .HasColumnType("NVARCHAR2(2000)");
+                        .IsRequired()
+                        .HasMaxLength(25)
+                        .HasColumnType("NVARCHAR2(25)");
 
                     b.Property<string>("Nameen")
-                        .HasColumnType("NVARCHAR2(2000)");
+                        .IsRequired()
+                        .HasMaxLength(25)
+                        .HasColumnType("NVARCHAR2(25)");
 
                     b.HasKey("Id");
 
                     b.ToTable("Ordetypes");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            Namear = "اختبار",
-                            Nameen = "test"
-                        });
                 });
 
             modelBuilder.Entity("Ris2022.Data.Models.Patient", b =>
@@ -739,22 +700,18 @@ namespace Ris2022.Data.Migrations
                     OraclePropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
                     b.Property<string>("Namear")
-                        .HasColumnType("NVARCHAR2(2000)");
+                        .IsRequired()
+                        .HasMaxLength(25)
+                        .HasColumnType("NVARCHAR2(25)");
 
                     b.Property<string>("Nameen")
-                        .HasColumnType("NVARCHAR2(2000)");
+                        .IsRequired()
+                        .HasMaxLength(25)
+                        .HasColumnType("NVARCHAR2(25)");
 
                     b.HasKey("Id");
 
                     b.ToTable("Paytypes");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            Namear = "اختبار",
-                            Nameen = "test"
-                        });
                 });
 
             modelBuilder.Entity("Ris2022.Data.Models.Proceduretype", b =>
@@ -766,10 +723,14 @@ namespace Ris2022.Data.Migrations
                     OraclePropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
                     b.Property<string>("Namear")
-                        .HasColumnType("NVARCHAR2(2000)");
+                        .IsRequired()
+                        .HasMaxLength(25)
+                        .HasColumnType("NVARCHAR2(25)");
 
                     b.Property<string>("Nameen")
-                        .HasColumnType("NVARCHAR2(2000)");
+                        .IsRequired()
+                        .HasMaxLength(25)
+                        .HasColumnType("NVARCHAR2(25)");
 
                     b.Property<int>("Parentnum")
                         .HasColumnType("NUMBER(10)");
@@ -777,15 +738,6 @@ namespace Ris2022.Data.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Proceduretypes");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            Namear = "اختبار",
-                            Nameen = "test",
-                            Parentnum = 0
-                        });
                 });
 
             modelBuilder.Entity("Ris2022.Data.Models.Reason", b =>
@@ -797,22 +749,18 @@ namespace Ris2022.Data.Migrations
                     OraclePropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
                     b.Property<string>("Namear")
-                        .HasColumnType("NVARCHAR2(2000)");
+                        .IsRequired()
+                        .HasMaxLength(25)
+                        .HasColumnType("NVARCHAR2(25)");
 
                     b.Property<string>("Nameen")
-                        .HasColumnType("NVARCHAR2(2000)");
+                        .IsRequired()
+                        .HasMaxLength(25)
+                        .HasColumnType("NVARCHAR2(25)");
 
                     b.HasKey("Id");
 
                     b.ToTable("Reasons");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            Namear = "اختبار",
-                            Nameen = "test"
-                        });
                 });
 
             modelBuilder.Entity("Ris2022.Data.Models.Report", b =>
@@ -887,6 +835,9 @@ namespace Ris2022.Data.Migrations
                     b.Property<int>("AccessFailedCount")
                         .HasColumnType("NUMBER(10)");
 
+                    b.Property<int?>("ClinicId")
+                        .HasColumnType("NUMBER(10)");
+
                     b.Property<string>("ConcurrencyStamp")
                         .IsConcurrencyToken()
                         .HasColumnType("NVARCHAR2(2000)");
@@ -949,6 +900,10 @@ namespace Ris2022.Data.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("ClinicId");
+
+                    b.HasIndex("Departmentid");
+
                     b.HasIndex("NormalizedEmail")
                         .HasDatabaseName("EmailIndex");
 
@@ -962,9 +917,9 @@ namespace Ris2022.Data.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "2326a1f2-a58a-4f03-92ab-1aea67ed6a28",
+                            Id = "d0891aa3-10d7-4ad6-aef2-4f21541e05e9",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "1f8ffe5a-de0c-49be-8112-241d90d0107c",
+                            ConcurrencyStamp = "f5bcd396-6ea5-49bf-b6cd-18950702803a",
                             Email = "RISAdmin@yy.com",
                             EmailConfirmed = true,
                             Firstname = "RIS",
@@ -974,7 +929,7 @@ namespace Ris2022.Data.Migrations
                             LockoutEnabled = false,
                             PasswordHash = "P@ssw0rd123",
                             PhoneNumberConfirmed = true,
-                            SecurityStamp = "4dcbce47-0eb7-441f-8ad6-ddf8c5515988",
+                            SecurityStamp = "5d9dceed-a6dc-4dfa-a19e-fade26394b71",
                             TwoFactorEnabled = false,
                             UserName = "RISAdmin"
                         });
@@ -989,22 +944,18 @@ namespace Ris2022.Data.Migrations
                     OraclePropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
                     b.Property<string>("Namear")
-                        .HasColumnType("NVARCHAR2(2000)");
+                        .IsRequired()
+                        .HasMaxLength(25)
+                        .HasColumnType("NVARCHAR2(25)");
 
                     b.Property<string>("Nameen")
-                        .HasColumnType("NVARCHAR2(2000)");
+                        .IsRequired()
+                        .HasMaxLength(25)
+                        .HasColumnType("NVARCHAR2(25)");
 
                     b.HasKey("Id");
 
                     b.ToTable("Worktypes");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            Namear = "اختبار",
-                            Nameen = "test"
-                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -1058,28 +1009,47 @@ namespace Ris2022.Data.Migrations
                         .IsRequired();
                 });
 
+            modelBuilder.Entity("Ris2022.Data.Models.Modality", b =>
+                {
+                    b.HasOne("Ris2022.Data.Models.Department", "Department")
+                        .WithMany()
+                        .HasForeignKey("Departmentid")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Ris2022.Data.Models.Modalitytype", "Modalitytype")
+                        .WithMany()
+                        .HasForeignKey("Modalitytypeid")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Department");
+
+                    b.Navigation("Modalitytype");
+                });
+
             modelBuilder.Entity("Ris2022.Data.Models.Order", b =>
                 {
                     b.HasOne("Ris2022.Data.Models.Clinic", "clinic")
-                        .WithMany()
+                        .WithMany("Orders")
                         .HasForeignKey("Clinicid");
 
                     b.HasOne("Ris2022.Data.Models.Department", "dept")
-                        .WithMany()
+                        .WithMany("Orders")
                         .HasForeignKey("Departmentid");
 
                     b.HasOne("Ris2022.Data.Models.Modality", "modality")
-                        .WithMany()
+                        .WithMany("Orders")
                         .HasForeignKey("Modalityid")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("Ris2022.Data.Models.Modalitytype", "modalitytype")
-                        .WithMany()
+                        .WithMany("Orders")
                         .HasForeignKey("Modalitytypeid");
 
                     b.HasOne("Ris2022.Data.Models.Ordertype", "Ordertype")
-                        .WithMany()
+                        .WithMany("Orders")
                         .HasForeignKey("Ordertypeid");
 
                     b.HasOne("Ris2022.Data.Models.Patient", "patient")
@@ -1089,19 +1059,19 @@ namespace Ris2022.Data.Migrations
                         .IsRequired();
 
                     b.HasOne("Ris2022.Data.Models.Paytype", "paytype")
-                        .WithMany()
+                        .WithMany("Orders")
                         .HasForeignKey("Paytypeid");
 
                     b.HasOne("Ris2022.Data.Models.Proceduretype", "proceduretype")
-                        .WithMany()
+                        .WithMany("Orders")
                         .HasForeignKey("Proceduretypeid");
 
                     b.HasOne("Ris2022.Data.Models.Reason", "reason")
-                        .WithMany()
+                        .WithMany("Orders")
                         .HasForeignKey("Reasonid");
 
                     b.HasOne("Ris2022.Data.Models.RisAppUser", "RisAppDoctor")
-                        .WithMany()
+                        .WithMany("Orders")
                         .HasForeignKey("RisAppDoctorId");
 
                     b.Navigation("Ordertype");
@@ -1142,7 +1112,7 @@ namespace Ris2022.Data.Migrations
                         .HasForeignKey("Nationalityid");
 
                     b.HasOne("Ris2022.Data.Models.Reason", "Reason")
-                        .WithMany()
+                        .WithMany("Patients")
                         .HasForeignKey("Reasonid");
 
                     b.HasOne("Ris2022.Data.Models.Worktype", "Worktype")
@@ -1160,9 +1130,36 @@ namespace Ris2022.Data.Migrations
                     b.Navigation("Worktype");
                 });
 
+            modelBuilder.Entity("Ris2022.Data.Models.RisAppUser", b =>
+                {
+                    b.HasOne("Ris2022.Data.Models.Clinic", null)
+                        .WithMany("Employees")
+                        .HasForeignKey("ClinicId");
+
+                    b.HasOne("Ris2022.Data.Models.Department", "Department")
+                        .WithMany("Employees")
+                        .HasForeignKey("Departmentid");
+
+                    b.Navigation("Department");
+                });
+
             modelBuilder.Entity("Ris2022.Data.Models.Acceptancetype", b =>
                 {
                     b.Navigation("patients");
+                });
+
+            modelBuilder.Entity("Ris2022.Data.Models.Clinic", b =>
+                {
+                    b.Navigation("Employees");
+
+                    b.Navigation("Orders");
+                });
+
+            modelBuilder.Entity("Ris2022.Data.Models.Department", b =>
+                {
+                    b.Navigation("Employees");
+
+                    b.Navigation("Orders");
                 });
 
             modelBuilder.Entity("Ris2022.Data.Models.Martialstatus", b =>
@@ -1170,14 +1167,51 @@ namespace Ris2022.Data.Migrations
                     b.Navigation("patients");
                 });
 
+            modelBuilder.Entity("Ris2022.Data.Models.Modality", b =>
+                {
+                    b.Navigation("Orders");
+                });
+
+            modelBuilder.Entity("Ris2022.Data.Models.Modalitytype", b =>
+                {
+                    b.Navigation("Orders");
+                });
+
             modelBuilder.Entity("Ris2022.Data.Models.Nationality", b =>
                 {
                     b.Navigation("patients");
                 });
 
+            modelBuilder.Entity("Ris2022.Data.Models.Ordertype", b =>
+                {
+                    b.Navigation("Orders");
+                });
+
             modelBuilder.Entity("Ris2022.Data.Models.Patient", b =>
                 {
                     b.Navigation("patientOrders");
+                });
+
+            modelBuilder.Entity("Ris2022.Data.Models.Paytype", b =>
+                {
+                    b.Navigation("Orders");
+                });
+
+            modelBuilder.Entity("Ris2022.Data.Models.Proceduretype", b =>
+                {
+                    b.Navigation("Orders");
+                });
+
+            modelBuilder.Entity("Ris2022.Data.Models.Reason", b =>
+                {
+                    b.Navigation("Orders");
+
+                    b.Navigation("Patients");
+                });
+
+            modelBuilder.Entity("Ris2022.Data.Models.RisAppUser", b =>
+                {
+                    b.Navigation("Orders");
                 });
 
             modelBuilder.Entity("Ris2022.Data.Models.Worktype", b =>

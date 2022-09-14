@@ -29,7 +29,7 @@ namespace Ris2022.Controllers
         // GET: Orders
         public async Task<IActionResult> Index()
         {
-            var risDBContext = _context.orders
+            var risDBContext = _context.Orders
                 .Include(o => o.Ordertype)
                 .Include(o => o.clinic)
                 .Include(o => o.dept)
@@ -46,12 +46,12 @@ namespace Ris2022.Controllers
         // GET: Orders/Details/5
         public async Task<IActionResult> Details(int? id)
         {
-            if (id == null || _context.orders == null)
+            if (id == null || _context.Orders == null)
             {
                 return NotFound();
             }
 
-            var order = await _context.orders
+            var order = await _context.Orders
                 .Include(o => o.Ordertype)
                 .Include(o => o.clinic)
                 .Include(o => o.dept)
@@ -142,12 +142,12 @@ namespace Ris2022.Controllers
         // GET: Orders/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
-            if (id == null || _context.orders == null)
+            if (id == null || _context.Orders == null)
             {
                 return NotFound();
             }
 
-            var order = await _context.orders.FindAsync(id);
+            var order = await _context.Orders.FindAsync(id);
             if (order == null)
             {
                 return NotFound();
@@ -213,12 +213,12 @@ namespace Ris2022.Controllers
         // GET: Orders/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
-            if (id == null || _context.orders == null)
+            if (id == null || _context.Orders == null)
             {
                 return NotFound();
             }
 
-            var order = await _context.orders
+            var order = await _context.Orders
                 .Include(o => o.Ordertype)
                 .Include(o => o.clinic)
                 .Include(o => o.dept)
@@ -242,14 +242,14 @@ namespace Ris2022.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            if (_context.orders == null)
+            if (_context.Orders == null)
             {
                 return Problem("Entity set 'RisDBContext.orders'  is null.");
             }
-            var order = await _context.orders.FindAsync(id);
+            var order = await _context.Orders.FindAsync(id);
             if (order != null)
             {
-                _context.orders.Remove(order);
+                _context.Orders.Remove(order);
             }
             
             await _context.SaveChangesAsync();
@@ -258,7 +258,7 @@ namespace Ris2022.Controllers
 
         private bool OrderExists(int id)
         {
-          return (_context.orders?.Any(e => e.Id == id)).GetValueOrDefault();
+          return (_context.Orders?.Any(e => e.Id == id)).GetValueOrDefault();
         }
     }
 }

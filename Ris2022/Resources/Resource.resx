@@ -120,6 +120,9 @@
   <data name="Acceptancetype" xml:space="preserve">
     <value>Acceptance Type</value>
   </data>
+  <data name="AddModality" xml:space="preserve">
+    <value>Add New Modality</value>
+  </data>
   <data name="AddOrder" xml:space="preserve">
     <value>New Radigraph</value>
   </data>
@@ -228,6 +231,9 @@
   <data name="Mobilephone" xml:space="preserve">
     <value>Mobile</value>
   </data>
+  <data name="Modalities" xml:space="preserve">
+    <value>Modalities</value>
+  </data>
   <data name="Modality" xml:space="preserve">
     <value>Modality</value>
   </data>
@@ -299,6 +305,9 @@
   </data>
   <data name="Role" xml:space="preserve">
     <value>Role</value>
+  </data>
+  <data name="StartDate" xml:space="preserve">
+    <value>Start Date</value>
   </data>
   <data name="SurName" xml:space="preserve">
     <value>Surname</value>

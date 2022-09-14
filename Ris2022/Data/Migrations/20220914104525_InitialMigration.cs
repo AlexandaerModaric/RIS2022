@@ -15,42 +15,12 @@ namespace Ris2022.Data.Migrations
                 {
                     Id = table.Column<int>(type: "NUMBER(10)", nullable: false)
                         .Annotation("Oracle:Identity", "START WITH 1 INCREMENT BY 1"),
-                    Namear = table.Column<string>(type: "NVARCHAR2(2000)", nullable: true),
-                    Nameen = table.Column<string>(type: "NVARCHAR2(2000)", nullable: true)
+                    Namear = table.Column<string>(type: "NVARCHAR2(25)", maxLength: 25, nullable: false),
+                    Nameen = table.Column<string>(type: "NVARCHAR2(25)", maxLength: 25, nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Acceptancetypes", x => x.Id);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "AppUser",
-                columns: table => new
-                {
-                    Id = table.Column<string>(type: "NVARCHAR2(450)", nullable: false),
-                    Languageid = table.Column<int>(type: "NUMBER(10)", nullable: true),
-                    Firstname = table.Column<string>(type: "NVARCHAR2(20)", maxLength: 20, nullable: true),
-                    Lastname = table.Column<string>(type: "NVARCHAR2(2000)", nullable: true),
-                    Departmentid = table.Column<int>(type: "NUMBER(10)", nullable: true),
-                    Isdoctor = table.Column<bool>(type: "NUMBER(1)", nullable: true),
-                    UserName = table.Column<string>(type: "NVARCHAR2(256)", maxLength: 256, nullable: true),
-                    NormalizedUserName = table.Column<string>(type: "NVARCHAR2(256)", maxLength: 256, nullable: true),
-                    Email = table.Column<string>(type: "NVARCHAR2(256)", maxLength: 256, nullable: true),
-                    NormalizedEmail = table.Column<string>(type: "NVARCHAR2(256)", maxLength: 256, nullable: true),
-                    EmailConfirmed = table.Column<bool>(type: "NUMBER(1)", nullable: false),
-                    PasswordHash = table.Column<string>(type: "NVARCHAR2(2000)", nullable: true),
-                    SecurityStamp = table.Column<string>(type: "NVARCHAR2(2000)", nullable: true),
-                    ConcurrencyStamp = table.Column<string>(type: "NVARCHAR2(2000)", nullable: true),
-                    PhoneNumber = table.Column<string>(type: "NVARCHAR2(2000)", nullable: true),
-                    PhoneNumberConfirmed = table.Column<bool>(type: "NUMBER(1)", nullable: false),
-                    TwoFactorEnabled = table.Column<bool>(type: "NUMBER(1)", nullable: false),
-                    LockoutEnd = table.Column<DateTimeOffset>(type: "TIMESTAMP(7) WITH TIME ZONE", nullable: true),
-                    LockoutEnabled = table.Column<bool>(type: "NUMBER(1)", nullable: false),
-                    AccessFailedCount = table.Column<int>(type: "NUMBER(10)", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_AppUser", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -59,8 +29,8 @@ namespace Ris2022.Data.Migrations
                 {
                     Id = table.Column<int>(type: "NUMBER(10)", nullable: false)
                         .Annotation("Oracle:Identity", "START WITH 1 INCREMENT BY 1"),
-                    Namear = table.Column<string>(type: "NVARCHAR2(2000)", nullable: false),
-                    Nameen = table.Column<string>(type: "NVARCHAR2(2000)", nullable: true),
+                    Namear = table.Column<string>(type: "NVARCHAR2(25)", maxLength: 25, nullable: false),
+                    Nameen = table.Column<string>(type: "NVARCHAR2(25)", maxLength: 25, nullable: false),
                     Cost = table.Column<int>(type: "NUMBER(10)", nullable: true)
                 },
                 constraints: table =>
@@ -74,8 +44,8 @@ namespace Ris2022.Data.Migrations
                 {
                     Id = table.Column<int>(type: "NUMBER(10)", nullable: false)
                         .Annotation("Oracle:Identity", "START WITH 1 INCREMENT BY 1"),
-                    Namear = table.Column<string>(type: "NVARCHAR2(2000)", nullable: false),
-                    Nameen = table.Column<string>(type: "NVARCHAR2(2000)", nullable: true)
+                    Namear = table.Column<string>(type: "NVARCHAR2(25)", maxLength: 25, nullable: false),
+                    Nameen = table.Column<string>(type: "NVARCHAR2(25)", maxLength: 25, nullable: false)
                 },
                 constraints: table =>
                 {
@@ -88,8 +58,8 @@ namespace Ris2022.Data.Migrations
                 {
                     Id = table.Column<int>(type: "NUMBER(10)", nullable: false)
                         .Annotation("Oracle:Identity", "START WITH 1 INCREMENT BY 1"),
-                    Namear = table.Column<string>(type: "NVARCHAR2(2000)", nullable: false),
-                    Nameen = table.Column<string>(type: "NVARCHAR2(2000)", nullable: true),
+                    Namear = table.Column<string>(type: "NVARCHAR2(25)", maxLength: 25, nullable: false),
+                    Nameen = table.Column<string>(type: "NVARCHAR2(25)", maxLength: 25, nullable: false),
                     Code = table.Column<string>(type: "NVARCHAR2(2000)", nullable: false)
                 },
                 constraints: table =>
@@ -103,31 +73,12 @@ namespace Ris2022.Data.Migrations
                 {
                     Id = table.Column<int>(type: "NUMBER(10)", nullable: false)
                         .Annotation("Oracle:Identity", "START WITH 1 INCREMENT BY 1"),
-                    Namear = table.Column<string>(type: "NVARCHAR2(2000)", nullable: true),
-                    Nameen = table.Column<string>(type: "NVARCHAR2(2000)", nullable: true)
+                    Namear = table.Column<string>(type: "NVARCHAR2(25)", maxLength: 25, nullable: false),
+                    Nameen = table.Column<string>(type: "NVARCHAR2(25)", maxLength: 25, nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Martialstatuses", x => x.Id);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "Modalities",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "NUMBER(10)", nullable: false)
-                        .Annotation("Oracle:Identity", "START WITH 1 INCREMENT BY 1"),
-                    Name = table.Column<string>(type: "NVARCHAR2(2000)", nullable: true),
-                    Aetitle = table.Column<string>(type: "NVARCHAR2(2000)", nullable: true),
-                    Ipaddress = table.Column<string>(type: "NVARCHAR2(2000)", nullable: true),
-                    Port = table.Column<int>(type: "NUMBER(10)", nullable: true),
-                    Modalitytypeid = table.Column<int>(type: "NUMBER(10)", nullable: true),
-                    Description = table.Column<string>(type: "NVARCHAR2(2000)", nullable: true),
-                    Departmentid = table.Column<int>(type: "NUMBER(10)", nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Modalities", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -136,8 +87,8 @@ namespace Ris2022.Data.Migrations
                 {
                     Id = table.Column<int>(type: "NUMBER(10)", nullable: false)
                         .Annotation("Oracle:Identity", "START WITH 1 INCREMENT BY 1"),
-                    Namear = table.Column<string>(type: "NVARCHAR2(2000)", nullable: true),
-                    Nameen = table.Column<string>(type: "NVARCHAR2(2000)", nullable: true)
+                    Namear = table.Column<string>(type: "NVARCHAR2(25)", maxLength: 25, nullable: false),
+                    Nameen = table.Column<string>(type: "NVARCHAR2(25)", maxLength: 25, nullable: false)
                 },
                 constraints: table =>
                 {
@@ -164,8 +115,8 @@ namespace Ris2022.Data.Migrations
                 {
                     Id = table.Column<int>(type: "NUMBER(10)", nullable: false)
                         .Annotation("Oracle:Identity", "START WITH 1 INCREMENT BY 1"),
-                    Namear = table.Column<string>(type: "NVARCHAR2(2000)", nullable: true),
-                    Nameen = table.Column<string>(type: "NVARCHAR2(2000)", nullable: true)
+                    Namear = table.Column<string>(type: "NVARCHAR2(25)", maxLength: 25, nullable: false),
+                    Nameen = table.Column<string>(type: "NVARCHAR2(25)", maxLength: 25, nullable: false)
                 },
                 constraints: table =>
                 {
@@ -178,8 +129,8 @@ namespace Ris2022.Data.Migrations
                 {
                     Id = table.Column<int>(type: "NUMBER(10)", nullable: false)
                         .Annotation("Oracle:Identity", "START WITH 1 INCREMENT BY 1"),
-                    Namear = table.Column<string>(type: "NVARCHAR2(2000)", nullable: true),
-                    Nameen = table.Column<string>(type: "NVARCHAR2(2000)", nullable: true)
+                    Namear = table.Column<string>(type: "NVARCHAR2(25)", maxLength: 25, nullable: false),
+                    Nameen = table.Column<string>(type: "NVARCHAR2(25)", maxLength: 25, nullable: false)
                 },
                 constraints: table =>
                 {
@@ -193,8 +144,8 @@ namespace Ris2022.Data.Migrations
                     Id = table.Column<int>(type: "NUMBER(10)", nullable: false)
                         .Annotation("Oracle:Identity", "START WITH 1 INCREMENT BY 1"),
                     Parentnum = table.Column<int>(type: "NUMBER(10)", nullable: false),
-                    Namear = table.Column<string>(type: "NVARCHAR2(2000)", nullable: true),
-                    Nameen = table.Column<string>(type: "NVARCHAR2(2000)", nullable: true)
+                    Namear = table.Column<string>(type: "NVARCHAR2(25)", maxLength: 25, nullable: false),
+                    Nameen = table.Column<string>(type: "NVARCHAR2(25)", maxLength: 25, nullable: false)
                 },
                 constraints: table =>
                 {
@@ -207,8 +158,8 @@ namespace Ris2022.Data.Migrations
                 {
                     Id = table.Column<int>(type: "NUMBER(10)", nullable: false)
                         .Annotation("Oracle:Identity", "START WITH 1 INCREMENT BY 1"),
-                    Namear = table.Column<string>(type: "NVARCHAR2(2000)", nullable: true),
-                    Nameen = table.Column<string>(type: "NVARCHAR2(2000)", nullable: true)
+                    Namear = table.Column<string>(type: "NVARCHAR2(25)", maxLength: 25, nullable: false),
+                    Nameen = table.Column<string>(type: "NVARCHAR2(25)", maxLength: 25, nullable: false)
                 },
                 constraints: table =>
                 {
@@ -289,8 +240,8 @@ namespace Ris2022.Data.Migrations
                 {
                     Id = table.Column<int>(type: "NUMBER(10)", nullable: false)
                         .Annotation("Oracle:Identity", "START WITH 1 INCREMENT BY 1"),
-                    Namear = table.Column<string>(type: "NVARCHAR2(2000)", nullable: true),
-                    Nameen = table.Column<string>(type: "NVARCHAR2(2000)", nullable: true)
+                    Namear = table.Column<string>(type: "NVARCHAR2(25)", maxLength: 25, nullable: false),
+                    Nameen = table.Column<string>(type: "NVARCHAR2(25)", maxLength: 25, nullable: false)
                 },
                 constraints: table =>
                 {
@@ -298,62 +249,73 @@ namespace Ris2022.Data.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "UserClaims",
+                name: "AppUser",
+                columns: table => new
+                {
+                    Id = table.Column<string>(type: "NVARCHAR2(450)", nullable: false),
+                    Languageid = table.Column<int>(type: "NUMBER(10)", nullable: true),
+                    Firstname = table.Column<string>(type: "NVARCHAR2(20)", maxLength: 20, nullable: true),
+                    Lastname = table.Column<string>(type: "NVARCHAR2(2000)", nullable: true),
+                    Departmentid = table.Column<int>(type: "NUMBER(10)", nullable: true),
+                    Isdoctor = table.Column<bool>(type: "NUMBER(1)", nullable: true),
+                    ClinicId = table.Column<int>(type: "NUMBER(10)", nullable: true),
+                    UserName = table.Column<string>(type: "NVARCHAR2(256)", maxLength: 256, nullable: true),
+                    NormalizedUserName = table.Column<string>(type: "NVARCHAR2(256)", maxLength: 256, nullable: true),
+                    Email = table.Column<string>(type: "NVARCHAR2(256)", maxLength: 256, nullable: true),
+                    NormalizedEmail = table.Column<string>(type: "NVARCHAR2(256)", maxLength: 256, nullable: true),
+                    EmailConfirmed = table.Column<bool>(type: "NUMBER(1)", nullable: false),
+                    PasswordHash = table.Column<string>(type: "NVARCHAR2(2000)", nullable: true),
+                    SecurityStamp = table.Column<string>(type: "NVARCHAR2(2000)", nullable: true),
+                    ConcurrencyStamp = table.Column<string>(type: "NVARCHAR2(2000)", nullable: true),
+                    PhoneNumber = table.Column<string>(type: "NVARCHAR2(2000)", nullable: true),
+                    PhoneNumberConfirmed = table.Column<bool>(type: "NUMBER(1)", nullable: false),
+                    TwoFactorEnabled = table.Column<bool>(type: "NUMBER(1)", nullable: false),
+                    LockoutEnd = table.Column<DateTimeOffset>(type: "TIMESTAMP(7) WITH TIME ZONE", nullable: true),
+                    LockoutEnabled = table.Column<bool>(type: "NUMBER(1)", nullable: false),
+                    AccessFailedCount = table.Column<int>(type: "NUMBER(10)", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_AppUser", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_AppUser_Clinics_ClinicId",
+                        column: x => x.ClinicId,
+                        principalTable: "Clinics",
+                        principalColumn: "Id");
+                    table.ForeignKey(
+                        name: "FK_AppUser_Departments_Depart~",
+                        column: x => x.Departmentid,
+                        principalTable: "Departments",
+                        principalColumn: "Id");
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Modalities",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "NUMBER(10)", nullable: false)
                         .Annotation("Oracle:Identity", "START WITH 1 INCREMENT BY 1"),
-                    UserId = table.Column<string>(type: "NVARCHAR2(450)", nullable: false),
-                    ClaimType = table.Column<string>(type: "NVARCHAR2(2000)", nullable: true),
-                    ClaimValue = table.Column<string>(type: "NVARCHAR2(2000)", nullable: true)
+                    Name = table.Column<string>(type: "NVARCHAR2(25)", maxLength: 25, nullable: false),
+                    Aetitle = table.Column<string>(type: "NVARCHAR2(25)", maxLength: 25, nullable: false),
+                    Ipaddress = table.Column<string>(type: "NVARCHAR2(25)", maxLength: 25, nullable: false),
+                    Port = table.Column<int>(type: "NUMBER(10)", nullable: false),
+                    Modalitytypeid = table.Column<int>(type: "NUMBER(10)", nullable: false),
+                    Description = table.Column<string>(type: "NVARCHAR2(200)", maxLength: 200, nullable: true),
+                    Departmentid = table.Column<int>(type: "NUMBER(10)", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_UserClaims", x => x.Id);
+                    table.PrimaryKey("PK_Modalities", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_UserClaims_AppUser_UserId",
-                        column: x => x.UserId,
-                        principalTable: "AppUser",
+                        name: "FK_Modalities_Departments_Dep~",
+                        column: x => x.Departmentid,
+                        principalTable: "Departments",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "UserLogins",
-                columns: table => new
-                {
-                    LoginProvider = table.Column<string>(type: "NVARCHAR2(128)", maxLength: 128, nullable: false),
-                    ProviderKey = table.Column<string>(type: "NVARCHAR2(128)", maxLength: 128, nullable: false),
-                    ProviderDisplayName = table.Column<string>(type: "NVARCHAR2(2000)", nullable: true),
-                    UserId = table.Column<string>(type: "NVARCHAR2(450)", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_UserLogins", x => new { x.LoginProvider, x.ProviderKey });
                     table.ForeignKey(
-                        name: "FK_UserLogins_AppUser_UserId",
-                        column: x => x.UserId,
-                        principalTable: "AppUser",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "UserTokens",
-                columns: table => new
-                {
-                    UserId = table.Column<string>(type: "NVARCHAR2(450)", nullable: false),
-                    LoginProvider = table.Column<string>(type: "NVARCHAR2(128)", maxLength: 128, nullable: false),
-                    Name = table.Column<string>(type: "NVARCHAR2(128)", maxLength: 128, nullable: false),
-                    Value = table.Column<string>(type: "NVARCHAR2(2000)", nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_UserTokens", x => new { x.UserId, x.LoginProvider, x.Name });
-                    table.ForeignKey(
-                        name: "FK_UserTokens_AppUser_UserId",
-                        column: x => x.UserId,
-                        principalTable: "AppUser",
+                        name: "FK_Modalities_Modalitytypes_M~",
+                        column: x => x.Modalitytypeid,
+                        principalTable: "Modalitytypes",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
@@ -373,30 +335,6 @@ namespace Ris2022.Data.Migrations
                     table.PrimaryKey("PK_RoleClaims", x => x.Id);
                     table.ForeignKey(
                         name: "FK_RoleClaims_Role_RoleId",
-                        column: x => x.RoleId,
-                        principalTable: "Role",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "UserRoles",
-                columns: table => new
-                {
-                    UserId = table.Column<string>(type: "NVARCHAR2(450)", nullable: false),
-                    RoleId = table.Column<string>(type: "NVARCHAR2(450)", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_UserRoles", x => new { x.UserId, x.RoleId });
-                    table.ForeignKey(
-                        name: "FK_UserRoles_AppUser_UserId",
-                        column: x => x.UserId,
-                        principalTable: "AppUser",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_UserRoles_Role_RoleId",
                         column: x => x.RoleId,
                         principalTable: "Role",
                         principalColumn: "Id",
@@ -461,6 +399,11 @@ namespace Ris2022.Data.Migrations
                         principalTable: "Nationalities",
                         principalColumn: "Id");
                     table.ForeignKey(
+                        name: "FK_Patients_Reasons_Reasonid",
+                        column: x => x.Reasonid,
+                        principalTable: "Reasons",
+                        principalColumn: "Id");
+                    table.ForeignKey(
                         name: "FK_Patients_Worktypes_Worktyp~",
                         column: x => x.Worktypeid,
                         principalTable: "Worktypes",
@@ -468,7 +411,92 @@ namespace Ris2022.Data.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "orders",
+                name: "UserClaims",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "NUMBER(10)", nullable: false)
+                        .Annotation("Oracle:Identity", "START WITH 1 INCREMENT BY 1"),
+                    UserId = table.Column<string>(type: "NVARCHAR2(450)", nullable: false),
+                    ClaimType = table.Column<string>(type: "NVARCHAR2(2000)", nullable: true),
+                    ClaimValue = table.Column<string>(type: "NVARCHAR2(2000)", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_UserClaims", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_UserClaims_AppUser_UserId",
+                        column: x => x.UserId,
+                        principalTable: "AppUser",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "UserLogins",
+                columns: table => new
+                {
+                    LoginProvider = table.Column<string>(type: "NVARCHAR2(128)", maxLength: 128, nullable: false),
+                    ProviderKey = table.Column<string>(type: "NVARCHAR2(128)", maxLength: 128, nullable: false),
+                    ProviderDisplayName = table.Column<string>(type: "NVARCHAR2(2000)", nullable: true),
+                    UserId = table.Column<string>(type: "NVARCHAR2(450)", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_UserLogins", x => new { x.LoginProvider, x.ProviderKey });
+                    table.ForeignKey(
+                        name: "FK_UserLogins_AppUser_UserId",
+                        column: x => x.UserId,
+                        principalTable: "AppUser",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "UserRoles",
+                columns: table => new
+                {
+                    UserId = table.Column<string>(type: "NVARCHAR2(450)", nullable: false),
+                    RoleId = table.Column<string>(type: "NVARCHAR2(450)", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_UserRoles", x => new { x.UserId, x.RoleId });
+                    table.ForeignKey(
+                        name: "FK_UserRoles_AppUser_UserId",
+                        column: x => x.UserId,
+                        principalTable: "AppUser",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_UserRoles_Role_RoleId",
+                        column: x => x.RoleId,
+                        principalTable: "Role",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "UserTokens",
+                columns: table => new
+                {
+                    UserId = table.Column<string>(type: "NVARCHAR2(450)", nullable: false),
+                    LoginProvider = table.Column<string>(type: "NVARCHAR2(128)", maxLength: 128, nullable: false),
+                    Name = table.Column<string>(type: "NVARCHAR2(128)", maxLength: 128, nullable: false),
+                    Value = table.Column<string>(type: "NVARCHAR2(2000)", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_UserTokens", x => new { x.UserId, x.LoginProvider, x.Name });
+                    table.ForeignKey(
+                        name: "FK_UserTokens_AppUser_UserId",
+                        column: x => x.UserId,
+                        principalTable: "AppUser",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Orders",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "NUMBER(10)", nullable: false)
@@ -499,144 +527,90 @@ namespace Ris2022.Data.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_orders", x => x.Id);
+                    table.PrimaryKey("PK_Orders", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_orders_AppUser_RisAppDocto~",
+                        name: "FK_Orders_AppUser_RisAppDocto~",
                         column: x => x.RisAppDoctorId,
                         principalTable: "AppUser",
                         principalColumn: "Id");
                     table.ForeignKey(
-                        name: "FK_orders_Clinics_Clinicid",
+                        name: "FK_Orders_Clinics_Clinicid",
                         column: x => x.Clinicid,
                         principalTable: "Clinics",
                         principalColumn: "Id");
                     table.ForeignKey(
-                        name: "FK_orders_Departments_Departm~",
+                        name: "FK_Orders_Departments_Departm~",
                         column: x => x.Departmentid,
                         principalTable: "Departments",
                         principalColumn: "Id");
                     table.ForeignKey(
-                        name: "FK_orders_Modalities_Modality~",
+                        name: "FK_Orders_Modalities_Modality~",
                         column: x => x.Modalityid,
                         principalTable: "Modalities",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_orders_Modalitytypes_Modal~",
+                        name: "FK_Orders_Modalitytypes_Modal~",
                         column: x => x.Modalitytypeid,
                         principalTable: "Modalitytypes",
                         principalColumn: "Id");
                     table.ForeignKey(
-                        name: "FK_orders_Ordetypes_Ordertype~",
+                        name: "FK_Orders_Ordetypes_Ordertype~",
                         column: x => x.Ordertypeid,
                         principalTable: "Ordetypes",
                         principalColumn: "Id");
                     table.ForeignKey(
-                        name: "FK_orders_Patients_Patientid",
+                        name: "FK_Orders_Patients_Patientid",
                         column: x => x.Patientid,
                         principalTable: "Patients",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_orders_Paytypes_Paytypeid",
+                        name: "FK_Orders_Paytypes_Paytypeid",
                         column: x => x.Paytypeid,
                         principalTable: "Paytypes",
                         principalColumn: "Id");
                     table.ForeignKey(
-                        name: "FK_orders_Proceduretypes_Proc~",
+                        name: "FK_Orders_Proceduretypes_Proc~",
                         column: x => x.Proceduretypeid,
                         principalTable: "Proceduretypes",
                         principalColumn: "Id");
                     table.ForeignKey(
-                        name: "FK_orders_Reasons_Reasonid",
+                        name: "FK_Orders_Reasons_Reasonid",
                         column: x => x.Reasonid,
                         principalTable: "Reasons",
                         principalColumn: "Id");
                 });
 
             migrationBuilder.InsertData(
-                table: "Acceptancetypes",
-                columns: new[] { "Id", "Namear", "Nameen" },
-                values: new object[] { 1, "اختبار", "test" });
-
-            migrationBuilder.InsertData(
                 table: "AppUser",
-                columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Departmentid", "Email", "EmailConfirmed", "Firstname", "Isdoctor", "Languageid", "Lastname", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "024ed066-22ce-4280-901f-7f6120b1138f", 0, "c543e544-958e-492d-9d95-f410a78f1ab5", null, "RISAdmin@yy.com", true, "RIS", true, 1, "Admin", false, null, null, null, "P@ssw0rd123", null, true, "2bf0e1b1-0148-448b-9de2-5d4c65dded27", false, "RISAdmin" });
-
-            migrationBuilder.InsertData(
-                table: "Clinics",
-                columns: new[] { "Id", "Cost", "Namear", "Nameen" },
-                values: new object[] { 1, null, "اختبار", "test" });
-
-            migrationBuilder.InsertData(
-                table: "Departments",
-                columns: new[] { "Id", "Namear", "Nameen" },
-                values: new object[] { 1, "اختبار", "test" });
-
-            migrationBuilder.InsertData(
-                table: "Languages",
-                columns: new[] { "Id", "Code", "Namear", "Nameen" },
-                values: new object[] { 1, "te", "اختبار", "test" });
-
-            migrationBuilder.InsertData(
-                table: "Martialstatuses",
-                columns: new[] { "Id", "Namear", "Nameen" },
-                values: new object[] { 1, "اختبار", "test" });
-
-            migrationBuilder.InsertData(
-                table: "Modalities",
-                columns: new[] { "Id", "Aetitle", "Departmentid", "Description", "Ipaddress", "Modalitytypeid", "Name", "Port" },
-                values: new object[] { 1, "test", 1, "test", "127.0.0.1", 1, "test", 104 });
-
-            migrationBuilder.InsertData(
-                table: "Modalitytypes",
-                columns: new[] { "Id", "Namear", "Nameen" },
-                values: new object[] { 1, "اختبار", "test" });
-
-            migrationBuilder.InsertData(
-                table: "Nationalities",
-                columns: new[] { "Id", "Namear", "Nameen" },
-                values: new object[] { 1, "اختبار", "test" });
-
-            migrationBuilder.InsertData(
-                table: "Ordetypes",
-                columns: new[] { "Id", "Namear", "Nameen" },
-                values: new object[] { 1, "اختبار", "test" });
-
-            migrationBuilder.InsertData(
-                table: "Paytypes",
-                columns: new[] { "Id", "Namear", "Nameen" },
-                values: new object[] { 1, "اختبار", "test" });
-
-            migrationBuilder.InsertData(
-                table: "Proceduretypes",
-                columns: new[] { "Id", "Namear", "Nameen", "Parentnum" },
-                values: new object[] { 1, "اختبار", "test", 0 });
-
-            migrationBuilder.InsertData(
-                table: "Reasons",
-                columns: new[] { "Id", "Namear", "Nameen" },
-                values: new object[] { 1, "اختبار", "test" });
+                columns: new[] { "Id", "AccessFailedCount", "ClinicId", "ConcurrencyStamp", "Departmentid", "Email", "EmailConfirmed", "Firstname", "Isdoctor", "Languageid", "Lastname", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
+                values: new object[] { "d0891aa3-10d7-4ad6-aef2-4f21541e05e9", 0, null, "f5bcd396-6ea5-49bf-b6cd-18950702803a", null, "RISAdmin@yy.com", true, "RIS", true, 1, "Admin", false, null, null, null, "P@ssw0rd123", null, true, "5d9dceed-a6dc-4dfa-a19e-fade26394b71", false, "RISAdmin" });
 
             migrationBuilder.InsertData(
                 table: "Role",
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
-                values: new object[,]
-                {
-                    { "4e7097e3-550c-4396-b684-e7d8609e0d8c", "ce7a8304-d3bd-4090-8923-c6cf14b3ab94", "User", "USER" },
-                    { "a63ed26a-e35b-43a5-947b-1a9546b2e03b", "58aa212c-7c46-4057-b26b-c805362721b8", "Administrator", "ADMINISTRATOR" }
-                });
+                values: new object[] { "c2cc7dcf-49bc-4bb6-9d41-3224c581ef8a", "c8eba6e3-c5d4-461a-a067-6f793bfc0847", "Administrator", "ADMINISTRATOR" });
 
             migrationBuilder.InsertData(
-                table: "Worktypes",
-                columns: new[] { "Id", "Namear", "Nameen" },
-                values: new object[] { 1, "اختبار", "test" });
+                table: "Role",
+                columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
+                values: new object[] { "db55a99f-1450-4e7f-ab0f-b55349a5e316", "8f107268-b7ef-4250-a7f7-69a3fd58b7c6", "User", "USER" });
 
             migrationBuilder.CreateIndex(
                 name: "EmailIndex",
                 table: "AppUser",
                 column: "NormalizedEmail");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_AppUser_ClinicId",
+                table: "AppUser",
+                column: "ClinicId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_AppUser_Departmentid",
+                table: "AppUser",
+                column: "Departmentid");
 
             migrationBuilder.CreateIndex(
                 name: "UserNameIndex",
@@ -646,53 +620,63 @@ namespace Ris2022.Data.Migrations
                 filter: "\"NormalizedUserName\" IS NOT NULL");
 
             migrationBuilder.CreateIndex(
-                name: "IX_orders_Clinicid",
-                table: "orders",
-                column: "Clinicid");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_orders_Departmentid",
-                table: "orders",
+                name: "IX_Modalities_Departmentid",
+                table: "Modalities",
                 column: "Departmentid");
 
             migrationBuilder.CreateIndex(
-                name: "IX_orders_Modalityid",
-                table: "orders",
-                column: "Modalityid");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_orders_Modalitytypeid",
-                table: "orders",
+                name: "IX_Modalities_Modalitytypeid",
+                table: "Modalities",
                 column: "Modalitytypeid");
 
             migrationBuilder.CreateIndex(
-                name: "IX_orders_Ordertypeid",
-                table: "orders",
+                name: "IX_Orders_Clinicid",
+                table: "Orders",
+                column: "Clinicid");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Orders_Departmentid",
+                table: "Orders",
+                column: "Departmentid");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Orders_Modalityid",
+                table: "Orders",
+                column: "Modalityid");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Orders_Modalitytypeid",
+                table: "Orders",
+                column: "Modalitytypeid");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Orders_Ordertypeid",
+                table: "Orders",
                 column: "Ordertypeid");
 
             migrationBuilder.CreateIndex(
-                name: "IX_orders_Patientid",
-                table: "orders",
+                name: "IX_Orders_Patientid",
+                table: "Orders",
                 column: "Patientid");
 
             migrationBuilder.CreateIndex(
-                name: "IX_orders_Paytypeid",
-                table: "orders",
+                name: "IX_Orders_Paytypeid",
+                table: "Orders",
                 column: "Paytypeid");
 
             migrationBuilder.CreateIndex(
-                name: "IX_orders_Proceduretypeid",
-                table: "orders",
+                name: "IX_Orders_Proceduretypeid",
+                table: "Orders",
                 column: "Proceduretypeid");
 
             migrationBuilder.CreateIndex(
-                name: "IX_orders_Reasonid",
-                table: "orders",
+                name: "IX_Orders_Reasonid",
+                table: "Orders",
                 column: "Reasonid");
 
             migrationBuilder.CreateIndex(
-                name: "IX_orders_RisAppDoctorId",
-                table: "orders",
+                name: "IX_Orders_RisAppDoctorId",
+                table: "Orders",
                 column: "RisAppDoctorId");
 
             migrationBuilder.CreateIndex(
@@ -709,6 +693,11 @@ namespace Ris2022.Data.Migrations
                 name: "IX_Patients_Nationalityid",
                 table: "Patients",
                 column: "Nationalityid");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Patients_Reasonid",
+                table: "Patients",
+                column: "Reasonid");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Patients_Worktypeid",
@@ -749,7 +738,7 @@ namespace Ris2022.Data.Migrations
                 name: "Languages");
 
             migrationBuilder.DropTable(
-                name: "orders");
+                name: "Orders");
 
             migrationBuilder.DropTable(
                 name: "Reports");
@@ -773,16 +762,7 @@ namespace Ris2022.Data.Migrations
                 name: "UserTokens");
 
             migrationBuilder.DropTable(
-                name: "Clinics");
-
-            migrationBuilder.DropTable(
-                name: "Departments");
-
-            migrationBuilder.DropTable(
                 name: "Modalities");
-
-            migrationBuilder.DropTable(
-                name: "Modalitytypes");
 
             migrationBuilder.DropTable(
                 name: "Ordetypes");
@@ -797,13 +777,13 @@ namespace Ris2022.Data.Migrations
                 name: "Proceduretypes");
 
             migrationBuilder.DropTable(
-                name: "Reasons");
-
-            migrationBuilder.DropTable(
                 name: "Role");
 
             migrationBuilder.DropTable(
                 name: "AppUser");
+
+            migrationBuilder.DropTable(
+                name: "Modalitytypes");
 
             migrationBuilder.DropTable(
                 name: "Acceptancetypes");
@@ -815,7 +795,16 @@ namespace Ris2022.Data.Migrations
                 name: "Nationalities");
 
             migrationBuilder.DropTable(
+                name: "Reasons");
+
+            migrationBuilder.DropTable(
                 name: "Worktypes");
+
+            migrationBuilder.DropTable(
+                name: "Clinics");
+
+            migrationBuilder.DropTable(
+                name: "Departments");
         }
     }
 }

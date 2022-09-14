@@ -48,5 +48,7 @@ namespace Ris2022.Data.Models
         [Display(ResourceType = typeof(Resource), Name = "Department")]
         public virtual Department? Department { get; set; }
 
+        public virtual ICollection<Order>? Orders { get; set; }
+
     }
 }

@@ -19,5 +19,8 @@ namespace Ris2022.Data.Models
         [StringLength(25)]
         [Display(ResourceType = typeof(Resource), Name = "Department")]
         public string? Nameen { get; set; }
+        public virtual ICollection<Order>? Orders { get; set; }
+        public virtual ICollection<RisAppUser>? Employees { get; set; }
+
     }
 }
