@@ -123,6 +123,9 @@
   <data name="AddModality" xml:space="preserve">
     <value>Add New Modality</value>
   </data>
+  <data name="AddNew" xml:space="preserve">
+    <value>Add New</value>
+  </data>
   <data name="AddOrder" xml:space="preserve">
     <value>New Radigraph</value>
   </data>
@@ -158,6 +161,9 @@
   </data>
   <data name="Confirm" xml:space="preserve">
     <value>Confirm Password</value>
+  </data>
+  <data name="ConfirmDelete" xml:space="preserve">
+    <value>Are you sure you want to delete this</value>
   </data>
   <data name="Currentaddress" xml:space="preserve">
     <value>Current Address</value>
@@ -246,6 +252,12 @@
   <data name="Name" xml:space="preserve">
     <value>Name</value>
   </data>
+  <data name="Namear" xml:space="preserve">
+    <value>ArabicTerm</value>
+  </data>
+  <data name="Nameen" xml:space="preserve">
+    <value>English Term</value>
+  </data>
   <data name="Nationality" xml:space="preserve">
     <value>Nationality</value>
   </data>
@@ -261,6 +273,9 @@
   <data name="Notes" xml:space="preserve">
     <value>Notes</value>
   </data>
+  <data name="Order" xml:space="preserve">
+    <value>Order</value>
+  </data>
   <data name="OrderIndex" xml:space="preserve">
     <value>Radiographs Orders</value>
   </data>
@@ -272,6 +287,9 @@
   </data>
   <data name="PatId" xml:space="preserve">
     <value>Patient Id</value>
+  </data>
+  <data name="Patient" xml:space="preserve">
+    <value>Patient</value>
   </data>
   <data name="PatientName" xml:space="preserve">
     <value>PatientName</value>

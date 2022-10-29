@@ -79,6 +79,15 @@ namespace Ris2022.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Add New.
+        /// </summary>
+        public static string AddNew {
+            get {
+                return ResourceManager.GetString("AddNew", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to New Radigraph.
         /// </summary>
         public static string AddOrder {
@@ -183,6 +192,15 @@ namespace Ris2022.Resources {
         public static string Confirm {
             get {
                 return ResourceManager.GetString("Confirm", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Are you sure you want to delete this.
+        /// </summary>
+        public static string ConfirmDelete {
+            get {
+                return ResourceManager.GetString("ConfirmDelete", resourceCulture);
             }
         }
         
@@ -448,6 +466,24 @@ namespace Ris2022.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to ArabicTerm.
+        /// </summary>
+        public static string Namear {
+            get {
+                return ResourceManager.GetString("Namear", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to English Term.
+        /// </summary>
+        public static string Nameen {
+            get {
+                return ResourceManager.GetString("Nameen", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Nationality.
         /// </summary>
         public static string Nationality {
@@ -493,6 +529,15 @@ namespace Ris2022.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Order.
+        /// </summary>
+        public static string Order {
+            get {
+                return ResourceManager.GetString("Order", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Radiographs Orders.
         /// </summary>
         public static string OrderIndex {
@@ -525,6 +570,15 @@ namespace Ris2022.Resources {
         public static string PatId {
             get {
                 return ResourceManager.GetString("PatId", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Patient.
+        /// </summary>
+        public static string Patient {
+            get {
+                return ResourceManager.GetString("Patient", resourceCulture);
             }
         }
         

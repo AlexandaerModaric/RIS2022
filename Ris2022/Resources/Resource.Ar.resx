@@ -123,6 +123,9 @@
   <data name="AddModality" xml:space="preserve">
     <value>إضافة آلة</value>
   </data>
+  <data name="AddNew" xml:space="preserve">
+    <value>إضافة</value>
+  </data>
   <data name="AddOrder" xml:space="preserve">
     <value>طلب تصوير</value>
   </data>
@@ -158,6 +161,9 @@
   </data>
   <data name="Confirm" xml:space="preserve">
     <value>تأكيد كلمة السر</value>
+  </data>
+  <data name="ConfirmDelete" xml:space="preserve">
+    <value>هل أنا متأكد من حذف</value>
   </data>
   <data name="Currentaddress" xml:space="preserve">
     <value>العنوان الحالي</value>
@@ -246,6 +252,12 @@
   <data name="Name" xml:space="preserve">
     <value>الاسم</value>
   </data>
+  <data name="Namear" xml:space="preserve">
+    <value>الاسم بالعربية</value>
+  </data>
+  <data name="Nameen" xml:space="preserve">
+    <value>الاسم بالانكليزية</value>
+  </data>
   <data name="Nationality" xml:space="preserve">
     <value>الجنسية</value>
   </data>
@@ -261,6 +273,9 @@
   <data name="Notes" xml:space="preserve">
     <value>الملاحظات</value>
   </data>
+  <data name="Order" xml:space="preserve">
+    <value>طلب تصوير</value>
+  </data>
   <data name="OrderIndex" xml:space="preserve">
     <value>طلبات التصوير</value>
   </data>
@@ -272,6 +287,9 @@
   </data>
   <data name="PatId" xml:space="preserve">
     <value>معرف المريض</value>
+  </data>
+  <data name="Patient" xml:space="preserve">
+    <value>بيانات المريض</value>
   </data>
   <data name="PatientName" xml:space="preserve">
     <value>اسم المريض</value>

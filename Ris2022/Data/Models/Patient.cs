@@ -6,6 +6,11 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Ris2022.Data.Models
 {
+    public enum gender
+    {
+        Male=0,
+        Female=1
+    }
     public class Patient
     {
         [Key]
@@ -31,7 +36,7 @@ namespace Ris2022.Data.Models
 
         [Range(0, 1)]
         [Display(ResourceType = typeof(Resource), Name = "Gender")]
-        public int? Gendre { get; set; }
+        public gender Gendre { get; set; }
 
         [Display(ResourceType = typeof(Resource), Name = "MotherName")]
         public string? Mothername { get; set; }

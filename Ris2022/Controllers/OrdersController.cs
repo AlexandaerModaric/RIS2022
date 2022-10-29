@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
@@ -102,7 +103,7 @@ namespace Ris2022.Controllers
             order.modality = _context.Modalities.SingleOrDefault(m => m.Id == order.Modalityid);
             order.Accessionnumber = int.Parse(patient.Id + DateTime.Now.ToString("ssmm"));
             order.InsertuserName = User.FindFirstValue(ClaimTypes.Name);
-            order.Startdate = DateTime.Now;
+            //order.Startdate = DateTime.Now;
             order.proceduretype = _context.Proceduretypes.SingleOrDefault(proc => proc.Id == order.Proceduretypeid);
             //order.Startdate = DateTime.Now.ToUniversalTime();
             HL7message hL7Message = new()
@@ -116,10 +117,11 @@ namespace Ris2022.Controllers
                 patientLastName = patient.Lastname,
                 modalityName = order.modality.Name,
                 startDateTime = DateTime.Now.ToString("yyyyMMddHHmmss"),
+                //startDateTime = DateTime.ParseExact(order.Startdate.ToString(), "yyyyMMddHHmmss", CultureInfo.InvariantCulture).ToString(),
                 procedureId = order.Proceduretypeid.Value,
                 procedureName = order.proceduretype.Nameen
             };
-            if (ModelState.IsValid && !Hl7Client.SendHl7Msg(hL7Message))
+            if (ModelState.IsValid && Hl7Client.SendHl7Msg(hL7Message))
                 //if (ModelState.IsValid)
             {
                 _context.Add(order);

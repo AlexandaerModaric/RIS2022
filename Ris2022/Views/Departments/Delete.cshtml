@@ -1,15 +1,15 @@
 ﻿@model Ris2022.Data.Models.Department
 
 @{
-    ViewData["Title"] = "Delete";
+    ViewData["Title"] = Resource.Delete;
     Layout = "~/Pages/Shared/_Layout.cshtml";
 }
 
-<h1>Delete</h1>
+<h1>@Resource.Delete</h1>
 
-<h3>Are you sure you want to delete this?</h3>
+<h3>@Resource.ConfirmDelete @Resource.Department?</h3>
 <div>
-    <h4>Department</h4>
+    <h4>@Resource.Department</h4>
     <hr />
     <dl class="row">
         <dt class = "col-sm-2">

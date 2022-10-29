@@ -13,11 +13,11 @@ namespace Ris2022.Data.Models
         public int Id { get; set; }
         [Required]
         [StringLength(25)]
-        [Display(ResourceType = typeof(Resource), Name = "Clinic")]
-        public string Namear { get; set; } = null!;
+        [Display(ResourceType = typeof(Resource), Name = "Namear")]
+        public string? Namear { get; set; }
         [Required]
         [StringLength(25)]
-        [Display(ResourceType = typeof(Resource), Name = "Clinic")]
+        [Display(ResourceType = typeof(Resource), Name = "Nameen")]
         public string? Nameen { get; set; }
         public int? Cost { get; set; }
         [Display(ResourceType = typeof(Resource), Name = "UserName")]

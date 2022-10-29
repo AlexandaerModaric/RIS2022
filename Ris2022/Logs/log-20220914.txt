@@ -3347,4 +3347,820 @@ INNER JOIN "Modalitytypes" "m0" ON "m"."Modalitytypeid" = "m0"."Id"
  ]2022-09-14 20:10:49.392 +03:00 [INF Entity Framework Core 6.0.8 initialized 'RisDBContext' using provider 'Oracle.EntityFrameworkCore:6.0.21.1-20220418' with options: None 
  ]2022-09-14 20:12:06.119 +03:00 [INF Entity Framework Core 6.0.8 initialized 'RisDBContext' using provider 'Oracle.EntityFrameworkCore:6.0.21.1-20220418' with options: None 
  ]2022-09-14 20:15:42.217 +03:00 [INF Entity Framework Core 6.0.8 initialized 'RisDBContext' using provider 'Oracle.EntityFrameworkCore:6.0.21.1-20220418' with options: None 
+ ]2022-09-14 20:19:08.348 +03:00 [INF User profile is available. Using 'C:\Users\hp\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest. 
+ ]2022-09-14 20:19:08.815 +03:00 [INF Application Is Starting 
+ ]2022-09-14 20:19:08.992 +03:00 [INF Application started. Press Ctrl+C to shut down. 
+ ]2022-09-14 20:19:08.993 +03:00 [INF Hosting environment: Development 
+ ]2022-09-14 20:19:08.993 +03:00 [INF Content root path: C:\Users\hp\source\repos\Ris2022\Ris2022\ 
+ ]2022-09-14 20:19:09.052 +03:00 [INF Request starting HTTP/1.1 GET https://localhost:44392/ - - 
+ ]2022-09-14 20:19:09.215 +03:00 [INF Identity.Application was not authenticated. Failure message: Ticket expired 
+ ]2022-09-14 20:19:09.226 +03:00 [INF Executing endpoint '/Index' 
+ ]2022-09-14 20:19:09.317 +03:00 [INF Route matched with {page = "/Index", action = "", controller = "", area = ""}. Executing page /Index 
+ ]2022-09-14 20:19:09.657 +03:00 [INF Executing handler method Ris2022.Pages.Account.LoginIModel.OnGetAsync - ModelState is "Valid" 
+ ]2022-09-14 20:19:09.671 +03:00 [INF AuthenticationScheme: Identity.External signed out. 
+ ]2022-09-14 20:19:09.673 +03:00 [INF Executed handler method OnGetAsync, returned result . 
+ ]2022-09-14 20:19:09.681 +03:00 [INF Executing an implicit handler method - ModelState is "Valid" 
+ ]2022-09-14 20:19:09.682 +03:00 [INF Executed an implicit handler method, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult. 
+ ]2022-09-14 20:19:10.150 +03:00 [INF Executed page /Index in 821.9378ms 
+ ]2022-09-14 20:19:10.156 +03:00 [INF Executed endpoint '/Index' 
+ ]2022-09-14 20:19:10.255 +03:00 [INF Request finished HTTP/1.1 GET https://localhost:44392/ - - - 200 - text/html;+charset=utf-8 1210.1190ms 
+ ]2022-09-14 20:19:10.294 +03:00 [INF Request starting HTTP/1.1 GET https://localhost:44392/_framework/aspnetcore-browser-refresh.js - - 
+ ]2022-09-14 20:19:10.307 +03:00 [INF Request finished HTTP/1.1 GET https://localhost:44392/_framework/aspnetcore-browser-refresh.js - - - 200 11984 application/javascript;+charset=utf-8 12.2626ms 
+ ]2022-09-14 20:19:10.327 +03:00 [INF Request starting HTTP/1.1 GET https://localhost:44392/_vs/browserLink - - 
+ ]2022-09-14 20:19:10.426 +03:00 [INF Request finished HTTP/1.1 GET https://localhost:44392/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 99.6148ms 
+ ]2022-09-14 20:19:10.502 +03:00 [INF Request starting HTTP/1.1 GET https://localhost:44392/assets/images/fav.png - - 
+ ]2022-09-14 20:19:10.513 +03:00 [INF Identity.Application was not authenticated. Failure message: Ticket expired 
+ ]2022-09-14 20:19:10.514 +03:00 [INF Request finished HTTP/1.1 GET https://localhost:44392/assets/images/fav.png - - - 0 - - 11.7726ms 
+ ]2022-09-14 20:19:17.201 +03:00 [INF Request starting HTTP/1.1 POST https://localhost:44392/ application/x-www-form-urlencoded 252 
+ ]2022-09-14 20:19:17.204 +03:00 [INF Identity.Application was not authenticated. Failure message: Ticket expired 
+ ]2022-09-14 20:19:17.204 +03:00 [INF Executing endpoint '/Index' 
+ ]2022-09-14 20:19:17.205 +03:00 [INF Route matched with {page = "/Index", action = "", controller = "", area = ""}. Executing page /Index 
+ ]2022-09-14 20:19:17.306 +03:00 [INF Executing handler method Ris2022.Pages.Account.LoginIModel.OnPostAsync - ModelState is "Valid" 
+ ]2022-09-14 20:19:19.556 +03:00 [INF Entity Framework Core 6.0.8 initialized 'RisDBContext' using provider 'Oracle.EntityFrameworkCore:6.0.21.1-20220418' with options: None 
+ ]2022-09-14 20:19:21.502 +03:00 [INF Executed DbCommand (175ms) [Parameters=[:normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='0']
+SELECT "a"."Id", "a"."AccessFailedCount", "a"."ClinicId", "a"."ConcurrencyStamp", "a"."Departmentid", "a"."Email", "a"."EmailConfirmed", "a"."Firstname", "a"."Isdoctor", "a"."Languageid", "a"."Lastname", "a"."LockoutEnabled", "a"."LockoutEnd", "a"."NormalizedEmail", "a"."NormalizedUserName", "a"."PasswordHash", "a"."PhoneNumber", "a"."PhoneNumberConfirmed", "a"."SecurityStamp", "a"."TwoFactorEnabled", "a"."UserName"
+FROM "AppUser" "a"
+WHERE "a"."NormalizedUserName" = :normalizedUserName_0
+FETCH FIRST 1 ROWS ONLY 
+ ]2022-09-14 20:19:21.978 +03:00 [INF Executed DbCommand (1ms) [Parameters=[:user_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='0']
+SELECT "u"."Id", "u"."ClaimType", "u"."ClaimValue", "u"."UserId"
+FROM "UserClaims" "u"
+WHERE "u"."UserId" = :user_Id_0 
+ ]2022-09-14 20:19:22.033 +03:00 [INF Executed DbCommand (1ms) [Parameters=[:userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='0']
+SELECT "r"."Name"
+FROM "UserRoles" "u"
+INNER JOIN "Role" "r" ON "u"."RoleId" = "r"."Id"
+WHERE "u"."UserId" = :userId_0 
+ ]2022-09-14 20:19:22.046 +03:00 [INF Executed DbCommand (1ms) [Parameters=[:normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='0']
+SELECT "r"."Id", "r"."ConcurrencyStamp", "r"."Name", "r"."NormalizedName"
+FROM "Role" "r"
+WHERE "r"."NormalizedName" = :normalizedName_0
+FETCH FIRST 1 ROWS ONLY 
+ ]2022-09-14 20:19:22.092 +03:00 [INF Executed DbCommand (1ms) [Parameters=[:role_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='0']
+SELECT "r"."ClaimType", "r"."ClaimValue"
+FROM "RoleClaims" "r"
+WHERE "r"."RoleId" = :role_Id_0 
+ ]2022-09-14 20:19:22.101 +03:00 [INF AuthenticationScheme: Identity.Application signed in. 
+ ]2022-09-14 20:19:22.101 +03:00 [INF modar User logged in. 
+ ]2022-09-14 20:19:22.102 +03:00 [INF Executed handler method OnPostAsync, returned result Microsoft.AspNetCore.Mvc.RedirectToPageResult. 
+ ]2022-09-14 20:19:22.108 +03:00 [INF Executing RedirectToPageResult, redirecting to MainPage. 
+ ]2022-09-14 20:19:22.109 +03:00 [INF Executed page /Index in 4903.6136ms 
+ ]2022-09-14 20:19:22.109 +03:00 [INF Executed endpoint '/Index' 
+ ]2022-09-14 20:19:22.115 +03:00 [INF Request starting HTTP/1.1 GET https://localhost:44392/MainPage - - 
+ ]2022-09-14 20:19:22.117 +03:00 [INF Request finished HTTP/1.1 POST https://localhost:44392/ application/x-www-form-urlencoded 252 - 302 - - 4917.5034ms 
+ ]2022-09-14 20:19:22.134 +03:00 [INF Executing endpoint '/MainPage' 
+ ]2022-09-14 20:19:22.141 +03:00 [INF Route matched with {page = "/MainPage", action = "", controller = "", area = ""}. Executing page /MainPage 
+ ]2022-09-14 20:19:22.142 +03:00 [INF Executing handler method Ris2022.Pages.IndexModel.OnGet - ModelState is "Valid" 
+ ]2022-09-14 20:19:22.142 +03:00 [INF Executed handler method OnGet, returned result . 
+ ]2022-09-14 20:19:22.143 +03:00 [INF Executing an implicit handler method - ModelState is "Valid" 
+ ]2022-09-14 20:19:22.143 +03:00 [INF Executed an implicit handler method, returned result Microsoft.AspNetCore.Mvc.RazorPages.PageResult. 
+ ]2022-09-14 20:19:22.239 +03:00 [INF Executed page /MainPage in 97.2948ms 
+ ]2022-09-14 20:19:22.239 +03:00 [INF Executed endpoint '/MainPage' 
+ ]2022-09-14 20:19:22.264 +03:00 [INF Request finished HTTP/1.1 GET https://localhost:44392/MainPage - - - 200 - text/html;+charset=utf-8 148.7801ms 
+ ]2022-09-14 20:19:22.343 +03:00 [INF Request starting HTTP/1.1 GET https://localhost:44392/_vs/browserLink - - 
+ ]2022-09-14 20:19:22.414 +03:00 [INF Request starting HTTP/1.1 GET https://localhost:44392/_framework/aspnetcore-browser-refresh.js - - 
+ ]2022-09-14 20:19:22.418 +03:00 [INF Request finished HTTP/1.1 GET https://localhost:44392/_framework/aspnetcore-browser-refresh.js - - - 200 11984 application/javascript;+charset=utf-8 4.5023ms 
+ ]2022-09-14 20:19:22.513 +03:00 [INF Request finished HTTP/1.1 GET https://localhost:44392/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 170.2645ms 
+ ]2022-09-14 20:20:00.775 +03:00 [INF Request starting HTTP/1.1 GET https://localhost:44392/acceptancetypes - - 
+ ]2022-09-14 20:20:00.779 +03:00 [INF Executing endpoint 'Ris2022.Controllers.AcceptancetypesController.Index (Ris2022)' 
+ ]2022-09-14 20:20:00.802 +03:00 [INF Route matched with {action = "Index", controller = "Acceptancetypes", page = "", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller Ris2022.Controllers.AcceptancetypesController (Ris2022). 
+ ]2022-09-14 20:20:00.911 +03:00 [INF Entity Framework Core 6.0.8 initialized 'RisDBContext' using provider 'Oracle.EntityFrameworkCore:6.0.21.1-20220418' with options: None 
+ ]2022-09-14 20:20:00.940 +03:00 [INF Executed DbCommand (13ms) [Parameters=[], CommandType='"Text"', CommandTimeout='0']
+SELECT "a"."Id", "a"."Namear", "a"."Nameen"
+FROM "Acceptancetypes" "a" 
+ ]2022-09-14 20:20:00.947 +03:00 [INF Executing ViewResult, running view Index. 
+ ]2022-09-14 20:20:00.976 +03:00 [INF Executed ViewResult - view Index executed in 31.9155ms. 
+ ]2022-09-14 20:20:00.977 +03:00 [INF Executed action Ris2022.Controllers.AcceptancetypesController.Index (Ris2022) in 174.5937ms 
+ ]2022-09-14 20:20:00.977 +03:00 [INF Executed endpoint 'Ris2022.Controllers.AcceptancetypesController.Index (Ris2022)' 
+ ]2022-09-14 20:20:00.981 +03:00 [INF Request finished HTTP/1.1 GET https://localhost:44392/acceptancetypes - - - 200 - text/html;+charset=utf-8 206.5993ms 
+ ]2022-09-14 20:20:01.057 +03:00 [INF Request starting HTTP/1.1 GET https://localhost:44392/_vs/browserLink - - 
+ ]2022-09-14 20:20:01.066 +03:00 [INF Request starting HTTP/1.1 GET https://localhost:44392/_framework/aspnetcore-browser-refresh.js - - 
+ ]2022-09-14 20:20:01.068 +03:00 [INF Request finished HTTP/1.1 GET https://localhost:44392/_framework/aspnetcore-browser-refresh.js - - - 200 11984 application/javascript;+charset=utf-8 2.1436ms 
+ ]2022-09-14 20:20:01.133 +03:00 [INF Request finished HTTP/1.1 GET https://localhost:44392/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 75.4086ms 
+ ]2022-09-14 20:20:03.134 +03:00 [INF Request starting HTTP/1.1 GET https://localhost:44392/Acceptancetypes/Create - - 
+ ]2022-09-14 20:20:03.138 +03:00 [INF Executing endpoint 'Ris2022.Controllers.AcceptancetypesController.Create (Ris2022)' 
+ ]2022-09-14 20:20:03.142 +03:00 [INF Route matched with {action = "Create", controller = "Acceptancetypes", page = "", area = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Create() on controller Ris2022.Controllers.AcceptancetypesController (Ris2022). 
+ ]2022-09-14 20:20:03.147 +03:00 [INF Executing ViewResult, running view Create. 
+ ]2022-09-14 20:20:03.195 +03:00 [INF Executed ViewResult - view Create executed in 51.6967ms. 
+ ]2022-09-14 20:20:03.195 +03:00 [INF Executed action Ris2022.Controllers.AcceptancetypesController.Create (Ris2022) in 52.9775ms 
+ ]2022-09-14 20:20:03.195 +03:00 [INF Executed endpoint 'Ris2022.Controllers.AcceptancetypesController.Create (Ris2022)' 
+ ]2022-09-14 20:20:03.200 +03:00 [INF Request finished HTTP/1.1 GET https://localhost:44392/Acceptancetypes/Create - - - 200 - text/html;+charset=utf-8 66.3195ms 
+ ]2022-09-14 20:20:03.247 +03:00 [INF Request starting HTTP/1.1 GET https://localhost:44392/Acceptancetypes/assets/js/jquery-3.2.1.min.js - - 
+ ]2022-09-14 20:20:03.257 +03:00 [INF Request finished HTTP/1.1 GET https://localhost:44392/Acceptancetypes/assets/js/jquery-3.2.1.min.js - - - 404 - - 9.9995ms 
+ ]2022-09-14 20:20:03.262 +03:00 [INF Request starting HTTP/1.1 GET https://localhost:44392/Acceptancetypes/assets/js/popper.min.js - - 
+ ]2022-09-14 20:20:03.264 +03:00 [INF Request finished HTTP/1.1 GET https://localhost:44392/Acceptancetypes/assets/js/popper.min.js - - - 404 - - 2.7646ms 
+ ]2022-09-14 20:20:03.276 +03:00 [INF Request starting HTTP/1.1 GET https://localhost:44392/Acceptancetypes/assets/plugins/slider/js/owl.carousel.min.js - - 
+ ]2022-09-14 20:20:03.277 +03:00 [INF Request finished HTTP/1.1 GET https://localhost:44392/Acceptancetypes/assets/plugins/slider/js/owl.carousel.min.js - - - 404 - - 1.5715ms 
+ ]2022-09-14 20:20:03.305 +03:00 [INF Request starting HTTP/1.1 GET https://localhost:44392/_framework/aspnetcore-browser-refresh.js - - 
+ ]2022-09-14 20:20:03.307 +03:00 [INF Request finished HTTP/1.1 GET https://localhost:44392/_framework/aspnetcore-browser-refresh.js - - - 200 11984 application/javascript;+charset=utf-8 1.3699ms 
+ ]2022-09-14 20:20:03.315 +03:00 [INF Request starting HTTP/1.1 GET https://localhost:44392/Acceptancetypes/assets/js/jquery-3.2.1.min.js - - 
+ ]2022-09-14 20:20:03.317 +03:00 [INF Request finished HTTP/1.1 GET https://localhost:44392/Acceptancetypes/assets/js/jquery-3.2.1.min.js - - - 404 - - 1.5052ms 
+ ]2022-09-14 20:20:03.347 +03:00 [INF Request starting HTTP/1.1 GET https://localhost:44392/Acceptancetypes/assets/js/popper.min.js - - 
+ ]2022-09-14 20:20:03.349 +03:00 [INF Request finished HTTP/1.1 GET https://localhost:44392/Acceptancetypes/assets/js/popper.min.js - - - 404 - - 2.2770ms 
+ ]2022-09-14 20:20:03.370 +03:00 [INF Request starting HTTP/1.1 GET https://localhost:44392/Acceptancetypes/assets/js/bootstrap.min.js - - 
+ ]2022-09-14 20:20:03.372 +03:00 [INF Request finished HTTP/1.1 GET https://localhost:44392/Acceptancetypes/assets/js/bootstrap.min.js - - - 404 - - 4.1850ms 
+ ]2022-09-14 20:20:03.378 +03:00 [INF Request starting HTTP/1.1 GET https://localhost:44392/Acceptancetypes/assets/plugins/scroll-fixed/jquery-scrolltofixed-min.js - - 
+ ]2022-09-14 20:20:03.380 +03:00 [INF Request finished HTTP/1.1 GET https://localhost:44392/Acceptancetypes/assets/plugins/scroll-fixed/jquery-scrolltofixed-min.js - - - 404 - - 1.5724ms 
+ ]2022-09-14 20:20:03.380 +03:00 [INF Request starting HTTP/1.1 GET https://localhost:44392/Acceptancetypes/assets/js/script.js - - 
+ ]2022-09-14 20:20:03.382 +03:00 [INF Request finished HTTP/1.1 GET https://localhost:44392/Acceptancetypes/assets/js/script.js - - - 404 - - 2.4044ms 
+ ]2022-09-14 20:20:03.383 +03:00 [INF Request starting HTTP/1.1 GET https://localhost:44392/_vs/browserLink - - 
+ ]2022-09-14 20:20:03.398 +03:00 [INF Request starting HTTP/1.1 GET https://localhost:44392/Acceptancetypes/assets/plugins/slider/js/owl.carousel.min.js - - 
+ ]2022-09-14 20:20:03.400 +03:00 [INF Request finished HTTP/1.1 GET https://localhost:44392/Acceptancetypes/assets/plugins/slider/js/owl.carousel.min.js - - - 404 - - 1.4026ms 
+ ]2022-09-14 20:20:03.418 +03:00 [INF Request starting HTTP/1.1 GET https://localhost:44392/Acceptancetypes/assets/js/script.js - - 
+ ]2022-09-14 20:20:03.420 +03:00 [INF Request finished HTTP/1.1 GET https://localhost:44392/Acceptancetypes/assets/js/script.js - - - 404 - - 1.7008ms 
+ ]2022-09-14 20:20:03.519 +03:00 [INF Request finished HTTP/1.1 GET https://localhost:44392/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 135.9393ms 
+ ]2022-09-14 20:20:22.674 +03:00 [INF Request starting HTTP/1.1 POST https://localhost:44392/Acceptancetypes/Create application/x-www-form-urlencoded 279 
+ ]2022-09-14 20:20:22.676 +03:00 [INF Executing endpoint 'Ris2022.Controllers.AcceptancetypesController.Create (Ris2022)' 
+ ]2022-09-14 20:20:22.730 +03:00 [INF Route matched with {action = "Create", controller = "Acceptancetypes", page = "", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Create(Ris2022.Data.Models.Acceptancetype) on controller Ris2022.Controllers.AcceptancetypesController (Ris2022). 
+ ]2022-09-14 20:20:22.762 +03:00 [INF Entity Framework Core 6.0.8 initialized 'RisDBContext' using provider 'Oracle.EntityFrameworkCore:6.0.21.1-20220418' with options: None 
+ ]2022-09-14 20:20:23.104 +03:00 [INF Executed DbCommand (38ms) [Parameters=[:p0='?' (Size = 25), :p1='?' (Size = 25), :cur1='?' (Direction = Output) (DbType = Object)], CommandType='"Text"', CommandTimeout='0']
+DECLARE
+TYPE "rAcceptancetypes_0" IS RECORD
+(
+"Id" NUMBER(10)
+);
+TYPE "tAcceptancetypes_0" IS TABLE OF "rAcceptancetypes_0";
+"lAcceptancetypes_0" "tAcceptancetypes_0";
+v_RowCount INTEGER;
+BEGIN
+
+"lAcceptancetypes_0" := "tAcceptancetypes_0"();
+"lAcceptancetypes_0".extend(1);
+INSERT INTO "Acceptancetypes" ("Namear", "Nameen")
+VALUES (:p0, :p1)
+RETURNING "Id" INTO "lAcceptancetypes_0"(1)."Id";
+OPEN :cur1 FOR SELECT "lAcceptancetypes_0"(1)."Id" FROM DUAL;
+END; 
+ ]2022-09-14 20:20:23.196 +03:00 [INF Executing RedirectResult, redirecting to /Acceptancetypes. 
+ ]2022-09-14 20:20:23.196 +03:00 [INF Executed action Ris2022.Controllers.AcceptancetypesController.Create (Ris2022) in 465.3858ms 
+ ]2022-09-14 20:20:23.196 +03:00 [INF Executed endpoint 'Ris2022.Controllers.AcceptancetypesController.Create (Ris2022)' 
+ ]2022-09-14 20:20:23.196 +03:00 [INF Request finished HTTP/1.1 POST https://localhost:44392/Acceptancetypes/Create application/x-www-form-urlencoded 279 - 302 - - 522.7038ms 
+ ]2022-09-14 20:20:23.200 +03:00 [INF Request starting HTTP/1.1 GET https://localhost:44392/Acceptancetypes - - 
+ ]2022-09-14 20:20:23.202 +03:00 [INF Executing endpoint 'Ris2022.Controllers.AcceptancetypesController.Index (Ris2022)' 
+ ]2022-09-14 20:20:23.202 +03:00 [INF Route matched with {action = "Index", controller = "Acceptancetypes", page = "", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller Ris2022.Controllers.AcceptancetypesController (Ris2022). 
+ ]2022-09-14 20:20:23.203 +03:00 [INF Entity Framework Core 6.0.8 initialized 'RisDBContext' using provider 'Oracle.EntityFrameworkCore:6.0.21.1-20220418' with options: None 
+ ]2022-09-14 20:20:23.209 +03:00 [INF Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='0']
+SELECT "a"."Id", "a"."Namear", "a"."Nameen"
+FROM "Acceptancetypes" "a" 
+ ]2022-09-14 20:20:23.212 +03:00 [INF Executing ViewResult, running view Index. 
+ ]2022-09-14 20:20:23.224 +03:00 [INF Executed ViewResult - view Index executed in 12.8337ms. 
+ ]2022-09-14 20:20:23.224 +03:00 [INF Executed action Ris2022.Controllers.AcceptancetypesController.Index (Ris2022) in 22.4129ms 
+ ]2022-09-14 20:20:23.225 +03:00 [INF Executed endpoint 'Ris2022.Controllers.AcceptancetypesController.Index (Ris2022)' 
+ ]2022-09-14 20:20:23.232 +03:00 [INF Request finished HTTP/1.1 GET https://localhost:44392/Acceptancetypes - - - 200 - text/html;+charset=utf-8 31.7596ms 
+ ]2022-09-14 20:20:23.309 +03:00 [INF Request starting HTTP/1.1 GET https://localhost:44392/_vs/browserLink - - 
+ ]2022-09-14 20:20:23.312 +03:00 [INF Request starting HTTP/1.1 GET https://localhost:44392/_framework/aspnetcore-browser-refresh.js - - 
+ ]2022-09-14 20:20:23.316 +03:00 [INF Request finished HTTP/1.1 GET https://localhost:44392/_framework/aspnetcore-browser-refresh.js - - - 200 11984 application/javascript;+charset=utf-8 4.2042ms 
+ ]2022-09-14 20:20:23.400 +03:00 [INF Request finished HTTP/1.1 GET https://localhost:44392/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 90.9875ms 
+ ]2022-09-14 20:20:31.188 +03:00 [INF Request starting HTTP/1.1 GET https://localhost:44392/clinics - - 
+ ]2022-09-14 20:20:31.190 +03:00 [INF Executing endpoint 'Ris2022.Controllers.ClinicsController.Index (Ris2022)' 
+ ]2022-09-14 20:20:31.198 +03:00 [INF Route matched with {action = "Index", controller = "Clinics", page = "", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller Ris2022.Controllers.ClinicsController (Ris2022). 
+ ]2022-09-14 20:20:31.202 +03:00 [INF Entity Framework Core 6.0.8 initialized 'RisDBContext' using provider 'Oracle.EntityFrameworkCore:6.0.21.1-20220418' with options: None 
+ ]2022-09-14 20:20:31.222 +03:00 [INF Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='0']
+SELECT "c"."Id", "c"."Cost", "c"."Namear", "c"."Nameen"
+FROM "Clinics" "c" 
+ ]2022-09-14 20:20:31.224 +03:00 [INF Executing ViewResult, running view Index. 
+ ]2022-09-14 20:20:31.248 +03:00 [INF Executed ViewResult - view Index executed in 25.0147ms. 
+ ]2022-09-14 20:20:31.248 +03:00 [INF Executed action Ris2022.Controllers.ClinicsController.Index (Ris2022) in 49.6552ms 
+ ]2022-09-14 20:20:31.248 +03:00 [INF Executed endpoint 'Ris2022.Controllers.ClinicsController.Index (Ris2022)' 
+ ]2022-09-14 20:20:31.257 +03:00 [INF Request finished HTTP/1.1 GET https://localhost:44392/clinics - - - 200 - text/html;+charset=utf-8 68.5125ms 
+ ]2022-09-14 20:20:31.365 +03:00 [INF Request starting HTTP/1.1 GET https://localhost:44392/_framework/aspnetcore-browser-refresh.js - - 
+ ]2022-09-14 20:20:31.367 +03:00 [INF Request finished HTTP/1.1 GET https://localhost:44392/_framework/aspnetcore-browser-refresh.js - - - 200 11984 application/javascript;+charset=utf-8 1.8286ms 
+ ]2022-09-14 20:20:31.379 +03:00 [INF Request starting HTTP/1.1 GET https://localhost:44392/_vs/browserLink - - 
+ ]2022-09-14 20:20:31.456 +03:00 [INF Request finished HTTP/1.1 GET https://localhost:44392/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 73.3131ms 
+ ]2022-09-14 20:20:32.873 +03:00 [INF Request starting HTTP/1.1 GET https://localhost:44392/Clinics/Create - - 
+ ]2022-09-14 20:20:32.876 +03:00 [INF Executing endpoint 'Ris2022.Controllers.ClinicsController.Create (Ris2022)' 
+ ]2022-09-14 20:20:32.878 +03:00 [INF Route matched with {action = "Create", controller = "Clinics", page = "", area = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Create() on controller Ris2022.Controllers.ClinicsController (Ris2022). 
+ ]2022-09-14 20:20:32.880 +03:00 [INF Executing ViewResult, running view Create. 
+ ]2022-09-14 20:20:32.926 +03:00 [INF Executed ViewResult - view Create executed in 47.3833ms. 
+ ]2022-09-14 20:20:32.926 +03:00 [INF Executed action Ris2022.Controllers.ClinicsController.Create (Ris2022) in 48.2036ms 
+ ]2022-09-14 20:20:32.927 +03:00 [INF Executed endpoint 'Ris2022.Controllers.ClinicsController.Create (Ris2022)' 
+ ]2022-09-14 20:20:33.648 +03:00 [INF Request finished HTTP/1.1 GET https://localhost:44392/Clinics/Create - - - 200 - text/html;+charset=utf-8 774.7556ms 
+ ]2022-09-14 20:20:33.696 +03:00 [INF Request starting HTTP/1.1 GET https://localhost:44392/Clinics/assets/js/jquery-3.2.1.min.js - - 
+ ]2022-09-14 20:20:33.706 +03:00 [INF Request starting HTTP/1.1 GET https://localhost:44392/Clinics/assets/js/popper.min.js - - 
+ ]2022-09-14 20:20:33.706 +03:00 [INF Request finished HTTP/1.1 GET https://localhost:44392/Clinics/assets/js/jquery-3.2.1.min.js - - - 404 - - 9.8553ms 
+ ]2022-09-14 20:20:33.707 +03:00 [INF Request starting HTTP/1.1 GET https://localhost:44392/Clinics/assets/js/bootstrap.min.js - - 
+ ]2022-09-14 20:20:33.709 +03:00 [INF Request finished HTTP/1.1 GET https://localhost:44392/Clinics/assets/js/popper.min.js - - - 404 - - 2.9737ms 
+ ]2022-09-14 20:20:33.709 +03:00 [INF Request starting HTTP/1.1 GET https://localhost:44392/Clinics/assets/plugins/scroll-fixed/jquery-scrolltofixed-min.js - - 
+ ]2022-09-14 20:20:33.709 +03:00 [INF Request starting HTTP/1.1 GET https://localhost:44392/Clinics/assets/plugins/slider/js/owl.carousel.min.js - - 
+ ]2022-09-14 20:20:33.711 +03:00 [INF Request finished HTTP/1.1 GET https://localhost:44392/Clinics/assets/plugins/scroll-fixed/jquery-scrolltofixed-min.js - - - 404 - - 1.5785ms 
+ ]2022-09-14 20:20:33.711 +03:00 [INF Request finished HTTP/1.1 GET https://localhost:44392/Clinics/assets/plugins/slider/js/owl.carousel.min.js - - - 404 - - 1.5962ms 
+ ]2022-09-14 20:20:33.712 +03:00 [INF Request starting HTTP/1.1 GET https://localhost:44392/Clinics/assets/js/script.js - - 
+ ]2022-09-14 20:20:33.709 +03:00 [INF Request finished HTTP/1.1 GET https://localhost:44392/Clinics/assets/js/bootstrap.min.js - - - 404 - - 2.2752ms 
+ ]2022-09-14 20:20:33.716 +03:00 [INF Request finished HTTP/1.1 GET https://localhost:44392/Clinics/assets/js/script.js - - - 404 - - 2.0479ms 
+ ]2022-09-14 20:20:33.721 +03:00 [INF Request starting HTTP/1.1 GET https://localhost:44392/_vs/browserLink - - 
+ ]2022-09-14 20:20:33.724 +03:00 [INF Request starting HTTP/1.1 GET https://localhost:44392/_framework/aspnetcore-browser-refresh.js - - 
+ ]2022-09-14 20:20:33.726 +03:00 [INF Request finished HTTP/1.1 GET https://localhost:44392/_framework/aspnetcore-browser-refresh.js - - - 200 11984 application/javascript;+charset=utf-8 1.9219ms 
+ ]2022-09-14 20:20:33.737 +03:00 [INF Request starting HTTP/1.1 GET https://localhost:44392/Clinics/assets/js/jquery-3.2.1.min.js - - 
+ ]2022-09-14 20:20:33.740 +03:00 [INF Request finished HTTP/1.1 GET https://localhost:44392/Clinics/assets/js/jquery-3.2.1.min.js - - - 404 - - 3.3526ms 
+ ]2022-09-14 20:20:33.779 +03:00 [INF Request starting HTTP/1.1 GET https://localhost:44392/Clinics/assets/js/popper.min.js - - 
+ ]2022-09-14 20:20:33.781 +03:00 [INF Request finished HTTP/1.1 GET https://localhost:44392/Clinics/assets/js/popper.min.js - - - 404 - - 1.7064ms 
+ ]2022-09-14 20:20:33.799 +03:00 [INF Request starting HTTP/1.1 GET https://localhost:44392/Clinics/assets/js/bootstrap.min.js - - 
+ ]2022-09-14 20:20:33.801 +03:00 [INF Request finished HTTP/1.1 GET https://localhost:44392/Clinics/assets/js/bootstrap.min.js - - - 404 - - 2.4889ms 
+ ]2022-09-14 20:20:33.808 +03:00 [INF Request starting HTTP/1.1 GET https://localhost:44392/Clinics/assets/plugins/scroll-fixed/jquery-scrolltofixed-min.js - - 
+ ]2022-09-14 20:20:33.817 +03:00 [INF Request finished HTTP/1.1 GET https://localhost:44392/Clinics/assets/plugins/scroll-fixed/jquery-scrolltofixed-min.js - - - 404 - - 8.9286ms 
+ ]2022-09-14 20:20:33.821 +03:00 [INF Request finished HTTP/1.1 GET https://localhost:44392/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 100.3240ms 
+ ]2022-09-14 20:20:33.826 +03:00 [INF Request starting HTTP/1.1 GET https://localhost:44392/Clinics/assets/plugins/slider/js/owl.carousel.min.js - - 
+ ]2022-09-14 20:20:33.827 +03:00 [INF Request finished HTTP/1.1 GET https://localhost:44392/Clinics/assets/plugins/slider/js/owl.carousel.min.js - - - 404 - - 1.2444ms 
+ ]2022-09-14 20:20:33.834 +03:00 [INF Request starting HTTP/1.1 GET https://localhost:44392/Clinics/assets/js/script.js - - 
+ ]2022-09-14 20:20:33.836 +03:00 [INF Request finished HTTP/1.1 GET https://localhost:44392/Clinics/assets/js/script.js - - - 404 - - 2.1706ms 
+ ]2022-09-14 20:20:59.305 +03:00 [INF Request starting HTTP/1.1 POST https://localhost:44392/Clinics/Create application/x-www-form-urlencoded 290 
+ ]2022-09-14 20:20:59.308 +03:00 [INF Executing endpoint 'Ris2022.Controllers.ClinicsController.Create (Ris2022)' 
+ ]2022-09-14 20:20:59.316 +03:00 [INF Route matched with {action = "Create", controller = "Clinics", page = "", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Create(Ris2022.Data.Models.Clinic) on controller Ris2022.Controllers.ClinicsController (Ris2022). 
+ ]2022-09-14 20:20:59.325 +03:00 [INF Entity Framework Core 6.0.8 initialized 'RisDBContext' using provider 'Oracle.EntityFrameworkCore:6.0.21.1-20220418' with options: None 
+ ]2022-09-14 20:20:59.441 +03:00 [INF Executed DbCommand (75ms) [Parameters=[:p0='?' (DbType = Int32), :p1='?' (Size = 25), :p2='?' (Size = 25), :cur1='?' (Direction = Output) (DbType = Object)], CommandType='"Text"', CommandTimeout='0']
+DECLARE
+TYPE "rClinics_0" IS RECORD
+(
+"Id" NUMBER(10)
+);
+TYPE "tClinics_0" IS TABLE OF "rClinics_0";
+"lClinics_0" "tClinics_0";
+v_RowCount INTEGER;
+BEGIN
+
+"lClinics_0" := "tClinics_0"();
+"lClinics_0".extend(1);
+INSERT INTO "Clinics" ("Cost", "Namear", "Nameen")
+VALUES (:p0, :p1, :p2)
+RETURNING "Id" INTO "lClinics_0"(1)."Id";
+OPEN :cur1 FOR SELECT "lClinics_0"(1)."Id" FROM DUAL;
+END; 
+ ]2022-09-14 20:20:59.449 +03:00 [INF Executing RedirectResult, redirecting to /Clinics. 
+ ]2022-09-14 20:20:59.449 +03:00 [INF Executed action Ris2022.Controllers.ClinicsController.Create (Ris2022) in 133.0183ms 
+ ]2022-09-14 20:20:59.449 +03:00 [INF Executed endpoint 'Ris2022.Controllers.ClinicsController.Create (Ris2022)' 
+ ]2022-09-14 20:20:59.450 +03:00 [INF Request finished HTTP/1.1 POST https://localhost:44392/Clinics/Create application/x-www-form-urlencoded 290 - 302 - - 144.9977ms 
+ ]2022-09-14 20:20:59.454 +03:00 [INF Request starting HTTP/1.1 GET https://localhost:44392/Clinics - - 
+ ]2022-09-14 20:20:59.456 +03:00 [INF Executing endpoint 'Ris2022.Controllers.ClinicsController.Index (Ris2022)' 
+ ]2022-09-14 20:20:59.456 +03:00 [INF Route matched with {action = "Index", controller = "Clinics", page = "", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller Ris2022.Controllers.ClinicsController (Ris2022). 
+ ]2022-09-14 20:20:59.457 +03:00 [INF Entity Framework Core 6.0.8 initialized 'RisDBContext' using provider 'Oracle.EntityFrameworkCore:6.0.21.1-20220418' with options: None 
+ ]2022-09-14 20:20:59.461 +03:00 [INF Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='0']
+SELECT "c"."Id", "c"."Cost", "c"."Namear", "c"."Nameen"
+FROM "Clinics" "c" 
+ ]2022-09-14 20:20:59.462 +03:00 [INF Executing ViewResult, running view Index. 
+ ]2022-09-14 20:20:59.477 +03:00 [INF Executed ViewResult - view Index executed in 14.6918ms. 
+ ]2022-09-14 20:20:59.477 +03:00 [INF Executed action Ris2022.Controllers.ClinicsController.Index (Ris2022) in 21.1838ms 
+ ]2022-09-14 20:20:59.477 +03:00 [INF Executed endpoint 'Ris2022.Controllers.ClinicsController.Index (Ris2022)' 
+ ]2022-09-14 20:20:59.482 +03:00 [INF Request finished HTTP/1.1 GET https://localhost:44392/Clinics - - - 200 - text/html;+charset=utf-8 27.7859ms 
+ ]2022-09-14 20:20:59.539 +03:00 [INF Request starting HTTP/1.1 GET https://localhost:44392/_vs/browserLink - - 
+ ]2022-09-14 20:20:59.547 +03:00 [INF Request starting HTTP/1.1 GET https://localhost:44392/_framework/aspnetcore-browser-refresh.js - - 
+ ]2022-09-14 20:20:59.549 +03:00 [INF Request finished HTTP/1.1 GET https://localhost:44392/_framework/aspnetcore-browser-refresh.js - - - 200 11984 application/javascript;+charset=utf-8 1.5262ms 
+ ]2022-09-14 20:20:59.625 +03:00 [INF Request finished HTTP/1.1 GET https://localhost:44392/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 86.0017ms 
+ ]2022-09-14 20:21:22.558 +03:00 [INF Request starting HTTP/1.1 GET https://localhost:44392/ordertypes - - 
+ ]2022-09-14 20:21:22.560 +03:00 [INF Executing endpoint 'Ris2022.Controllers.OrdertypesController.Index (Ris2022)' 
+ ]2022-09-14 20:21:22.571 +03:00 [INF Route matched with {action = "Index", controller = "Ordertypes", page = "", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller Ris2022.Controllers.OrdertypesController (Ris2022). 
+ ]2022-09-14 20:21:22.576 +03:00 [INF Entity Framework Core 6.0.8 initialized 'RisDBContext' using provider 'Oracle.EntityFrameworkCore:6.0.21.1-20220418' with options: None 
+ ]2022-09-14 20:21:22.597 +03:00 [INF Executed DbCommand (9ms) [Parameters=[], CommandType='"Text"', CommandTimeout='0']
+SELECT "o"."Id", "o"."Namear", "o"."Nameen"
+FROM "Ordetypes" "o" 
+ ]2022-09-14 20:21:22.600 +03:00 [INF Executing ViewResult, running view Index. 
+ ]2022-09-14 20:21:22.625 +03:00 [INF Executed ViewResult - view Index executed in 26.87ms. 
+ ]2022-09-14 20:21:22.626 +03:00 [INF Executed action Ris2022.Controllers.OrdertypesController.Index (Ris2022) in 55.1688ms 
+ ]2022-09-14 20:21:22.626 +03:00 [INF Executed endpoint 'Ris2022.Controllers.OrdertypesController.Index (Ris2022)' 
+ ]2022-09-14 20:21:22.631 +03:00 [INF Request finished HTTP/1.1 GET https://localhost:44392/ordertypes - - - 200 - text/html;+charset=utf-8 73.0914ms 
+ ]2022-09-14 20:21:22.703 +03:00 [INF Request starting HTTP/1.1 GET https://localhost:44392/_framework/aspnetcore-browser-refresh.js - - 
+ ]2022-09-14 20:21:22.705 +03:00 [INF Request finished HTTP/1.1 GET https://localhost:44392/_framework/aspnetcore-browser-refresh.js - - - 200 11984 application/javascript;+charset=utf-8 1.6275ms 
+ ]2022-09-14 20:21:22.726 +03:00 [INF Request starting HTTP/1.1 GET https://localhost:44392/_vs/browserLink - - 
+ ]2022-09-14 20:21:22.799 +03:00 [INF Request finished HTTP/1.1 GET https://localhost:44392/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 72.5268ms 
+ ]2022-09-14 20:21:24.747 +03:00 [INF Request starting HTTP/1.1 GET https://localhost:44392/Ordertypes/Create - - 
+ ]2022-09-14 20:21:24.749 +03:00 [INF Executing endpoint 'Ris2022.Controllers.OrdertypesController.Create (Ris2022)' 
+ ]2022-09-14 20:21:24.754 +03:00 [INF Route matched with {action = "Create", controller = "Ordertypes", page = "", area = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Create() on controller Ris2022.Controllers.OrdertypesController (Ris2022). 
+ ]2022-09-14 20:21:24.757 +03:00 [INF Executing ViewResult, running view Create. 
+ ]2022-09-14 20:21:24.790 +03:00 [INF Executed ViewResult - view Create executed in 35.2308ms. 
+ ]2022-09-14 20:21:24.790 +03:00 [INF Executed action Ris2022.Controllers.OrdertypesController.Create (Ris2022) in 36.1757ms 
+ ]2022-09-14 20:21:24.790 +03:00 [INF Executed endpoint 'Ris2022.Controllers.OrdertypesController.Create (Ris2022)' 
+ ]2022-09-14 20:21:24.794 +03:00 [INF Request finished HTTP/1.1 GET https://localhost:44392/Ordertypes/Create - - - 200 - text/html;+charset=utf-8 46.9909ms 
+ ]2022-09-14 20:21:24.863 +03:00 [INF Request starting HTTP/1.1 GET https://localhost:44392/Ordertypes/assets/js/popper.min.js - - 
+ ]2022-09-14 20:21:24.868 +03:00 [INF Request starting HTTP/1.1 GET https://localhost:44392/Ordertypes/assets/js/bootstrap.min.js - - 
+ ]2022-09-14 20:21:24.870 +03:00 [INF Request finished HTTP/1.1 GET https://localhost:44392/Ordertypes/assets/js/popper.min.js - - - 404 - - 7.1247ms 
+ ]2022-09-14 20:21:24.870 +03:00 [INF Request starting HTTP/1.1 GET https://localhost:44392/Ordertypes/assets/plugins/scroll-fixed/jquery-scrolltofixed-min.js - - 
+ ]2022-09-14 20:21:24.871 +03:00 [INF Request finished HTTP/1.1 GET https://localhost:44392/Ordertypes/assets/js/bootstrap.min.js - - - 404 - - 2.7819ms 
+ ]2022-09-14 20:21:24.871 +03:00 [INF Request starting HTTP/1.1 GET https://localhost:44392/Ordertypes/assets/js/jquery-3.2.1.min.js - - 
+ ]2022-09-14 20:21:24.871 +03:00 [INF Request finished HTTP/1.1 GET https://localhost:44392/Ordertypes/assets/plugins/scroll-fixed/jquery-scrolltofixed-min.js - - - 404 - - 1.0909ms 
+ ]2022-09-14 20:21:24.872 +03:00 [INF Request finished HTTP/1.1 GET https://localhost:44392/Ordertypes/assets/js/jquery-3.2.1.min.js - - - 404 - - 1.0946ms 
+ ]2022-09-14 20:21:24.873 +03:00 [INF Request starting HTTP/1.1 GET https://localhost:44392/Ordertypes/assets/plugins/slider/js/owl.carousel.min.js - - 
+ ]2022-09-14 20:21:24.875 +03:00 [INF Request finished HTTP/1.1 GET https://localhost:44392/Ordertypes/assets/plugins/slider/js/owl.carousel.min.js - - - 404 - - 1.7479ms 
+ ]2022-09-14 20:21:24.877 +03:00 [INF Request starting HTTP/1.1 GET https://localhost:44392/Ordertypes/assets/js/script.js - - 
+ ]2022-09-14 20:21:24.878 +03:00 [INF Request finished HTTP/1.1 GET https://localhost:44392/Ordertypes/assets/js/script.js - - - 404 - - 1.7922ms 
+ ]2022-09-14 20:21:24.890 +03:00 [INF Request starting HTTP/1.1 GET https://localhost:44392/_framework/aspnetcore-browser-refresh.js - - 
+ ]2022-09-14 20:21:24.892 +03:00 [INF Request finished HTTP/1.1 GET https://localhost:44392/_framework/aspnetcore-browser-refresh.js - - - 200 11984 application/javascript;+charset=utf-8 1.4726ms 
+ ]2022-09-14 20:21:24.892 +03:00 [INF Request starting HTTP/1.1 GET https://localhost:44392/_vs/browserLink - - 
+ ]2022-09-14 20:21:24.896 +03:00 [INF Request starting HTTP/1.1 GET https://localhost:44392/Ordertypes/assets/js/popper.min.js - - 
+ ]2022-09-14 20:21:24.899 +03:00 [INF Request finished HTTP/1.1 GET https://localhost:44392/Ordertypes/assets/js/popper.min.js - - - 404 - - 2.8780ms 
+ ]2022-09-14 20:21:24.910 +03:00 [INF Request starting HTTP/1.1 GET https://localhost:44392/Ordertypes/assets/js/bootstrap.min.js - - 
+ ]2022-09-14 20:21:24.913 +03:00 [INF Request finished HTTP/1.1 GET https://localhost:44392/Ordertypes/assets/js/bootstrap.min.js - - - 404 - - 2.2546ms 
+ ]2022-09-14 20:21:24.925 +03:00 [INF Request starting HTTP/1.1 GET https://localhost:44392/Ordertypes/assets/plugins/scroll-fixed/jquery-scrolltofixed-min.js - - 
+ ]2022-09-14 20:21:24.926 +03:00 [INF Request finished HTTP/1.1 GET https://localhost:44392/Ordertypes/assets/plugins/scroll-fixed/jquery-scrolltofixed-min.js - - - 404 - - 1.1306ms 
+ ]2022-09-14 20:21:24.938 +03:00 [INF Request starting HTTP/1.1 GET https://localhost:44392/Ordertypes/assets/plugins/slider/js/owl.carousel.min.js - - 
+ ]2022-09-14 20:21:24.939 +03:00 [INF Request finished HTTP/1.1 GET https://localhost:44392/Ordertypes/assets/plugins/slider/js/owl.carousel.min.js - - - 404 - - 1.7894ms 
+ ]2022-09-14 20:21:24.947 +03:00 [INF Request starting HTTP/1.1 GET https://localhost:44392/Ordertypes/assets/js/script.js - - 
+ ]2022-09-14 20:21:24.948 +03:00 [INF Request finished HTTP/1.1 GET https://localhost:44392/Ordertypes/assets/js/script.js - - - 404 - - 1.2687ms 
+ ]2022-09-14 20:21:24.976 +03:00 [INF Request finished HTTP/1.1 GET https://localhost:44392/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 83.7419ms 
+ ]2022-09-14 20:21:46.328 +03:00 [INF Request starting HTTP/1.1 POST https://localhost:44392/Ordertypes/Create application/x-www-form-urlencoded 291 
+ ]2022-09-14 20:21:46.331 +03:00 [INF Executing endpoint 'Ris2022.Controllers.OrdertypesController.Create (Ris2022)' 
+ ]2022-09-14 20:21:46.340 +03:00 [INF Route matched with {action = "Create", controller = "Ordertypes", page = "", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Create(Ris2022.Data.Models.Ordertype) on controller Ris2022.Controllers.OrdertypesController (Ris2022). 
+ ]2022-09-14 20:21:46.347 +03:00 [INF Entity Framework Core 6.0.8 initialized 'RisDBContext' using provider 'Oracle.EntityFrameworkCore:6.0.21.1-20220418' with options: None 
+ ]2022-09-14 20:21:46.414 +03:00 [INF Executed DbCommand (27ms) [Parameters=[:p0='?' (Size = 25), :p1='?' (Size = 25), :cur1='?' (Direction = Output) (DbType = Object)], CommandType='"Text"', CommandTimeout='0']
+DECLARE
+TYPE "rOrdetypes_0" IS RECORD
+(
+"Id" NUMBER(10)
+);
+TYPE "tOrdetypes_0" IS TABLE OF "rOrdetypes_0";
+"lOrdetypes_0" "tOrdetypes_0";
+v_RowCount INTEGER;
+BEGIN
+
+"lOrdetypes_0" := "tOrdetypes_0"();
+"lOrdetypes_0".extend(1);
+INSERT INTO "Ordetypes" ("Namear", "Nameen")
+VALUES (:p0, :p1)
+RETURNING "Id" INTO "lOrdetypes_0"(1)."Id";
+OPEN :cur1 FOR SELECT "lOrdetypes_0"(1)."Id" FROM DUAL;
+END; 
+ ]2022-09-14 20:21:46.419 +03:00 [INF Executing RedirectResult, redirecting to /Ordertypes. 
+ ]2022-09-14 20:21:46.419 +03:00 [INF Executed action Ris2022.Controllers.OrdertypesController.Create (Ris2022) in 78.4584ms 
+ ]2022-09-14 20:21:46.419 +03:00 [INF Executed endpoint 'Ris2022.Controllers.OrdertypesController.Create (Ris2022)' 
+ ]2022-09-14 20:21:46.420 +03:00 [INF Request finished HTTP/1.1 POST https://localhost:44392/Ordertypes/Create application/x-www-form-urlencoded 291 - 302 - - 92.1354ms 
+ ]2022-09-14 20:21:46.424 +03:00 [INF Request starting HTTP/1.1 GET https://localhost:44392/Ordertypes - - 
+ ]2022-09-14 20:21:46.426 +03:00 [INF Executing endpoint 'Ris2022.Controllers.OrdertypesController.Index (Ris2022)' 
+ ]2022-09-14 20:21:46.426 +03:00 [INF Route matched with {action = "Index", controller = "Ordertypes", page = "", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller Ris2022.Controllers.OrdertypesController (Ris2022). 
+ ]2022-09-14 20:21:46.427 +03:00 [INF Entity Framework Core 6.0.8 initialized 'RisDBContext' using provider 'Oracle.EntityFrameworkCore:6.0.21.1-20220418' with options: None 
+ ]2022-09-14 20:21:46.431 +03:00 [INF Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='0']
+SELECT "o"."Id", "o"."Namear", "o"."Nameen"
+FROM "Ordetypes" "o" 
+ ]2022-09-14 20:21:46.432 +03:00 [INF Executing ViewResult, running view Index. 
+ ]2022-09-14 20:21:46.442 +03:00 [INF Executed ViewResult - view Index executed in 10.161ms. 
+ ]2022-09-14 20:21:46.442 +03:00 [INF Executed action Ris2022.Controllers.OrdertypesController.Index (Ris2022) in 16.261ms 
+ ]2022-09-14 20:21:46.442 +03:00 [INF Executed endpoint 'Ris2022.Controllers.OrdertypesController.Index (Ris2022)' 
+ ]2022-09-14 20:21:46.447 +03:00 [INF Request finished HTTP/1.1 GET https://localhost:44392/Ordertypes - - - 200 - text/html;+charset=utf-8 21.6462ms 
+ ]2022-09-14 20:21:46.509 +03:00 [INF Request starting HTTP/1.1 GET https://localhost:44392/_vs/browserLink - - 
+ ]2022-09-14 20:21:46.514 +03:00 [INF Request starting HTTP/1.1 GET https://localhost:44392/_framework/aspnetcore-browser-refresh.js - - 
+ ]2022-09-14 20:21:46.518 +03:00 [INF Request finished HTTP/1.1 GET https://localhost:44392/_framework/aspnetcore-browser-refresh.js - - - 200 11984 application/javascript;+charset=utf-8 10.7181ms 
+ ]2022-09-14 20:21:46.606 +03:00 [INF Request finished HTTP/1.1 GET https://localhost:44392/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 97.7184ms 
+ ]2022-09-14 20:22:04.206 +03:00 [INF Request starting HTTP/1.1 GET https://localhost:44392/martialstatus - - 
+ ]2022-09-14 20:22:04.218 +03:00 [INF Executing endpoint 'Ris2022.Controllers.MartialstatusController.Index (Ris2022)' 
+ ]2022-09-14 20:22:04.227 +03:00 [INF Route matched with {action = "Index", controller = "Martialstatus", page = "", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller Ris2022.Controllers.MartialstatusController (Ris2022). 
+ ]2022-09-14 20:22:04.231 +03:00 [INF Entity Framework Core 6.0.8 initialized 'RisDBContext' using provider 'Oracle.EntityFrameworkCore:6.0.21.1-20220418' with options: None 
+ ]2022-09-14 20:22:04.250 +03:00 [INF Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='0']
+SELECT "m"."Id", "m"."Namear", "m"."Nameen"
+FROM "Martialstatuses" "m" 
+ ]2022-09-14 20:22:04.252 +03:00 [INF Executing ViewResult, running view Index. 
+ ]2022-09-14 20:22:04.269 +03:00 [INF Executed ViewResult - view Index executed in 18.2199ms. 
+ ]2022-09-14 20:22:04.269 +03:00 [INF Executed action Ris2022.Controllers.MartialstatusController.Index (Ris2022) in 42.0261ms 
+ ]2022-09-14 20:22:04.269 +03:00 [INF Executed endpoint 'Ris2022.Controllers.MartialstatusController.Index (Ris2022)' 
+ ]2022-09-14 20:22:04.276 +03:00 [INF Request finished HTTP/1.1 GET https://localhost:44392/martialstatus - - - 200 - text/html;+charset=utf-8 70.2680ms 
+ ]2022-09-14 20:22:04.327 +03:00 [INF Request starting HTTP/1.1 GET https://localhost:44392/_framework/aspnetcore-browser-refresh.js - - 
+ ]2022-09-14 20:22:04.332 +03:00 [INF Request finished HTTP/1.1 GET https://localhost:44392/_framework/aspnetcore-browser-refresh.js - - - 200 11984 application/javascript;+charset=utf-8 4.4011ms 
+ ]2022-09-14 20:22:04.328 +03:00 [INF Request starting HTTP/1.1 GET https://localhost:44392/_vs/browserLink - - 
+ ]2022-09-14 20:22:04.416 +03:00 [INF Request finished HTTP/1.1 GET https://localhost:44392/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 89.3889ms 
+ ]2022-09-14 20:22:06.086 +03:00 [INF Request starting HTTP/1.1 GET https://localhost:44392/Martialstatus/Create - - 
+ ]2022-09-14 20:22:06.087 +03:00 [INF Executing endpoint 'Ris2022.Controllers.MartialstatusController.Create (Ris2022)' 
+ ]2022-09-14 20:22:06.089 +03:00 [INF Route matched with {action = "Create", controller = "Martialstatus", page = "", area = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Create() on controller Ris2022.Controllers.MartialstatusController (Ris2022). 
+ ]2022-09-14 20:22:06.092 +03:00 [INF Executing ViewResult, running view Create. 
+ ]2022-09-14 20:22:06.131 +03:00 [INF Executed ViewResult - view Create executed in 40.9753ms. 
+ ]2022-09-14 20:22:06.131 +03:00 [INF Executed action Ris2022.Controllers.MartialstatusController.Create (Ris2022) in 41.6948ms 
+ ]2022-09-14 20:22:06.131 +03:00 [INF Executed endpoint 'Ris2022.Controllers.MartialstatusController.Create (Ris2022)' 
+ ]2022-09-14 20:22:06.142 +03:00 [INF Request finished HTTP/1.1 GET https://localhost:44392/Martialstatus/Create - - - 200 - text/html;+charset=utf-8 56.3008ms 
+ ]2022-09-14 20:22:06.180 +03:00 [INF Request starting HTTP/1.1 GET https://localhost:44392/Martialstatus/assets/js/jquery-3.2.1.min.js - - 
+ ]2022-09-14 20:22:06.184 +03:00 [INF Request finished HTTP/1.1 GET https://localhost:44392/Martialstatus/assets/js/jquery-3.2.1.min.js - - - 404 - - 4.0548ms 
+ ]2022-09-14 20:22:06.186 +03:00 [INF Request starting HTTP/1.1 GET https://localhost:44392/Martialstatus/assets/js/bootstrap.min.js - - 
+ ]2022-09-14 20:22:06.189 +03:00 [INF Request starting HTTP/1.1 GET https://localhost:44392/Martialstatus/assets/plugins/scroll-fixed/jquery-scrolltofixed-min.js - - 
+ ]2022-09-14 20:22:06.190 +03:00 [INF Request finished HTTP/1.1 GET https://localhost:44392/Martialstatus/assets/js/bootstrap.min.js - - - 404 - - 4.1552ms 
+ ]2022-09-14 20:22:06.190 +03:00 [INF Request finished HTTP/1.1 GET https://localhost:44392/Martialstatus/assets/plugins/scroll-fixed/jquery-scrolltofixed-min.js - - - 404 - - 1.3573ms 
+ ]2022-09-14 20:22:06.199 +03:00 [INF Request starting HTTP/1.1 GET https://localhost:44392/Martialstatus/assets/plugins/slider/js/owl.carousel.min.js - - 
+ ]2022-09-14 20:22:06.202 +03:00 [INF Request finished HTTP/1.1 GET https://localhost:44392/Martialstatus/assets/plugins/slider/js/owl.carousel.min.js - - - 404 - - 2.1314ms 
+ ]2022-09-14 20:22:06.211 +03:00 [INF Request starting HTTP/1.1 GET https://localhost:44392/Martialstatus/assets/js/script.js - - 
+ ]2022-09-14 20:22:06.211 +03:00 [INF Request starting HTTP/1.1 GET https://localhost:44392/_framework/aspnetcore-browser-refresh.js - - 
+ ]2022-09-14 20:22:06.214 +03:00 [INF Request finished HTTP/1.1 GET https://localhost:44392/Martialstatus/assets/js/script.js - - - 404 - - 2.7931ms 
+ ]2022-09-14 20:22:06.215 +03:00 [INF Request finished HTTP/1.1 GET https://localhost:44392/_framework/aspnetcore-browser-refresh.js - - - 200 11984 application/javascript;+charset=utf-8 3.3890ms 
+ ]2022-09-14 20:22:06.218 +03:00 [INF Request starting HTTP/1.1 GET https://localhost:44392/_vs/browserLink - - 
+ ]2022-09-14 20:22:06.219 +03:00 [INF Request starting HTTP/1.1 GET https://localhost:44392/Martialstatus/assets/js/jquery-3.2.1.min.js - - 
+ ]2022-09-14 20:22:06.221 +03:00 [INF Request starting HTTP/1.1 GET https://localhost:44392/Martialstatus/assets/js/popper.min.js - - 
+ ]2022-09-14 20:22:06.223 +03:00 [INF Request finished HTTP/1.1 GET https://localhost:44392/Martialstatus/assets/js/jquery-3.2.1.min.js - - - 404 - - 3.4510ms 
+ ]2022-09-14 20:22:06.224 +03:00 [INF Request finished HTTP/1.1 GET https://localhost:44392/Martialstatus/assets/js/popper.min.js - - - 404 - - 2.9317ms 
+ ]2022-09-14 20:22:06.238 +03:00 [INF Request starting HTTP/1.1 GET https://localhost:44392/Martialstatus/assets/js/bootstrap.min.js - - 
+ ]2022-09-14 20:22:06.245 +03:00 [INF Request finished HTTP/1.1 GET https://localhost:44392/Martialstatus/assets/js/bootstrap.min.js - - - 404 - - 6.1845ms 
+ ]2022-09-14 20:22:06.251 +03:00 [INF Request starting HTTP/1.1 GET https://localhost:44392/Martialstatus/assets/plugins/scroll-fixed/jquery-scrolltofixed-min.js - - 
+ ]2022-09-14 20:22:06.260 +03:00 [INF Request finished HTTP/1.1 GET https://localhost:44392/Martialstatus/assets/plugins/scroll-fixed/jquery-scrolltofixed-min.js - - - 404 - - 9.4671ms 
+ ]2022-09-14 20:22:06.264 +03:00 [INF Request starting HTTP/1.1 GET https://localhost:44392/Martialstatus/assets/plugins/slider/js/owl.carousel.min.js - - 
+ ]2022-09-14 20:22:06.266 +03:00 [INF Request finished HTTP/1.1 GET https://localhost:44392/Martialstatus/assets/plugins/slider/js/owl.carousel.min.js - - - 404 - - 2.0913ms 
+ ]2022-09-14 20:22:06.284 +03:00 [INF Request starting HTTP/1.1 GET https://localhost:44392/Martialstatus/assets/js/script.js - - 
+ ]2022-09-14 20:22:06.285 +03:00 [INF Request finished HTTP/1.1 GET https://localhost:44392/Martialstatus/assets/js/script.js - - - 404 - - 1.2715ms 
+ ]2022-09-14 20:22:06.319 +03:00 [INF Request finished HTTP/1.1 GET https://localhost:44392/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 101.0053ms 
+ ]2022-09-14 20:22:22.526 +03:00 [INF Request starting HTTP/1.1 POST https://localhost:44392/Martialstatus/Create application/x-www-form-urlencoded 282 
+ ]2022-09-14 20:22:22.528 +03:00 [INF Executing endpoint 'Ris2022.Controllers.MartialstatusController.Create (Ris2022)' 
+ ]2022-09-14 20:22:22.539 +03:00 [INF Route matched with {action = "Create", controller = "Martialstatus", page = "", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Create(Ris2022.Data.Models.Martialstatus) on controller Ris2022.Controllers.MartialstatusController (Ris2022). 
+ ]2022-09-14 20:22:22.545 +03:00 [INF Entity Framework Core 6.0.8 initialized 'RisDBContext' using provider 'Oracle.EntityFrameworkCore:6.0.21.1-20220418' with options: None 
+ ]2022-09-14 20:22:22.595 +03:00 [INF Executed DbCommand (23ms) [Parameters=[:p0='?' (Size = 25), :p1='?' (Size = 25), :cur1='?' (Direction = Output) (DbType = Object)], CommandType='"Text"', CommandTimeout='0']
+DECLARE
+TYPE "rMartialstatuses_0" IS RECORD
+(
+"Id" NUMBER(10)
+);
+TYPE "tMartialstatuses_0" IS TABLE OF "rMartialstatuses_0";
+"lMartialstatuses_0" "tMartialstatuses_0";
+v_RowCount INTEGER;
+BEGIN
+
+"lMartialstatuses_0" := "tMartialstatuses_0"();
+"lMartialstatuses_0".extend(1);
+INSERT INTO "Martialstatuses" ("Namear", "Nameen")
+VALUES (:p0, :p1)
+RETURNING "Id" INTO "lMartialstatuses_0"(1)."Id";
+OPEN :cur1 FOR SELECT "lMartialstatuses_0"(1)."Id" FROM DUAL;
+END; 
+ ]2022-09-14 20:22:22.600 +03:00 [INF Executing RedirectResult, redirecting to /Martialstatus. 
+ ]2022-09-14 20:22:22.600 +03:00 [INF Executed action Ris2022.Controllers.MartialstatusController.Create (Ris2022) in 60.4219ms 
+ ]2022-09-14 20:22:22.600 +03:00 [INF Executed endpoint 'Ris2022.Controllers.MartialstatusController.Create (Ris2022)' 
+ ]2022-09-14 20:22:22.601 +03:00 [INF Request finished HTTP/1.1 POST https://localhost:44392/Martialstatus/Create application/x-www-form-urlencoded 282 - 302 - - 74.7750ms 
+ ]2022-09-14 20:22:22.605 +03:00 [INF Request starting HTTP/1.1 GET https://localhost:44392/Martialstatus - - 
+ ]2022-09-14 20:22:22.606 +03:00 [INF Executing endpoint 'Ris2022.Controllers.MartialstatusController.Index (Ris2022)' 
+ ]2022-09-14 20:22:22.606 +03:00 [INF Route matched with {action = "Index", controller = "Martialstatus", page = "", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller Ris2022.Controllers.MartialstatusController (Ris2022). 
+ ]2022-09-14 20:22:22.607 +03:00 [INF Entity Framework Core 6.0.8 initialized 'RisDBContext' using provider 'Oracle.EntityFrameworkCore:6.0.21.1-20220418' with options: None 
+ ]2022-09-14 20:22:22.612 +03:00 [INF Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='0']
+SELECT "m"."Id", "m"."Namear", "m"."Nameen"
+FROM "Martialstatuses" "m" 
+ ]2022-09-14 20:22:22.612 +03:00 [INF Executing ViewResult, running view Index. 
+ ]2022-09-14 20:22:22.623 +03:00 [INF Executed ViewResult - view Index executed in 10.9397ms. 
+ ]2022-09-14 20:22:22.623 +03:00 [INF Executed action Ris2022.Controllers.MartialstatusController.Index (Ris2022) in 16.8382ms 
+ ]2022-09-14 20:22:22.623 +03:00 [INF Executed endpoint 'Ris2022.Controllers.MartialstatusController.Index (Ris2022)' 
+ ]2022-09-14 20:22:22.635 +03:00 [INF Request finished HTTP/1.1 GET https://localhost:44392/Martialstatus - - - 200 - text/html;+charset=utf-8 30.1157ms 
+ ]2022-09-14 20:22:22.706 +03:00 [INF Request starting HTTP/1.1 GET https://localhost:44392/_vs/browserLink - - 
+ ]2022-09-14 20:22:22.707 +03:00 [INF Request starting HTTP/1.1 GET https://localhost:44392/_framework/aspnetcore-browser-refresh.js - - 
+ ]2022-09-14 20:22:22.709 +03:00 [INF Request finished HTTP/1.1 GET https://localhost:44392/_framework/aspnetcore-browser-refresh.js - - - 200 11984 application/javascript;+charset=utf-8 1.7288ms 
+ ]2022-09-14 20:22:22.811 +03:00 [INF Request finished HTTP/1.1 GET https://localhost:44392/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 104.2940ms 
+ ]2022-09-14 20:22:32.059 +03:00 [INF Request starting HTTP/1.1 GET https://localhost:44392/paytypes - - 
+ ]2022-09-14 20:22:32.060 +03:00 [INF Executing endpoint 'Ris2022.Controllers.PaytypesController.Index (Ris2022)' 
+ ]2022-09-14 20:22:32.069 +03:00 [INF Route matched with {action = "Index", controller = "Paytypes", page = "", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller Ris2022.Controllers.PaytypesController (Ris2022). 
+ ]2022-09-14 20:22:32.074 +03:00 [INF Entity Framework Core 6.0.8 initialized 'RisDBContext' using provider 'Oracle.EntityFrameworkCore:6.0.21.1-20220418' with options: None 
+ ]2022-09-14 20:22:32.092 +03:00 [INF Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='0']
+SELECT "p"."Id", "p"."Namear", "p"."Nameen"
+FROM "Paytypes" "p" 
+ ]2022-09-14 20:22:32.095 +03:00 [INF Executing ViewResult, running view Index. 
+ ]2022-09-14 20:22:32.117 +03:00 [INF Executed ViewResult - view Index executed in 24.5789ms. 
+ ]2022-09-14 20:22:32.117 +03:00 [INF Executed action Ris2022.Controllers.PaytypesController.Index (Ris2022) in 48.394ms 
+ ]2022-09-14 20:22:32.118 +03:00 [INF Executed endpoint 'Ris2022.Controllers.PaytypesController.Index (Ris2022)' 
+ ]2022-09-14 20:22:32.122 +03:00 [INF Request finished HTTP/1.1 GET https://localhost:44392/paytypes - - - 200 - text/html;+charset=utf-8 63.5940ms 
+ ]2022-09-14 20:22:32.182 +03:00 [INF Request starting HTTP/1.1 GET https://localhost:44392/_vs/browserLink - - 
+ ]2022-09-14 20:22:32.182 +03:00 [INF Request starting HTTP/1.1 GET https://localhost:44392/_framework/aspnetcore-browser-refresh.js - - 
+ ]2022-09-14 20:22:32.185 +03:00 [INF Request finished HTTP/1.1 GET https://localhost:44392/_framework/aspnetcore-browser-refresh.js - - - 200 11984 application/javascript;+charset=utf-8 2.8412ms 
+ ]2022-09-14 20:22:32.286 +03:00 [INF Request finished HTTP/1.1 GET https://localhost:44392/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 104.5753ms 
+ ]2022-09-14 20:22:33.712 +03:00 [INF Request starting HTTP/1.1 GET https://localhost:44392/Paytypes/Create - - 
+ ]2022-09-14 20:22:33.714 +03:00 [INF Executing endpoint 'Ris2022.Controllers.PaytypesController.Create (Ris2022)' 
+ ]2022-09-14 20:22:33.716 +03:00 [INF Route matched with {action = "Create", controller = "Paytypes", page = "", area = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Create() on controller Ris2022.Controllers.PaytypesController (Ris2022). 
+ ]2022-09-14 20:22:33.720 +03:00 [INF Executing ViewResult, running view Create. 
+ ]2022-09-14 20:22:33.754 +03:00 [INF Executed ViewResult - view Create executed in 36.5051ms. 
+ ]2022-09-14 20:22:33.755 +03:00 [INF Executed action Ris2022.Controllers.PaytypesController.Create (Ris2022) in 38.428ms 
+ ]2022-09-14 20:22:33.755 +03:00 [INF Executed endpoint 'Ris2022.Controllers.PaytypesController.Create (Ris2022)' 
+ ]2022-09-14 20:22:33.760 +03:00 [INF Request finished HTTP/1.1 GET https://localhost:44392/Paytypes/Create - - - 200 - text/html;+charset=utf-8 47.9208ms 
+ ]2022-09-14 20:22:33.821 +03:00 [INF Request starting HTTP/1.1 GET https://localhost:44392/Paytypes/assets/js/jquery-3.2.1.min.js - - 
+ ]2022-09-14 20:22:33.824 +03:00 [INF Request finished HTTP/1.1 GET https://localhost:44392/Paytypes/assets/js/jquery-3.2.1.min.js - - - 404 - - 3.1589ms 
+ ]2022-09-14 20:22:33.824 +03:00 [INF Request starting HTTP/1.1 GET https://localhost:44392/Paytypes/assets/js/popper.min.js - - 
+ ]2022-09-14 20:22:33.825 +03:00 [INF Request finished HTTP/1.1 GET https://localhost:44392/Paytypes/assets/js/popper.min.js - - - 404 - - 1.0704ms 
+ ]2022-09-14 20:22:33.828 +03:00 [INF Request starting HTTP/1.1 GET https://localhost:44392/Paytypes/assets/js/bootstrap.min.js - - 
+ ]2022-09-14 20:22:33.830 +03:00 [INF Request finished HTTP/1.1 GET https://localhost:44392/Paytypes/assets/js/bootstrap.min.js - - - 404 - - 1.4889ms 
+ ]2022-09-14 20:22:33.840 +03:00 [INF Request starting HTTP/1.1 GET https://localhost:44392/Paytypes/assets/plugins/scroll-fixed/jquery-scrolltofixed-min.js - - 
+ ]2022-09-14 20:22:33.841 +03:00 [INF Request finished HTTP/1.1 GET https://localhost:44392/Paytypes/assets/plugins/scroll-fixed/jquery-scrolltofixed-min.js - - - 404 - - 1.2309ms 
+ ]2022-09-14 20:22:33.843 +03:00 [INF Request starting HTTP/1.1 GET https://localhost:44392/Paytypes/assets/plugins/slider/js/owl.carousel.min.js - - 
+ ]2022-09-14 20:22:33.846 +03:00 [INF Request finished HTTP/1.1 GET https://localhost:44392/Paytypes/assets/plugins/slider/js/owl.carousel.min.js - - - 404 - - 2.2276ms 
+ ]2022-09-14 20:22:33.850 +03:00 [INF Request starting HTTP/1.1 GET https://localhost:44392/_vs/browserLink - - 
+ ]2022-09-14 20:22:33.855 +03:00 [INF Request starting HTTP/1.1 GET https://localhost:44392/_framework/aspnetcore-browser-refresh.js - - 
+ ]2022-09-14 20:22:33.855 +03:00 [INF Request starting HTTP/1.1 GET https://localhost:44392/Paytypes/assets/js/jquery-3.2.1.min.js - - 
+ ]2022-09-14 20:22:33.856 +03:00 [INF Request finished HTTP/1.1 GET https://localhost:44392/_framework/aspnetcore-browser-refresh.js - - - 200 11984 application/javascript;+charset=utf-8 1.5496ms 
+ ]2022-09-14 20:22:33.863 +03:00 [INF Request starting HTTP/1.1 GET https://localhost:44392/Paytypes/assets/js/script.js - - 
+ ]2022-09-14 20:22:33.867 +03:00 [INF Request finished HTTP/1.1 GET https://localhost:44392/Paytypes/assets/js/script.js - - - 404 - - 3.9340ms 
+ ]2022-09-14 20:22:33.872 +03:00 [INF Request finished HTTP/1.1 GET https://localhost:44392/Paytypes/assets/js/jquery-3.2.1.min.js - - - 404 - - 16.4794ms 
+ ]2022-09-14 20:22:33.902 +03:00 [INF Request starting HTTP/1.1 GET https://localhost:44392/Paytypes/assets/js/popper.min.js - - 
+ ]2022-09-14 20:22:33.906 +03:00 [INF Request finished HTTP/1.1 GET https://localhost:44392/Paytypes/assets/js/popper.min.js - - - 404 - - 3.4982ms 
+ ]2022-09-14 20:22:33.969 +03:00 [INF Request starting HTTP/1.1 GET https://localhost:44392/Paytypes/assets/js/bootstrap.min.js - - 
+ ]2022-09-14 20:22:33.970 +03:00 [INF Request finished HTTP/1.1 GET https://localhost:44392/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 119.8374ms 
+ ]2022-09-14 20:22:33.971 +03:00 [INF Request finished HTTP/1.1 GET https://localhost:44392/Paytypes/assets/js/bootstrap.min.js - - - 404 - - 1.5780ms 
+ ]2022-09-14 20:22:33.978 +03:00 [INF Request starting HTTP/1.1 GET https://localhost:44392/Paytypes/assets/plugins/scroll-fixed/jquery-scrolltofixed-min.js - - 
+ ]2022-09-14 20:22:33.979 +03:00 [INF Request finished HTTP/1.1 GET https://localhost:44392/Paytypes/assets/plugins/scroll-fixed/jquery-scrolltofixed-min.js - - - 404 - - 1.2416ms 
+ ]2022-09-14 20:22:33.987 +03:00 [INF Request starting HTTP/1.1 GET https://localhost:44392/Paytypes/assets/plugins/slider/js/owl.carousel.min.js - - 
+ ]2022-09-14 20:22:33.988 +03:00 [INF Request finished HTTP/1.1 GET https://localhost:44392/Paytypes/assets/plugins/slider/js/owl.carousel.min.js - - - 404 - - 1.1399ms 
+ ]2022-09-14 20:22:34.005 +03:00 [INF Request starting HTTP/1.1 GET https://localhost:44392/Paytypes/assets/js/script.js - - 
+ ]2022-09-14 20:22:34.007 +03:00 [INF Request finished HTTP/1.1 GET https://localhost:44392/Paytypes/assets/js/script.js - - - 404 - - 1.7983ms 
+ ]2022-09-14 20:22:48.414 +03:00 [INF Request starting HTTP/1.1 POST https://localhost:44392/Paytypes/Create application/x-www-form-urlencoded 301 
+ ]2022-09-14 20:22:48.415 +03:00 [INF Executing endpoint 'Ris2022.Controllers.PaytypesController.Create (Ris2022)' 
+ ]2022-09-14 20:22:48.425 +03:00 [INF Route matched with {action = "Create", controller = "Paytypes", page = "", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Create(Ris2022.Data.Models.Paytype) on controller Ris2022.Controllers.PaytypesController (Ris2022). 
+ ]2022-09-14 20:22:48.432 +03:00 [INF Entity Framework Core 6.0.8 initialized 'RisDBContext' using provider 'Oracle.EntityFrameworkCore:6.0.21.1-20220418' with options: None 
+ ]2022-09-14 20:22:48.491 +03:00 [INF Executed DbCommand (29ms) [Parameters=[:p0='?' (Size = 25), :p1='?' (Size = 25), :cur1='?' (Direction = Output) (DbType = Object)], CommandType='"Text"', CommandTimeout='0']
+DECLARE
+TYPE "rPaytypes_0" IS RECORD
+(
+"Id" NUMBER(10)
+);
+TYPE "tPaytypes_0" IS TABLE OF "rPaytypes_0";
+"lPaytypes_0" "tPaytypes_0";
+v_RowCount INTEGER;
+BEGIN
+
+"lPaytypes_0" := "tPaytypes_0"();
+"lPaytypes_0".extend(1);
+INSERT INTO "Paytypes" ("Namear", "Nameen")
+VALUES (:p0, :p1)
+RETURNING "Id" INTO "lPaytypes_0"(1)."Id";
+OPEN :cur1 FOR SELECT "lPaytypes_0"(1)."Id" FROM DUAL;
+END; 
+ ]2022-09-14 20:22:48.495 +03:00 [INF Executing RedirectResult, redirecting to /Paytypes. 
+ ]2022-09-14 20:22:48.495 +03:00 [INF Executed action Ris2022.Controllers.PaytypesController.Create (Ris2022) in 69.9488ms 
+ ]2022-09-14 20:22:48.495 +03:00 [INF Executed endpoint 'Ris2022.Controllers.PaytypesController.Create (Ris2022)' 
+ ]2022-09-14 20:22:48.495 +03:00 [INF Request finished HTTP/1.1 POST https://localhost:44392/Paytypes/Create application/x-www-form-urlencoded 301 - 302 - - 81.4032ms 
+ ]2022-09-14 20:22:48.499 +03:00 [INF Request starting HTTP/1.1 GET https://localhost:44392/Paytypes - - 
+ ]2022-09-14 20:22:48.500 +03:00 [INF Executing endpoint 'Ris2022.Controllers.PaytypesController.Index (Ris2022)' 
+ ]2022-09-14 20:22:48.500 +03:00 [INF Route matched with {action = "Index", controller = "Paytypes", page = "", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller Ris2022.Controllers.PaytypesController (Ris2022). 
+ ]2022-09-14 20:22:48.501 +03:00 [INF Entity Framework Core 6.0.8 initialized 'RisDBContext' using provider 'Oracle.EntityFrameworkCore:6.0.21.1-20220418' with options: None 
+ ]2022-09-14 20:22:48.505 +03:00 [INF Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='0']
+SELECT "p"."Id", "p"."Namear", "p"."Nameen"
+FROM "Paytypes" "p" 
+ ]2022-09-14 20:22:48.506 +03:00 [INF Executing ViewResult, running view Index. 
+ ]2022-09-14 20:22:48.516 +03:00 [INF Executed ViewResult - view Index executed in 10.14ms. 
+ ]2022-09-14 20:22:48.516 +03:00 [INF Executed action Ris2022.Controllers.PaytypesController.Index (Ris2022) in 15.9647ms 
+ ]2022-09-14 20:22:48.516 +03:00 [INF Executed endpoint 'Ris2022.Controllers.PaytypesController.Index (Ris2022)' 
+ ]2022-09-14 20:22:48.520 +03:00 [INF Request finished HTTP/1.1 GET https://localhost:44392/Paytypes - - - 200 - text/html;+charset=utf-8 21.3485ms 
+ ]2022-09-14 20:22:48.570 +03:00 [INF Request starting HTTP/1.1 GET https://localhost:44392/_vs/browserLink - - 
+ ]2022-09-14 20:22:48.570 +03:00 [INF Request starting HTTP/1.1 GET https://localhost:44392/_framework/aspnetcore-browser-refresh.js - - 
+ ]2022-09-14 20:22:48.573 +03:00 [INF Request finished HTTP/1.1 GET https://localhost:44392/_framework/aspnetcore-browser-refresh.js - - - 200 11984 application/javascript;+charset=utf-8 2.8710ms 
+ ]2022-09-14 20:22:48.662 +03:00 [INF Request finished HTTP/1.1 GET https://localhost:44392/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 92.6319ms 
+ ]2022-09-14 20:23:11.967 +03:00 [INF Request starting HTTP/1.1 GET https://localhost:44392/reasons - - 
+ ]2022-09-14 20:23:11.969 +03:00 [INF Executing endpoint 'Ris2022.Controllers.ReasonsController.Index (Ris2022)' 
+ ]2022-09-14 20:23:11.976 +03:00 [INF Route matched with {action = "Index", controller = "Reasons", page = "", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller Ris2022.Controllers.ReasonsController (Ris2022). 
+ ]2022-09-14 20:23:11.980 +03:00 [INF Entity Framework Core 6.0.8 initialized 'RisDBContext' using provider 'Oracle.EntityFrameworkCore:6.0.21.1-20220418' with options: None 
+ ]2022-09-14 20:23:11.999 +03:00 [INF Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='0']
+SELECT "r"."Id", "r"."Namear", "r"."Nameen"
+FROM "Reasons" "r" 
+ ]2022-09-14 20:23:12.002 +03:00 [INF Executing ViewResult, running view Index. 
+ ]2022-09-14 20:23:12.019 +03:00 [INF Executed ViewResult - view Index executed in 18.3146ms. 
+ ]2022-09-14 20:23:12.019 +03:00 [INF Executed action Ris2022.Controllers.ReasonsController.Index (Ris2022) in 42.3327ms 
+ ]2022-09-14 20:23:12.019 +03:00 [INF Executed endpoint 'Ris2022.Controllers.ReasonsController.Index (Ris2022)' 
+ ]2022-09-14 20:23:12.031 +03:00 [INF Request finished HTTP/1.1 GET https://localhost:44392/reasons - - - 200 - text/html;+charset=utf-8 63.5305ms 
+ ]2022-09-14 20:23:12.082 +03:00 [INF Request starting HTTP/1.1 GET https://localhost:44392/_vs/browserLink - - 
+ ]2022-09-14 20:23:12.082 +03:00 [INF Request starting HTTP/1.1 GET https://localhost:44392/_framework/aspnetcore-browser-refresh.js - - 
+ ]2022-09-14 20:23:12.086 +03:00 [INF Request finished HTTP/1.1 GET https://localhost:44392/_framework/aspnetcore-browser-refresh.js - - - 200 11984 application/javascript;+charset=utf-8 4.2335ms 
+ ]2022-09-14 20:23:12.175 +03:00 [INF Request finished HTTP/1.1 GET https://localhost:44392/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 93.3495ms 
+ ]2022-09-14 20:23:13.283 +03:00 [INF Request starting HTTP/1.1 GET https://localhost:44392/Reasons/Create - - 
+ ]2022-09-14 20:23:13.285 +03:00 [INF Executing endpoint 'Ris2022.Controllers.ReasonsController.Create (Ris2022)' 
+ ]2022-09-14 20:23:13.289 +03:00 [INF Route matched with {action = "Create", controller = "Reasons", page = "", area = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Create() on controller Ris2022.Controllers.ReasonsController (Ris2022). 
+ ]2022-09-14 20:23:13.292 +03:00 [INF Executing ViewResult, running view Create. 
+ ]2022-09-14 20:23:13.326 +03:00 [INF Executed ViewResult - view Create executed in 36.4776ms. 
+ ]2022-09-14 20:23:13.326 +03:00 [INF Executed action Ris2022.Controllers.ReasonsController.Create (Ris2022) in 37.4603ms 
+ ]2022-09-14 20:23:13.326 +03:00 [INF Executed endpoint 'Ris2022.Controllers.ReasonsController.Create (Ris2022)' 
+ ]2022-09-14 20:23:13.331 +03:00 [INF Request finished HTTP/1.1 GET https://localhost:44392/Reasons/Create - - - 200 - text/html;+charset=utf-8 48.2661ms 
+ ]2022-09-14 20:23:13.382 +03:00 [INF Request starting HTTP/1.1 GET https://localhost:44392/Reasons/assets/js/jquery-3.2.1.min.js - - 
+ ]2022-09-14 20:23:13.390 +03:00 [INF Request finished HTTP/1.1 GET https://localhost:44392/Reasons/assets/js/jquery-3.2.1.min.js - - - 404 - - 7.9926ms 
+ ]2022-09-14 20:23:13.395 +03:00 [INF Request starting HTTP/1.1 GET https://localhost:44392/Reasons/assets/js/popper.min.js - - 
+ ]2022-09-14 20:23:13.396 +03:00 [INF Request starting HTTP/1.1 GET https://localhost:44392/Reasons/assets/js/bootstrap.min.js - - 
+ ]2022-09-14 20:23:13.398 +03:00 [INF Request finished HTTP/1.1 GET https://localhost:44392/Reasons/assets/js/popper.min.js - - - 404 - - 3.0777ms 
+ ]2022-09-14 20:23:13.403 +03:00 [INF Request starting HTTP/1.1 GET https://localhost:44392/Reasons/assets/plugins/scroll-fixed/jquery-scrolltofixed-min.js - - 
+ ]2022-09-14 20:23:13.404 +03:00 [INF Request finished HTTP/1.1 GET https://localhost:44392/Reasons/assets/plugins/scroll-fixed/jquery-scrolltofixed-min.js - - - 404 - - 1.3531ms 
+ ]2022-09-14 20:23:13.404 +03:00 [INF Request starting HTTP/1.1 GET https://localhost:44392/Reasons/assets/plugins/slider/js/owl.carousel.min.js - - 
+ ]2022-09-14 20:23:13.405 +03:00 [INF Request finished HTTP/1.1 GET https://localhost:44392/Reasons/assets/js/bootstrap.min.js - - - 404 - - 9.2800ms 
+ ]2022-09-14 20:23:13.405 +03:00 [INF Request starting HTTP/1.1 GET https://localhost:44392/_vs/browserLink - - 
+ ]2022-09-14 20:23:13.408 +03:00 [INF Request finished HTTP/1.1 GET https://localhost:44392/Reasons/assets/plugins/slider/js/owl.carousel.min.js - - - 404 - - 3.9442ms 
+ ]2022-09-14 20:23:13.409 +03:00 [INF Request starting HTTP/1.1 GET https://localhost:44392/Reasons/assets/js/script.js - - 
+ ]2022-09-14 20:23:13.411 +03:00 [INF Request starting HTTP/1.1 GET https://localhost:44392/_framework/aspnetcore-browser-refresh.js - - 
+ ]2022-09-14 20:23:13.411 +03:00 [INF Request finished HTTP/1.1 GET https://localhost:44392/Reasons/assets/js/script.js - - - 404 - - 2.6228ms 
+ ]2022-09-14 20:23:13.411 +03:00 [INF Request starting HTTP/1.1 GET https://localhost:44392/Reasons/assets/js/popper.min.js - - 
+ ]2022-09-14 20:23:13.413 +03:00 [INF Request finished HTTP/1.1 GET https://localhost:44392/_framework/aspnetcore-browser-refresh.js - - - 200 11984 application/javascript;+charset=utf-8 1.7456ms 
+ ]2022-09-14 20:23:13.416 +03:00 [INF Request finished HTTP/1.1 GET https://localhost:44392/Reasons/assets/js/popper.min.js - - - 404 - - 4.9848ms 
+ ]2022-09-14 20:23:13.431 +03:00 [INF Request starting HTTP/1.1 GET https://localhost:44392/Reasons/assets/js/bootstrap.min.js - - 
+ ]2022-09-14 20:23:13.432 +03:00 [INF Request finished HTTP/1.1 GET https://localhost:44392/Reasons/assets/js/bootstrap.min.js - - - 404 - - 1.1833ms 
+ ]2022-09-14 20:23:13.440 +03:00 [INF Request starting HTTP/1.1 GET https://localhost:44392/Reasons/assets/plugins/scroll-fixed/jquery-scrolltofixed-min.js - - 
+ ]2022-09-14 20:23:13.444 +03:00 [INF Request finished HTTP/1.1 GET https://localhost:44392/Reasons/assets/plugins/scroll-fixed/jquery-scrolltofixed-min.js - - - 404 - - 3.9023ms 
+ ]2022-09-14 20:23:13.463 +03:00 [INF Request starting HTTP/1.1 GET https://localhost:44392/Reasons/assets/plugins/slider/js/owl.carousel.min.js - - 
+ ]2022-09-14 20:23:13.465 +03:00 [INF Request finished HTTP/1.1 GET https://localhost:44392/Reasons/assets/plugins/slider/js/owl.carousel.min.js - - - 404 - - 1.9975ms 
+ ]2022-09-14 20:23:13.473 +03:00 [INF Request starting HTTP/1.1 GET https://localhost:44392/Reasons/assets/js/script.js - - 
+ ]2022-09-14 20:23:13.474 +03:00 [INF Request finished HTTP/1.1 GET https://localhost:44392/Reasons/assets/js/script.js - - - 404 - - 1.3975ms 
+ ]2022-09-14 20:23:13.493 +03:00 [INF Request finished HTTP/1.1 GET https://localhost:44392/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 87.3899ms 
+ ]2022-09-14 20:23:24.180 +03:00 [INF Request starting HTTP/1.1 POST https://localhost:44392/Reasons/Create application/x-www-form-urlencoded 269 
+ ]2022-09-14 20:23:24.184 +03:00 [INF Executing endpoint 'Ris2022.Controllers.ReasonsController.Create (Ris2022)' 
+ ]2022-09-14 20:23:24.191 +03:00 [INF Route matched with {action = "Create", controller = "Reasons", page = "", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Create(Ris2022.Data.Models.Reason) on controller Ris2022.Controllers.ReasonsController (Ris2022). 
+ ]2022-09-14 20:23:24.203 +03:00 [INF Entity Framework Core 6.0.8 initialized 'RisDBContext' using provider 'Oracle.EntityFrameworkCore:6.0.21.1-20220418' with options: None 
+ ]2022-09-14 20:23:24.427 +03:00 [INF Executed DbCommand (186ms) [Parameters=[:p0='?' (Size = 25), :p1='?' (Size = 25), :cur1='?' (Direction = Output) (DbType = Object)], CommandType='"Text"', CommandTimeout='0']
+DECLARE
+TYPE "rReasons_0" IS RECORD
+(
+"Id" NUMBER(10)
+);
+TYPE "tReasons_0" IS TABLE OF "rReasons_0";
+"lReasons_0" "tReasons_0";
+v_RowCount INTEGER;
+BEGIN
+
+"lReasons_0" := "tReasons_0"();
+"lReasons_0".extend(1);
+INSERT INTO "Reasons" ("Namear", "Nameen")
+VALUES (:p0, :p1)
+RETURNING "Id" INTO "lReasons_0"(1)."Id";
+OPEN :cur1 FOR SELECT "lReasons_0"(1)."Id" FROM DUAL;
+END; 
+ ]2022-09-14 20:23:24.432 +03:00 [INF Executing RedirectResult, redirecting to /Reasons. 
+ ]2022-09-14 20:23:24.432 +03:00 [INF Executed action Ris2022.Controllers.ReasonsController.Create (Ris2022) in 240.4863ms 
+ ]2022-09-14 20:23:24.432 +03:00 [INF Executed endpoint 'Ris2022.Controllers.ReasonsController.Create (Ris2022)' 
+ ]2022-09-14 20:23:24.432 +03:00 [INF Request finished HTTP/1.1 POST https://localhost:44392/Reasons/Create application/x-www-form-urlencoded 269 - 302 - - 251.9841ms 
+ ]2022-09-14 20:23:24.437 +03:00 [INF Request starting HTTP/1.1 GET https://localhost:44392/Reasons - - 
+ ]2022-09-14 20:23:24.438 +03:00 [INF Executing endpoint 'Ris2022.Controllers.ReasonsController.Index (Ris2022)' 
+ ]2022-09-14 20:23:24.438 +03:00 [INF Route matched with {action = "Index", controller = "Reasons", page = "", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller Ris2022.Controllers.ReasonsController (Ris2022). 
+ ]2022-09-14 20:23:24.439 +03:00 [INF Entity Framework Core 6.0.8 initialized 'RisDBContext' using provider 'Oracle.EntityFrameworkCore:6.0.21.1-20220418' with options: None 
+ ]2022-09-14 20:23:24.445 +03:00 [INF Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='0']
+SELECT "r"."Id", "r"."Namear", "r"."Nameen"
+FROM "Reasons" "r" 
+ ]2022-09-14 20:23:24.446 +03:00 [INF Executing ViewResult, running view Index. 
+ ]2022-09-14 20:23:24.461 +03:00 [INF Executed ViewResult - view Index executed in 14.9503ms. 
+ ]2022-09-14 20:23:24.461 +03:00 [INF Executed action Ris2022.Controllers.ReasonsController.Index (Ris2022) in 22.6849ms 
+ ]2022-09-14 20:23:24.461 +03:00 [INF Executed endpoint 'Ris2022.Controllers.ReasonsController.Index (Ris2022)' 
+ ]2022-09-14 20:23:24.469 +03:00 [INF Request finished HTTP/1.1 GET https://localhost:44392/Reasons - - - 200 - text/html;+charset=utf-8 31.2356ms 
+ ]2022-09-14 20:23:24.518 +03:00 [INF Request starting HTTP/1.1 GET https://localhost:44392/_framework/aspnetcore-browser-refresh.js - - 
+ ]2022-09-14 20:23:24.518 +03:00 [INF Request starting HTTP/1.1 GET https://localhost:44392/_vs/browserLink - - 
+ ]2022-09-14 20:23:24.519 +03:00 [INF Request finished HTTP/1.1 GET https://localhost:44392/_framework/aspnetcore-browser-refresh.js - - - 200 11984 application/javascript;+charset=utf-8 1.4007ms 
+ ]2022-09-14 20:23:24.592 +03:00 [INF Request finished HTTP/1.1 GET https://localhost:44392/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 74.4050ms 
+ ]2022-09-14 20:24:28.869 +03:00 [INF Request starting HTTP/1.1 GET https://localhost:44392/worktypes - - 
+ ]2022-09-14 20:24:28.872 +03:00 [INF Executing endpoint 'Ris2022.Controllers.WorktypesController.Index (Ris2022)' 
+ ]2022-09-14 20:24:28.882 +03:00 [INF Route matched with {action = "Index", controller = "Worktypes", page = "", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller Ris2022.Controllers.WorktypesController (Ris2022). 
+ ]2022-09-14 20:24:28.885 +03:00 [INF Entity Framework Core 6.0.8 initialized 'RisDBContext' using provider 'Oracle.EntityFrameworkCore:6.0.21.1-20220418' with options: None 
+ ]2022-09-14 20:24:28.901 +03:00 [INF Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='0']
+SELECT "w"."Id", "w"."Namear", "w"."Nameen"
+FROM "Worktypes" "w" 
+ ]2022-09-14 20:24:28.903 +03:00 [INF Executing ViewResult, running view Index. 
+ ]2022-09-14 20:24:28.920 +03:00 [INF Executed ViewResult - view Index executed in 18.1825ms. 
+ ]2022-09-14 20:24:28.920 +03:00 [INF Executed action Ris2022.Controllers.WorktypesController.Index (Ris2022) in 38.5862ms 
+ ]2022-09-14 20:24:28.921 +03:00 [INF Executed endpoint 'Ris2022.Controllers.WorktypesController.Index (Ris2022)' 
+ ]2022-09-14 20:24:28.926 +03:00 [INF Request finished HTTP/1.1 GET https://localhost:44392/worktypes - - - 200 - text/html;+charset=utf-8 56.7072ms 
+ ]2022-09-14 20:24:28.987 +03:00 [INF Request starting HTTP/1.1 GET https://localhost:44392/_framework/aspnetcore-browser-refresh.js - - 
+ ]2022-09-14 20:24:28.988 +03:00 [INF Request starting HTTP/1.1 GET https://localhost:44392/_vs/browserLink - - 
+ ]2022-09-14 20:24:28.990 +03:00 [INF Request finished HTTP/1.1 GET https://localhost:44392/_framework/aspnetcore-browser-refresh.js - - - 200 11984 application/javascript;+charset=utf-8 2.6041ms 
+ ]2022-09-14 20:24:29.092 +03:00 [INF Request finished HTTP/1.1 GET https://localhost:44392/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 104.2412ms 
+ ]2022-09-14 20:24:30.421 +03:00 [INF Request starting HTTP/1.1 GET https://localhost:44392/Worktypes/Create - - 
+ ]2022-09-14 20:24:30.431 +03:00 [INF Executing endpoint 'Ris2022.Controllers.WorktypesController.Create (Ris2022)' 
+ ]2022-09-14 20:24:30.434 +03:00 [INF Route matched with {action = "Create", controller = "Worktypes", page = "", area = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Create() on controller Ris2022.Controllers.WorktypesController (Ris2022). 
+ ]2022-09-14 20:24:30.436 +03:00 [INF Executing ViewResult, running view Create. 
+ ]2022-09-14 20:24:30.477 +03:00 [INF Executed ViewResult - view Create executed in 42.6537ms. 
+ ]2022-09-14 20:24:30.478 +03:00 [INF Executed action Ris2022.Controllers.WorktypesController.Create (Ris2022) in 43.4208ms 
+ ]2022-09-14 20:24:30.478 +03:00 [INF Executed endpoint 'Ris2022.Controllers.WorktypesController.Create (Ris2022)' 
+ ]2022-09-14 20:24:30.483 +03:00 [INF Request finished HTTP/1.1 GET https://localhost:44392/Worktypes/Create - - - 200 - text/html;+charset=utf-8 61.9155ms 
+ ]2022-09-14 20:24:30.545 +03:00 [INF Request starting HTTP/1.1 GET https://localhost:44392/Worktypes/assets/js/jquery-3.2.1.min.js - - 
+ ]2022-09-14 20:24:30.549 +03:00 [INF Request starting HTTP/1.1 GET https://localhost:44392/Worktypes/assets/plugins/scroll-fixed/jquery-scrolltofixed-min.js - - 
+ ]2022-09-14 20:24:30.551 +03:00 [INF Request finished HTTP/1.1 GET https://localhost:44392/Worktypes/assets/plugins/scroll-fixed/jquery-scrolltofixed-min.js - - - 404 - - 1.5197ms 
+ ]2022-09-14 20:24:30.551 +03:00 [INF Request starting HTTP/1.1 GET https://localhost:44392/Worktypes/assets/plugins/slider/js/owl.carousel.min.js - - 
+ ]2022-09-14 20:24:30.552 +03:00 [INF Request finished HTTP/1.1 GET https://localhost:44392/Worktypes/assets/plugins/slider/js/owl.carousel.min.js - - - 404 - - 1.3284ms 
+ ]2022-09-14 20:24:30.553 +03:00 [INF Request starting HTTP/1.1 GET https://localhost:44392/Worktypes/assets/js/script.js - - 
+ ]2022-09-14 20:24:30.555 +03:00 [INF Request finished HTTP/1.1 GET https://localhost:44392/Worktypes/assets/js/jquery-3.2.1.min.js - - - 404 - - 10.0219ms 
+ ]2022-09-14 20:24:30.555 +03:00 [INF Request starting HTTP/1.1 GET https://localhost:44392/Worktypes/assets/js/popper.min.js - - 
+ ]2022-09-14 20:24:30.557 +03:00 [INF Request finished HTTP/1.1 GET https://localhost:44392/Worktypes/assets/js/script.js - - - 404 - - 3.8934ms 
+ ]2022-09-14 20:24:30.558 +03:00 [INF Request starting HTTP/1.1 GET https://localhost:44392/Worktypes/assets/js/bootstrap.min.js - - 
+ ]2022-09-14 20:24:30.559 +03:00 [INF Request finished HTTP/1.1 GET https://localhost:44392/Worktypes/assets/js/popper.min.js - - - 404 - - 3.8299ms 
+ ]2022-09-14 20:24:30.560 +03:00 [INF Request starting HTTP/1.1 GET https://localhost:44392/_vs/browserLink - - 
+ ]2022-09-14 20:24:30.560 +03:00 [INF Request finished HTTP/1.1 GET https://localhost:44392/Worktypes/assets/js/bootstrap.min.js - - - 404 - - 1.3905ms 
+ ]2022-09-14 20:24:30.564 +03:00 [INF Request starting HTTP/1.1 GET https://localhost:44392/_framework/aspnetcore-browser-refresh.js - - 
+ ]2022-09-14 20:24:30.565 +03:00 [INF Request finished HTTP/1.1 GET https://localhost:44392/_framework/aspnetcore-browser-refresh.js - - - 200 11984 application/javascript;+charset=utf-8 1.5360ms 
+ ]2022-09-14 20:24:30.610 +03:00 [INF Request starting HTTP/1.1 GET https://localhost:44392/Worktypes/assets/js/jquery-3.2.1.min.js - - 
+ ]2022-09-14 20:24:30.612 +03:00 [INF Request finished HTTP/1.1 GET https://localhost:44392/Worktypes/assets/js/jquery-3.2.1.min.js - - - 404 - - 1.9602ms 
+ ]2022-09-14 20:24:30.618 +03:00 [INF Request starting HTTP/1.1 GET https://localhost:44392/Worktypes/assets/js/popper.min.js - - 
+ ]2022-09-14 20:24:30.621 +03:00 [INF Request finished HTTP/1.1 GET https://localhost:44392/Worktypes/assets/js/popper.min.js - - - 404 - - 3.1099ms 
+ ]2022-09-14 20:24:30.654 +03:00 [INF Request starting HTTP/1.1 GET https://localhost:44392/Worktypes/assets/js/bootstrap.min.js - - 
+ ]2022-09-14 20:24:30.655 +03:00 [INF Request finished HTTP/1.1 GET https://localhost:44392/Worktypes/assets/js/bootstrap.min.js - - - 404 - - 1.2505ms 
+ ]2022-09-14 20:24:30.691 +03:00 [INF Request finished HTTP/1.1 GET https://localhost:44392/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 131.1626ms 
+ ]2022-09-14 20:24:30.692 +03:00 [INF Request starting HTTP/1.1 GET https://localhost:44392/Worktypes/assets/plugins/scroll-fixed/jquery-scrolltofixed-min.js - - 
+ ]2022-09-14 20:24:30.694 +03:00 [INF Request finished HTTP/1.1 GET https://localhost:44392/Worktypes/assets/plugins/scroll-fixed/jquery-scrolltofixed-min.js - - - 404 - - 1.4395ms 
+ ]2022-09-14 20:24:30.701 +03:00 [INF Request starting HTTP/1.1 GET https://localhost:44392/Worktypes/assets/plugins/slider/js/owl.carousel.min.js - - 
+ ]2022-09-14 20:24:30.703 +03:00 [INF Request finished HTTP/1.1 GET https://localhost:44392/Worktypes/assets/plugins/slider/js/owl.carousel.min.js - - - 404 - - 1.0522ms 
+ ]2022-09-14 20:24:30.708 +03:00 [INF Request starting HTTP/1.1 GET https://localhost:44392/Worktypes/assets/js/script.js - - 
+ ]2022-09-14 20:24:30.709 +03:00 [INF Request finished HTTP/1.1 GET https://localhost:44392/Worktypes/assets/js/script.js - - - 404 - - 1.1408ms 
+ ]2022-09-14 20:24:46.270 +03:00 [INF Request starting HTTP/1.1 POST https://localhost:44392/Worktypes/Create application/x-www-form-urlencoded 302 
+ ]2022-09-14 20:24:46.276 +03:00 [INF Executing endpoint 'Ris2022.Controllers.WorktypesController.Create (Ris2022)' 
+ ]2022-09-14 20:24:46.286 +03:00 [INF Route matched with {action = "Create", controller = "Worktypes", page = "", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Create(Ris2022.Data.Models.Worktype) on controller Ris2022.Controllers.WorktypesController (Ris2022). 
+ ]2022-09-14 20:24:46.291 +03:00 [INF Entity Framework Core 6.0.8 initialized 'RisDBContext' using provider 'Oracle.EntityFrameworkCore:6.0.21.1-20220418' with options: None 
+ ]2022-09-14 20:24:46.337 +03:00 [INF Executed DbCommand (17ms) [Parameters=[:p0='?' (Size = 25), :p1='?' (Size = 25), :cur1='?' (Direction = Output) (DbType = Object)], CommandType='"Text"', CommandTimeout='0']
+DECLARE
+TYPE "rWorktypes_0" IS RECORD
+(
+"Id" NUMBER(10)
+);
+TYPE "tWorktypes_0" IS TABLE OF "rWorktypes_0";
+"lWorktypes_0" "tWorktypes_0";
+v_RowCount INTEGER;
+BEGIN
+
+"lWorktypes_0" := "tWorktypes_0"();
+"lWorktypes_0".extend(1);
+INSERT INTO "Worktypes" ("Namear", "Nameen")
+VALUES (:p0, :p1)
+RETURNING "Id" INTO "lWorktypes_0"(1)."Id";
+OPEN :cur1 FOR SELECT "lWorktypes_0"(1)."Id" FROM DUAL;
+END; 
+ ]2022-09-14 20:24:46.341 +03:00 [INF Executing RedirectResult, redirecting to /Worktypes. 
+ ]2022-09-14 20:24:46.341 +03:00 [INF Executed action Ris2022.Controllers.WorktypesController.Create (Ris2022) in 55.585ms 
+ ]2022-09-14 20:24:46.341 +03:00 [INF Executed endpoint 'Ris2022.Controllers.WorktypesController.Create (Ris2022)' 
+ ]2022-09-14 20:24:46.342 +03:00 [INF Request finished HTTP/1.1 POST https://localhost:44392/Worktypes/Create application/x-www-form-urlencoded 302 - 302 - - 72.4531ms 
+ ]2022-09-14 20:24:46.347 +03:00 [INF Request starting HTTP/1.1 GET https://localhost:44392/Worktypes - - 
+ ]2022-09-14 20:24:46.349 +03:00 [INF Executing endpoint 'Ris2022.Controllers.WorktypesController.Index (Ris2022)' 
+ ]2022-09-14 20:24:46.349 +03:00 [INF Route matched with {action = "Index", controller = "Worktypes", page = "", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller Ris2022.Controllers.WorktypesController (Ris2022). 
+ ]2022-09-14 20:24:46.350 +03:00 [INF Entity Framework Core 6.0.8 initialized 'RisDBContext' using provider 'Oracle.EntityFrameworkCore:6.0.21.1-20220418' with options: None 
+ ]2022-09-14 20:24:46.355 +03:00 [INF Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='0']
+SELECT "w"."Id", "w"."Namear", "w"."Nameen"
+FROM "Worktypes" "w" 
+ ]2022-09-14 20:24:46.355 +03:00 [INF Executing ViewResult, running view Index. 
+ ]2022-09-14 20:24:46.366 +03:00 [INF Executed ViewResult - view Index executed in 10.3868ms. 
+ ]2022-09-14 20:24:46.366 +03:00 [INF Executed action Ris2022.Controllers.WorktypesController.Index (Ris2022) in 17.0057ms 
+ ]2022-09-14 20:24:46.366 +03:00 [INF Executed endpoint 'Ris2022.Controllers.WorktypesController.Index (Ris2022)' 
+ ]2022-09-14 20:24:46.370 +03:00 [INF Request finished HTTP/1.1 GET https://localhost:44392/Worktypes - - - 200 - text/html;+charset=utf-8 22.4138ms 
+ ]2022-09-14 20:24:46.417 +03:00 [INF Request starting HTTP/1.1 GET https://localhost:44392/_vs/browserLink - - 
+ ]2022-09-14 20:24:46.417 +03:00 [INF Request starting HTTP/1.1 GET https://localhost:44392/_framework/aspnetcore-browser-refresh.js - - 
+ ]2022-09-14 20:24:46.419 +03:00 [INF Request finished HTTP/1.1 GET https://localhost:44392/_framework/aspnetcore-browser-refresh.js - - - 200 11984 application/javascript;+charset=utf-8 2.0909ms 
+ ]2022-09-14 20:24:46.520 +03:00 [INF Request finished HTTP/1.1 GET https://localhost:44392/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 103.4667ms 
+ ]2022-09-14 20:25:06.099 +03:00 [INF Request starting HTTP/1.1 GET https://localhost:44392/Proceduretypeس - - 
+ ]2022-09-14 20:25:06.102 +03:00 [INF Request finished HTTP/1.1 GET https://localhost:44392/Proceduretypeس - - - 404 - - 2.4907ms 
+ ]2022-09-14 20:25:15.069 +03:00 [INF Request starting HTTP/1.1 GET https://localhost:44392/Proceduretypes - - 
+ ]2022-09-14 20:25:15.075 +03:00 [INF Executing endpoint 'Ris2022.Controllers.ProceduretypesController.Index (Ris2022)' 
+ ]2022-09-14 20:25:15.082 +03:00 [INF Route matched with {action = "Index", controller = "Proceduretypes", page = "", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller Ris2022.Controllers.ProceduretypesController (Ris2022). 
+ ]2022-09-14 20:25:15.086 +03:00 [INF Entity Framework Core 6.0.8 initialized 'RisDBContext' using provider 'Oracle.EntityFrameworkCore:6.0.21.1-20220418' with options: None 
+ ]2022-09-14 20:25:15.102 +03:00 [INF Executed DbCommand (9ms) [Parameters=[], CommandType='"Text"', CommandTimeout='0']
+SELECT "p"."Id", "p"."Namear", "p"."Nameen", "p"."Parentnum"
+FROM "Proceduretypes" "p" 
+ ]2022-09-14 20:25:15.105 +03:00 [INF Executing ViewResult, running view Index. 
+ ]2022-09-14 20:25:15.158 +03:00 [INF Executed ViewResult - view Index executed in 54.7726ms. 
+ ]2022-09-14 20:25:15.158 +03:00 [INF Executed action Ris2022.Controllers.ProceduretypesController.Index (Ris2022) in 76.0012ms 
+ ]2022-09-14 20:25:15.158 +03:00 [INF Executed endpoint 'Ris2022.Controllers.ProceduretypesController.Index (Ris2022)' 
+ ]2022-09-14 20:25:15.204 +03:00 [INF Request finished HTTP/1.1 GET https://localhost:44392/Proceduretypes - - - 200 - text/html;+charset=utf-8 135.6020ms 
+ ]2022-09-14 20:25:15.233 +03:00 [INF Request starting HTTP/1.1 GET https://localhost:44392/_vs/browserLink - - 
+ ]2022-09-14 20:25:15.233 +03:00 [INF Request starting HTTP/1.1 GET https://localhost:44392/_framework/aspnetcore-browser-refresh.js - - 
+ ]2022-09-14 20:25:15.257 +03:00 [INF Request finished HTTP/1.1 GET https://localhost:44392/_framework/aspnetcore-browser-refresh.js - - - 200 11984 application/javascript;+charset=utf-8 23.1510ms 
+ ]2022-09-14 20:25:15.319 +03:00 [INF Request finished HTTP/1.1 GET https://localhost:44392/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 86.2812ms 
+ ]2022-09-14 20:25:16.612 +03:00 [INF Request starting HTTP/1.1 GET https://localhost:44392/Proceduretypes/Create - - 
+ ]2022-09-14 20:25:16.615 +03:00 [INF Executing endpoint 'Ris2022.Controllers.ProceduretypesController.Create (Ris2022)' 
+ ]2022-09-14 20:25:16.617 +03:00 [INF Route matched with {action = "Create", controller = "Proceduretypes", page = "", area = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Create() on controller Ris2022.Controllers.ProceduretypesController (Ris2022). 
+ ]2022-09-14 20:25:16.620 +03:00 [INF Executing ViewResult, running view Create. 
+ ]2022-09-14 20:25:16.671 +03:00 [INF Executed ViewResult - view Create executed in 51.7872ms. 
+ ]2022-09-14 20:25:16.671 +03:00 [INF Executed action Ris2022.Controllers.ProceduretypesController.Create (Ris2022) in 53.0275ms 
+ ]2022-09-14 20:25:16.671 +03:00 [INF Executed endpoint 'Ris2022.Controllers.ProceduretypesController.Create (Ris2022)' 
+ ]2022-09-14 20:25:16.676 +03:00 [INF Request finished HTTP/1.1 GET https://localhost:44392/Proceduretypes/Create - - - 200 - text/html;+charset=utf-8 64.5664ms 
+ ]2022-09-14 20:25:16.726 +03:00 [INF Request starting HTTP/1.1 GET https://localhost:44392/Proceduretypes/assets/js/jquery-3.2.1.min.js - - 
+ ]2022-09-14 20:25:16.727 +03:00 [INF Request starting HTTP/1.1 GET https://localhost:44392/Proceduretypes/assets/js/bootstrap.min.js - - 
+ ]2022-09-14 20:25:16.733 +03:00 [INF Request finished HTTP/1.1 GET https://localhost:44392/Proceduretypes/assets/js/jquery-3.2.1.min.js - - - 404 - - 6.8256ms 
+ ]2022-09-14 20:25:16.733 +03:00 [INF Request starting HTTP/1.1 GET https://localhost:44392/Proceduretypes/assets/plugins/slider/js/owl.carousel.min.js - - 
+ ]2022-09-14 20:25:16.734 +03:00 [INF Request finished HTTP/1.1 GET https://localhost:44392/Proceduretypes/assets/plugins/slider/js/owl.carousel.min.js - - - 404 - - 1.1572ms 
+ ]2022-09-14 20:25:16.735 +03:00 [INF Request starting HTTP/1.1 GET https://localhost:44392/Proceduretypes/assets/plugins/scroll-fixed/jquery-scrolltofixed-min.js - - 
+ ]2022-09-14 20:25:16.736 +03:00 [INF Request finished HTTP/1.1 GET https://localhost:44392/Proceduretypes/assets/plugins/scroll-fixed/jquery-scrolltofixed-min.js - - - 404 - - 1.1922ms 
+ ]2022-09-14 20:25:16.736 +03:00 [INF Request starting HTTP/1.1 GET https://localhost:44392/Proceduretypes/assets/js/popper.min.js - - 
+ ]2022-09-14 20:25:16.738 +03:00 [INF Request finished HTTP/1.1 GET https://localhost:44392/Proceduretypes/assets/js/popper.min.js - - - 404 - - 1.4082ms 
+ ]2022-09-14 20:25:16.738 +03:00 [INF Request starting HTTP/1.1 GET https://localhost:44392/Proceduretypes/assets/js/script.js - - 
+ ]2022-09-14 20:25:16.739 +03:00 [INF Request finished HTTP/1.1 GET https://localhost:44392/Proceduretypes/assets/js/script.js - - - 404 - - 1.3629ms 
+ ]2022-09-14 20:25:16.740 +03:00 [INF Request starting HTTP/1.1 GET https://localhost:44392/_vs/browserLink - - 
+ ]2022-09-14 20:25:16.741 +03:00 [INF Request starting HTTP/1.1 GET https://localhost:44392/_framework/aspnetcore-browser-refresh.js - - 
+ ]2022-09-14 20:25:16.742 +03:00 [INF Request finished HTTP/1.1 GET https://localhost:44392/_framework/aspnetcore-browser-refresh.js - - - 200 11984 application/javascript;+charset=utf-8 1.8421ms 
+ ]2022-09-14 20:25:16.745 +03:00 [INF Request finished HTTP/1.1 GET https://localhost:44392/Proceduretypes/assets/js/bootstrap.min.js - - - 404 - - 17.0533ms 
+ ]2022-09-14 20:25:16.769 +03:00 [INF Request starting HTTP/1.1 GET https://localhost:44392/Proceduretypes/assets/js/jquery-3.2.1.min.js - - 
+ ]2022-09-14 20:25:16.771 +03:00 [INF Request finished HTTP/1.1 GET https://localhost:44392/Proceduretypes/assets/js/jquery-3.2.1.min.js - - - 404 - - 1.2617ms 
+ ]2022-09-14 20:25:16.776 +03:00 [INF Request starting HTTP/1.1 GET https://localhost:44392/Proceduretypes/assets/js/popper.min.js - - 
+ ]2022-09-14 20:25:16.777 +03:00 [INF Request finished HTTP/1.1 GET https://localhost:44392/Proceduretypes/assets/js/popper.min.js - - - 404 - - 1.0214ms 
+ ]2022-09-14 20:25:16.792 +03:00 [INF Request starting HTTP/1.1 GET https://localhost:44392/Proceduretypes/assets/js/bootstrap.min.js - - 
+ ]2022-09-14 20:25:16.793 +03:00 [INF Request finished HTTP/1.1 GET https://localhost:44392/Proceduretypes/assets/js/bootstrap.min.js - - - 404 - - 1.0676ms 
+ ]2022-09-14 20:25:16.801 +03:00 [INF Request starting HTTP/1.1 GET https://localhost:44392/Proceduretypes/assets/plugins/scroll-fixed/jquery-scrolltofixed-min.js - - 
+ ]2022-09-14 20:25:16.803 +03:00 [INF Request finished HTTP/1.1 GET https://localhost:44392/Proceduretypes/assets/plugins/scroll-fixed/jquery-scrolltofixed-min.js - - - 404 - - 2.0647ms 
+ ]2022-09-14 20:25:16.809 +03:00 [INF Request starting HTTP/1.1 GET https://localhost:44392/Proceduretypes/assets/plugins/slider/js/owl.carousel.min.js - - 
+ ]2022-09-14 20:25:16.811 +03:00 [INF Request finished HTTP/1.1 GET https://localhost:44392/Proceduretypes/assets/plugins/slider/js/owl.carousel.min.js - - - 404 - - 1.4861ms 
+ ]2022-09-14 20:25:16.827 +03:00 [INF Request starting HTTP/1.1 GET https://localhost:44392/Proceduretypes/assets/js/script.js - - 
+ ]2022-09-14 20:25:16.828 +03:00 [INF Request finished HTTP/1.1 GET https://localhost:44392/Proceduretypes/assets/js/script.js - - - 404 - - 1.7367ms 
+ ]2022-09-14 20:25:16.838 +03:00 [INF Request finished HTTP/1.1 GET https://localhost:44392/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 97.6055ms 
+ ]2022-09-14 20:25:39.533 +03:00 [INF Request starting HTTP/1.1 POST https://localhost:44392/Proceduretypes/Create application/x-www-form-urlencoded 296 
+ ]2022-09-14 20:25:39.535 +03:00 [INF Executing endpoint 'Ris2022.Controllers.ProceduretypesController.Create (Ris2022)' 
+ ]2022-09-14 20:25:39.543 +03:00 [INF Route matched with {action = "Create", controller = "Proceduretypes", page = "", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Create(Ris2022.Data.Models.Proceduretype) on controller Ris2022.Controllers.ProceduretypesController (Ris2022). 
+ ]2022-09-14 20:25:39.549 +03:00 [INF Entity Framework Core 6.0.8 initialized 'RisDBContext' using provider 'Oracle.EntityFrameworkCore:6.0.21.1-20220418' with options: None 
+ ]2022-09-14 20:25:39.607 +03:00 [INF Executed DbCommand (18ms) [Parameters=[:p0='?' (Size = 25), :p1='?' (Size = 25), :p2='?' (DbType = Int32), :cur1='?' (Direction = Output) (DbType = Object)], CommandType='"Text"', CommandTimeout='0']
+DECLARE
+TYPE "rProceduretypes_0" IS RECORD
+(
+"Id" NUMBER(10)
+);
+TYPE "tProceduretypes_0" IS TABLE OF "rProceduretypes_0";
+"lProceduretypes_0" "tProceduretypes_0";
+v_RowCount INTEGER;
+BEGIN
+
+"lProceduretypes_0" := "tProceduretypes_0"();
+"lProceduretypes_0".extend(1);
+INSERT INTO "Proceduretypes" ("Namear", "Nameen", "Parentnum")
+VALUES (:p0, :p1, :p2)
+RETURNING "Id" INTO "lProceduretypes_0"(1)."Id";
+OPEN :cur1 FOR SELECT "lProceduretypes_0"(1)."Id" FROM DUAL;
+END; 
+ ]2022-09-14 20:25:39.611 +03:00 [INF Executing RedirectResult, redirecting to /Proceduretypes. 
+ ]2022-09-14 20:25:39.611 +03:00 [INF Executed action Ris2022.Controllers.ProceduretypesController.Create (Ris2022) in 68.0721ms 
+ ]2022-09-14 20:25:39.611 +03:00 [INF Executed endpoint 'Ris2022.Controllers.ProceduretypesController.Create (Ris2022)' 
+ ]2022-09-14 20:25:39.612 +03:00 [INF Request finished HTTP/1.1 POST https://localhost:44392/Proceduretypes/Create application/x-www-form-urlencoded 296 - 302 - - 78.2830ms 
+ ]2022-09-14 20:25:39.616 +03:00 [INF Request starting HTTP/1.1 GET https://localhost:44392/Proceduretypes - - 
+ ]2022-09-14 20:25:39.617 +03:00 [INF Executing endpoint 'Ris2022.Controllers.ProceduretypesController.Index (Ris2022)' 
+ ]2022-09-14 20:25:39.617 +03:00 [INF Route matched with {action = "Index", controller = "Proceduretypes", page = "", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller Ris2022.Controllers.ProceduretypesController (Ris2022). 
+ ]2022-09-14 20:25:39.618 +03:00 [INF Entity Framework Core 6.0.8 initialized 'RisDBContext' using provider 'Oracle.EntityFrameworkCore:6.0.21.1-20220418' with options: None 
+ ]2022-09-14 20:25:39.622 +03:00 [INF Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='0']
+SELECT "p"."Id", "p"."Namear", "p"."Nameen", "p"."Parentnum"
+FROM "Proceduretypes" "p" 
+ ]2022-09-14 20:25:39.622 +03:00 [INF Executing ViewResult, running view Index. 
+ ]2022-09-14 20:25:39.636 +03:00 [INF Executed ViewResult - view Index executed in 13.4945ms. 
+ ]2022-09-14 20:25:39.636 +03:00 [INF Executed action Ris2022.Controllers.ProceduretypesController.Index (Ris2022) in 19.1036ms 
+ ]2022-09-14 20:25:39.636 +03:00 [INF Executed endpoint 'Ris2022.Controllers.ProceduretypesController.Index (Ris2022)' 
+ ]2022-09-14 20:25:39.640 +03:00 [INF Request finished HTTP/1.1 GET https://localhost:44392/Proceduretypes - - - 200 - text/html;+charset=utf-8 24.2229ms 
+ ]2022-09-14 20:25:39.688 +03:00 [INF Request starting HTTP/1.1 GET https://localhost:44392/_vs/browserLink - - 
+ ]2022-09-14 20:25:39.770 +03:00 [INF Request finished HTTP/1.1 GET https://localhost:44392/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 81.5689ms 
  ]

@@ -302,3 +302,10 @@ C:\Users\hp\source\repos\Ris2022\Ris2022\bin\Debug\net6.0\Serilog.Sinks.Console.
 C:\Users\hp\source\repos\Ris2022\Ris2022\bin\Debug\net6.0\Serilog.Sinks.Debug.dll
 C:\Users\hp\source\repos\Ris2022\Ris2022\bin\Debug\net6.0\Serilog.Sinks.File.dll
 C:\Users\hp\source\repos\Ris2022\Ris2022\obj\Debug\net6.0\scopedcss\Pages\Shared\_LoginLayout.cshtml.rz.scp.css
+C:\Users\hp\source\repos\Ris2022\Ris2022\bin\Debug\net6.0\Microsoft.ReportViewer.Common.dll
+C:\Users\hp\source\repos\Ris2022\Ris2022\bin\Debug\net6.0\Microsoft.ReportViewer.DataVisualization.dll
+C:\Users\hp\source\repos\Ris2022\Ris2022\bin\Debug\net6.0\Microsoft.ReportViewer.NETCore.dll
+C:\Users\hp\source\repos\Ris2022\Ris2022\bin\Debug\net6.0\Microsoft.ReportViewer.ProcessingObjectModel.dll
+C:\Users\hp\source\repos\Ris2022\Ris2022\bin\Debug\net6.0\System.CodeDom.dll
+C:\Users\hp\source\repos\Ris2022\Ris2022\bin\Debug\net6.0\System.IO.Packaging.dll
+C:\Users\hp\source\repos\Ris2022\Ris2022\bin\Debug\net6.0\System.Resources.Extensions.dll

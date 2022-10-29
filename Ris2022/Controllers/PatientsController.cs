@@ -63,7 +63,7 @@ namespace Ris2022.Controllers
             ViewData["Nationalityid"] = new SelectList(_context.Nationalities, "Id", Resource.ENARName);
             ViewData["Worktypeid"] = new SelectList(_context.Worktypes, "Id", Resource.ENARName);
             ViewData["Reasonid"] = new SelectList(_context.Reasons, "Id", Resource.ENARName);
-
+            ViewData["Gendre"] = new SelectList(Enum.GetValues(typeof(gender)));
             Patient patient = new()
             {
                 InsertUserName = User.FindFirstValue(ClaimTypes.Name),
@@ -91,6 +91,7 @@ namespace Ris2022.Controllers
             ViewData["Nationalityid"] = new SelectList(_context.Nationalities, "Id", Resource.ENARName, patient.Nationalityid);
             ViewData["Worktypeid"] = new SelectList(_context.Worktypes, "Id", Resource.ENARName, patient.Worktypeid);
             ViewData["Reasonid"] = new SelectList(_context.Reasons, "Id", Resource.ENARName, patient.Reasonid);
+            ViewData["Gendre"] = new SelectList(Enum.GetValues(typeof(gender)),patient.Gendre);
             return View(patient);
         }
 

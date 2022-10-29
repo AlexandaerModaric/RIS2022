@@ -3,16 +3,21 @@
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
     <Nullable>enable</Nullable>
+    <NullableDbContextOptions>disable</NullableDbContextOptions>
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Reports\**" />
     <Compile Remove="Views\Accounts\**" />
     <Compile Remove="Views\Orders1\**" />
+    <Content Remove="Reports\**" />
     <Content Remove="Views\Accounts\**" />
     <Content Remove="Views\Orders1\**" />
+    <EmbeddedResource Remove="Reports\**" />
     <EmbeddedResource Remove="Views\Accounts\**" />
     <EmbeddedResource Remove="Views\Orders1\**" />
+    <None Remove="Reports\**" />
     <None Remove="Views\Accounts\**" />
     <None Remove="Views\Orders1\**" />
   </ItemGroup>
@@ -86,6 +91,7 @@
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="6.0.8" />
     <PackageReference Include="NonFactors.Grid.Mvc6" Version="7.0.2" />
     <PackageReference Include="Oracle.EntityFrameworkCore" Version="6.21.61" />
+    <PackageReference Include="ReportViewerCore.NETCore" Version="15.1.17" />
     <PackageReference Include="Serilog.AspNetCore" Version="6.0.1" />
   </ItemGroup>
 
