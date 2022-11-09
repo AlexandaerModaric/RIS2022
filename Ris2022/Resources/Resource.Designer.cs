@@ -295,6 +295,15 @@ namespace Ris2022.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Error This Field is Required.
+        /// </summary>
+        public static string ErrorFieldRequired {
+            get {
+                return ResourceManager.GetString("ErrorFieldRequired", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Middle Name.
         /// </summary>
         public static string FathName {
@@ -516,6 +525,33 @@ namespace Ris2022.Resources {
         public static string News {
             get {
                 return ResourceManager.GetString("News", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to News Body.
+        /// </summary>
+        public static string NewsBody {
+            get {
+                return ResourceManager.GetString("NewsBody", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to News Link.
+        /// </summary>
+        public static string NewsLink {
+            get {
+                return ResourceManager.GetString("NewsLink", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to News Title.
+        /// </summary>
+        public static string NewsTitle {
+            get {
+                return ResourceManager.GetString("NewsTitle", resourceCulture);
             }
         }
         

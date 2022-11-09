@@ -1,4 +1,5 @@
-﻿using Ris2022.Resources;
+﻿using Microsoft.AspNetCore.Mvc;
+using Ris2022.Resources;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -31,6 +32,7 @@ namespace Ris2022.Data.Models
 
         public string Studyid { get; set; }
         [Display(ResourceType = typeof(Resource), Name = "StartDate")]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd HH:mm}", ApplyFormatInEditMode = true)]
         public DateTime? Startdate { get; set; }
         public DateTime? Enddate { get; set; }
         public int? Statusid { get; set; }

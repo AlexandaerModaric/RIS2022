@@ -29,7 +29,6 @@ C:\Users\hp\source\repos\Ris2022\Ris2022\bin\Debug\net6.0\MessagePack.dll
 C:\Users\hp\source\repos\Ris2022\Ris2022\bin\Debug\net6.0\MessagePack.Annotations.dll
 C:\Users\hp\source\repos\Ris2022\Ris2022\bin\Debug\net6.0\Microsoft.AspNetCore.Razor.Language.dll
 C:\Users\hp\source\repos\Ris2022\Ris2022\bin\Debug\net6.0\Microsoft.Bcl.AsyncInterfaces.dll
-C:\Users\hp\source\repos\Ris2022\Ris2022\bin\Debug\net6.0\Microsoft.Build.Locator.dll
 C:\Users\hp\source\repos\Ris2022\Ris2022\bin\Debug\net6.0\Microsoft.CodeAnalysis.AnalyzerUtilities.dll
 C:\Users\hp\source\repos\Ris2022\Ris2022\bin\Debug\net6.0\Microsoft.CodeAnalysis.dll
 C:\Users\hp\source\repos\Ris2022\Ris2022\bin\Debug\net6.0\Microsoft.CodeAnalysis.CSharp.dll
@@ -309,3 +308,7 @@ C:\Users\hp\source\repos\Ris2022\Ris2022\bin\Debug\net6.0\Microsoft.ReportViewer
 C:\Users\hp\source\repos\Ris2022\Ris2022\bin\Debug\net6.0\System.CodeDom.dll
 C:\Users\hp\source\repos\Ris2022\Ris2022\bin\Debug\net6.0\System.IO.Packaging.dll
 C:\Users\hp\source\repos\Ris2022\Ris2022\bin\Debug\net6.0\System.Resources.Extensions.dll
+C:\Users\hp\source\repos\Ris2022\Ris2022\bin\Debug\net6.0\Microsoft.Build.dll
+C:\Users\hp\source\repos\Ris2022\Ris2022\bin\Debug\net6.0\Microsoft.Build.Framework.dll
+C:\Users\hp\source\repos\Ris2022\Ris2022\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\hp\source\repos\Ris2022\Ris2022\bin\Debug\net6.0\Microsoft.NET.StringTools.dll

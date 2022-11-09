@@ -80,6 +80,7 @@ builder.Services.AddLocalization(options =>
 });
 //builder.Services.AddLocalization();
 builder.Services.AddSingleton<CommonLocalizationService>();
+builder.Services.AddTransient<NewsFeedService>();
 #region Repositories
 builder.Services.AddTransient(typeof(IGenericRepository<>), typeof(GenericRepository<>));
 builder.Services.AddTransient<IPatientRepository, PatientRepository>();

@@ -195,6 +195,9 @@
   <data name="ENARName" xml:space="preserve">
     <value>Nameen</value>
   </data>
+  <data name="ErrorFieldRequired" xml:space="preserve">
+    <value>Error This Field is Required</value>
+  </data>
   <data name="FathName" xml:space="preserve">
     <value>Middle Name</value>
   </data>
@@ -269,6 +272,15 @@
   </data>
   <data name="News" xml:space="preserve">
     <value>RIS News</value>
+  </data>
+  <data name="NewsBody" xml:space="preserve">
+    <value>News Body</value>
+  </data>
+  <data name="NewsLink" xml:space="preserve">
+    <value>News Link</value>
+  </data>
+  <data name="NewsTitle" xml:space="preserve">
+    <value>News Title</value>
   </data>
   <data name="Notes" xml:space="preserve">
     <value>Notes</value>

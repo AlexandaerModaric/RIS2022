@@ -195,6 +195,9 @@
   <data name="ENARName" xml:space="preserve">
     <value>Namear</value>
   </data>
+  <data name="ErrorFieldRequired" xml:space="preserve">
+    <value>هذا الحقل يجب ألا يكون فارغاً</value>
+  </data>
   <data name="FathName" xml:space="preserve">
     <value>اسم الأب</value>
   </data>
@@ -270,6 +273,15 @@
   <data name="News" xml:space="preserve">
     <value>الأخبار</value>
   </data>
+  <data name="NewsBody" xml:space="preserve">
+    <value>نص الخبر</value>
+  </data>
+  <data name="NewsLink" xml:space="preserve">
+    <value>رابط الخبر</value>
+  </data>
+  <data name="NewsTitle" xml:space="preserve">
+    <value>عنوان الخبر</value>
+  </data>
   <data name="Notes" xml:space="preserve">
     <value>الملاحظات</value>
   </data>
@@ -334,7 +346,7 @@
     <value>تاريخ التعديل</value>
   </data>
   <data name="UpdateuserName" xml:space="preserve">
-    <value>قام بالبتعديل</value>
+    <value>قام بالتعديل</value>
   </data>
   <data name="UserName" xml:space="preserve">
     <value>اسم المستخدم</value>

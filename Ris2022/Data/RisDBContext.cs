@@ -32,6 +32,7 @@ namespace Ris2022.Data
         public virtual DbSet<Report> Reports { get; set; } = null!;
         public virtual DbSet<Worktype> Worktypes { get; set; } = null!;
         public virtual DbSet<Ordertype> Ordetypes { get; set; } = null!;
+        public virtual DbSet<News> News { get; set; } = null!;
 
         //protected override void OnConfiguring(DbContextOptionsBuilder dbContextOptionsBuilder) => dbContextOptionsBuilder.UseOracle("Data Source=orcl;User Id=risndb;Password=risndb;Validate Connection=true;");
         protected override void OnModelCreating(ModelBuilder modelBuilder)

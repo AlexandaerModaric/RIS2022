@@ -51,15 +51,15 @@ namespace Ris2022.Data.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "db55a99f-1450-4e7f-ab0f-b55349a5e316",
-                            ConcurrencyStamp = "8f107268-b7ef-4250-a7f7-69a3fd58b7c6",
+                            Id = "ebbc87d5-53d2-40ff-bcc0-f227e8f35536",
+                            ConcurrencyStamp = "b04f802d-f4f6-4563-8a6f-e1c61fce101d",
                             Name = "User",
                             NormalizedName = "USER"
                         },
                         new
                         {
-                            Id = "c2cc7dcf-49bc-4bb6-9d41-3224c581ef8a",
-                            ConcurrencyStamp = "c8eba6e3-c5d4-461a-a067-6f793bfc0847",
+                            Id = "3b94acb1-f192-4ad3-9f9b-746e97e54a22",
+                            ConcurrencyStamp = "e6b04e96-b34a-444a-ac69-d3c355fc45a3",
                             Name = "Administrator",
                             NormalizedName = "ADMINISTRATOR"
                         });
@@ -429,14 +429,49 @@ namespace Ris2022.Data.Migrations
                     OraclePropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
                     b.Property<string>("Namear")
-                        .HasColumnType("NVARCHAR2(2000)");
+                        .IsRequired()
+                        .HasMaxLength(25)
+                        .HasColumnType("NVARCHAR2(25)");
 
                     b.Property<string>("Nameen")
-                        .HasColumnType("NVARCHAR2(2000)");
+                        .IsRequired()
+                        .HasMaxLength(25)
+                        .HasColumnType("NVARCHAR2(25)");
 
                     b.HasKey("Id");
 
                     b.ToTable("Nationalities");
+                });
+
+            modelBuilder.Entity("Ris2022.Data.Models.News", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("NUMBER(10)");
+
+                    OraclePropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<string>("Body")
+                        .IsRequired()
+                        .HasColumnType("NVARCHAR2(2000)");
+
+                    b.Property<int?>("Departmentid")
+                        .IsRequired()
+                        .HasColumnType("NUMBER(10)");
+
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasColumnType("NVARCHAR2(2000)");
+
+                    b.Property<string>("URL")
+                        .IsRequired()
+                        .HasColumnType("NVARCHAR2(2000)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("Departmentid");
+
+                    b.ToTable("News");
                 });
 
             modelBuilder.Entity("Ris2022.Data.Models.Order", b =>
@@ -594,7 +629,7 @@ namespace Ris2022.Data.Migrations
                         .HasMaxLength(25)
                         .HasColumnType("NVARCHAR2(25)");
 
-                    b.Property<int?>("Gendre")
+                    b.Property<int>("Gendre")
                         .HasColumnType("NUMBER(10)");
 
                     b.Property<string>("Givenid")
@@ -915,9 +950,9 @@ namespace Ris2022.Data.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "d0891aa3-10d7-4ad6-aef2-4f21541e05e9",
+                            Id = "658ca761-c0e7-4365-ae70-85f60436f84b",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "f5bcd396-6ea5-49bf-b6cd-18950702803a",
+                            ConcurrencyStamp = "0f0fae5e-14e2-4de1-af11-044053ffa941",
                             Email = "RISAdmin@yy.com",
                             EmailConfirmed = true,
                             Firstname = "RIS",
@@ -927,7 +962,7 @@ namespace Ris2022.Data.Migrations
                             LockoutEnabled = false,
                             PasswordHash = "P@ssw0rd123",
                             PhoneNumberConfirmed = true,
-                            SecurityStamp = "5d9dceed-a6dc-4dfa-a19e-fade26394b71",
+                            SecurityStamp = "d81ce42f-b07a-4414-9e5e-355f428b6a51",
                             TwoFactorEnabled = false,
                             UserName = "RISAdmin"
                         });
@@ -1024,6 +1059,17 @@ namespace Ris2022.Data.Migrations
                     b.Navigation("Department");
 
                     b.Navigation("Modalitytype");
+                });
+
+            modelBuilder.Entity("Ris2022.Data.Models.News", b =>
+                {
+                    b.HasOne("Ris2022.Data.Models.Department", "Department")
+                        .WithMany()
+                        .HasForeignKey("Departmentid")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Department");
                 });
 
             modelBuilder.Entity("Ris2022.Data.Models.Order", b =>
