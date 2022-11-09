@@ -204,6 +204,9 @@
   <data name="Gender" xml:space="preserve">
     <value>الجنس</value>
   </data>
+  <data name="Hello" xml:space="preserve">
+    <value>مرحباً</value>
+  </data>
   <data name="Home" xml:space="preserve">
     <value>الصفحة الرئيسية</value>
   </data>
