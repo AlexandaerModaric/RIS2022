@@ -10,73 +10,87 @@
 <h4>@Resource.Order</h4>
 <hr />
 <div class="row">
-    <div class="col-md-4">
-        <form asp-action="Create">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            @Html.HiddenFor(model=>model.Patientid)
-			@Html.HiddenFor(model=>model.Studyid)
+    <form asp-action="Create">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="row border p-3 mt-4 justify-content-center align-items-center">
+            <div class="p-3 mt-4 col d-flex flex-column">
+                @Html.HiddenFor(model=>model.Patientid)
+                @Html.HiddenFor(model=>model.Studyid)
 
-            <div class="form-group">
-                <label asp-for="Modalityid" class="control-label"></label>
-                <select asp-for="Modalityid" class ="form-control" asp-items="ViewBag.Modalityid"></select>
+                <div class="form-group">
+                    <label asp-for="Modalityid" class="control-label"></label>
+                    <select asp-for="Modalityid" class="form-control" asp-items="ViewBag.Modalityid"></select>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Proceduretypeid" class="control-label"></label>
+                    <select asp-for="Proceduretypeid" class="form-control" asp-items="ViewBag.Proceduretypeid"></select>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Startdate" class="control-label"></label>
+                    <input asp-for="Startdate" class="form-control datepicker" />
+                    <span asp-validation-for="Startdate" class="text-danger"></span>
+                </div>
             </div>
-            <div class="form-group">
-                <label asp-for="Proceduretypeid" class="control-label"></label>
-                <select asp-for="Proceduretypeid" class ="form-control" asp-items="ViewBag.Proceduretypeid"></select>
+            <div class="p-3 mt-4 col d-flex flex-column">
+                <div class="form-group">
+                    <label asp-for="Doctorid" class="control-label"></label>
+                    <select asp-for="Doctorid" class="form-control" asp-items="ViewBag.Doctorid"></select>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Departmentid" class="control-label"></label>
+                    <select asp-for="Departmentid" class="form-control" asp-items="ViewBag.Departmentid"></select>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Documentid" class="control-label"></label>
+                    <input asp-for="Documentid" class="form-control" onchange="wow();" />
+                    <span asp-validation-for="Documentid" class="text-danger"></span>
+                </div>
             </div>
-            <div class="form-group">
-                <label asp-for="Startdate" class="control-label"></label>
-                <input asp-for="Startdate" class="form-control datepicker" />
-                <span asp-validation-for="Startdate" class="text-danger"></span>
+            <div class="p-3 mt-4 col d-flex flex-column">
+                <div class="form-group">
+                    <label asp-for="Ordertypeid" class="control-label"></label>
+                    <select asp-for="Ordertypeid" class="form-control" asp-items="ViewBag.Ordertypeid"></select>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Reasonid" class="control-label"></label>
+                    <select asp-for="Reasonid" class="form-control" asp-items="ViewBag.Reasonid"></select>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Paytypeid" class="control-label"></label>
+                    <select asp-for="Paytypeid" class="form-control" asp-items="ViewBag.Paytypeid"></select>
+                </div>
+            </div>
+            <div class="p-3 mt-4 col d-flex flex-column">
+
+                    <div class="form-group">
+                        <label asp-for="Payreasonid" class="control-label"></label>
+                        <input asp-for="Payreasonid" class="form-control" />
+                        <span asp-validation-for="Payreasonid" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Clinicid" class="control-label"></label>
+                        <select asp-for="Clinicid" class ="form-control" asp-items="ViewBag.Clinicid"></select>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Modalitytypeid" class="control-label"></label>
+                        <select asp-for="Modalitytypeid" class ="form-control" asp-items="ViewBag.Modalitytypeid"></select>
+                    </div>
+
             </div>
 
-            <div class="form-group">
-                <label asp-for="Doctorid" class="control-label"></label>
-                <select asp-for="Doctorid" class="form-control" asp-items="ViewBag.Doctorid"></select>
-            </div>
+     </div>
+        <div class="form-group">
+            <input type="submit" value="Create" class="btn btn-primary" />
+        </div>
+    </form>
 
-            <div class="form-group">
-                <label asp-for="Departmentid" class="control-label"></label>
-                <select asp-for="Departmentid" class ="form-control" asp-items="ViewBag.Departmentid"></select>
-            </div>
-            <div class="form-group">
-                <label asp-for="Documentid" class="control-label"></label>
-                <input asp-for="Documentid" class="form-control" />
-                <span asp-validation-for="Documentid" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Ordertypeid" class="control-label"></label>
-                <select asp-for="Ordertypeid" class ="form-control" asp-items="ViewBag.Ordertypeid"></select>
-            </div>
-
-            <div class="form-group">
-                <label asp-for="Reasonid" class="control-label"></label>
-                <select asp-for="Reasonid" class ="form-control" asp-items="ViewBag.Reasonid"></select>
-            </div>
-
-            <div class="form-group">
-                <label asp-for="Paytypeid" class="control-label"></label>
-                <select asp-for="Paytypeid" class ="form-control" asp-items="ViewBag.Paytypeid"></select>
-            </div>
-            <div class="form-group">
-                <label asp-for="Payreasonid" class="control-label"></label>
-                <input asp-for="Payreasonid" class="form-control" />
-                <span asp-validation-for="Payreasonid" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Clinicid" class="control-label"></label>
-                <select asp-for="Clinicid" class ="form-control" asp-items="ViewBag.Clinicid"></select>
-            </div>
-            <div class="form-group">
-                <label asp-for="Modalitytypeid" class="control-label"></label>
-                <select asp-for="Modalitytypeid" class ="form-control" asp-items="ViewBag.Modalitytypeid"></select>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
-            </div>
-        </form>
-    </div>
 </div>
+
+
+
 
 <div>
     <a asp-action="Index">Back to List</a>
@@ -84,4 +98,47 @@
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    <script>
+    function wow() {
+        debugger;
+        alert('sasasasasasasasasa');
+      //  alert("Selected Text: " + selectedText + " Value: " + selectedValue);
+        //$.ajax({
+
+        //    type: 'POST',
+
+        //    url: '/Radiology/getDeptModalityTyps',
+
+        //    data: '{ "dept" : "' + selectedValue + '" }',
+
+        //    contentType: 'application/json; charset=utf-8',
+
+        //    dataType: 'json',
+
+
+        //    success: function (data) {
+        //        var ddlMod = document.getElementById("MODALITYTYPE");
+        //        ddlMod.innerHTML = "";
+               
+        //        for (var i = 0; i < data.length; i++) {
+        //            var option = document.createElement("OPTION");
+
+        //            //Set Customer Name in Text part.
+        //            option.innerHTML = data[i].name;
+
+        //            //Set CustomerId in Value part.
+        //            option.value = data[i].num;
+
+        //            //Add the Option element to DropDownList.
+        //            ddlMod.options.add(option);
+        //        }
+
+        //    },
+        //    error: function () {
+
+        //    }
+
+        //});
+    });
+</script>
 }

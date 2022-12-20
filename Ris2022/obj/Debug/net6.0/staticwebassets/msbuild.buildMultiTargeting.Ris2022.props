@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\Ris2022.props" />
+</Project>

@@ -339,6 +339,9 @@
   <data name="Role" xml:space="preserve">
     <value>دور المستخدم</value>
   </data>
+  <data name="SelectLang" xml:space="preserve">
+    <value>اختر اللغة</value>
+  </data>
   <data name="StartDate" xml:space="preserve">
     <value>تاريخ البدء</value>
   </data>

@@ -42,6 +42,7 @@ namespace Ris2022.Data.Models
         public string? Mothername { get; set; }
 
         [Display(ResourceType = typeof(Resource), Name = "Birthdate")]
+        [DisplayFormat(DataFormatString = "{0:dd/MM/yyy}", ApplyFormatInEditMode = true)]
         public DateTime? Birthdate { get; set; }
 
         [Display(ResourceType = typeof(Resource), Name = "Age")]

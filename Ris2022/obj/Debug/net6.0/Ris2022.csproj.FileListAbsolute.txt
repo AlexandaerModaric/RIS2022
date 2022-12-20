@@ -312,3 +312,8 @@ C:\Users\hp\source\repos\Ris2022\Ris2022\bin\Debug\net6.0\Microsoft.Build.dll
 C:\Users\hp\source\repos\Ris2022\Ris2022\bin\Debug\net6.0\Microsoft.Build.Framework.dll
 C:\Users\hp\source\repos\Ris2022\Ris2022\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.dll
 C:\Users\hp\source\repos\Ris2022\Ris2022\bin\Debug\net6.0\Microsoft.NET.StringTools.dll
+C:\Users\hp\source\repos\Ris2022\Ris2022\obj\Debug\net6.0\staticwebassets\msbuild.Ris2022.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\hp\source\repos\Ris2022\Ris2022\obj\Debug\net6.0\staticwebassets\msbuild.build.Ris2022.props
+C:\Users\hp\source\repos\Ris2022\Ris2022\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.Ris2022.props
+C:\Users\hp\source\repos\Ris2022\Ris2022\obj\Debug\net6.0\staticwebassets\msbuild.buildTransitive.Ris2022.props
+C:\Users\hp\source\repos\Ris2022\Ris2022\obj\Debug\net6.0\staticwebassets.pack.json
